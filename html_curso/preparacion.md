@@ -1,206 +1,193 @@
 
 
-# ✅ **Planificación: Módulo 1 — Lección 1: Introducción a HTML**
+---
+
+# ✅ **Planificación: Módulo 1 — Lección 3: Etiquetas de texto y encabezados**
 
 ## **1) Título de la lección**
 
-**Introducción a HTML: qué es, para qué sirve y cómo se usa**
+**Etiquetas de texto y encabezados en HTML: estructura, jerarquía y uso correcto**
 
 ---
 
 ## **2) Objetivo de la lección**
 
-Que el estudiante comprenda qué es HTML, su origen, por qué es fundamental para la web y qué herramientas utilizará durante el curso.
+Que el alumno aprenda a estructurar contenido mediante encabezados y etiquetas de texto, entendiendo su jerarquía, semántica y usos adecuados.
 
-Al finalizar esta lección, el alumno podrá:
+Al finalizar la lección, el estudiante será capaz de:
 
-* Entender el rol de HTML en la web.
-* Conocer brevemente su historia y evolución.
-* Reconocer la estructura básica de un archivo HTML.
-* Instalar y usar Visual Studio Code para editar HTML.
-* Utilizar las DevTools del navegador para inspeccionar páginas.
-
----
-
-# ✅ **Contenido que llevará la lección**
+* Utilizar correctamente encabezados (`h1` a `h6`).
+* Crear párrafos (`p`).
+* Aplicar negritas, cursivas y otras etiquetas básicas de texto.
+* Comprender la importancia semántica de la jerarquía de encabezados.
+* Organizar contenido de forma clara y ordenada.
 
 ---
 
-## **3) Sección 1 — ¿Qué es HTML?**
-
-### Puntos clave:
-
-* HTML significa **HyperText Markup Language**.
-* Es el lenguaje que define la estructura de una página web.
-* No es un lenguaje de programación, sino de **marcado**.
-* Que es un lenguaje de marcado.
-* HTML organiza la información mediante **etiquetas**.
-* Todo lo que ves en una página web inicia con HTML: textos, botones, imágenes, formularios…
-
-### Cómo explicarlo:
-
-* Comparar HTML con el esqueleto de un cuerpo o la maqueta de una casa(mostrar de manera visaual con una animacion).
-* Claro que se puede añadir CSS (estilos) y JavaScript (funcionalidad), pero **sin HTML nada existiría**.
+# ✅ **Contenido de la Lección**
 
 ---
 
-## **4) Sección 2 — Contexto: cómo funciona la web**
+## **3) Sección 1 — ¿Qué son las etiquetas de texto en HTML?**
 
-Explicar a nivel básico:
+Explicación clara:
 
-* Un usuario escribe un enlace → el navegador pide la página → el servidor responde con un archivo HTML.
-* El navegador interpreta HTML y lo convierte en lo que el usuario ve.
-* Todo sitio tiene una estructura inicial basada en `index.html`.
+* HTML define diferentes tipos de texto mediante etiquetas especializadas.
+* No todo el texto es igual: hay títulos, subtítulos, párrafos, resaltes, citas, etc.
+* Estas etiquetas permiten que el navegador, buscadores y lectores de pantalla entiendan el contenido de forma correcta.
 
-Evitar tecnicismos al inicio, pero dejar clara la idea general.
+Comparación sugerida:
 
----
-
-## **5) Sección 3 — Breve historia de HTML**
-
-Datos fáciles de memorizar:
-
-* Creado por **Tim Berners-Lee** (foto) en 1991.
-* Surge en el CERN para compartir documentos entre científicos.
-* HTML evolucionó a versiones más avanzadas (HTML 2, 3, 4...).
-* **HTML5**, la versión moderna, llegó en 2014.
-* HTML5 trajo:
-
-  * etiquetas semánticas (`header`, `footer`, `nav`, `article`, etc.)
-  * soporte para audio, video y canvas sin plugins
-  * mejor estructura y SEO(que es seo)
-
-Datos interesantes opcionales:
-
-* Antes de HTML5 se usaban plugins como Flash para video/animaciones.
-* Tim Berners-Lee también creó el concepto de URL y navegador.
+* Son como los estilos de un documento de Word: Título grande, subtítulo más pequeño, texto normal... pero con intención semántica.
 
 ---
 
-## **6) Sección 4 — Herramientas que usaremos en el curso**
-
-Presentación de herramientas necesarias:
-
----
-
-### 🔹 **Visual Studio Code**
+## **4) Sección 2 — Encabezados (`h1` a `h6`)**
 
 Explicar:
 
-* Qué es un editor de código gratuito.
-* Por qué es el más usado hoy (ligero, extensiones, autocompletado).
-* Cómo instalarlo (mencionar: Windows).
-* Extensiones recomendadas (se enseñan más adelante):
+* Representan la estructura jerárquica de un documento.
+* `h1` es el título principal de la página (solo uno recomendado).
+* `h2` a `h6` son subtítulos de diferentes niveles.
+* Importancia para SEO y accesibilidad.
 
-  * Live Server
-  * HTML CSS Support
-  * Prettier
+Ejemplo visual sugerido:
 
-> El objetivo de esta lección no es instalarlas, sino que el alumno entienda por qué las usará.
+* Mostrar escalera: `h1` arriba → `h6` abajo.
 
----
-
-### 🔹 **Navegador web (Google Chrome recomendado)**
-
-Razones:
-
-* Trae las mejores DevTools.
-* Es estándar de facto para pruebas.
-* Compatible con la mayor parte de frameworks.
-
----
-
-### 🔹 **Google Chrome DevTools**
-
-Explicar qué es y para qué sirve pero solo mencionado solo nos enfocaremos lo aue se usa en htl que seria inspeccionar los elementos y editar el html:
-
-* Inspector de elementos
-* Consola
-* Ver errores
-* Ver estilos
-* Simular pantallas
-* Performance
-
-Explicar que es la herramienta del día a día del desarrollador web.
-
----
-
-### 🔹 **Sitios útiles para practicar**
-
-Mencionar como recursos que se usarán durante el curso:
-
-* MDN Web Docs (referencia oficial)
-* W3Schools (referencias rápidas)
-* CanIUse (compatibilidad)
-* ALguna chuleta.
-
-No entrar en profundidad, solo nombrarlos.
-
----
-
-## **7) Sección 5 — Estructura básica de un archivo HTML**
-
-Mostrar el esqueleto base que todo archivo tiene.
-
-*(Luego, en la siguiente lección, entrarás a fondo y explicas cada parte línea por línea.)*
-
-Código sugerido:
+Ejemplo de código con sistema Better Comments:
 
 ```html
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    //Declaración de metadatos del documento
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi primera página</title>
-</head>
-
 <body>
-    //Todo el contenido visible irá aquí
-    <h1>Hola, mundo</h1>
-</body>
+    //* Encabezado principal (solo debe haber uno por página)
+    <h1>Bienvenidos a mi sitio</h1>
 
-</html>
+    //* Subtítulo de segundo nivel
+    <h2>Acerca de mí</h2>
+
+    //* Subtítulo dentro de la sección anterior
+    <h3>Mis pasatiempos</h3>
+</body>
 ```
 
 ---
 
-## **8) Sección 6 — Datos interesantes para cerrar la lección**
+## **5) Sección 3 — Buenas prácticas con encabezados**
 
-Ideas:
-
-* El primer sitio web de la historia **aún existe** y sigue online.
-* HTML originalmente tenía solo 18 etiquetas.
-* Hoy existen más de 100 etiquetas entre básicas y semánticas.
-* HTML5 permite crear videojuegos en el navegador.
-* La web moderna combina HTML + CSS + JavaScript, pero HTML es siempre el punto de inicio.
+* Mantener la jerarquía correcta: no saltar de `h1` a `h4` sin razón.
+* No usar encabezados para hacer texto grande (eso se hace con CSS).
+* `h1` representa el tema principal del documento.
+* Importancia para SEO: Google entiende la estructura del contenido.
 
 ---
 
-## **9) Actividad práctica de cierre (simple y rápida)**
+## **6) Sección 4 — Etiquetas básicas de texto**
 
-Propuesta para el final de la lección:
+Aquí se presentan los tipos de texto más usados:
 
-**Crear tu primer archivo HTML**
+### **A) `<p>` — Párrafos**
 
-1. Crear una carpeta llamada `mi-primer-sitio`.
-2. Crear un archivo `index.html`.
-3. escribir la plantilla básica.
-4. Cambiar el texto del `<h1>` a tu nombre.
+* Elemento base para texto normal.
+* Siempre que quieras un bloque de texto largo, se usa `<p>`.
 
-(No se evalúa nada aún, solo motivación.)
+```html
+//* Párrafo de texto común
+<p>Este es un ejemplo de un párrafo en HTML.</p>
+```
+
+### **B) `<b>` y `<strong>` — Negritas**
+
+* `<b>` solo resalta visualmente.
+* `<strong>` añade importancia semántica (Google lo toma en cuenta).
+
+```html
+<p>Este es un texto en <strong>negritas importantes</strong>.</p>
+```
+
+### **C) `<i>` y `<em>` — Cursivas**
+
+* `<i>` = visual, sin semántica.
+* `<em>` = énfasis real en el significado.
+
+```html
+<p>Este texto tiene <em>énfasis especial</em> para destacarlo.</p>
+```
+
+### **D) `<small>` — Texto pequeño**
+
+```html
+<small>Nota pequeña o aclaración legal.</small>
+```
+
+### **E) `<br>` — Saltos de línea**
+
+* Se usa para saltos simples, no para separar párrafos completos.
 
 ---
 
-## **10) Resumen final de la lecciónq**
+## **7) Sección 5 — Combinando etiquetas para estructurar contenido**
 
-Un párrafo corto que funcione como ficha de estudio o resumen para tener a la mano con lo escencial:
+Mini ejemplo que muestra cómo se organiza un artículo simple:
 
-* qué es HTML
-* por qué es importante
-* herramientas que se usarán
+```html
+<body>
+    //* Título principal del artículo
+    <h1>Guía para usar etiquetas de texto</h1>
+
+    //* Sección introductoria
+    <h2>Introducción</h2>
+    <p>Las etiquetas de texto permiten organizar el contenido de manera clara.</p>
+
+    //* Sección secundaria
+    <h2>Tipos de texto</h2>
+    <p>Puedes usar <strong>negritas</strong>, <em>cursivas</em> o texto más <small>pequeño</small>.</p>
+
+    //* Evitar múltiples saltos de línea, usar <br> solo cuando sea necesario
+    <p>Texto con salto lineal<br>en esta parte.</p>
+</body>
+```
+
+---
+
+## **8) Sección 6 — Errores comunes que se deben evitar**
+
+* Usar `<br>` repetidos para separar bloques (mala práctica).
+* Tener varios `<h1>` sin razón.
+* Usar encabezados solo por apariencia (CSS se explicará después).
+* Mezclar niveles de encabezados sin orden lógico.
+
+---
+
+## **9) Sección 7 — Actividad práctica de la lección**
+
+### **Actividad: Estructurar un mini artículo personal**
+
+En el archivo `mi-biografia.html`:
+
+1. Crear un `<h1>` con tu nombre.
+2. Agregar una sección “Sobre mí” con `<h2>`.
+3. Añadir un párrafo explicando quién eres.
+4. Crear una sección “Mis hobbies” con `<h2>`.
+5. Listar tus hobbies usando `<p>` o subtítulos `<h3>`.
+6. Aplicar `<strong>`, `<em>` y `<small>` en partes clave.
+7. Comentar cada sección con tu sistema:
+
+```html
+//* Sección de hobbies
+```
+
+Objetivo: aprender jerarquía + orden + semántica.
+
+---
+
+## **10) Resumen final de la lección**
+
+Breve recordatorio:
+
+* Los encabezados ordenan el contenido y crean jerarquía.
+* Los párrafos se usan para texto estructurado.
+* Algunas etiquetas cambian el significado del texto, no solo su apariencia.
+* Una buena organización ayuda a que usuarios y buscadores entiendan la página.
 
 ---
 

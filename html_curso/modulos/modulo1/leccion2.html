@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 2: Estructura básica de una página HTML</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Highlight.js para código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    /* NAVEGACIÓN */
+    .lesson-nav {
+      background-color: #16213e;
+      padding: 20px 0;
+      border-bottom: 3px solid #e34c26;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    .lesson-title-nav {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .lesson-title-nav .module-badge {
+      background-color: #e34c26;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 15px;
+    }
+
+    .btn-back {
+      background-color: #2d3561;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #3d4875;
+    }
+
+    .btn-back:hover {
+      background-color: #e34c26;
+      border-color: #e34c26;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
+    .lesson-header {
+      background-color: #e34c26;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .lesson-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    .lesson-header .lesson-number {
+      background-color: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 25px;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .lesson-objectives {
+      background-color: #16213e;
+      padding: 40px;
+      margin-top: 30px;
+      border-radius: 15px;
+      border-left: 5px solid #f06529;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lesson-objectives h3 {
+      color: #f06529;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .lesson-objectives ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .lesson-objectives li {
+      padding-left: 30px;
+      position: relative;
+      margin-top: 12px;
+      color: #c5c6d0;
+    }
+
+    .lesson-objectives li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #f06529;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    .lesson-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .section + .section {
+      margin-top: 80px;
+    }
+
+    .section-title {
+      color: #e34c26;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #2d3561;
+    }
+
+    .section-subtitle {
+      color: #f06529;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 40px;
+    }
+
+    .text-content {
+      color: #c5c6d0;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .text-content + .text-content {
+      margin-top: 15px;
+    }
+
+    .highlight-box {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 5px solid #e34c26;
+      margin-top: 30px;
+    }
+
+    .highlight-box.info {
+      border-left-color: #3498db;
+    }
+
+    .highlight-box.warning {
+      border-left-color: #f39c12;
+    }
+
+    .highlight-box.success {
+      border-left-color: #27ae60;
+    }
+
+    .highlight-box h4 {
+      color: #fff;
+      font-weight: 700;
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .highlight-box p {
+      color: #c5c6d0;
+      margin-top: 12px;
+    }
+
+    .highlight-box ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .highlight-box li {
+      padding-left: 25px;
+      position: relative;
+      margin-top: 10px;
+      color: #c5c6d0;
+    }
+
+    .highlight-box li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #e34c26;
+      font-weight: bold;
+    }
+
+    /* ESTRUCTURA VISUAL */
+    .structure-visual {
+      background-color: #2d3561;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    .structure-item {
+      background-color: #16213e;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 20px;
+      border-left: 5px solid #e34c26;
+    }
+
+    .structure-item-title {
+      color: #f06529;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+      font-family: 'Courier New', monospace;
+    }
+
+    .structure-item-desc {
+      color: #c5c6d0;
+      margin-top: 15px;
+      font-size: 1.05rem;
+    }
+
+    /* CÓDIGO */
+    .code-container {
+      margin-top: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #2d3561;
+    }
+
+    .code-header {
+      background-color: #2d3561;
+      padding: 12px 20px;
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-language {
+      color: #f06529;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      margin: 0;
+      background-color: #282c34;
+    }
+
+    pre code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* LISTA DE PUNTOS */
+    .key-points {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .key-points h4 {
+      color: #e34c26;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .key-points ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .key-points li {
+      padding-left: 30px;
+      position: relative;
+      margin-top: 15px;
+      color: #c5c6d0;
+    }
+
+    .key-points li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: #f06529;
+      font-size: 1.5rem;
+    }
+
+    /* COMPARACIÓN VISUAL */
+    .comparison-container {
+      background-color: #2d3561;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .comparison-title {
+      color: #f06529;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .comparison-item {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      border-top: 4px solid #e34c26;
+    }
+
+    .comparison-icon {
+      font-size: 3.5rem;
+      color: #f06529;
+      margin-top: 10px;
+    }
+
+    .comparison-label {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .comparison-desc {
+      color: #c5c6d0;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+
+    /* ERRORES COMUNES */
+    .error-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .error-card {
+      background-color: #16213e;
+      padding: 25px;
+      border-radius: 12px;
+      border-left: 5px solid #e74c3c;
+    }
+
+    .error-card h5 {
+      color: #e74c3c;
+      font-weight: 700;
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .error-card p {
+      color: #c5c6d0;
+      margin-top: 12px;
+      font-size: 0.95rem;
+    }
+
+    /* ACTIVIDAD PRÁCTICA */
+    .practice-section {
+      background-color: #27ae60;
+      padding: 50px;
+      border-radius: 15px;
+      margin-top: 60px;
+      color: #fff;
+    }
+
+    .practice-section h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 0;
+    }
+
+    .practice-steps {
+      background-color: rgba(0,0,0,0.2);
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .practice-steps ol {
+      padding-left: 25px;
+      margin-top: 20px;
+    }
+
+    .practice-steps li {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* RESUMEN */
+    .summary-section {
+      background-color: #2d3561;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 60px;
+      border: 3px solid #e34c26;
+    }
+
+    .summary-section h3 {
+      color: #f06529;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .summary-content {
+      color: #e0e0e0;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* NAVEGACIÓN ENTRE LECCIONES */
+    .lesson-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+      gap: 20px;
+    }
+
+    .btn-nav {
+      flex: 1;
+      background-color: #16213e;
+      color: #fff;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      border: 2px solid #2d3561;
+      transition: all 0.3s ease;
+    }
+
+    .btn-nav:hover {
+      background-color: #e34c26;
+      border-color: #e34c26;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-nav.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .lesson-header h1 {
+        font-size: 2rem;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .error-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-navigation {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 1</span>
+        Lección 2: Estructura básica de HTML
+      </div>
+      <a href="../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 2 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Estructura básica de una página HTML</h1>
+      
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Comprender cada sección clave del esqueleto HTML</li>
+          <li>Identificar qué hace cada etiqueta principal</li>
+          <li>Crear un documento HTML estructurado correctamente</li>
+          <li>Usar comentarios para identificar partes del HTML</li>
+          <li>Preparar archivos para agregar contenido real</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: ¿Qué es la estructura básica? -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">¿Qué es la estructura básica de HTML?</h2>
+      
+      <p class="text-content">
+        Todo archivo HTML sigue una <strong>estructura mínima</strong> para que el navegador 
+        entienda cómo debe interpretar el documento. Esta estructura funciona como el marco 
+        donde luego se agregan textos, imágenes, botones, estilos y scripts.
+      </p>
+
+      <p class="text-content">
+        Sin importar qué tan complejo sea un sitio web, todos comienzan con esta misma base. 
+        Desde la página de inicio de Google hasta una aplicación web sofisticada, todos 
+        respetan esta estructura fundamental.
+      </p>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Como los cimientos de una casa</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-hard-hat"></i>
+            </div>
+            <div class="comparison-label">Cimientos</div>
+            <div class="comparison-desc">
+              Sin cimientos sólidos, no puedes construir nada encima. 
+              Lo mismo pasa con HTML.
+            </div>
+          </div>
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <div class="comparison-label">Estructura</div>
+            <div class="comparison-desc">
+              Las paredes y el techo definen los espacios. 
+              HTML define las secciones de tu página.
+            </div>
+          </div>
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-door-open"></i>
+            </div>
+            <div class="comparison-label">Contenido</div>
+            <div class="comparison-desc">
+              Una vez que tienes la estructura, puedes llenarla 
+              con muebles y decoración.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4>Importante</h4>
+        <p>
+          No puedes empezar un proyecto profesional sin dominar esta base. 
+          Es como intentar construir un edificio sin planos: simplemente no funciona.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Partes del documento -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Partes del documento HTML</h2>
+      
+      <p class="text-content">
+        Cada documento HTML se compone de elementos específicos que cumplen funciones diferentes. 
+        Vamos a analizar cada uno en detalle:
+      </p>
+
+      <div class="structure-visual">
+        
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="100">
+          <h4 class="structure-item-title">&lt;!DOCTYPE html&gt;</h4>
+          <div class="structure-item-desc">
+            <strong>¿Qué es?</strong> Una declaración que indica al navegador que el documento usa HTML5.
+            <br><br>
+            <strong>¿Para qué sirve?</strong> Le dice al navegador cómo interpretar el código. 
+            Sin esta línea, el navegador puede entrar en "modo quirks" (modo de compatibilidad antiguo) 
+            y renderizar la página de forma incorrecta.
+            <br><br>
+            <strong>Importante:</strong> No es una etiqueta HTML, es solo una declaración. 
+            Siempre debe ir en la primera línea del documento.
+          </div>
+        </div>
+
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="200">
+          <h4 class="structure-item-title">&lt;html lang="es"&gt;</h4>
+          <div class="structure-item-desc">
+            <strong>¿Qué es?</strong> La etiqueta raíz que contiene todo el documento.
+            <br><br>
+            <strong>El atributo lang:</strong> Indica el idioma principal del contenido. 
+            Esto ayuda a los lectores de pantalla (accesibilidad) y mejora el SEO.
+            <br><br>
+            <strong>Valores comunes:</strong> "es" para español, "en" para inglés, "fr" para francés, etc.
+            <br><br>
+            <strong>Regla:</strong> Todo el contenido del documento debe ir entre 
+            <code>&lt;html&gt;</code> y <code>&lt;/html&gt;</code>.
+          </div>
+        </div>
+
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="300">
+          <h4 class="structure-item-title">&lt;head&gt;</h4>
+          <div class="structure-item-desc">
+            <strong>¿Qué es?</strong> La sección de configuración del documento.
+            <br><br>
+            <strong>Contenido:</strong> Aquí van los metadatos, el título de la pestaña, 
+            enlaces a archivos CSS, scripts, favicons y más.
+            <br><br>
+            <strong>Importante:</strong> El contenido del <code>&lt;head&gt;</code> 
+            <strong>NO es visible</strong> para el usuario en la página. Solo configura cómo 
+            debe comportarse el documento.
+            <br><br>
+            <strong>Analogía:</strong> Es como el panel de control de un avión. El piloto lo necesita, 
+            pero los pasajeros no lo ven.
+          </div>
+        </div>
+
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="400">
+          <h4 class="structure-item-title">&lt;body&gt;</h4>
+          <div class="structure-item-desc">
+            <strong>¿Qué es?</strong> La parte visible del documento.
+            <br><br>
+            <strong>Contenido:</strong> Todo lo que el usuario ve en la pantalla va aquí: 
+            textos, imágenes, menús, párrafos, botones, formularios, videos, etc.
+            <br><br>
+            <strong>Regla fundamental:</strong> Si quieres que algo aparezca en la página, 
+            debe estar dentro del <code>&lt;body&gt;</code>.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Metadatos del head -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Metadatos esenciales del &lt;head&gt;</h2>
+      
+      <p class="text-content">
+        El <code>&lt;head&gt;</code> contiene información vital que prepara tu página 
+        para funcionar correctamente. Estas son las etiquetas más importantes:
+      </p>
+
+      <h3 class="section-subtitle">&lt;meta charset="UTF-8"&gt;</h3>
+      
+      <div class="highlight-box info">
+        <h4>Codificación de caracteres</h4>
+        <p>
+          <strong>UTF-8</strong> es el estándar universal de codificación que permite mostrar 
+          correctamente letras con acentos, la ñ, símbolos especiales y caracteres de múltiples idiomas.
+        </p>
+        <p style="margin-top: 12px;">
+          Sin esta línea, los acentos y caracteres especiales podrían verse como símbolos raros 
+          (como � o ÃÃ±).
+        </p>
+      </div>
+
+      <h3 class="section-subtitle">&lt;meta name="viewport"&gt;</h3>
+      
+      <div class="code-container">
+        <div class="code-header">
+          <span>Meta viewport</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box success">
+        <h4>Responsive design</h4>
+        <p>
+          Esta etiqueta es <strong>fundamental para dispositivos móviles</strong>. 
+          Le dice al navegador que ajuste el ancho de la página al ancho del dispositivo.
+        </p>
+        <p style="margin-top: 12px;">
+          <strong>width=device-width:</strong> El ancho de la página se adapta al ancho de la pantalla.
+          <br>
+          <strong>initial-scale=1.0:</strong> El zoom inicial es del 100%.
+        </p>
+        <p style="margin-top: 12px;">
+          Sin esta etiqueta, tu página se vería diminuta en celulares.
+        </p>
+      </div>
+
+      <h3 class="section-subtitle">&lt;title&gt;</h3>
+      
+      <p class="text-content">
+        Esta etiqueta controla el texto que aparece en la pestaña del navegador. 
+        Es lo primero que ven los usuarios cuando tienen múltiples pestañas abiertas, 
+        y también es importante para el SEO.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de título</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;title&gt;Mi primera página web&lt;/title&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Nota para después</h4>
+        <p>
+          En lecciones posteriores aprenderás a agregar hojas de estilo CSS en el 
+          <code>&lt;head&gt;</code> usando la etiqueta <code>&lt;link&gt;</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Demostración completa -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Demostración de la estructura completa</h2>
+      
+      <p class="text-content">
+        Ahora que comprendes cada parte, veamos cómo se ve un documento HTML completo 
+        con todos sus elementos básicos:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Plantilla HTML5 completa</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+
+&lt;head&gt;
+    &lt;!-- Metadatos y configuración del documento --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+
+    &lt;!-- Título que aparece en la pestaña del navegador --&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Contenido visible para el usuario --&gt;
+    &lt;h1&gt;Hola, esta es mi página&lt;/h1&gt;
+    &lt;p&gt;Este es mi primer párrafo en HTML.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box success">
+        <h4>Estructura lista para usar</h4>
+        <p>
+          Esta es la plantilla que usarás en todos tus proyectos. Más adelante agregarás 
+          más contenido en el <code>&lt;body&gt;</code> y configuraciones en el <code>&lt;head&gt;</code>, 
+          pero la estructura base siempre será esta.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Errores comunes -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Errores comunes al iniciar</h2>
+      
+      <p class="text-content">
+        Estos son los errores más frecuentes que cometen los principiantes. 
+        Conocerlos te ayudará a evitar frustraciones:
+      </p>
+
+      <div class="error-grid">
+        
+        <div class="error-card" data-aos="fade-up" data-aos-delay="100">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            Cerrar mal las etiquetas
+          </h5>
+          <p>
+            Todas las etiquetas que se abren deben cerrarse. Por cada 
+            <code>&lt;div&gt;</code> debe haber un <code>&lt;/div&gt;</code>. 
+            El orden también importa.
+          </p>
+        </div>
+
+        <div class="error-card" data-aos="fade-up" data-aos-delay="200">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            Contenido en el lugar equivocado
+          </h5>
+          <p>
+            Error común: poner textos o imágenes dentro del <code>&lt;head&gt;</code>. 
+            Todo contenido visible debe ir en el <code>&lt;body&gt;</code>.
+          </p>
+        </div>
+
+        <div class="error-card" data-aos="fade-up" data-aos-delay="300">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            Olvidar el DOCTYPE
+          </h5>
+          <p>
+            Sin el <code>&lt;!DOCTYPE html&gt;</code> al inicio, el navegador puede 
+            interpretar tu código de forma incorrecta o entrar en modo quirks.
+          </p>
+        </div>
+
+        <div class="error-card" data-aos="fade-up" data-aos-delay="400">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            No especificar el idioma
+          </h5>
+          <p>
+            Olvidar el atributo <code>lang="es"</code> en la etiqueta <code>&lt;html&gt;</code> 
+            afecta la accesibilidad y el SEO de tu sitio.
+          </p>
+        </div>
+
+        <div class="error-card" data-aos="fade-up" data-aos-delay="500">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            No indentar el código
+          </h5>
+          <p>
+            Un código sin indentación es difícil de leer y mantener. 
+            Usa tabulaciones o espacios para organizar visualmente tu HTML.
+          </p>
+        </div>
+
+        <div class="error-card" data-aos="fade-up" data-aos-delay="600">
+          <h5>
+            <i class="fas fa-times-circle"></i>
+            Confiar en que el navegador arregle errores
+          </h5>
+          <p>
+            Los navegadores modernos intentan corregir HTML mal escrito, 
+            pero eso NO es buena práctica. Escribe HTML correcto desde el inicio.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Conceptos complementarios -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Conceptos complementarios</h2>
+      
+      <h3 class="section-subtitle">¿Qué es la indentación y por qué es importante?</h3>
+      
+      <p class="text-content">
+        La <strong>indentación</strong> (también llamada sangría) es el espacio que se agrega 
+        al inicio de una línea de código para mostrar la jerarquía y estructura del documento.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Código sin indentar (difícil de leer)</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Mi página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Título&lt;/h1&gt;
+&lt;p&gt;Párrafo&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Código indentado correctamente (fácil de leer)</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mi página&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;p&gt;Párrafo&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box success">
+        <h4>Beneficios de la indentación</h4>
+        <ul>
+          <li>Facilita la lectura y comprensión del código</li>
+          <li>Permite detectar errores más rápidamente</li>
+          <li>Es un estándar profesional en desarrollo web</li>
+          <li>Hace el trabajo en equipo más eficiente</li>
+        </ul>
+      </div>
+
+      <h3 class="section-subtitle">Los navegadores son tolerantes (pero tú no deberías serlo)</h3>
+      
+      <p class="text-content">
+        Los navegadores modernos intentan interpretar HTML incluso si tiene errores. 
+        Pueden cerrar etiquetas automáticamente o corregir estructuras mal formadas.
+      </p>
+
+      <div class="highlight-box warning">
+        <h4>Esto NO es una buena práctica</h4>
+        <p>
+          Aunque el navegador pueda mostrar tu página con errores, esto puede causar:
+        </p>
+        <ul>
+          <li>Comportamiento inconsistente entre diferentes navegadores</li>
+          <li>Problemas de rendimiento</li>
+          <li>Dificultad para mantener y escalar el proyecto</li>
+          <li>Problemas con herramientas de desarrollo y frameworks</li>
+        </ul>
+        <p style="margin-top: 15px;">
+          <strong>Siempre escribe HTML válido y bien estructurado desde el principio.</strong>
+        </p>
+      </div>
+
+      <h3 class="section-subtitle">Elementos de bloque vs elementos en línea</h3>
+      
+      <p class="text-content">
+        Este es un concepto que veremos en profundidad en lecciones posteriores, 
+        pero es bueno que lo conozcas desde ahora:
+      </p>
+
+      <div class="key-points">
+        <h4>Diferencias básicas</h4>
+        <ul>
+          <li>
+            <strong>Elementos de bloque:</strong> Ocupan todo el ancho disponible y 
+            comienzan en una nueva línea. Ejemplos: <code>&lt;div&gt;</code>, 
+            <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>
+          </li>
+          <li>
+            <strong>Elementos en línea:</strong> Solo ocupan el espacio necesario y 
+            permiten que otros elementos estén en la misma línea. Ejemplos: 
+            <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>
+          </li>
+        </ul>
+      </div>
+
+      <div class="highlight-box info">
+        <h4>No te preocupes por memorizar esto ahora</h4>
+        <p>
+          En las próximas lecciones profundizaremos en este tema con ejemplos prácticos. 
+          Por ahora, solo necesitas saber que existen dos tipos principales de elementos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Reconstruye una página HTML desde cero</h3>
+        
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Es momento de reforzar lo aprendido creando tu propio documento HTML sin copiar y pegar. 
+          Esto te ayudará a desarrollar memoria muscular y confianza:
+        </p>
+
+        <div class="practice-steps">
+          <ol>
+            <li>
+              Crea un nuevo archivo llamado <strong>pagina2.html</strong> en tu carpeta 
+              de trabajo
+            </li>
+            <li>
+              Escribe la estructura completa de HTML sin copiar y pegar. 
+              Escríbela tú mismo de memoria
+            </li>
+            <li>
+              Cambia el título de la página por algo personalizado, por ejemplo: 
+              "Mi Segunda Página - [Tu Nombre]"
+            </li>
+            <li>
+              Dentro del <code>&lt;body&gt;</code>, añade:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Un <code>&lt;h1&gt;</code> con un título principal</li>
+                <li>Un <code>&lt;p&gt;</code> con un párrafo descriptivo</li>
+              </ul>
+            </li>
+            <li>
+              Comenta cada sección principal usando comentarios HTML:
+              <br>
+              <code style="background: rgba(0,0,0,0.3); padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 8px;">
+                &lt;!-- Este es el cuerpo de mi documento --&gt;
+              </code>
+            </li>
+            <li>
+              Guarda el archivo y ábrelo en tu navegador para verificar que funciona
+            </li>
+            <li>
+              Abre las DevTools de Chrome (F12) e inspecciona la estructura de tu página
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 30px;">
+          <h4 style="color: #fff;">Objetivo de esta actividad</h4>
+          <p style="color: #fff;">
+            El objetivo no es solo crear la página, sino que puedas escribir la estructura 
+            HTML de memoria. Esto te dará confianza para futuros proyectos.
+          </p>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Consejo profesional</h4>
+          <p style="color: #fff;">
+            Muchos editores como VS Code tienen atajos para generar la estructura básica. 
+            Por ejemplo, escribe <strong>!</strong> y presiona TAB. Pero es importante que 
+            primero aprendas a hacerlo manualmente para entender cada parte.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMEN -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+        
+        <div class="summary-content">
+          <p>
+            Un documento HTML se compone de <strong>cuatro elementos fundamentales</strong>: 
+            la declaración <code>&lt;!DOCTYPE html&gt;</code>, la etiqueta raíz 
+            <code>&lt;html&gt;</code>, la sección de configuración <code>&lt;head&gt;</code> 
+            y el contenido visible <code>&lt;body&gt;</code>.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Cada sección cumple una función específica que el navegador respeta. 
+            El <code>&lt;head&gt;</code> contiene metadatos como la codificación UTF-8, 
+            la configuración viewport para responsividad y el título de la página.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Todo el contenido visible para el usuario debe ir dentro del <code>&lt;body&gt;</code>. 
+            Es fundamental mantener un HTML bien indentado y evitar errores comunes como 
+            cerrar mal las etiquetas o colocar contenido en el lugar equivocado.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Esta estructura es la base de cualquier sitio web profesional. Dominarla te permitirá 
+            construir páginas más complejas con confianza, sabiendo que tu código está bien 
+            fundamentado desde el inicio.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="leccion1.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Introducción a HTML
+      </a>
+      <a href="leccion3.html" class="btn-nav">
+        Siguiente: Etiquetas de texto <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js para resaltar código
+    hljs.highlightAll();
+
+    // Marcar lección como completada
+    document.addEventListener('DOMContentLoaded', function() {
+      // Aquí puedes agregar lógica para guardar progreso
+      console.log('Lección 2 cargada - Estructura básica de HTML');
+    });
+
+    // Scroll suave para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

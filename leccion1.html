@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 1: Introducción a HTML</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+  <!-- AOS Scroll Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Highlight.js para código -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1a1a2e;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    /* NAVEGACIÓN */
+    .lesson-nav {
+      background-color: #16213e;
+      padding: 20px 0;
+      border-bottom: 3px solid #e34c26;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 30px;
+    }
+
+    .lesson-title-nav {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .lesson-title-nav .module-badge {
+      background-color: #e34c26;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-right: 15px;
+    }
+
+    .btn-back {
+      background-color: #2d3561;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      border: 2px solid #3d4875;
+    }
+
+    .btn-back:hover {
+      background-color: #e34c26;
+      border-color: #e34c26;
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* HEADER */
+    .lesson-header {
+      background-color: #e34c26;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .lesson-header h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    .lesson-header .lesson-number {
+      background-color: rgba(255,255,255,0.2);
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 25px;
+      display: inline-block;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .lesson-objectives {
+      background-color: #16213e;
+      padding: 40px;
+      margin-top: 30px;
+      border-radius: 15px;
+      border-left: 5px solid #f06529;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lesson-objectives h3 {
+      color: #f06529;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .lesson-objectives ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .lesson-objectives li {
+      padding-left: 30px;
+      position: relative;
+      margin-top: 12px;
+      color: #c5c6d0;
+    }
+
+    .lesson-objectives li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #f06529;
+      font-weight: bold;
+      font-size: 1.3rem;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    .lesson-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    .section {
+      margin-top: 60px;
+    }
+
+    .section + .section {
+      margin-top: 80px;
+    }
+
+    .section-title {
+      color: #e34c26;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-top: 0;
+      padding-bottom: 15px;
+      border-bottom: 3px solid #2d3561;
+    }
+
+    .section-subtitle {
+      color: #f06529;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-top: 40px;
+    }
+
+    .text-content {
+      color: #c5c6d0;
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+
+    .text-content + .text-content {
+      margin-top: 15px;
+    }
+
+    .highlight-box {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      border-left: 5px solid #e34c26;
+      margin-top: 30px;
+    }
+
+    .highlight-box.info {
+      border-left-color: #3498db;
+    }
+
+    .highlight-box.warning {
+      border-left-color: #f39c12;
+    }
+
+    .highlight-box.success {
+      border-left-color: #27ae60;
+    }
+
+    .highlight-box h4 {
+      color: #fff;
+      font-weight: 700;
+      margin-top: 0;
+      font-size: 1.2rem;
+    }
+
+    .highlight-box p {
+      color: #c5c6d0;
+      margin-top: 12px;
+    }
+
+    .highlight-box ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 15px;
+    }
+
+    .highlight-box li {
+      padding-left: 25px;
+      position: relative;
+      margin-top: 10px;
+      color: #c5c6d0;
+    }
+
+    .highlight-box li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #e34c26;
+      font-weight: bold;
+    }
+
+    /* ANALOGÍA VISUAL */
+    .analogy-container {
+      background-color: #2d3561;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .analogy-title {
+      color: #f06529;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .analogy-visual {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 30px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .analogy-item {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .analogy-icon {
+      font-size: 4rem;
+      margin-top: 15px;
+    }
+
+    .analogy-label {
+      color: #fff;
+      font-weight: 700;
+      margin-top: 15px;
+      font-size: 1.1rem;
+    }
+
+    .analogy-desc {
+      color: #c5c6d0;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    /* CÓDIGO */
+    .code-container {
+      margin-top: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #2d3561;
+    }
+
+    .code-header {
+      background-color: #2d3561;
+      padding: 12px 20px;
+      color: #fff;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .code-language {
+      color: #f06529;
+      font-size: 0.9rem;
+    }
+
+    pre {
+      margin: 0;
+      background-color: #282c34;
+    }
+
+    pre code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* LISTA DE PUNTOS */
+    .key-points {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .key-points h4 {
+      color: #e34c26;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .key-points ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+    }
+
+    .key-points li {
+      padding-left: 30px;
+      position: relative;
+      margin-top: 15px;
+      color: #c5c6d0;
+    }
+
+    .key-points li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: #f06529;
+      font-size: 1.5rem;
+    }
+
+    /* HERRAMIENTAS */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .tool-card {
+      background-color: #16213e;
+      padding: 30px;
+      border-radius: 12px;
+      border-top: 4px solid #e34c26;
+      transition: transform 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tool-icon {
+      font-size: 3rem;
+      color: #f06529;
+      margin-top: 10px;
+    }
+
+    .tool-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      margin-top: 20px;
+    }
+
+    .tool-desc {
+      color: #c5c6d0;
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      margin-top: 40px;
+      position: relative;
+      padding-left: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background-color: #2d3561;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-top: 30px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -31px;
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #e34c26;
+      border: 3px solid #1a1a2e;
+    }
+
+    .timeline-year {
+      color: #f06529;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .timeline-content {
+      color: #c5c6d0;
+      margin-top: 8px;
+    }
+
+    /* ACTIVIDAD PRÁCTICA */
+    .practice-section {
+      background-color: #27ae60;
+      padding: 50px;
+      border-radius: 15px;
+      margin-top: 60px;
+      color: #fff;
+    }
+
+    .practice-section h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-top: 0;
+    }
+
+    .practice-steps {
+      background-color: rgba(0,0,0,0.2);
+      padding: 30px;
+      border-radius: 12px;
+      margin-top: 30px;
+    }
+
+    .practice-steps ol {
+      padding-left: 25px;
+      margin-top: 20px;
+    }
+
+    .practice-steps li {
+      margin-top: 15px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* RESUMEN */
+    .summary-section {
+      background-color: #2d3561;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 60px;
+      border: 3px solid #e34c26;
+    }
+
+    .summary-section h3 {
+      color: #f06529;
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-top: 0;
+    }
+
+    .summary-content {
+      color: #e0e0e0;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    /* NAVEGACIÓN ENTRE LECCIONES */
+    .lesson-navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 80px;
+      gap: 20px;
+    }
+
+    .btn-nav {
+      flex: 1;
+      background-color: #16213e;
+      color: #fff;
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+      border: 2px solid #2d3561;
+      transition: all 0.3s ease;
+    }
+
+    .btn-nav:hover {
+      background-color: #e34c26;
+      border-color: #e34c26;
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-nav.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .lesson-header h1 {
+        font-size: 2rem;
+      }
+
+      .nav-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
+
+      .analogy-visual {
+        flex-direction: column;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lesson-navigation {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 1</span>
+        Lección 1: Introducción a HTML
+      </div>
+      <a href="../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 1 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Introducción a HTML</h1>
+      
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Entender el rol de HTML en la web</li>
+          <li>Conocer la historia y evolución de HTML</li>
+          <li>Reconocer la estructura básica de un archivo HTML</li>
+          <li>Familiarizarse con las herramientas de desarrollo</li>
+          <li>Crear tu primer archivo HTML</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: ¿Qué es HTML? -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">¿Qué es HTML?</h2>
+      
+      <p class="text-content">
+        HTML significa <strong>HyperText Markup Language</strong> (Lenguaje de Marcado de Hipertexto). 
+        Es el lenguaje fundamental que define la estructura de todas las páginas web que existen en internet.
+      </p>
+
+      <div class="key-points">
+        <h4>Puntos clave</h4>
+        <ul>
+          <li>HTML <strong>no es un lenguaje de programación</strong>, es un lenguaje de marcado</li>
+          <li>Un lenguaje de marcado usa <strong>etiquetas</strong> para organizar y estructurar información</li>
+          <li>HTML organiza el contenido mediante etiquetas que indican qué es cada elemento</li>
+          <li>Todo lo que ves en una página web comienza con HTML: textos, botones, imágenes, formularios</li>
+          <li>Sin HTML, simplemente no existiría la web como la conocemos</li>
+        </ul>
+      </div>
+
+      <div class="analogy-container">
+        <h3 class="analogy-title">Analogía: HTML como estructura de una casa</h3>
+        <div class="analogy-visual">
+          <div class="analogy-item">
+            <div class="analogy-icon">
+              <i class="fas fa-home" style="color: #e34c26;"></i>
+            </div>
+            <div class="analogy-label">HTML</div>
+            <div class="analogy-desc">La estructura y paredes de la casa</div>
+          </div>
+          <div class="analogy-item">
+            <div class="analogy-icon">
+              <i class="fas fa-paint-roller" style="color: #2965f1;"></i>
+            </div>
+            <div class="analogy-label">CSS</div>
+            <div class="analogy-desc">La pintura y decoración</div>
+          </div>
+          <div class="analogy-item">
+            <div class="analogy-icon">
+              <i class="fas fa-bolt" style="color: #f7df1e;"></i>
+            </div>
+            <div class="analogy-label">JavaScript</div>
+            <div class="analogy-desc">La electricidad y funcionalidad</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4>Importante</h4>
+        <p>
+          Aunque CSS (estilos) y JavaScript (funcionalidad) mejoran una página web, 
+          <strong>sin HTML nada de eso puede existir</strong>. HTML es siempre el punto de partida.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Cómo funciona la web -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Contexto: ¿Cómo funciona la web?</h2>
+      
+      <p class="text-content">
+        Para entender HTML, primero necesitas comprender cómo funciona la web a nivel básico:
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">Paso 1</div>
+          <div class="timeline-content">
+            Un usuario escribe una dirección web (URL) en su navegador
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paso 2</div>
+          <div class="timeline-content">
+            El navegador solicita la página al servidor donde está alojada
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paso 3</div>
+          <div class="timeline-content">
+            El servidor responde enviando archivos HTML, CSS y JavaScript
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Paso 4</div>
+          <div class="timeline-content">
+            El navegador interpreta el HTML y lo convierte en lo que el usuario ve en pantalla
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4>Dato importante</h4>
+        <p>
+          Todo sitio web tiene un archivo inicial llamado <strong>index.html</strong>. 
+          Es la página principal que se carga por defecto cuando visitas un sitio.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Historia de HTML -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Breve historia de HTML</h2>
+      
+      <p class="text-content">
+        HTML tiene una historia fascinante que vale la pena conocer:
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1991</div>
+          <div class="timeline-content">
+            <strong>Tim Berners-Lee</strong> crea HTML en el CERN para compartir documentos científicos. 
+            La primera versión tenía solo 18 etiquetas básicas.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1995-1999</div>
+          <div class="timeline-content">
+            Surgen HTML 2.0, 3.2 y 4.01. La web comienza a popularizarse con mejoras en tablas, 
+            formularios y soporte básico para estilos.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2014</div>
+          <div class="timeline-content">
+            <strong>HTML5</strong> se convierte en el estándar oficial. Trae etiquetas semánticas, 
+            soporte nativo para audio/video y mejoras enormes en estructura.
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">Actualidad</div>
+          <div class="timeline-content">
+            HTML5 es el estándar actual. Hoy existen más de 100 etiquetas y HTML sigue evolucionando 
+            con nuevas características.
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4>Innovaciones de HTML5</h4>
+        <ul>
+          <li>Etiquetas semánticas: header, footer, nav, article, section, aside</li>
+          <li>Soporte nativo para audio y video sin necesidad de plugins</li>
+          <li>Canvas para dibujar gráficos y crear animaciones</li>
+          <li>Mejor estructura y SEO (Search Engine Optimization)</li>
+          <li>Geolocalización y almacenamiento local</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4>¿Qué es SEO?</h4>
+        <p>
+          SEO significa Search Engine Optimization (Optimización para Motores de Búsqueda). 
+          Es el conjunto de técnicas para que tu sitio web aparezca mejor posicionado en Google 
+          y otros buscadores. HTML5 semántico ayuda a que los buscadores entiendan mejor tu contenido.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Herramientas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Herramientas que usaremos en el curso</h2>
+      
+      <p class="text-content">
+        Para trabajar con HTML necesitarás algunas herramientas básicas. No te preocupes, 
+        todas son gratuitas y fáciles de usar:
+      </p>
+
+      <div class="tools-grid">
+        <div class="tool-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="tool-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="tool-name">Visual Studio Code</h3>
+          <p class="tool-desc">
+            Editor de código gratuito y potente. Es el más usado por desarrolladores. 
+            Ligero, con autocompletado inteligente y miles de extensiones útiles.
+          </p>
+        </div>
+
+        <div class="tool-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="tool-icon">
+            <i class="fab fa-chrome"></i>
+          </div>
+          <h3 class="tool-name">Google Chrome</h3>
+          <p class="tool-desc">
+            Navegador web recomendado por sus excelentes herramientas de desarrollo (DevTools). 
+            Estándar en la industria para probar sitios web.
+          </p>
+        </div>
+
+        <div class="tool-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="tool-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="tool-name">Chrome DevTools</h3>
+          <p class="tool-desc">
+            Herramientas integradas en Chrome para inspeccionar elementos HTML, 
+            editar código en tiempo real, ver errores y depurar tu sitio web.
+          </p>
+        </div>
+      </div>
+
+      <h3 class="section-subtitle">Extensiones recomendadas para VS Code</h3>
+      
+      <div class="key-points">
+        <ul>
+          <li><strong>Live Server</strong> - Actualiza automáticamente tu navegador al guardar cambios</li>
+          <li><strong>HTML CSS Support</strong> - Autocompletado inteligente de etiquetas HTML y CSS</li>
+          <li><strong>Prettier</strong> - Formatea tu código automáticamente para que sea más legible</li>
+        </ul>
+      </div>
+
+      <h3 class="section-subtitle">Sitios útiles para consultar</h3>
+      
+      <div class="highlight-box info">
+        <ul>
+          <li><strong>MDN Web Docs</strong> - La documentación oficial más completa y confiable</li>
+          <li><strong>W3Schools</strong> - Referencias rápidas y ejemplos interactivos</li>
+          <li><strong>CanIUse</strong> - Verifica qué características son compatibles con cada navegador</li>
+          <li><strong>HTML CheatSheet</strong> - Guías rápidas con todas las etiquetas HTML</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Estructura básica -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Estructura básica de un archivo HTML</h2>
+      
+      <p class="text-content">
+        Todo documento HTML tiene una estructura base que siempre se repite. 
+        Veamos cómo se ve un archivo HTML básico:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Plantilla básica HTML</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+
+&lt;head&gt;
+    &lt;!-- Declaración de metadatos del documento --&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;!-- Todo el contenido visible irá aquí --&gt;
+    &lt;h1&gt;Hola, mundo&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4>No te preocupes por los detalles ahora</h4>
+        <p>
+          En la siguiente lección explicaremos línea por línea qué significa cada parte de este código. 
+          Por ahora solo familiarízate con cómo se ve un documento HTML.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Datos interesantes -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Datos interesantes sobre HTML</h2>
+      
+      <div class="key-points">
+        <ul>
+          <li>El <strong>primer sitio web de la historia</strong> aún existe y sigue en línea desde 1991</li>
+          <li>HTML originalmente tenía solo <strong>18 etiquetas</strong>. Hoy hay más de 100</li>
+          <li>Antes de HTML5, necesitabas plugins como Flash para reproducir videos en web</li>
+          <li>Tim Berners-Lee también inventó el concepto de URL y el primer navegador web</li>
+          <li>HTML5 permite crear videojuegos completos que corren directamente en el navegador</li>
+          <li>La web moderna combina HTML + CSS + JavaScript, pero <strong>HTML es siempre el inicio</strong></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ACTIVIDAD PRÁCTICA -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Crea tu primer archivo HTML</h3>
+        
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Es momento de poner en práctica lo aprendido. Esta actividad es simple y rápida, 
+          solo para que te familiarices con el proceso:
+        </p>
+
+        <div class="practice-steps">
+          <ol>
+            <li>Crea una carpeta en tu computadora llamada <strong>mi-primer-sitio</strong></li>
+            <li>Abre Visual Studio Code y abre esa carpeta</li>
+            <li>Crea un nuevo archivo llamado <strong>index.html</strong></li>
+            <li>Escribe la plantilla básica de HTML que viste anteriormente</li>
+            <li>Cambia el texto del h1 por tu nombre</li>
+            <li>Guarda el archivo y ábrelo con tu navegador</li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 30px;">
+          <h4 style="color: #fff;">Consejo</h4>
+          <p style="color: #fff;">
+            Para abrir el archivo en el navegador, puedes hacer clic derecho sobre index.html 
+            y seleccionar "Abrir con" o simplemente arrastrarlo a una ventana del navegador.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMEN -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+        
+        <div class="summary-content">
+          <p>
+            En esta primera lección aprendiste que <strong>HTML es el lenguaje de marcado</strong> 
+            que estructura todas las páginas web. No es un lenguaje de programación, sino un sistema 
+            de etiquetas que organiza el contenido.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Conociste la historia de HTML, desde su creación por Tim Berners-Lee en 1991 hasta 
+            HTML5, el estándar actual que trajo importantes mejoras como etiquetas semánticas 
+            y soporte nativo para multimedia.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Identificaste las herramientas esenciales: <strong>Visual Studio Code</strong> como editor, 
+            <strong>Google Chrome</strong> con sus DevTools para inspeccionar páginas, y recursos como 
+            MDN Web Docs y W3Schools para consultar.
+          </p>
+          
+          <p style="margin-top: 15px;">
+            Finalmente, viste por primera vez la estructura básica de un documento HTML. 
+            En la próxima lección profundizaremos en cada elemento de esta estructura para que 
+            comprendas exactamente qué hace cada línea de código.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="../modulos.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+      <a href="leccion2.html" class="btn-nav">
+        Siguiente: Estructura básica <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js para resaltar código
+    hljs.highlightAll();
+
+    // Marcar lección como vista
+    document.addEventListener('DOMContentLoaded', function() {
+      // Aquí puedes agregar lógica para guardar progreso
+      console.log('Lección 1 cargada');
+    });
+
+    // Scroll suave para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
