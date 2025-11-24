@@ -138,11 +138,11 @@ body {
 }
 
 .section + .section {
-  margin-top: 80px;
+  margin-top: 80px; 
 }
 
 .section-title {
-  color: #e34c26;
+  color: #f0f0f0;
   font-size: 2rem;
   font-weight: 700;
   margin-top: 0;
@@ -173,6 +173,7 @@ body {
   border-radius: 12px;
   border-left: 5px solid #e34c26;
   margin-top: 30px;
+  transition: .3s ease-in-out;
 }
 
 .highlight-box.info {
@@ -229,6 +230,15 @@ body {
   text-align: center;
 }
 
+.tool-card:hover,
+.analogy-item:hover {
+  transform: translateY(-8px) !important;
+}
+
+.highlight-box:hover {
+  border-left: 40px solid #f06529;
+} 
+
 .analogy-title {
   color: #f06529;
   font-size: 1.5rem;
@@ -248,6 +258,7 @@ body {
 .analogy-item {
   flex: 1;
   min-width: 200px;
+  transition: .3s ease-in-out;
 }
 
 .analogy-icon {
@@ -350,17 +361,19 @@ pre code {
   padding: 30px;
   border-radius: 12px;
   border-top: 4px solid #e34c26;
-  transition: transform 0.3s ease;
-}
-
-.tool-card:hover {
-  transform: translateY(-5px);
+  transition:0.3s ease-in-out;
 }
 
 .tool-icon {
   font-size: 3rem;
   color: #f06529;
   margin-top: 10px;
+  transition: .3s ease-in-out;
+}
+
+
+.tool-icon:hover {
+  color: #f0f0f0;
 }
 
 .tool-name {
