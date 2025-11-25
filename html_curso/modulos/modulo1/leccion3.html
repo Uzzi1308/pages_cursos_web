@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 3: Etiquetas de texto y encabezados</title>
+
+    <!-- //* CSS principal de Lección 3 -->
+    <link rel="stylesheet" href="../../assets/css/leccion3-style.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- AOS Animaciones -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+    <!-- Highlight.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+
+    <!-- NAVEGACIÓN (idéntica estructura que Lección 2) -->
+    <nav class="lesson-nav">
+      <!-- MIGAJAS / BREADCRUMBS -->
+<div class="breadcrumb-container">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="../../index.html">Inicio</a>
+        </li>
+        <li class="breadcrumb-separator"><i>›</i></li>
+
+        <li class="breadcrumb-item">
+            <a href="../../modulos.html">Módulos</a>
+        </li>
+        <li class="breadcrumb-separator"><i>›</i></li>
+
+        <li class="breadcrumb-item active">Lección 3</li>
+    </ol>
+</div>
+
+        <div class="nav-content">
+            <div class="lesson-title-nav">
+                <span class="module-badge">Módulo 1</span>
+                Lección 3: Etiquetas de texto y encabezados
+            </div>
+
+            <a href="../../modulos.html" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Volver a Módulos
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="lesson-header">
+        <div class="container">
+
+            <div class="lesson-number" data-aos="fade-down">
+                Lección 3 de 16
+            </div>
+
+            <h1 data-aos="fade-up" data-aos-delay="150">
+                Etiquetas de texto y encabezados
+            </h1>
+
+            <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="350">
+                <h3>Objetivos de aprendizaje</h3>
+                <ul>
+                    <li>Entender la jerarquía de encabezados h1–h6</li>
+                    <li>Usar etiquetas de texto como strong, em, small y br</li>
+                    <li>Aplicar semántica correcta en secciones de contenido</li>
+                    <li>Evitar errores comunes al estructurar texto</li>
+                    <li>Practicar con ejercicios estructurados</li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- CONTENIDO -->
+    <main class="lesson-content">
+
+        <!-- SECCIÓN 1 -->
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title">¿Qué son las etiquetas de texto?</h2>
+
+            <p class="text-content">
+                HTML incluye múltiples etiquetas para definir cómo se estructura e interpreta el contenido de texto.
+                Esto ayuda a organizar información, mejorar accesibilidad y mantener una semántica clara.
+            </p>
+
+            <div class="highlight-box info">
+                <h4>¿Por qué son importantes?</h4>
+                <p>
+                    Facilitan la lectura, ayudan a motores de búsqueda y permiten que usuarios con lectores de pantalla
+                    comprendan la jerarquía del contenido.
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title">Encabezados: h1 a h6</h2>
+
+            <p class="text-content">
+                Los encabezados organizan el contenido en niveles jerárquicos. El
+                <strong>h1 es único</strong> y representa el título principal de la página.
+                Los niveles h2–h6 crean subsecciones cada vez más específicas.
+            </p>
+
+            <div class="code-container">
+                <div class="code-header">
+                    <span>Ejemplo de encabezados</span>
+                    <span class="code-language">HTML</span>
+                </div>
+
+                <pre><code class="language-html">
+<!-- //* Encabezado principal -->
+<h1>Mi sitio web</h1>
+
+<!-- //* Sección principal -->
+<h2>Acerca de mí</h2>
+
+<!-- //* Subtema -->
+<h3>Mis pasatiempos</h3>
+                </code></pre>
+            </div>
+
+            <div class="highlight-box warning">
+                <h4>Buenas prácticas</h4>
+                <ul>
+                    <li>Solo un h1 por página</li>
+                    <li>No saltar niveles (ejemplo: de h1 a h4)</li>
+                    <li>No usar encabezados solo para hacer texto grande</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3 -->
+        <section class="section" data-aos="fade-up">
+            <h2 class="section-title">Etiquetas básicas de texto</h2>
+
+            <p class="text-content">
+                Además de los encabezados, existen etiquetas para resaltar,
+                enfatizar o ajustar partes específicas del contenido:
+            </p>
+
+            <!-- Párrafos -->
+            <div class="highlight-box">
+                <h4>Párrafos (p)</h4>
+                <pre><code class="language-html">
+<!-- //* Párrafo básico -->
+<p>Este es un párrafo en HTML.</p>
+                </code></pre>
+            </div>
+
+            <!-- Negritas -->
+            <div class="highlight-box">
+                <h4>Negritas: strong</h4>
+                <pre><code class="language-html">
+<p>Este texto tiene <strong>énfasis importante</strong>.</p>
+                </code></pre>
+            </div>
+
+            <!-- Cursivas -->
+            <div class="highlight-box">
+                <h4>Cursivas: em</h4>
+                <pre><code class="language-html">
+<p>Este texto tiene <em>énfasis especial</em>.</p>
+                </code></pre>
+            </div>
+
+            <!-- Small -->
+            <div class="highlight-box">
+                <h4>Texto pequeño: small</h4>
+                <pre><code class="language-html">
+<small>Nota legal o información secundaria.</small>
+                </code></pre>
+            </div>
+
+            <!-- br -->
+            <div class="highlight-box">
+                <h4>Saltos de línea: br</h4>
+                <pre><code class="language-html">
+<p>Línea uno<br>Línea dos</p>
+                </code></pre>
+            </div>
+
+        </section>
+
+        <!-- QUIZ GAMIFICADO -->
+        <section class="section" data-aos="zoom-in">
+            <h2 class="section-title">Mini-quiz</h2>
+
+            <div class="quiz-section">
+                <h4>¿Cuál etiqueta representa el título principal?</h4>
+
+                <button onclick="checkAnswer('h1')">h1</button>
+                <button onclick="checkAnswer('h2')">h2</button>
+                <button onclick="checkAnswer('title')">title</button>
+
+                <p id="quiz-feedback"></p>
+            </div>
+        </section>
+
+        <!-- BADGE -->
+        <div id="badge">
+            <i class="fa-solid fa-award"></i>
+            ¡Badge obtenido!
+        </div>
+
+        <!-- ACTIVIDAD -->
+        <section class="section" data-aos="fade-up">
+            <div class="practice-section">
+                <h3>Actividad práctica: Construye tu biografía</h3>
+
+                <p>
+                    Crea un archivo llamado <strong>mi-biografia.html</strong> y agrega:
+                </p>
+
+                <ul>
+                    <li>Un h1 con tu nombre</li>
+                    <li>Un h2 de “Sobre mí”</li>
+                    <li>Un párrafo describiéndote</li>
+                    <li>Un h2 de “Mis hobbies”</li>
+                    <li>Una lista con tres hobbies</li>
+                    <li>Uso de strong, em y small</li>
+                    <li>Comentarios usando Better Comments</li>
+                </ul>
+
+            </div>
+        </section>
+
+        <!-- NAVEGACIÓN -->
+        <div class="lesson-navigation">
+            <a class="btn-nav" href="leccion2.html">
+                <i class="fas fa-arrow-left"></i> Lección anterior
+            </a>
+
+            <a class="btn-nav" href="leccion4.html">
+                Siguiente lección <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        hljs.highlightAll();
+
+        //* Quiz
+        function checkAnswer(option) {
+            const feedback = document.getElementById("quiz-feedback");
+            const badge = document.getElementById("badge");
+
+            if (option === "h1") {
+                feedback.textContent = "Correcto.";
+                feedback.className = "correct";
+                badge.classList.add("active");
+            } else {
+                feedback.textContent = "Incorrecto.";
+                feedback.className = "incorrect";
+            }
+        }
+    </script>
+
+</body>
+</html>
