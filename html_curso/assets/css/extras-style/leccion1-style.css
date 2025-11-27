@@ -1,0 +1,150 @@
+/* ===== COMPONENTES ESPECÍFICOS LECCIÓN 1 ===== */
+.analogy-container {
+  background-color: #2d3561;
+  padding: 40px;
+  border-radius: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.analogy-title {
+  color: #f06529;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 0;
+}
+
+.analogy-visual {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.analogy-item {
+  flex: 1;
+  min-width: 200px;
+  transition: .3s ease-in-out;
+}
+
+.analogy-item:hover {
+  transform: translateY(-8px);
+}
+
+.analogy-icon {
+  font-size: 4rem;
+  color: #f06529;
+  margin-top: 15px;
+}
+
+.analogy-label {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 15px;
+  font-size: 1.1rem;
+}
+
+.analogy-desc {
+  color: #c5c6d0;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.tool-card {
+  background-color: #16213e;
+  padding: 30px;
+  border-radius: 12px;
+  border-top: 4px solid #e34c26;
+  transition: 0.3s ease-in-out;
+}
+
+.tool-card:hover {
+  transform: translateY(-8px);
+}
+
+.tool-icon {
+  font-size: 3rem;
+  color: #f06529;
+  margin-top: 10px;
+  transition: .3s ease-in-out;
+}
+
+.tool-icon:hover {
+  color: #f0f0f0;
+}
+
+.tool-name {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-top: 20px;
+}
+
+.tool-desc {
+  color: #c5c6d0;
+  margin-top: 15px;
+  font-size: 0.95rem;
+}
+
+.timeline {
+  margin-top: 40px;
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: #2d3561;
+}
+
+.timeline-item {
+  position: relative;
+  margin-top: 30px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -31px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #e34c26;
+  border: 3px solid #1a1a2e;
+}
+
+.timeline-year {
+  color: #f06529;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.timeline-content {
+  color: #c5c6d0;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .analogy-visual {
+    flex-direction: column;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+  }
+}

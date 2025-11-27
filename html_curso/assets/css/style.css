@@ -241,3 +241,34 @@ h1 {
     font-size: 2rem;
   }
 }
+
+/* Progreso Global */
+.global-progress-container {
+    background: #16213e;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #2d3561;
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.global-progress-bar {
+    background: #2d3561;
+    height: 12px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.global-progress-fill {
+    background: linear-gradient(90deg, #b6ff00, #60519b, #60519b);
+    height: 100%;
+    border-radius: 10px;
+    transition: width 1s ease-in-out;
+    position: relative;
+}

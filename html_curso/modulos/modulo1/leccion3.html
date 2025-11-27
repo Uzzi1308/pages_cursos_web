@@ -1,275 +1,935 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lección 3: Etiquetas de texto y encabezados</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 3: Etiquetas de texto y encabezados</title>
 
-    <!-- //* CSS principal de Lección 3 -->
-    <link rel="stylesheet" href="../../assets/css/leccion3-style.css">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-    <!-- AOS Animaciones -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-
-    <!-- Highlight.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
 
 <body>
 
-    <!-- NAVEGACIÓN (idéntica estructura que Lección 2) -->
-    <nav class="lesson-nav">
-      <!-- MIGAJAS / BREADCRUMBS -->
-<div class="breadcrumb-container">
+  <div class="breadcrumb-container">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="../../index.html">Inicio</a>
-        </li>
-        <li class="breadcrumb-separator"><i>›</i></li>
-
-        <li class="breadcrumb-item">
-            <a href="../../modulos.html">Módulos</a>
-        </li>
-        <li class="breadcrumb-separator"><i>›</i></li>
-
-        <li class="breadcrumb-item active">Lección 3</li>
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="leccion2.html">Lección 2</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 3: Etiquetas de texto</li>
     </ol>
-</div>
+  </div>
+  
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 1</span>
+        Lección 3: Etiquetas de texto y encabezados
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
 
-        <div class="nav-content">
-            <div class="lesson-title-nav">
-                <span class="module-badge">Módulo 1</span>
-                Lección 3: Etiquetas de texto y encabezados
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 3 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Etiquetas de texto y encabezados</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de la lección</h3>
+        <ul>
+          <li>Dominar la jerarquía de encabezados h1 a h6</li>
+          <li>Crear y estructurar párrafos correctamente</li>
+          <li>Aplicar énfasis y formato semántico al texto</li>
+          <li>Comprender la diferencia entre estilo visual y significado semántico</li>
+          <li>Organizar contenido siguiendo buenas prácticas de accesibilidad y SEO</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">¿Qué son las etiquetas de texto en HTML?</h2>
+
+      <p class="text-content">
+        Las etiquetas de texto en HTML son como las herramientas de formato de un procesador de textos,
+        pero con una diferencia fundamental: <strong>no solo cambian cómo se ve el texto, sino que le dan
+          significado</strong>.
+      </p>
+
+      <p class="text-content">
+        Cuando usas etiquetas de texto correctamente, estás comunicándote con tres audiencias diferentes:
+      </p>
+
+      <div class="key-points">
+        <h4>Las tres audiencias de tu HTML</h4>
+        <ul>
+          <li><strong>El navegador</strong> - Interpreta las etiquetas para mostrar el contenido visualmente</li>
+          <li><strong>Los motores de búsqueda</strong> - Entienden la estructura para indexar tu contenido</li>
+          <li><strong>Los lectores de pantalla</strong> - Traducen la estructura en navegación accesible para personas
+            con discapacidad visual</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box info">
+        <h4>Analogía: Las etiquetas de texto son como señales de tránsito</h4>
+        <p>
+          Así como las señales de tránsito organizan el flujo vehicular (alto, ceda el paso, curva peligrosa),
+          las etiquetas de texto organizan la información de tu página. Un <code>&lt;h1&gt;</code> es como
+          un letrero de "ENTRADA PRINCIPAL", mientras que un <code>&lt;p&gt;</code> es el camino normal por donde todos
+          transitan.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Jerarquía de encabezados -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">La jerarquía de encabezados: h1 a h6</h2>
+
+      <p class="text-content">
+        Los encabezados en HTML van del <code>&lt;h1&gt;</code> al <code>&lt;h6&gt;</code>,
+        creando una jerarquía que organiza tu contenido de lo más importante a lo más específico.
+      </p>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Visualización de la jerarquía</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-crown"></i>
             </div>
+            <div class="comparison-label">h1</div>
+            <div class="comparison-desc">
+              El título principal. Solo uno por página.
+              Es el tema general del documento.
+            </div>
+          </div>
 
-            <a href="../../modulos.html" class="btn-back">
-                <i class="fas fa-arrow-left"></i> Volver a Módulos
-            </a>
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-bookmark"></i>
+            </div>
+            <div class="comparison-label">h2</div>
+            <div class="comparison-desc">
+              Secciones principales. Divide el contenido
+              en temas mayores.
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-tags"></i>
+            </div>
+            <div class="comparison-label">h3 - h6</div>
+            <div class="comparison-desc">
+              Subsecciones cada vez más específicas.
+              Crean estructura dentro de las secciones principales.
+            </div>
+          </div>
         </div>
-    </nav>
+      </div>
 
-    <!-- HEADER -->
-    <header class="lesson-header">
-        <div class="container">
+      <h3 class="section-subtitle">Ejemplo práctico: Estructura de un artículo</h3>
 
-            <div class="lesson-number" data-aos="fade-down">
-                Lección 3 de 16
-            </div>
-
-            <h1 data-aos="fade-up" data-aos-delay="150">
-                Etiquetas de texto y encabezados
-            </h1>
-
-            <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="350">
-                <h3>Objetivos de aprendizaje</h3>
-                <ul>
-                    <li>Entender la jerarquía de encabezados h1–h6</li>
-                    <li>Usar etiquetas de texto como strong, em, small y br</li>
-                    <li>Aplicar semántica correcta en secciones de contenido</li>
-                    <li>Evitar errores comunes al estructurar texto</li>
-                    <li>Practicar con ejercicios estructurados</li>
-                </ul>
-            </div>
-
+      <div class="code-container">
+        <div class="code-header">
+          <span>Jerarquía correcta de encabezados</span>
+          <span class="code-language">HTML</span>
         </div>
-    </header>
+        <pre><code class="language-html">&lt;!-- Título principal del artículo (único) --&gt;
+&lt;h1&gt;Guía completa de HTML para principiantes&lt;/h1&gt;
 
-    <!-- CONTENIDO -->
-    <main class="lesson-content">
+&lt;!-- Primera sección principal --&gt;
+&lt;h2&gt;¿Qué es HTML?&lt;/h2&gt;
+&lt;p&gt;HTML es el lenguaje que estructura las páginas web...&lt;/p&gt;
 
-        <!-- SECCIÓN 1 -->
-        <section class="section" data-aos="fade-up">
-            <h2 class="section-title">¿Qué son las etiquetas de texto?</h2>
+  &lt;!-- Subsección dentro de "¿Qué es HTML?" --&gt;
+  &lt;h3&gt;Historia de HTML&lt;/h3&gt;
+  &lt;p&gt;HTML fue creado en 1991 por Tim Berners-Lee...&lt;/p&gt;
 
-            <p class="text-content">
-                HTML incluye múltiples etiquetas para definir cómo se estructura e interpreta el contenido de texto.
-                Esto ayuda a organizar información, mejorar accesibilidad y mantener una semántica clara.
-            </p>
+  &lt;h3&gt;Versiones de HTML&lt;/h3&gt;
+  &lt;p&gt;HTML ha evolucionado desde su primera versión...&lt;/p&gt;
 
-            <div class="highlight-box info">
-                <h4>¿Por qué son importantes?</h4>
-                <p>
-                    Facilitan la lectura, ayudan a motores de búsqueda y permiten que usuarios con lectores de pantalla
-                    comprendan la jerarquía del contenido.
-                </p>
-            </div>
-        </section>
+&lt;!-- Segunda sección principal --&gt;
+&lt;h2&gt;Estructura básica de HTML&lt;/h2&gt;
+&lt;p&gt;Todo documento HTML tiene elementos fundamentales...&lt;/p&gt;
 
-        <!-- SECCIÓN 2 -->
-        <section class="section" data-aos="fade-up">
-            <h2 class="section-title">Encabezados: h1 a h6</h2>
+  &lt;h3&gt;El elemento head&lt;/h3&gt;
+  &lt;p&gt;Contiene metadatos del documento...&lt;/p&gt;
 
-            <p class="text-content">
-                Los encabezados organizan el contenido en niveles jerárquicos. El
-                <strong>h1 es único</strong> y representa el título principal de la página.
-                Los niveles h2–h6 crean subsecciones cada vez más específicas.
-            </p>
+  &lt;h3&gt;El elemento body&lt;/h3&gt;
+  &lt;p&gt;Contiene el contenido visible...&lt;/p&gt;</code></pre>
+      </div>
 
-            <div class="code-container">
-                <div class="code-header">
-                    <span>Ejemplo de encabezados</span>
-                    <span class="code-language">HTML</span>
-                </div>
+      <div class="highlight-box success">
+        <h4>¿Por qué esta estructura es correcta?</h4>
+        <ul>
+          <li>Hay un solo <code>&lt;h1&gt;</code> que define el tema general</li>
+          <li>Los <code>&lt;h2&gt;</code> dividen el contenido en secciones principales</li>
+          <li>Los <code>&lt;h3&gt;</code> crean subsecciones dentro de cada <code>&lt;h2&gt;</code></li>
+          <li>No se saltan niveles (no hay un <code>&lt;h1&gt;</code> seguido directamente de un
+            <code>&lt;h4&gt;</code>)
+          </li>
+          <li>La jerarquía cuenta una historia coherente del contenido</li>
+        </ul>
+      </div>
+    </section>
 
-                <pre><code class="language-html">
-<!-- //* Encabezado principal -->
-<h1>Mi sitio web</h1>
+    <!-- SECCIÓN 3: Reglas de oro -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Las 5 reglas de oro de los encabezados</h2>
 
-<!-- //* Sección principal -->
-<h2>Acerca de mí</h2>
-
-<!-- //* Subtema -->
-<h3>Mis pasatiempos</h3>
-                </code></pre>
-            </div>
-
-            <div class="highlight-box warning">
-                <h4>Buenas prácticas</h4>
-                <ul>
-                    <li>Solo un h1 por página</li>
-                    <li>No saltar niveles (ejemplo: de h1 a h4)</li>
-                    <li>No usar encabezados solo para hacer texto grande</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- SECCIÓN 3 -->
-        <section class="section" data-aos="fade-up">
-            <h2 class="section-title">Etiquetas básicas de texto</h2>
-
-            <p class="text-content">
-                Además de los encabezados, existen etiquetas para resaltar,
-                enfatizar o ajustar partes específicas del contenido:
-            </p>
-
-            <!-- Párrafos -->
-            <div class="highlight-box">
-                <h4>Párrafos (p)</h4>
-                <pre><code class="language-html">
-<!-- //* Párrafo básico -->
-<p>Este es un párrafo en HTML.</p>
-                </code></pre>
-            </div>
-
-            <!-- Negritas -->
-            <div class="highlight-box">
-                <h4>Negritas: strong</h4>
-                <pre><code class="language-html">
-<p>Este texto tiene <strong>énfasis importante</strong>.</p>
-                </code></pre>
-            </div>
-
-            <!-- Cursivas -->
-            <div class="highlight-box">
-                <h4>Cursivas: em</h4>
-                <pre><code class="language-html">
-<p>Este texto tiene <em>énfasis especial</em>.</p>
-                </code></pre>
-            </div>
-
-            <!-- Small -->
-            <div class="highlight-box">
-                <h4>Texto pequeño: small</h4>
-                <pre><code class="language-html">
-<small>Nota legal o información secundaria.</small>
-                </code></pre>
-            </div>
-
-            <!-- br -->
-            <div class="highlight-box">
-                <h4>Saltos de línea: br</h4>
-                <pre><code class="language-html">
-<p>Línea uno<br>Línea dos</p>
-                </code></pre>
-            </div>
-
-        </section>
-
-        <!-- QUIZ GAMIFICADO -->
-        <section class="section" data-aos="zoom-in">
-            <h2 class="section-title">Mini-quiz</h2>
-
-            <div class="quiz-section">
-                <h4>¿Cuál etiqueta representa el título principal?</h4>
-
-                <button onclick="checkAnswer('h1')">h1</button>
-                <button onclick="checkAnswer('h2')">h2</button>
-                <button onclick="checkAnswer('title')">title</button>
-
-                <p id="quiz-feedback"></p>
-            </div>
-        </section>
-
-        <!-- BADGE -->
-        <div id="badge">
-            <i class="fa-solid fa-award"></i>
-            ¡Badge obtenido!
-        </div>
-
-        <!-- ACTIVIDAD -->
-        <section class="section" data-aos="fade-up">
-            <div class="practice-section">
-                <h3>Actividad práctica: Construye tu biografía</h3>
-
-                <p>
-                    Crea un archivo llamado <strong>mi-biografia.html</strong> y agrega:
-                </p>
-
-                <ul>
-                    <li>Un h1 con tu nombre</li>
-                    <li>Un h2 de “Sobre mí”</li>
-                    <li>Un párrafo describiéndote</li>
-                    <li>Un h2 de “Mis hobbies”</li>
-                    <li>Una lista con tres hobbies</li>
-                    <li>Uso de strong, em y small</li>
-                    <li>Comentarios usando Better Comments</li>
-                </ul>
-
-            </div>
-        </section>
-
-        <!-- NAVEGACIÓN -->
-        <div class="lesson-navigation">
-            <a class="btn-nav" href="leccion2.html">
-                <i class="fas fa-arrow-left"></i> Lección anterior
-            </a>
-
-            <a class="btn-nav" href="leccion4.html">
-                Siguiente lección <i class="fas fa-arrow-right"></i>
-            </a>
+      <div class="structure-visual">
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="100">
+          <h4 class="structure-item-title">Regla 1: Un solo h1 por página</h4>
+          <div class="structure-item-desc">
+            El <code>&lt;h1&gt;</code> es como el título de un libro: solo hay uno.
+            Define el tema principal de toda la página. Tener múltiples <code>&lt;h1&gt;</code>
+            confunde a los motores de búsqueda y lectores de pantalla.
+            <br><br>
+            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Tres <code>&lt;h1&gt;</code> en una página
+            <br>
+            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Un <code>&lt;h1&gt;</code> al inicio, <code>&lt;h2&gt;</code> para secciones
+          </div>
         </div>
 
-    </main>
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="200">
+          <h4 class="structure-item-title">Regla 2: Mantener el orden jerárquico</h4>
+          <div class="structure-item-desc">
+            No saltes niveles. Si usas <code>&lt;h2&gt;</code>, el siguiente subnivel debe ser <code>&lt;h3&gt;</code>,
+            no <code>&lt;h5&gt;</code>. Piensa en ello como en un índice de libro: no pasas del capítulo 1 al capítulo 5
+            sin pasar por 2, 3 y 4.
+            <br><br>
+            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> h1 → h4 → h2
+            <br>
+            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> h1 → h2 → h3 → h2
+          </div>
+        </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="300">
+          <h4 class="structure-item-title">Regla 3: Los encabezados no son para diseño</h4>
+          <div class="structure-item-desc">
+            Nunca uses un encabezado solo porque quieres texto grande o pequeño.
+            El tamaño se controla con CSS. Los encabezados existen para dar <strong>significado estructural</strong>, no
+            apariencia visual.
+            <br><br>
+            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Usar <code>&lt;h1&gt;</code> porque quieres texto grande
+            <br>
+            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Usar <code>&lt;h1&gt;</code> porque es el título principal
+          </div>
+        </div>
 
-    <script>
-        AOS.init({ duration: 800, once: true, offset: 100 });
-        hljs.highlightAll();
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="400">
+          <h4 class="structure-item-title">Regla 4: Sé descriptivo y claro</h4>
+          <div class="structure-item-desc">
+            Los encabezados deben describir claramente el contenido de su sección.
+            Evita títulos vagos como "Introducción" o "Información". Sé específico:
+            "Introducción a las etiquetas HTML" es mucho mejor.
+          </div>
+        </div>
 
-        //* Quiz
-        function checkAnswer(option) {
-            const feedback = document.getElementById("quiz-feedback");
-            const badge = document.getElementById("badge");
+        <div class="structure-item" data-aos="fade-right" data-aos-delay="500">
+          <h4 class="structure-item-title">Regla 5: Los encabezados crean el índice de tu página</h4>
+          <div class="structure-item-desc">
+            Los lectores de pantalla permiten a los usuarios navegar saltando entre encabezados.
+            Google también usa los encabezados para entender de qué trata tu página.
+            Una buena jerarquía mejora tanto la accesibilidad como el SEO.
+          </div>
+        </div>
+      </div>
+    </section>
 
-            if (option === "h1") {
-                feedback.textContent = "Correcto.";
-                feedback.className = "correct";
-                badge.classList.add("active");
-            } else {
-                feedback.textContent = "Incorrecto.";
-                feedback.className = "incorrect";
-            }
+    <!-- SECCIÓN 4: Párrafos -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Párrafos: La base del contenido textual</h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;p&gt;</code> es la etiqueta más común para texto en HTML.
+        Cada vez que quieras escribir un bloque de texto, un párrafo es tu mejor opción.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Uso básico de párrafos</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;h2&gt;Sobre este curso&lt;/h2&gt;
+
+&lt;p&gt;
+  Este curso está diseñado para enseñarte HTML desde cero. 
+  No necesitas experiencia previa en programación.
+&lt;/p&gt;
+
+&lt;p&gt;
+  A lo largo de 16 lecciones aprenderás todo lo necesario 
+  para crear tus propias páginas web.
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <div class="key-points">
+        <h4>Características de los párrafos</h4>
+        <ul>
+          <li>Cada <code>&lt;p&gt;</code> crea un bloque de texto separado visualmente</li>
+          <li>El navegador agrega automáticamente espacio antes y después de cada párrafo</li>
+          <li>Los párrafos son elementos de bloque: ocupan todo el ancho disponible</li>
+          <li>Los saltos de línea dentro del código HTML se ignoran (se convierten en un solo espacio)</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4>Saltos de línea dentro de párrafos</h4>
+        <p>
+          Si escribes esto en tu código HTML:
+        </p>
+        <pre style="background: #000; padding: 15px; border-radius: 8px; margin-top: 15px;"><code class="language-html">&lt;p&gt;
+  Primera línea
+  Segunda línea
+  Tercera línea
+&lt;/p&gt;</code></pre>
+        <p style="margin-top: 15px;">
+          El navegador lo mostrará como: <em>"Primera línea Segunda línea Tercera línea"</em>
+          <br><br>
+          Para crear saltos de línea visibles dentro de un párrafo, usa <code>&lt;br&gt;</code>
+          (lo veremos más adelante).
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Énfasis y formato -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Dando énfasis al texto: strong, em y más</h2>
+
+      <p class="text-content">
+        HTML ofrece varias etiquetas para resaltar partes específicas del texto.
+        Es crucial entender la diferencia entre <strong>estilo visual</strong> y <strong>significado semántico</strong>.
+      </p>
+
+      <h3 class="section-subtitle">Strong vs B: ¿Cuál usar?</h3>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Comparación de etiquetas de énfasis</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </div>
+            <div class="comparison-label">&lt;strong&gt;</div>
+            <div class="comparison-desc">
+              <strong>Importancia semántica</strong><br>
+              Indica que el texto tiene importancia fuerte.
+              Los lectores de pantalla lo enfatizan.
+              Google lo toma en cuenta para SEO.
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-bold"></i>
+            </div>
+            <div class="comparison-label">&lt;b&gt;</div>
+            <div class="comparison-desc">
+              <strong>Solo visual</strong><br>
+              Simplemente hace el texto en negrita.
+              No tiene significado especial.
+              Úsalo solo cuando quieras resaltar visualmente sin dar importancia semántica.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de &lt;strong&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;
+  &lt;strong&gt;Advertencia:&lt;/strong&gt; No olvides guardar tu trabajo 
+  antes de cerrar el archivo.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Los encabezados son &lt;strong&gt;fundamentales&lt;/strong&gt; para 
+  la estructura de tu página web.
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <h3 class="section-subtitle">Em vs I: Énfasis y cursivas</h3>
+
+      <div class="comparison-container">
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="comparison-label">&lt;em&gt;</div>
+            <div class="comparison-desc">
+              <strong>Énfasis semántico</strong><br>
+              Indica énfasis o estrés en la pronunciación.
+              Los lectores de pantalla cambian el tono de voz.
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-italic"></i>
+            </div>
+            <div class="comparison-label">&lt;i&gt;</div>
+            <div class="comparison-desc">
+              <strong>Solo visual</strong><br>
+              Texto en cursiva sin significado especial.
+              Útil para nombres técnicos, términos extranjeros, pensamientos.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de &lt;em&gt; y &lt;i&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;
+  Esto es &lt;em&gt;muy&lt;/em&gt; importante que lo entiendas.
+&lt;/p&gt;
+
+&lt;p&gt;
+  La expresión latina &lt;i&gt;carpe diem&lt;/i&gt; significa 
+  "aprovecha el día".
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <h3 class="section-subtitle">Otras etiquetas útiles</h3>
+
+      <div class="key-points">
+        <ul>
+          <li>
+            <code>&lt;small&gt;</code> - Texto de menor importancia, como notas legales o disclaimer
+          </li>
+          <li>
+            <code>&lt;mark&gt;</code> - Resaltar texto como si usaras un marcador amarillo
+          </li>
+          <li>
+            <code>&lt;del&gt;</code> - Texto tachado, indica contenido eliminado
+          </li>
+          <li>
+            <code>&lt;ins&gt;</code> - Texto subrayado, indica contenido insertado
+          </li>
+          <li>
+            <code>&lt;sub&gt;</code> - Subíndice (H<sub>2</sub>O)
+          </li>
+          <li>
+            <code>&lt;sup&gt;</code> - Superíndice (x<sup>2</sup>)
+          </li>
+        </ul>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplos de etiquetas adicionales</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;
+  El precio normal es &lt;del&gt;$100&lt;/del&gt; 
+  &lt;ins&gt;$75 en oferta&lt;/ins&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  La fórmula del agua es H&lt;sub&gt;2&lt;/sub&gt;O.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Einstein propuso E=mc&lt;sup&gt;2&lt;/sup&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Recuerda: &lt;mark&gt;El examen es el viernes&lt;/mark&gt;.
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;small&gt;* Los términos y condiciones aplican&lt;/small&gt;
+&lt;/p&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Saltos de línea -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Saltos de línea: El elemento &lt;br&gt;</h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;br&gt;</code> crea un salto de línea dentro del contenido.
+        Es una etiqueta <strong>autocerrante</strong> (no necesita etiqueta de cierre).
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Uso de &lt;br&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;p&gt;
+  Primera línea del párrafo.&lt;br&gt;
+  Segunda línea del párrafo.&lt;br&gt;
+  Tercera línea del párrafo.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Calle Principal 123&lt;br&gt;
+  Colonia Centro&lt;br&gt;
+  Ciudad, Estado 12345
+&lt;/p&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> Cuándo NO usar &lt;br&gt;</h4>
+        <p>
+          <strong>Nunca uses múltiples <code>&lt;br&gt;</code> seguidos para crear espaciado vertical.</strong>
+          Esto es una mala práctica muy común entre principiantes.
+        </p>
+        <pre style="background: #000; padding: 15px; border-radius: 8px; margin-top: 15px;"><code class="language-html">&lt;!-- <i class="fas fa-times text-danger"></i> INCORRECTO: No hagas esto --&gt;
+&lt;p&gt;Primer párrafo&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;p&gt;Segundo párrafo&lt;/p&gt;
+
+&lt;!-- <i class="fas fa-check text-success"></i> CORRECTO: Usa CSS para espaciado --&gt;
+&lt;p&gt;Primer párrafo&lt;/p&gt;
+&lt;p&gt;Segundo párrafo&lt;/p&gt;</code></pre>
+        <p style="margin-top: 15px;">
+          El espaciado entre elementos se controla con CSS, que aprenderás en módulos posteriores.
+          Por ahora, solo usar <code>&lt;br&gt;</code> para saltos de línea simples dentro de un párrafo.
+        </p>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-check-circle"></i> Usos apropiados de &lt;br&gt;</h4>
+        <ul>
+          <li>Direcciones postales</li>
+          <li>Poemas o letras de canciones</li>
+          <li>Saltos de línea naturales dentro de un párrafo</li>
+          <li>Líneas de firma en cartas o emails</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Ejemplo completo -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Ejemplo completo: Artículo bien estructurado</h2>
+
+      <p class="text-content">
+        Veamos cómo combinar todos estos elementos para crear un artículo web bien estructurado,
+        semánticamente correcto y accesible:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Artículo completo con estructura correcta</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Guía de HTML para principiantes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;!-- Título principal único de la página --&gt;
+    &lt;h1&gt;Guía de HTML para principiantes&lt;/h1&gt;
+
+    &lt;!-- Introducción --&gt;
+    &lt;p&gt;
+        HTML es el &lt;strong&gt;lenguaje fundamental&lt;/strong&gt; de la web. 
+        Si quieres crear páginas web, &lt;em&gt;este&lt;/em&gt; es el punto de partida.
+    &lt;/p&gt;
+
+    &lt;!-- Primera sección principal --&gt;
+    &lt;h2&gt;¿Qué es HTML?&lt;/h2&gt;
+    
+    &lt;p&gt;
+        HTML significa &lt;i&gt;HyperText Markup Language&lt;/i&gt; 
+        (Lenguaje de Marcado de Hipertexto). Es el estándar para 
+        crear documentos que se muestran en navegadores web.
+    &lt;/p&gt;
+
+    &lt;!-- Subsección --&gt;
+    &lt;h3&gt;Historia de HTML&lt;/h3&gt;
+    
+    &lt;p&gt;
+        HTML fue creado por &lt;strong&gt;Tim Berners-Lee&lt;/strong&gt; 
+        en 1991 en el CERN. La versión actual es HTML5, 
+        lanzada oficialmente en 2014.
+    &lt;/p&gt;
+
+    &lt;!-- Segunda sección principal --&gt;
+    &lt;h2&gt;Conceptos básicos&lt;/h2&gt;
+    
+    &lt;p&gt;
+        Para comenzar con HTML, necesitas entender tres conceptos 
+        fundamentales: elementos, etiquetas y atributos.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Elementos HTML&lt;/h3&gt;
+    
+    &lt;p&gt;
+        Un elemento HTML es la unidad básica de la estructura de HTML. 
+        Está compuesto por una etiqueta de apertura, contenido y una 
+        etiqueta de cierre.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Etiquetas HTML&lt;/h3&gt;
+    
+    &lt;p&gt;
+        Las etiquetas son los nombres entre corchetes angulares. 
+        Por ejemplo, &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; para párrafos o 
+        &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; para encabezados.
+    &lt;/p&gt;
+
+    &lt;h3&gt;Atributos HTML&lt;/h3&gt;
+    
+    &lt;p&gt;
+        Los atributos proporcionan información adicional sobre los 
+        elementos. Se colocan en la etiqueta de apertura. 
+        Por ejemplo, &lt;code&gt;class&lt;/code&gt;, &lt;code&gt;id&lt;/code&gt;, &lt;code&gt;src&lt;/code&gt;, etc.
+    &lt;/p&gt;
+
+    &lt;h2&gt;Conclusión&lt;/h2&gt;
+    
+    &lt;p&gt;
+        HTML es &lt;strong&gt;fácil de aprender&lt;/strong&gt; y es el primer paso 
+        para convertirse en desarrollador web. 
+        &lt;mark&gt;¡Sigue practicando!&lt;/mark&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+        &lt;small&gt;Publicado el 15 de marzo, 2024&lt;/small&gt;
+    &lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Resumen de la lección</h2>
+
+      <div class="key-points">
+        <h4>Lo más importante que aprendiste:</h4>
+        <ul>
+          <li>Los encabezados (<code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code>) crean la estructura jerárquica de tu
+            página</li>
+          <li>Usa un solo <code>&lt;h1&gt;</code> por página y mantén el orden de los encabezados</li>
+          <li>Los párrafos (<code>&lt;p&gt;</code>) contienen bloques de texto</li>
+          <li><code>&lt;strong&gt;</code> y <code>&lt;em&gt;</code> dan importancia semántica</li>
+          <li><code>&lt;b&gt;</code> y <code>&lt;i&gt;</code> son solo para estilo visual</li>
+          <li><code>&lt;br&gt;</code> crea saltos de línea, pero no lo uses para espaciado</li>
+          <li>La semántica importa más que la apariencia visual</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box info">
+        <h4>Recuerda siempre:</h4>
+        <p>
+          <strong>HTML es para estructura, CSS es para diseño.</strong>
+          No uses etiquetas de HTML para controlar cómo se ve tu página.
+          Usa las etiquetas correctas para dar significado a tu contenido,
+          y más adelante aprenderás a hacerlo visualmente atractivo con CSS.
+        </p>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Verifica tu comprensión</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>Etiquetas de texto y encabezados</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion3">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion3">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuántos elementos &lt;h1&gt; debería haber en una página?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">Solo uno</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">Tantos como necesites</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">Mínimo tres</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Cuál es la diferencia principal entre &lt;strong&gt; y &lt;b&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">&lt;strong&gt; es semántico, &lt;b&gt; es solo visual</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">&lt;strong&gt; es más moderno</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">No hay diferencia, son iguales</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Cuál etiqueta usarías para énfasis semántico?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">&lt;em&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">&lt;i&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">&lt;span&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Cuál es la jerarquía correcta de encabezados?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">h1 → h2 → h3</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">h1 → h3 → h2</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">h6 → h5 → h4</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Cuándo es apropiado usar &lt;br&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">Para crear espaciado entre párrafos</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">Para saltos de línea dentro de un párrafo</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">Para separar secciones de contenido</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion3" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion3" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="leccion2.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Lección Anterior
+      </a>
+      <a href="leccion4.html" class="btn-nav">
+        Siguiente Lección <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    // Inicializar AOS (Animate On Scroll)
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js para resaltar código
+    hljs.highlightAll();
+
+    // Quiz para Lección 3
+    document.addEventListener('DOMContentLoaded', function () {
+      // Respuestas correctas
+      const correctAnswersLeccion3 = {
+        q1: 'a', // Solo un h1
+        q2: 'a', // strong semántico, b visual
+        q3: 'a', // em
+        q4: 'a', // h1 → h2 → h3
+        q5: 'b'  // saltos de línea en párrafo
+      };
+
+      // Explicaciones de las respuestas
+      const explanationsLeccion3 = {
+        q1: {
+          correct: "¡Correcto! Debe haber solo un &lt;h1&gt; por página para mantener una estructura semántica correcta.",
+          incorrect: "Incorrecto. Debe haber solo un &lt;h1&gt; por página para SEO y accesibilidad."
+        },
+        q2: {
+          correct: "¡Correcto! &lt;strong&gt; da importancia semántica, &lt;b&gt; es solo estilo visual.",
+          incorrect: "Incorrecto. La diferencia principal es que &lt;strong&gt; es semántico y &lt;b&gt; es solo visual."
+        },
+        q3: {
+          correct: "¡Correcto! &lt;em&gt; se usa para énfasis semántico, mientras que &lt;i&gt; es solo visual.",
+          incorrect: "Incorrecto. &lt;em&gt; es para énfasis semántico, &lt;i&gt; es solo para estilo cursiva."
+        },
+        q4: {
+          correct: "¡Correcto! La jerarquía debe ser h1 → h2 → h3, sin saltar niveles.",
+          incorrect: "Incorrecto. La jerarquía correcta es h1 → h2 → h3, sin saltar niveles."
+        },
+        q5: {
+          correct: "¡Correcto! &lt;br&gt; es apropiado para saltos de línea dentro de un párrafo, no para espaciado.",
+          incorrect: "Incorrecto. &lt;br&gt; debe usarse para saltos de línea dentro de párrafos, no para espaciado entre elementos."
         }
-    </script>
+      };
 
+      const checkButton3 = document.getElementById('check-quiz-leccion3');
+      const resetButton3 = document.getElementById('reset-quiz-leccion3');
+      const scoreElement3 = document.getElementById('score-leccion3');
+
+      checkButton3.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion3');
+
+        // Verificar cada pregunta
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion3[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion3[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion3[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        // Actualizar puntuación
+        scoreElement3.textContent = score;
+
+        // Mostrar mensaje final
+        if (score === 5) {
+          setTimeout(() => {
+            alert('¡Perfecto! Dominas las etiquetas de texto y encabezados.');
+          }, 500);
+        }
+      });
+
+      resetButton3.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion3');
+        form.reset();
+
+        // Limpiar feedback
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        // Reiniciar puntuación
+        scoreElement3.textContent = '0';
+      });
+    });
+  </script>
+
+  <!-- Sistema de Progreso -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener ID de la lección actual desde la URL
+    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
+    
+    // Marcar como completada cuando se llega al final
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                progressManager.marcarLeccionCompletada(currentLesson);
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observar el último elemento de la lección
+    const lastElement = document.querySelector('.lesson-navigation');
+    if (lastElement) {
+        observer.observe(lastElement);
+    }
+});
+</script>
 </body>
 </html>

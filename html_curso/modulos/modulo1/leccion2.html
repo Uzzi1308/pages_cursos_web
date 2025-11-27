@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lección 2: Estructura básica de una página HTML</title>
-  <link rel="stylesheet" href="../../assets/css/leccion2-style.css">
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
@@ -20,6 +21,17 @@
 
 </head>
 <body>
+    <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+            <li class="breadcrumb-item"><a href="leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 2: Estructura básica</li>
+    </ol>
+  </div>
 
   <!-- NAVEGACIÓN -->
   <nav class="lesson-nav">
@@ -548,6 +560,142 @@
       </div>
     </section>
 
+    <!-- Agregar esta sección antes de la navegación entre lecciones en leccion2.html -->
+<section class="section" data-aos="fade-up">
+  <h2 class="section-title">Quiz: Verifica tu comprensión</h2>
+  
+  <div class="quiz-container">
+    <div class="quiz-header">
+      <h3>Estructura básica de HTML</h3>
+      <div class="quiz-score">
+        Puntuación: <span id="score-leccion2">0</span>/5
+      </div>
+    </div>
+    
+    <form id="quiz-form-leccion2">
+      <!-- Pregunta 1 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <span class="question-number">1</span>
+          <p>¿Cuál es la declaración correcta para HTML5?</p>
+        </div>
+        <div class="question-options">
+          <label class="option">
+            <input type="radio" name="q1" value="a">
+            <span class="option-text">&lt;!DOCTYPE HTML PUBLIC&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q1" value="b">
+            <span class="option-text">&lt;!DOCTYPE html&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q1" value="c">
+            <span class="option-text">&lt;HTML5&gt;</span>
+          </label>
+        </div>
+        <div class="question-feedback" id="feedback-q1"></div>
+      </div>
+      
+      <!-- Pregunta 2 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <span class="question-number">2</span>
+          <p>¿Dónde debe ir el contenido visible de la página?</p>
+        </div>
+        <div class="question-options">
+          <label class="option">
+            <input type="radio" name="q2" value="a">
+            <span class="option-text">En la sección &lt;head&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q2" value="b">
+            <span class="option-text">En la sección &lt;body&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q2" value="c">
+            <span class="option-text">Fuera de &lt;html&gt;</span>
+          </label>
+        </div>
+        <div class="question-feedback" id="feedback-q2"></div>
+      </div>
+      
+      <!-- Pregunta 3 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <span class="question-number">3</span>
+          <p>¿Para qué sirve el atributo lang en la etiqueta &lt;html&gt;?</p>
+        </div>
+        <div class="question-options">
+          <label class="option">
+            <input type="radio" name="q3" value="a">
+            <span class="option-text">Para definir el lenguaje de programación</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q3" value="b">
+            <span class="option-text">Para especificar el idioma del contenido</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q3" value="c">
+            <span class="option-text">Para indicar la ubicación del servidor</span>
+          </label>
+        </div>
+        <div class="question-feedback" id="feedback-q3"></div>
+      </div>
+      
+      <!-- Pregunta 4 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <span class="question-number">4</span>
+          <p>¿Qué metadato es esencial para el diseño responsive?</p>
+        </div>
+        <div class="question-options">
+          <label class="option">
+            <input type="radio" name="q4" value="a">
+            <span class="option-text">&lt;meta charset="UTF-8"&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q4" value="b">
+            <span class="option-text">&lt;meta name="viewport"&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q4" value="c">
+            <span class="option-text">&lt;title&gt;</span>
+          </label>
+        </div>
+        <div class="question-feedback" id="feedback-q4"></div>
+      </div>
+      
+      <!-- Pregunta 5 -->
+      <div class="quiz-question">
+        <div class="question-header">
+          <span class="question-number">5</span>
+          <p>¿Qué elemento muestra el texto en la pestaña del navegador?</p>
+        </div>
+        <div class="question-options">
+          <label class="option">
+            <input type="radio" name="q5" value="a">
+            <span class="option-text">&lt;h1&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q5" value="b">
+            <span class="option-text">&lt;title&gt;</span>
+          </label>
+          <label class="option">
+            <input type="radio" name="q5" value="c">
+            <span class="option-text">&lt;header&gt;</span>
+          </label>
+        </div>
+        <div class="question-feedback" id="feedback-q5"></div>
+      </div>
+      
+      <div class="quiz-actions">
+        <button type="button" id="check-quiz-leccion2" class="btn-quiz-check">Verificar respuestas</button>
+        <button type="button" id="reset-quiz-leccion2" class="btn-quiz-reset">Reiniciar quiz</button>
+      </div>
+    </form>
+  </div>
+</section>
+
     <!-- NAVEGACIÓN ENTRE LECCIONES -->
     <div class="lesson-navigation">
       <a href="leccion1.html" class="btn-nav">
@@ -593,7 +741,121 @@
         }
       });
     });
+
+    // Quiz para Lección 2
+document.addEventListener('DOMContentLoaded', function() {
+  // Respuestas correctas
+  const correctAnswersLeccion2 = {
+    q1: 'b', // DOCTYPE html
+    q2: 'b', // body
+    q3: 'b', // especificar idioma
+    q4: 'b', // meta viewport
+    q5: 'b'  // title
+  };
+  
+  // Explicaciones de las respuestas
+  const explanationsLeccion2 = {
+    q1: {
+      correct: "¡Correcto! &lt;!DOCTYPE html&gt; es la declaración correcta para HTML5.",
+      incorrect: "Incorrecto. La declaración correcta para HTML5 es &lt;!DOCTYPE html&gt;."
+    },
+    q2: {
+      correct: "¡Correcto! Todo el contenido visible debe ir dentro de &lt;body&gt;.",
+      incorrect: "Incorrecto. El contenido visible debe ir en &lt;body&gt;, no en &lt;head&gt;."
+    },
+    q3: {
+      correct: "¡Correcto! El atributo lang especifica el idioma del contenido para accesibilidad y SEO.",
+      incorrect: "Incorrecto. El atributo lang especifica el idioma del contenido, no el de programación."
+    },
+    q4: {
+      correct: "¡Correcto! &lt;meta name='viewport'&gt; es esencial para el diseño responsive.",
+      incorrect: "Incorrecto. Aunque charset es importante, viewport es el esencial para responsive design."
+    },
+    q5: {
+      correct: "¡Correcto! &lt;title&gt; define el texto que aparece en la pestaña del navegador.",
+      incorrect: "Incorrecto. &lt;h1&gt; es para el contenido de la página, &lt;title&gt; es para la pestaña."
+    }
+  };
+  
+  const checkButton2 = document.getElementById('check-quiz-leccion2');
+  const resetButton2 = document.getElementById('reset-quiz-leccion2');
+  const scoreElement2 = document.getElementById('score-leccion2');
+  
+  checkButton2.addEventListener('click', function() {
+    let score = 0;
+    const form = document.getElementById('quiz-form-leccion2');
+    
+    // Verificar cada pregunta
+    for (let i = 1; i <= 5; i++) {
+      const questionName = 'q' + i;
+      const selectedOption = form.elements[questionName].value;
+      const feedbackElement = document.getElementById('feedback-q' + i);
+      
+      if (selectedOption === correctAnswersLeccion2[questionName]) {
+        score++;
+        feedbackElement.textContent = explanationsLeccion2[questionName].correct;
+        feedbackElement.className = 'question-feedback correct';
+      } else if (selectedOption) {
+        feedbackElement.textContent = explanationsLeccion2[questionName].incorrect;
+        feedbackElement.className = 'question-feedback incorrect';
+      } else {
+        feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+        feedbackElement.className = 'question-feedback incorrect';
+      }
+    }
+    
+    // Actualizar puntuación
+    scoreElement2.textContent = score;
+    
+    // Mostrar mensaje final
+    if (score === 5) {
+      setTimeout(() => {
+        alert('¡Excelente! Dominas la estructura básica de HTML.');
+      }, 500);
+    }
+  });
+  
+  resetButton2.addEventListener('click', function() {
+    const form = document.getElementById('quiz-form-leccion2');
+    form.reset();
+    
+    // Limpiar feedback
+    for (let i = 1; i <= 5; i++) {
+      const feedbackElement = document.getElementById('feedback-q' + i);
+      feedbackElement.textContent = '';
+      feedbackElement.className = 'question-feedback';
+    }
+    
+    // Reiniciar puntuación
+    scoreElement2.textContent = '0';
+  });
+});
+
   </script>
+
+  <!-- Sistema de Progreso -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener ID de la lección actual desde la URL
+    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
+    
+    // Marcar como completada cuando se llega al final
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                progressManager.marcarLeccionCompletada(currentLesson);
+                observer.disconnect();
+            }
+        });
+    }, { threshold: 0.5 });
+
+    // Observar el último elemento de la lección
+    const lastElement = document.querySelector('.lesson-navigation');
+    if (lastElement) {
+        observer.observe(lastElement);
+    }
+});
+</script>
 
 </body>
 </html>

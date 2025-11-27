@@ -70,36 +70,57 @@
     </div>
   </header>
 
-  <!-- ESTADÍSTICAS -->
-  <section class="stats container-fluid py-5 px-5">
+ <!-- ESTADÍSTICAS MEJORADAS -->
+<section class="stats container-fluid py-5 px-5">
     <div class="row g-4">
-
-      <!-- Módulos -->
-      <div class="col-md-4">
-        <div class="stat-box border-neon">
-          <h2 class="stat-number">5</h2>
-          <p class="stat-label">Módulos</p>
+        <!-- Módulos -->
+        <div class="col-md-3">
+            <div class="stat-box border-neon">
+                <h2 class="stat-number">5</h2>
+                <p class="stat-label">Módulos</p>
+            </div>
         </div>
-      </div>
 
-      <!-- Lecciones -->
-      <div class="col-md-4">
-        <div class="stat-box border-purple">
-          <h2 class="stat-number">16</h2>
-          <p class="stat-label">Lecciones</p>
+        <!-- Lecciones -->
+        <div class="col-md-3">
+            <div class="stat-box border-purple">
+                <h2 class="stat-number">16</h2>
+                <p class="stat-label">Lecciones</p>
+            </div>
         </div>
-      </div>
 
-      <!-- Progreso -->
-      <div class="col-md-4">
-        <div class="stat-box border-light-purple">
-          <h2 class="stat-number" id="progressText">0%</h2>
-          <p class="stat-label">Progreso</p>
+        <!-- Completadas -->
+        <div class="col-md-3">
+            <div class="stat-box border-light-purple">
+                <h2 class="stat-number" id="lessonsCompleted">0</h2>
+                <p class="stat-label">Completadas</p>
+            </div>
         </div>
-      </div>
 
+        <!-- Progreso -->
+        <div class="col-md-3">
+            <div class="stat-box border-neon">
+                <h2 class="stat-number" id="progressText">0%</h2>
+                <p class="stat-label">Progreso</p>
+            </div>
+        </div>
     </div>
-  </section>
+
+    <!-- Barra de progreso general -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="global-progress-container">
+                <div class="progress-info">
+                    <span>Progreso total del curso</span>
+                    <span id="globalProgressText">0%</span>
+                </div>
+                <div class="global-progress-bar">
+                    <div class="global-progress-fill" id="globalProgressBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   <!-- CTA FINAL -->
   <section class="cta text-center text-white">
