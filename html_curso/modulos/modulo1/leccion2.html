@@ -833,19 +833,24 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   </script>
-
-  <!-- Sistema de Progreso -->
+<!-- DESPUÉS (CORRECTO) -->
+<!-- Sistema de Progreso - Debe ir DESPUÉS de cargar progressManager.js -->
+<script src="../../assets/js/progressManager.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // Obtener ID de la lección actual desde la URL
+    // Obtener ID de la lección actual
     const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
     
     // Marcar como completada cuando se llega al final
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                progressManager.marcarLeccionCompletada(currentLesson);
-                observer.disconnect();
+                if (typeof progressManager !== 'undefined') {
+                    progressManager.marcarLeccionCompletada(currentLesson);
+                    observer.disconnect();
+                } else {
+                    console.error('progressManager no está definido');
+                }
             }
         });
     }, { threshold: 0.5 });
