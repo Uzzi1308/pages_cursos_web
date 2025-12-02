@@ -1,13 +1,33 @@
-// ===== progressManager.js MEJORADO =====
 class ProgressManager {
     constructor() {
         this.progress = this.loadProgress();
         this.totalLessons = 16;
+        this.init();
+    }
+
+    init() {
+        if (!this.progress.leccionesCompletadas) {
+            this.progress.leccionesCompletadas = [];
+        }
+        if (!this.progress.fechaInicio) {
+            this.progress.fechaInicio = new Date().toISOString();
+        }
+        this.actualizarProgresoGeneral();
+        this.saveProgress();
     }
 
     loadProgress() {
-        const saved = localStorage.getItem('cursoHTMLProgress');
-        return saved ? JSON.parse(saved) : {
+        try {
+            const saved = localStorage.getItem('cursoHTMLProgress');
+            return saved ? JSON.parse(saved) : this.getDefaultProgress();
+        } catch (error) {
+            console.error('Error cargando progreso:', error);
+            return this.getDefaultProgress();
+        }
+    }
+
+    getDefaultProgress() {
+        return {
             leccionesCompletadas: [],
             ultimaLeccion: null,
             fechaInicio: new Date().toISOString(),
@@ -16,16 +36,27 @@ class ProgressManager {
     }
 
     saveProgress() {
-        localStorage.setItem('cursoHTMLProgress', JSON.stringify(this.progress));
+        try {
+            localStorage.setItem('cursoHTMLProgress', JSON.stringify(this.progress));
+            return true;
+        } catch (error) {
+            console.error('Error guardando progreso:', error);
+            return false;
+        }
     }
 
     marcarLeccionCompletada(leccionId) {
+        leccionId = leccionId.replace('.html', '');
+        
         if (!this.progress.leccionesCompletadas.includes(leccionId)) {
             this.progress.leccionesCompletadas.push(leccionId);
             this.progress.ultimaLeccion = leccionId;
             this.actualizarProgresoGeneral();
             this.saveProgress();
             this.actualizarUI();
+            
+            // Feedback visual
+            this.mostrarNotificacion(`¡Lección completada! 🎉`);
             return true;
         }
         return false;
@@ -38,29 +69,25 @@ class ProgressManager {
 
     actualizarUI() {
         // Actualizar página principal (index.html)
-        const progressText = document.getElementById('progressText');
-        const globalProgressText = document.getElementById('globalProgressText');
-        const globalProgressBar = document.getElementById('globalProgressBar');
-        const lessonsCompleted = document.getElementById('lessonsCompleted');
-
-        if (progressText) {
-            progressText.textContent = this.progress.progresoGeneral + '%';
-        }
+        this.actualizarElemento('progressText', this.progress.progresoGeneral + '%');
+        this.actualizarElemento('globalProgressText', this.progress.progresoGeneral + '%');
+        this.actualizarElemento('lessonsCompleted', this.progress.leccionesCompletadas.length);
         
-        if (globalProgressText) {
-            globalProgressText.textContent = this.progress.progresoGeneral + '%';
-        }
-
+        // Actualizar barra de progreso
+        const globalProgressBar = document.getElementById('globalProgressBar');
         if (globalProgressBar) {
             globalProgressBar.style.width = this.progress.progresoGeneral + '%';
         }
 
-        if (lessonsCompleted) {
-            lessonsCompleted.textContent = this.progress.leccionesCompletadas.length;
-        }
-
         // Actualizar barras de módulos
         this.actualizarBarrasModulos();
+    }
+
+    actualizarElemento(id, valor) {
+        const elemento = document.getElementById(id);
+        if (elemento) {
+            elemento.textContent = valor;
+        }
     }
 
     actualizarBarrasModulos() {
@@ -85,30 +112,56 @@ class ProgressManager {
                 const progressBar = moduleCard.querySelector('.progress-bar-fill');
                 if (progressBar) {
                     progressBar.style.width = porcentaje + '%';
-                    progressBar.setAttribute('data-progress', porcentaje + '%');
                 }
             }
         }
+    }
+
+    mostrarNotificacion(mensaje) {
+        const notif = document.createElement('div');
+        notif.className = 'progress-notification';
+        notif.textContent = mensaje;
+        notif.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 10000;
+            animation: slideIn 0.3s ease;
+        `;
+        
+        document.body.appendChild(notif);
+        
+        setTimeout(() => {
+            notif.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => notif.remove(), 300);
+        }, 3000);
     }
 
     getProgreso() {
         return this.progress;
     }
 
-    // Método para resetear progreso (útil para testing)
+    estaCompletada(leccionId) {
+        leccionId = leccionId.replace('.html', '');
+        return this.progress.leccionesCompletadas.includes(leccionId);
+    }
+
     resetProgress() {
-        localStorage.removeItem('cursoHTMLProgress');
-        this.progress = {
-            leccionesCompletadas: [],
-            ultimaLeccion: null,
-            fechaInicio: new Date().toISOString(),
-            progresoGeneral: 0
-        };
-        this.actualizarUI();
+        if (confirm('¿Estás seguro de que quieres reiniciar tu progreso? Esta acción no se puede deshacer.')) {
+            localStorage.removeItem('cursoHTMLProgress');
+            this.progress = this.getDefaultProgress();
+            this.actualizarUI();
+            this.mostrarNotificacion('Progreso reiniciado');
+        }
     }
 }
 
-// Instancia global
+// Crear instancia global
 const progressManager = new ProgressManager();
 
 // Inicializar UI cuando cargue la página
@@ -116,56 +169,29 @@ document.addEventListener('DOMContentLoaded', function() {
     progressManager.actualizarUI();
 });
 
-
-// ===== SCRIPT PARA INCLUIR EN CADA LECCIÓN =====
-// Este código va en cada archivo de lección (leccion1.html, leccion2.html, etc.)
-
-/*
-<script src="../../assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener ID de la lección actual desde la URL
-    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
-    
-    // Marcar como completada cuando se llega al final
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                progressManager.marcarLeccionCompletada(currentLesson);
-                observer.disconnect();
-            }
-        });
-    }, { threshold: 0.5 });
-
-    // Observar el último elemento de la lección
-    const lastElement = document.querySelector('.lesson-navigation');
-    if (lastElement) {
-        observer.observe(lastElement);
+// Agregar animaciones CSS
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
-});
-</script>
-*/
-
-
-// ===== SCRIPT PARA index.html =====
-/*
-<script src="assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Actualizar estadísticas en la página principal
-    progressManager.actualizarUI();
-});
-</script>
-*/
-
-
-// ===== SCRIPT PARA modulos.html =====
-/*
-<script src="assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Actualizar barras de progreso en módulos
-    progressManager.actualizarBarrasModulos();
-});
-</script>
-*/
+    
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(400px);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);

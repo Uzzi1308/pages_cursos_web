@@ -163,7 +163,7 @@
       z-index: 2;
     }
 
-    .lessons-list li {
+    .lessons-list li a {
       padding: 12px 0;
       padding-left: 30px;
       position: relative;
@@ -171,9 +171,10 @@
       font-size: 0.95rem;
       font-weight: 600;
       transition: all 0.3s ease;
+      text-decoration: none;
     }
 
-    .lessons-list li:hover {
+    .lessons-list li a:hover {
       color: #f06529;
       transform: translateX(5px);
     }
@@ -209,7 +210,6 @@
 
     .progress-bar-fill {
       height: 100%;
-      width: 3%;
       background: linear-gradient(90deg, #e34c26, #f06529);
       border-radius: 10px;
       transition: width 0.5s ease;

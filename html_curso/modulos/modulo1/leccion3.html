@@ -29,7 +29,7 @@
       <li class="breadcrumb-item active">Lección 3: Etiquetas de texto</li>
     </ol>
   </div>
-  
+
   <!-- NAVEGACIÓN -->
   <nav class="lesson-nav">
     <div class="nav-content">
@@ -83,20 +83,10 @@
         <h4>Las tres audiencias de tu HTML</h4>
         <ul>
           <li><strong>El navegador</strong> - Interpreta las etiquetas para mostrar el contenido visualmente</li>
-          <li><strong>Los motores de búsqueda</strong> - Entienden la estructura para indexar tu contenido</li>
+          <li><strong>Los motores de búsqueda</strong> - Entienden la estructura e informacion de tu pagina para mostrar tu pagina en la busqueda de las personas</li>
           <li><strong>Los lectores de pantalla</strong> - Traducen la estructura en navegación accesible para personas
             con discapacidad visual</li>
         </ul>
-      </div>
-
-      <div class="highlight-box info">
-        <h4>Analogía: Las etiquetas de texto son como señales de tránsito</h4>
-        <p>
-          Así como las señales de tránsito organizan el flujo vehicular (alto, ceda el paso, curva peligrosa),
-          las etiquetas de texto organizan la información de tu página. Un <code>&lt;h1&gt;</code> es como
-          un letrero de "ENTRADA PRINCIPAL", mientras que un <code>&lt;p&gt;</code> es el camino normal por donde todos
-          transitan.
-        </p>
       </div>
     </section>
 
@@ -179,6 +169,22 @@
   &lt;p&gt;Contiene el contenido visible...&lt;/p&gt;</code></pre>
       </div>
 
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver jerarquía visual
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-encabezados.jpg" 
+                 alt="Ejemplo visual de jerarquía de encabezados" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Los encabezados muestran claramente la estructura jerárquica del contenido
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="highlight-box success">
         <h4>¿Por qué esta estructura es correcta?</h4>
         <ul>
@@ -205,9 +211,11 @@
             Define el tema principal de toda la página. Tener múltiples <code>&lt;h1&gt;</code>
             confunde a los motores de búsqueda y lectores de pantalla.
             <br><br>
-            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Tres <code>&lt;h1&gt;</code> en una página
+            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Tres <code>&lt;h1&gt;</code> en una
+            página
             <br>
-            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Un <code>&lt;h1&gt;</code> al inicio, <code>&lt;h2&gt;</code> para secciones
+            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Un <code>&lt;h1&gt;</code> al inicio,
+            <code>&lt;h2&gt;</code> para secciones
           </div>
         </div>
 
@@ -231,9 +239,11 @@
             El tamaño se controla con CSS. Los encabezados existen para dar <strong>significado estructural</strong>, no
             apariencia visual.
             <br><br>
-            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Usar <code>&lt;h1&gt;</code> porque quieres texto grande
+            <strong><i class="fas fa-times text-danger"></i> Incorrecto:</strong> Usar <code>&lt;h1&gt;</code> porque
+            quieres texto grande
             <br>
-            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Usar <code>&lt;h1&gt;</code> porque es el título principal
+            <strong><i class="fas fa-check text-success"></i> Correcto:</strong> Usar <code>&lt;h1&gt;</code> porque es
+            el título principal
           </div>
         </div>
 
@@ -282,6 +292,22 @@
   A lo largo de 16 lecciones aprenderás todo lo necesario 
   para crear tus propias páginas web.
 &lt;/p&gt;</code></pre>
+      </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver ejemplo visual
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-parrafos.jpg" 
+                 alt="Ejemplo de párrafos en navegador" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Los párrafos se muestran como bloques separados con espacio automático
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="key-points">
@@ -371,6 +397,22 @@
 &lt;/p&gt;</code></pre>
       </div>
 
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver diferencia visual
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-strong.jpg" 
+                 alt="Ejemplo de strong en navegador" 
+                 class="preview-image">
+            <div class="preview-caption">
+              El texto en &lt;strong&gt; aparece en negrita, igual que &lt;b&gt;, pero con significado semántico
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h3 class="section-subtitle">Em vs I: Énfasis y cursivas</h3>
 
       <div class="comparison-container">
@@ -383,7 +425,7 @@
             <div class="comparison-desc">
               <strong>Énfasis semántico</strong><br>
               Indica énfasis o estrés en la pronunciación.
-              Los lectores de pantalla cambian el tono de voz.
+              Los lectores de pantalla cambian el tono de voice.
             </div>
           </div>
 
@@ -416,21 +458,39 @@
 &lt;/p&gt;</code></pre>
       </div>
 
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver diferencia visual
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-em-i.jpg" 
+                 alt="Ejemplo de em e i en navegador" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Ambos muestran texto en cursiva, pero &lt;em&gt; tiene significado semántico
+            </div>
+          </div>
+        </div>
+      </div>
+
       <h3 class="section-subtitle">Otras etiquetas útiles</h3>
 
       <div class="key-points">
+        <p class="text-content">Estas etiquetas no se suelen usar, solo en casos muy especificos 
+          ya que se usa mas el css para dar este tipos de estilos</p>
         <ul>
           <li>
-            <code>&lt;small&gt;</code> - Texto de menor importancia, como notas legales o disclaimer
+            <code>&lt;small&gt;</code> - <small> Texto de menor importancia, como notas legales o disclaimer</small>
           </li>
           <li>
-            <code>&lt;mark&gt;</code> - Resaltar texto como si usaras un marcador amarillo
+            <code>&lt;mark&gt;</code> -  <mark>Resaltar texto como si usaras un marcador amarillo</mark>
           </li>
           <li>
-            <code>&lt;del&gt;</code> - Texto tachado, indica contenido eliminado
+            <code>&lt;del&gt;</code> - <del> Texto tachado, indica contenido eliminado</del>
           </li>
           <li>
-            <code>&lt;ins&gt;</code> - Texto subrayado, indica contenido insertado
+            <code>&lt;ins&gt;</code> - <ins>Texto subrayado, indica contenido insertado</ins> 
           </li>
           <li>
             <code>&lt;sub&gt;</code> - Subíndice (H<sub>2</sub>O)
@@ -467,6 +527,22 @@
   &lt;small&gt;* Los términos y condiciones aplican&lt;/small&gt;
 &lt;/p&gt;</code></pre>
       </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver todas las etiquetas
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-otras-etiquetas.jpg" 
+                 alt="Ejemplo de todas las etiquetas de formato" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Ejemplo visual de todas las etiquetas de formato trabajando juntas
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN 6: Saltos de línea -->
@@ -494,6 +570,22 @@
   Colonia Centro&lt;br&gt;
   Ciudad, Estado 12345
 &lt;/p&gt;</code></pre>
+      </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver ejemplo de br
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-br.jpg" 
+                 alt="Ejemplo de br en navegador" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Los saltos de línea con &lt;br&gt; son útiles para direcciones y poemas
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="highlight-box warning">
@@ -624,6 +716,22 @@
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
       </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver artículo completo
+          </button>
+          <div class="preview-content" style="display: none;">
+            <img src="../../assets/images/captures-example/ejemplo-completo.jpg" 
+                 alt="Ejemplo completo del artículo en navegador" 
+                 class="preview-image">
+            <div class="preview-caption">
+              Vista completa del artículo con todas las etiquetas trabajando juntas
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- SECCIÓN 8: Resumen -->
@@ -657,7 +765,7 @@
 
     <!-- QUIZ -->
     <section class="section" data-aos="fade-up">
-      <h2 class="section-title">Quiz: Verifica tu comprensión</h2>
+      <h2 class="section-title">Quiz</h2>
 
       <div class="quiz-container">
         <div class="quiz-header">
@@ -804,24 +912,24 @@
   </main>
 
   <!-- SCRIPTS -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
   <script>
-    // Inicializar AOS (Animate On Scroll)
+
     AOS.init({
       duration: 800,
       once: true,
       offset: 100
     });
 
-    // Inicializar Highlight.js para resaltar código
     hljs.highlightAll();
 
     // Quiz para Lección 3
     document.addEventListener('DOMContentLoaded', function () {
-      // Respuestas correctas
       const correctAnswersLeccion3 = {
         q1: 'a', // Solo un h1
         q2: 'a', // strong semántico, b visual
@@ -908,35 +1016,6 @@
       });
     });
   </script>
-
-<!-- DESPUÉS (CORRECTO) -->
-<!-- Sistema de Progreso - Debe ir DESPUÉS de cargar progressManager.js -->
-<script src="../../assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener ID de la lección actual
-    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
-    
-    // Marcar como completada cuando se llega al final
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (typeof progressManager !== 'undefined') {
-                    progressManager.marcarLeccionCompletada(currentLesson);
-                    observer.disconnect();
-                } else {
-                    console.error('progressManager no está definido');
-                }
-            }
-        });
-    }, { threshold: 0.5 });
-
-    // Observar el último elemento de la lección
-    const lastElement = document.querySelector('.lesson-navigation');
-    if (lastElement) {
-        observer.observe(lastElement);
-    }
-});
-</script>
 </body>
+
 </html>

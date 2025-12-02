@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lección 1: Introducción a HTML</title>
 
   <link rel="stylesheet" href="../../assets/css/lessons-style.css">
-    <link rel="stylesheet" href="../../assets/css/extras-style/leccion1-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion1-style.css">
 
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
   <!-- AOS Scroll Animations -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Highlight.js para código -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 </head>
+
 <body>
-      <div class="breadcrumb-container">
+  <div class="breadcrumb-container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
       <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
@@ -49,7 +51,7 @@
     <div class="container">
       <div class="lesson-number" data-aos="fade-down">Lección 1 de 16</div>
       <h1 data-aos="fade-up" data-aos-delay="200">Introducción a HTML</h1>
-      
+
       <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
         <h3>Objetivos de la lección</h3>
         <ul>
@@ -66,12 +68,11 @@
   <!-- CONTENIDO -->
   <main class="lesson-content">
 
-    <!-- SECCIÓN 1: ¿Qué es HTML? -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">¿Qué es HTML?</h2>
-      
+
       <p class="text-content">
-        HTML significa <strong>HyperText Markup Language</strong> (Lenguaje de Marcado de Hipertexto). 
+        HTML significa <strong>HyperText Markup Language</strong> (Lenguaje de Marcado de Hipertexto).
         Es el lenguaje fundamental que define la estructura de todas las páginas web que existen en internet.
       </p>
 
@@ -87,7 +88,7 @@
       </div>
 
       <div class="analogy-container">
-        <h3 class="analogy-title">Analogía: HTML como estructura de una casa</h3>
+        <h3 class="analogy-title">HTML como estructura de una casa</h3>
         <div class="analogy-visual">
           <div class="analogy-item">
             <div class="analogy-icon">
@@ -116,19 +117,14 @@
       <div class="highlight-box info">
         <h4>Importante</h4>
         <p>
-          Aunque CSS (estilos) y JavaScript (funcionalidad) mejoran una página web, 
+          Aunque CSS (estilos) y JavaScript (funcionalidad) mejoran una página web,
           <strong>sin HTML nada de eso puede existir</strong>. HTML es siempre el punto de partida.
         </p>
       </div>
     </section>
 
-    <!-- SECCIÓN 2: Cómo funciona la web -->
     <section class="section" data-aos="fade-up">
-      <h2 class="section-title">Contexto: ¿Cómo funciona la web?</h2>
-      
-      <p class="text-content">
-        Para entender HTML, primero necesitas comprender cómo funciona la web a nivel básico:
-      </p>
+      <h2 class="section-title">¿Cómo funciona la web?</h2>
 
       <div class="timeline">
         <div class="timeline-item">
@@ -160,7 +156,7 @@
       <div class="highlight-box">
         <h4>Dato importante</h4>
         <p>
-          Todo sitio web tiene un archivo inicial llamado <strong>index.html</strong>. 
+          Todo sitio web tiene un archivo inicial llamado <strong>index.html</strong>.
           Es la página principal que se carga por defecto cuando visitas un sitio.
         </p>
       </div>
@@ -169,7 +165,7 @@
     <!-- SECCIÓN 3: Historia de HTML -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Breve historia de HTML</h2>
-      
+
       <p class="text-content">
         HTML tiene una historia fascinante que vale la pena conocer:
       </p>
@@ -178,28 +174,28 @@
         <div class="timeline-item">
           <div class="timeline-year">1991</div>
           <div class="timeline-content">
-            <strong>Tim Berners-Lee</strong> crea HTML en el CERN para compartir documentos científicos. 
+            <strong>Tim Berners-Lee</strong> crea HTML en el CERN para compartir documentos científicos.
             La primera versión tenía solo 18 etiquetas básicas.
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">1995-1999</div>
           <div class="timeline-content">
-            Surgen HTML 2.0, 3.2 y 4.01. La web comienza a popularizarse con mejoras en tablas, 
+            Surgen HTML 2.0, 3.2 y 4.01. La web comienza a popularizarse con mejoras en tablas,
             formularios y soporte básico para estilos.
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">2014</div>
           <div class="timeline-content">
-            <strong>HTML5</strong> se convierte en el estándar oficial. Trae etiquetas semánticas, 
+            <strong>HTML5</strong> se convierte en el estándar oficial. Trae etiquetas semánticas,
             soporte nativo para audio/video y mejoras enormes en estructura.
           </div>
         </div>
         <div class="timeline-item">
           <div class="timeline-year">Actualidad</div>
           <div class="timeline-content">
-            HTML5 es el estándar actual. Hoy existen más de 100 etiquetas y HTML sigue evolucionando 
+            HTML5 es el estándar actual. Hoy existen más de 100 etiquetas y HTML sigue evolucionando
             con nuevas características.
           </div>
         </div>
@@ -219,8 +215,8 @@
       <div class="highlight-box warning">
         <h4>¿Qué es SEO?</h4>
         <p>
-          SEO significa Search Engine Optimization (Optimización para Motores de Búsqueda). 
-          Es el conjunto de técnicas para que tu sitio web aparezca mejor posicionado en Google 
+          SEO significa Search Engine Optimization (Optimización para Motores de Búsqueda).
+          Es el conjunto de técnicas para que tu sitio web aparezca mejor posicionado en Google
           y otros buscadores. HTML5 semántico ayuda a que los buscadores entiendan mejor tu contenido.
         </p>
       </div>
@@ -229,9 +225,9 @@
     <!-- SECCIÓN 4: Herramientas -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Herramientas que usaremos en el curso</h2>
-      
+
       <p class="text-content">
-        Para trabajar con HTML necesitarás algunas herramientas básicas. No te preocupes, 
+        Para trabajar con HTML necesitarás algunas herramientas básicas. No te preocupes,
         todas son gratuitas y fáciles de usar:
       </p>
 
@@ -240,9 +236,11 @@
           <div class="tool-icon">
             <i class="fas fa-code"></i>
           </div>
-          <h3 class="tool-name">Visual Studio Code</h3>
+          <a href="https://code.visualstudio.com/download">
+            <h3 class="tool-name">Visual Studio Code</h3>
+          </a>
           <p class="tool-desc">
-            Editor de código gratuito y potente. Es el más usado por desarrolladores. 
+            Editor de código gratuito y potente. Es el más usado por desarrolladores.
             Ligero, con autocompletado inteligente y miles de extensiones útiles.
           </p>
         </div>
@@ -253,7 +251,7 @@
           </div>
           <h3 class="tool-name">Google Chrome</h3>
           <p class="tool-desc">
-            Navegador web recomendado por sus excelentes herramientas de desarrollo (DevTools). 
+            Navegador web recomendado por sus excelentes herramientas de desarrollo (DevTools).
             Estándar en la industria para probar sitios web.
           </p>
         </div>
@@ -264,14 +262,14 @@
           </div>
           <h3 class="tool-name">Chrome DevTools</h3>
           <p class="tool-desc">
-            Herramientas integradas en Chrome para inspeccionar elementos HTML, 
+            Herramientas integradas en Chrome para inspeccionar elementos HTML,
             editar código en tiempo real, ver errores y depurar tu sitio web.
           </p>
         </div>
       </div>
 
       <h3 class="section-subtitle">Extensiones recomendadas para VS Code</h3>
-      
+
       <div class="key-points">
         <ul>
           <li><strong>Live Server</strong> - Actualiza automáticamente tu navegador al guardar cambios</li>
@@ -281,13 +279,26 @@
       </div>
 
       <h3 class="section-subtitle">Sitios útiles para consultar</h3>
-      
+
       <div class="highlight-box info">
         <ul>
-          <li><strong>MDN Web Docs</strong> - La documentación oficial más completa y confiable</li>
-          <li><strong>W3Schools</strong> - Referencias rápidas y ejemplos interactivos</li>
-          <li><strong>CanIUse</strong> - Verifica qué características son compatibles con cada navegador</li>
-          <li><strong>HTML CheatSheet</strong> - Guías rápidas con todas las etiquetas HTML</li>
+          <li>
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML">
+              <strong>MDN Web Docs</strong> - La documentación oficial más completa y confiable
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.w3schools.com/html/default.asp">
+              <strong>W3Schools</strong> - Referencias rápidas y ejemplos interactivos
+            </a>
+          </li>
+
+          <li>
+            <a href="">
+              <strong>HTML CheatSheet</strong> - Guías rápidas con todas las etiquetas HTML
+            </a>
+          </li>
         </ul>
       </div>
     </section>
@@ -295,9 +306,9 @@
     <!-- SECCIÓN 5: Estructura básica -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Estructura básica de un archivo HTML</h2>
-      
+
       <p class="text-content">
-        Todo documento HTML tiene una estructura base que siempre se repite. 
+        Todo documento HTML tiene una estructura base que siempre se repite.
         Veamos cómo se ve un archivo HTML básico:
       </p>
 
@@ -327,7 +338,7 @@
       <div class="highlight-box">
         <h4>No te preocupes por los detalles ahora</h4>
         <p>
-          En la siguiente lección explicaremos línea por línea qué significa cada parte de este código. 
+          En la siguiente lección explicaremos línea por línea qué significa cada parte de este código.
           Por ahora solo familiarízate con cómo se ve un documento HTML.
         </p>
       </div>
@@ -336,7 +347,7 @@
     <!-- SECCIÓN 6: Datos interesantes -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Datos interesantes sobre HTML</h2>
-      
+
       <div class="key-points">
         <ul>
           <li>El <strong>primer sitio web de la historia</strong> aún existe y sigue en línea desde 1991</li>
@@ -353,9 +364,9 @@
     <section class="section" data-aos="fade-up">
       <div class="practice-section">
         <h3>Actividad práctica: Crea tu primer archivo HTML</h3>
-        
+
         <p style="margin-top: 20px; font-size: 1.1rem;">
-          Es momento de poner en práctica lo aprendido. Esta actividad es simple y rápida, 
+          Es momento de poner en práctica lo aprendido. Esta actividad es simple y rápida,
           solo para que te familiarices con el proceso:
         </p>
 
@@ -367,16 +378,123 @@
             <li>Escribe la plantilla básica de HTML que viste anteriormente</li>
             <li>Cambia el texto del h1 por tu nombre</li>
             <li>Guarda el archivo y ábrelo con tu navegador</li>
+            <li>Da clic derecho en la pantalla y da clic en "inspeccionar"</li>
+            <li>explora la parte izquierda es el DevTools</li>
+            <li>Prueba cambiando el titulo desde ahí</li>
           </ol>
         </div>
 
-        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 30px;">
+        <div class="highlight-box"
+          style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 30px;">
           <h4 style="color: #fff;">Consejo</h4>
           <p style="color: #fff;">
-            Para abrir el archivo en el navegador, puedes hacer clic derecho sobre index.html 
+            Para abrir el archivo en el navegador,puedes dar doble clic izquierdo o puedes hacer clic derecho sobre
+            index.html
             y seleccionar "Abrir con" o simplemente arrastrarlo a una ventana del navegador.
           </p>
         </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN INTERACTIVA: Anatomía de una etiqueta HTML -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Anatomía de una etiqueta HTML</h2>
+
+      <p class="text-content">
+        Como has notado en la estructura básica, HTML funciona mediante <strong>etiquetas</strong>.
+        Es momento de entender cómo están construidas antes de seguir avanzando.
+      </p>
+
+      <div class="interactive-anatomy">
+        <!-- Selector de ejemplos -->
+        <div class="example-selector">
+          <button class="example-btn active" data-example="paragraph">Párrafo</button>
+          <button class="example-btn" data-example="heading">Título</button>
+          <button class="example-btn" data-example="link">Enlace</button>
+          <button class="example-btn" data-example="image">Imagen</button>
+        </div>
+
+        <!-- Display interactivo -->
+        <div class="anatomy-display">
+          <div class="tag-visual" id="tagVisual">
+            <!-- Se actualiza dinámicamente con JavaScript -->
+            <span class="tag-part bracket start">&lt;</span>
+            <span class="tag-part name">p</span>
+            <span class="tag-part bracket end">&gt;</span>
+            <span class="tag-part content">Este es un párrafo de ejemplo</span>
+            <span class="tag-part bracket start">&lt;/</span>
+            <span class="tag-part name">p</span>
+            <span class="tag-part bracket end">&gt;</span>
+          </div>
+        </div>
+
+        <!-- Información en tiempo real -->
+        <div class="anatomy-info">
+          <div class="info-card" data-part="bracket">
+            <h4><i class="fas fa-code"></i> Signos &lt; &gt;</h4>
+            <p>Delimitan el inicio y fin de cada etiqueta. Siempre van en pares.</p>
+          </div>
+
+          <div class="info-card" data-part="name">
+            <h4><i class="fas fa-tag"></i> Nombre de etiqueta</h4>
+            <p>Define el tipo de elemento (p, h1, a, img, etc.).</p>
+          </div>
+
+          <div class="info-card" data-part="content">
+            <h4><i class="fas fa-align-left"></i> Contenido</h4>
+            <p>Texto u otros elementos que van dentro de la etiqueta.</p>
+          </div>
+
+          <div class="info-card" data-part="attribute">
+            <h4><i class="fas fa-cog"></i> Atributos</h4>
+            <p>Información adicional (href, src, class). Los veremos en detalle más adelante.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Estructura general de una etiqueta</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;nombre-etiqueta atributo="valor"&gt;Contenido&lt;/nombre-etiqueta&gt;</code></pre>
+      </div>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Tipos de etiquetas</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-exchange-alt"></i>
+            </div>
+            <div class="comparison-label">Etiquetas de apertura y cierre</div>
+            <div class="comparison-desc">
+              Tienen contenido entre ellas:<br>
+              <code>&lt;p&gt;Texto&lt;/p&gt;</code><br>
+              <code>&lt;h1&gt;Título&lt;/h1&gt;</code>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-minus"></i>
+            </div>
+            <div class="comparison-label">Etiquetas autocerradas</div>
+            <div class="comparison-desc">
+              No necesitan cierre:<br>
+              <code>&lt;br&gt;</code><br>
+              <code>&lt;img src="foto.jpg"&gt;</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4>Regla de oro: Cierra lo que abres</h4>
+        <p>
+          Por cada <code>&lt;etiqueta&gt;</code> debe haber un <code>&lt;/etiqueta&gt;</code> correspondiente.
+          A ecepción de las etiqutas autocerradas.
+        </p>
       </div>
     </section>
 
@@ -384,30 +502,42 @@
     <section class="section" data-aos="fade-up">
       <div class="summary-section">
         <h3>Resumen de la lección</h3>
-        
+
         <div class="summary-content">
           <p>
-            En esta primera lección aprendiste que <strong>HTML es el lenguaje de marcado</strong> 
-            que estructura todas las páginas web. No es un lenguaje de programación, sino un sistema 
-            de etiquetas que organiza el contenido.
+            <strong>HTML es el lenguaje de marcado</strong>
+            que estructura todas las páginas web.
           </p>
-          
+
           <p style="margin-top: 15px;">
-            Conociste la historia de HTML, desde su creación por Tim Berners-Lee en 1991 hasta 
-            HTML5, el estándar actual que trajo importantes mejoras como etiquetas semánticas 
+            HTML fue creado por Tim Berners-Lee en 1991. HTML5 es el estándar actual que trajo importantes mejoras como
+            etiquetas semánticas
             y soporte nativo para multimedia.
           </p>
-          
+
           <p style="margin-top: 15px;">
-            Identificaste las herramientas esenciales: <strong>Visual Studio Code</strong> como editor, 
-            <strong>Google Chrome</strong> con sus DevTools para inspeccionar páginas, y recursos como 
+            Herramientas esenciales: <strong>Visual Studio Code</strong> como editor,
+            <strong>Google Chrome</strong> con sus DevTools para inspeccionar páginas, y recursos como
             MDN Web Docs y W3Schools para consultar.
           </p>
-          
+
           <p style="margin-top: 15px;">
-            Finalmente, viste por primera vez la estructura básica de un documento HTML. 
-            En la próxima lección profundizaremos en cada elemento de esta estructura para que 
-            comprendas exactamente qué hace cada línea de código.
+            Estructura básica de un documento HTML.
+
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Mi primera página&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;h1&gt;Hola, mundo&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
           </p>
         </div>
       </div>
@@ -426,6 +556,9 @@
   </main>
 
   <!-- JavaScript -->
+  <!-- Sistema de Progreso -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
@@ -441,7 +574,7 @@
     hljs.highlightAll();
 
     // Marcar lección como vista
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Aquí puedes agregar lógica para guardar progreso
       console.log('Lección 1 cargada');
     });
@@ -459,37 +592,114 @@
         }
       });
     });
-  </script>
-  <!-- Sistema de Progreso -->
-<!-- DESPUÉS (CORRECTO) -->
-<!-- Sistema de Progreso - Debe ir DESPUÉS de cargar progressManager.js -->
-<script src="../../assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener ID de la lección actual
-    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
-    
-    // Marcar como completada cuando se llega al final
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (typeof progressManager !== 'undefined') {
-                    progressManager.marcarLeccionCompletada(currentLesson);
-                    observer.disconnect();
-                } else {
-                    console.error('progressManager no está definido');
-                }
-            }
-        });
-    }, { threshold: 0.5 });
 
-    // Observar el último elemento de la lección
-    const lastElement = document.querySelector('.lesson-navigation');
-    if (lastElement) {
-        observer.observe(lastElement);
-    }
-});
-</script>
+    // Anatomía interactiva de etiquetas
+    document.addEventListener('DOMContentLoaded', function () {
+      const exampleButtons = document.querySelectorAll('.example-btn');
+      const tagVisual = document.getElementById('tagVisual');
+
+      const examples = {
+        paragraph: {
+          html: `
+        <span class="tag-part bracket start">&lt;</span>
+        <span class="tag-part name">p</span>
+        <span class="tag-part bracket end">&gt;</span>
+        <span class="tag-part content">Este es un párrafo de ejemplo</span>
+        <span class="tag-part bracket start">&lt;/</span>
+        <span class="tag-part name">p</span>
+        <span class="tag-part bracket end">&gt;</span>
+      `,
+          description: "Etiqueta de párrafo básica"
+        },
+        heading: {
+          html: `
+        <span class="tag-part bracket start">&lt;</span>
+        <span class="tag-part name">h1</span>
+        <span class="tag-part bracket end">&gt;</span>
+        <span class="tag-part content">Título Principal</span>
+        <span class="tag-part bracket start">&lt;/</span>
+        <span class="tag-part name">h1</span>
+        <span class="tag-part bracket end">&gt;</span>
+      `,
+          description: "Etiqueta de encabezado nivel 1"
+        },
+        link: {
+          html: `
+        <span class="tag-part bracket start">&lt;</span>
+        <span class="tag-part name">a</span>
+        <span class="tag-part attribute">href="#"</span>
+        <span class="tag-part bracket end">&gt;</span>
+        <span class="tag-part content">Haz clic aquí</span>
+        <span class="tag-part bracket start">&lt;/</span>
+        <span class="tag-part name">a</span>
+        <span class="tag-part bracket end">&gt;</span>
+      `,
+          description: "Etiqueta de enlace con atributo href"
+        },
+        image: {
+          html: `
+        <span class="tag-part bracket start">&lt;</span>
+        <span class="tag-part name">img</span>
+        <span class="tag-part attribute">src="imagen.jpg"</span>
+        <span class="tag-part attribute">alt="Descripción"</span>
+        <span class="tag-part bracket end">&gt;</span>
+      `,
+          description: "Etiqueta de imagen autocerrada"
+        }
+      };
+
+      // Configurar eventos para los botones
+      exampleButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Remover clase active de todos los botones
+          exampleButtons.forEach(btn => btn.classList.remove('active'));
+          // Agregar clase active al botón clickeado
+          this.classList.add('active');
+
+          // Obtener el ejemplo seleccionado
+          const exampleType = this.getAttribute('data-example');
+          const example = examples[exampleType];
+
+          // Actualizar la visualización
+          tagVisual.innerHTML = example.html;
+
+          // Agregar eventos hover a las nuevas partes
+          setupTagPartEvents();
+        });
+      });
+
+      function setupTagPartEvents() {
+        const tagParts = tagVisual.querySelectorAll('.tag-part');
+        const infoCards = document.querySelectorAll('.info-card');
+
+        tagParts.forEach(part => {
+          part.addEventListener('mouseenter', function () {
+            const partType = Array.from(this.classList)
+              .find(cls => cls !== 'tag-part');
+
+            // Resaltar la tarjeta de información correspondiente
+            infoCards.forEach(card => {
+              if (card.getAttribute('data-part') === partType) {
+                card.style.borderLeftColor = '#b6ff00';
+                card.style.transform = 'translateX(15px)';
+              }
+            });
+          });
+
+          part.addEventListener('mouseleave', function () {
+            // Restaurar todas las tarjetas
+            infoCards.forEach(card => {
+              card.style.borderLeftColor = '#e34c26';
+              card.style.transform = 'translateX(0)';
+            });
+          });
+        });
+      }
+
+      setupTagPartEvents();
+    });
+  </script>
 
 </body>
+
 </html>

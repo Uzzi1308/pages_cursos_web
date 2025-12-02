@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,23 +12,24 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 
   <!-- AOS Scroll Animations -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <!-- Highlight.js para código -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 
 </head>
+
 <body>
-    <div class="breadcrumb-container">
+  <div class="breadcrumb-container">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
       <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
       <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
       <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
-            <li class="breadcrumb-item"><a href="leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-item"><a href="leccion1.html">Lección 1</a></li>
       <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
       <li class="breadcrumb-item active">Lección 2: Estructura básica</li>
     </ol>
@@ -51,7 +53,7 @@
     <div class="container">
       <div class="lesson-number" data-aos="fade-down">Lección 2 de 16</div>
       <h1 data-aos="fade-up" data-aos-delay="200">Estructura básica de una página HTML</h1>
-      
+
       <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
         <h3>Objetivos de aprendizaje</h3>
         <ul>
@@ -71,16 +73,16 @@
     <!-- SECCIÓN 1: ¿Qué es la estructura básica? -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">¿Qué es la estructura básica de HTML?</h2>
-      
+
       <p class="text-content">
-        Todo archivo HTML sigue una <strong>estructura mínima</strong> para que el navegador 
-        entienda cómo debe interpretar el documento. Esta estructura funciona como el marco 
+        Todo archivo HTML sigue una <strong>estructura mínima</strong> para que el navegador
+        entienda cómo debe interpretar el documento. Esta estructura funciona como el marco
         donde luego se agregan textos, imágenes, botones, estilos y scripts.
       </p>
 
       <p class="text-content">
-        Sin importar qué tan complejo sea un sitio web, todos comienzan con esta misma base. 
-        Desde la página de inicio de Google hasta una aplicación web sofisticada, todos 
+        Sin importar qué tan complejo sea un sitio web, todos comienzan con esta misma base.
+        Desde la página de inicio de Google hasta una aplicación web sofisticada, todos
         respetan esta estructura fundamental.
       </p>
     </section>
@@ -88,70 +90,98 @@
     <!-- SECCIÓN 2: Partes del documento -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Partes del documento HTML</h2>
-      
+
       <p class="text-content">
-        Cada documento HTML se compone de elementos específicos que cumplen funciones diferentes. 
+        Cada documento HTML se compone de elementos específicos que cumplen funciones diferentes.
         Vamos a analizar cada uno en detalle:
       </p>
 
       <div class="structure-visual">
-        
+
         <div class="structure-item" data-aos="fade-right" data-aos-delay="100">
           <h4 class="structure-item-title">&lt;!DOCTYPE html&gt;</h4>
           <div class="structure-item-desc">
-            <strong>¿Qué es?</strong> Una declaración que indica al navegador que el documento usa HTML5.
-            <br><br>
-            <strong>¿Para qué sirve?</strong> Le dice al navegador cómo interpretar el código. 
-            Sin esta línea, el navegador puede entrar en "modo quirks" (modo de compatibilidad antiguo) 
-            y renderizar la página de forma incorrecta.
-            <br><br>
-            <strong>Importante:</strong> No es una etiqueta HTML, es solo una declaración. 
-            Siempre debe ir en la primera línea del documento.
+            <p>
+              <strong>¿Qué es?</strong> Una declaración que indica al navegador que el documento usa la version HTML5.
+            </p>
+
+            <p>
+              <strong>¿Para qué sirve?</strong> Le dice al navegador cómo interpretar el código.
+              Sin esta línea, el navegador puede entrar en "modo quirks" (modo de compatibilidad antiguo)
+              y renderizar la página de forma incorrecta.
+            </p>
+
+            <p>
+              <strong>Importante:</strong> No es una etiqueta HTML, es solo una declaración.
+              Siempre debe ir en la primera línea del documento.
+            </p>
           </div>
         </div>
 
         <div class="structure-item" data-aos="fade-right" data-aos-delay="200">
           <h4 class="structure-item-title">&lt;html lang="es"&gt;</h4>
           <div class="structure-item-desc">
-            <strong>¿Qué es?</strong> La etiqueta raíz que contiene todo el documento.
-            <br><br>
-            <strong>El atributo lang:</strong> Indica el idioma principal del contenido. 
-            Esto ayuda a los lectores de pantalla (accesibilidad) y mejora el SEO.
-            <br><br>
-            <strong>Valores comunes:</strong> "es" para español, "en" para inglés, "fr" para francés, etc.
-            <br><br>
-            <strong>Regla:</strong> Todo el contenido del documento debe ir entre 
-            <code>&lt;html&gt;</code> y <code>&lt;/html&gt;</code>.
+            <p>
+              <strong>¿Qué es?</strong> La etiqueta raíz que contiene todo el documento.
+            </p>
+
+            <p>
+              <strong>El atributo lang:</strong> Indica el idioma principal del contenido.
+              Esto ayuda a los lectores de pantalla (accesibilidad) y mejora el SEO.
+            </p>
+
+            <p>
+              <strong>Valores comunes:</strong> "es" para español, "en" para inglés, "fr" para francés, etc.
+            </p>
+
+            <p>
+              <strong>Regla:</strong> Todo el contenido del documento debe ir entre
+              <code>&lt;html&gt;</code> y <code>&lt;/html&gt;</code>.
+            </p>
           </div>
         </div>
 
         <div class="structure-item" data-aos="fade-right" data-aos-delay="300">
           <h4 class="structure-item-title">&lt;head&gt;</h4>
           <div class="structure-item-desc">
-            <strong>¿Qué es?</strong> La sección de configuración del documento.
-            <br><br>
-            <strong>Contenido:</strong> Aquí van los metadatos, el título de la pestaña, 
-            enlaces a archivos CSS, scripts, favicons y más.
-            <br><br>
-            <strong>Importante:</strong> El contenido del <code>&lt;head&gt;</code> 
-            <strong>NO es visible</strong> para el usuario en la página. Solo configura cómo 
-            debe comportarse el documento.
-            <br><br>
-            <strong>Analogía:</strong> Es como el panel de control de un avión. El piloto lo necesita, 
-            pero los pasajeros no lo ven.
+            <p>
+              <strong>¿Qué es?</strong> La sección de configuración del documento.
+            </p>
+
+            <p>
+              <strong>Contenido:</strong> Aquí van los metadatos, el título de la pestaña,
+              enlaces a archivos CSS, scripts, favicons y más.
+            </p>
+
+            <p>
+              <strong>Importante:</strong> El contenido del <code>&lt;head&gt;</code>
+              <strong>NO es visible</strong> para el usuario en la página. Solo configura cómo
+              debe comportarse el documento.
+            </p>
+
+            <p>
+              <strong>Analogía:</strong> Es como el panel de control de un avión. El piloto lo necesita,
+              pero los pasajeros no lo ven.
+            </p>
           </div>
         </div>
 
         <div class="structure-item" data-aos="fade-right" data-aos-delay="400">
           <h4 class="structure-item-title">&lt;body&gt;</h4>
           <div class="structure-item-desc">
-            <strong>¿Qué es?</strong> La parte visible del documento.
-            <br><br>
-            <strong>Contenido:</strong> Todo lo que el usuario ve en la pantalla va aquí: 
-            textos, imágenes, menús, párrafos, botones, formularios, videos, etc.
-            <br><br>
-            <strong>Regla fundamental:</strong> Si quieres que algo aparezca en la página, 
-            debe estar dentro del <code>&lt;body&gt;</code>.
+            <p>
+              <strong>¿Qué es?</strong> La parte visible del documento.
+            </p>
+
+            <p>
+              <strong>Contenido:</strong> Todo lo que el usuario ve en la pantalla va aquí:
+              textos, imágenes, menús, párrafos, botones, formularios, videos, etc.
+            </p>
+
+            <p>
+              <strong>Regla fundamental:</strong> Si quieres que algo aparezca en la página,
+              debe estar dentro del <code>&lt;body&gt;</code>.
+            </p>
           </div>
         </div>
 
@@ -161,28 +191,28 @@
     <!-- SECCIÓN 3: Metadatos del head -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Metadatos esenciales del &lt;head&gt;</h2>
-      
+
       <p class="text-content">
-        El <code>&lt;head&gt;</code> contiene información vital que prepara tu página 
+        El <code>&lt;head&gt;</code> contiene información vital que prepara tu página
         para funcionar correctamente. Estas son las etiquetas más importantes:
       </p>
 
       <h3 class="section-subtitle">&lt;meta charset="UTF-8"&gt;</h3>
-      
+
       <div class="highlight-box info">
         <h4>Codificación de caracteres</h4>
         <p>
-          <strong>UTF-8</strong> es el estándar universal de codificación que permite mostrar 
+          <strong>UTF-8</strong> es el estándar universal de codificación que permite mostrar
           correctamente letras con acentos, la ñ, símbolos especiales y caracteres de múltiples idiomas.
         </p>
         <p style="margin-top: 12px;">
-          Sin esta línea, los acentos y caracteres especiales podrían verse como símbolos raros 
+          Sin esta línea, los acentos y caracteres especiales podrían verse como símbolos raros
           (como � o ÃÃ±).
         </p>
       </div>
 
       <h3 class="section-subtitle">&lt;meta name="viewport"&gt;</h3>
-      
+
       <div class="code-container">
         <div class="code-header">
           <span>Meta viewport</span>
@@ -194,7 +224,7 @@
       <div class="highlight-box success">
         <h4>Responsive design</h4>
         <p>
-          Esta etiqueta es <strong>fundamental para dispositivos móviles</strong>. 
+          Esta etiqueta es <strong>fundamental para dispositivos móviles</strong>.
           Le dice al navegador que ajuste el ancho de la página al ancho del dispositivo.
         </p>
         <p style="margin-top: 12px;">
@@ -208,10 +238,10 @@
       </div>
 
       <h3 class="section-subtitle">&lt;title&gt;</h3>
-      
+
       <p class="text-content">
-        Esta etiqueta controla el texto que aparece en la pestaña del navegador. 
-        Es lo primero que ven los usuarios cuando tienen múltiples pestañas abiertas, 
+        Esta etiqueta controla el texto que aparece en la pestaña del navegador.
+        Es lo primero que ven los usuarios cuando tienen múltiples pestañas abiertas,
         y también es importante para el SEO.
       </p>
 
@@ -226,7 +256,7 @@
       <div class="highlight-box">
         <h4>Nota para después</h4>
         <p>
-          En lecciones posteriores aprenderás a agregar hojas de estilo CSS en el 
+          En lecciones posteriores aprenderás a agregar hojas de estilo CSS en el
           <code>&lt;head&gt;</code> usando la etiqueta <code>&lt;link&gt;</code>.
         </p>
       </div>
@@ -235,9 +265,9 @@
     <!-- SECCIÓN 4: Demostración completa -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Demostración de la estructura completa</h2>
-      
+
       <p class="text-content">
-        Ahora que comprendes cada parte, veamos cómo se ve un documento HTML completo 
+        Ahora que comprendes cada parte, veamos cómo se ve un documento HTML completo
         con todos sus elementos básicos:
       </p>
 
@@ -270,8 +300,8 @@
       <div class="highlight-box success">
         <h4>Estructura lista para usar</h4>
         <p>
-          Esta es la plantilla que usarás en todos tus proyectos. Más adelante agregarás 
-          más contenido en el <code>&lt;body&gt;</code> y configuraciones en el <code>&lt;head&gt;</code>, 
+          Esta es la plantilla que usarás en todos tus proyectos. Más adelante agregarás
+          más contenido en el <code>&lt;body&gt;</code> y configuraciones en el <code>&lt;head&gt;</code>,
           pero la estructura base siempre será esta.
         </p>
       </div>
@@ -280,22 +310,22 @@
     <!-- SECCIÓN 5: Errores comunes -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Errores comunes al iniciar</h2>
-      
+
       <p class="text-content">
-        Estos son los errores más frecuentes que cometen los principiantes. 
+        Estos son los errores más frecuentes.
         Conocerlos te ayudará a evitar frustraciones:
       </p>
 
       <div class="error-grid">
-        
+
         <div class="error-card" data-aos="fade-up" data-aos-delay="100">
           <h5>
             <i class="fas fa-times-circle"></i>
             Cerrar mal las etiquetas
           </h5>
           <p>
-            Todas las etiquetas que se abren deben cerrarse. Por cada 
-            <code>&lt;div&gt;</code> debe haber un <code>&lt;/div&gt;</code>. 
+            Todas las etiquetas que se abren deben cerrarse. Por cada
+            <code>&lt;div&gt;</code> debe haber un <code>&lt;/div&gt;</code>.
             El orden también importa.
           </p>
         </div>
@@ -306,7 +336,7 @@
             Contenido en el lugar equivocado
           </h5>
           <p>
-            Error común: poner textos o imágenes dentro del <code>&lt;head&gt;</code>. 
+            Error común: poner textos o imágenes dentro del <code>&lt;head&gt;</code>.
             Todo contenido visible debe ir en el <code>&lt;body&gt;</code>.
           </p>
         </div>
@@ -317,7 +347,7 @@
             Olvidar el DOCTYPE
           </h5>
           <p>
-            Sin el <code>&lt;!DOCTYPE html&gt;</code> al inicio, el navegador puede 
+            Sin el <code>&lt;!DOCTYPE html&gt;</code> al inicio, el navegador puede
             interpretar tu código de forma incorrecta o entrar en modo quirks.
           </p>
         </div>
@@ -328,7 +358,7 @@
             No especificar el idioma
           </h5>
           <p>
-            Olvidar el atributo <code>lang="es"</code> en la etiqueta <code>&lt;html&gt;</code> 
+            Olvidar el atributo <code>lang="es"</code> en la etiqueta <code>&lt;html&gt;</code>
             afecta la accesibilidad y el SEO de tu sitio.
           </p>
         </div>
@@ -339,7 +369,7 @@
             No indentar el código
           </h5>
           <p>
-            Un código sin indentación es difícil de leer y mantener. 
+            Un código sin indentación es difícil de leer y mantener.
             Usa tabulaciones o espacios para organizar visualmente tu HTML.
           </p>
         </div>
@@ -350,7 +380,7 @@
             Confiar en que el navegador arregle errores
           </h5>
           <p>
-            Los navegadores modernos intentan corregir HTML mal escrito, 
+            Los navegadores modernos intentan corregir HTML mal escrito,
             pero eso NO es buena práctica. Escribe HTML correcto desde el inicio.
           </p>
         </div>
@@ -361,15 +391,16 @@
     <!-- SECCIÓN 6: Conceptos complementarios -->
     <section class="section" data-aos="fade-up">
       <h2 class="section-title">Conceptos complementarios</h2>
-      
+
       <h3 class="section-subtitle">¿Qué es la indentación y por qué es importante?</h3>
-      
+
       <p class="text-content">
-        La <strong>indentación</strong> (también llamada sangría) es el espacio que se agrega 
+        La <strong>indentación</strong> (también llamada sangría) es el espacio que se agrega
         al inicio de una línea de código para mostrar la jerarquía y estructura del documento.
       </p>
 
-      <p>Recomiendo usar 2 espacios para la indentación, cada elemento/etiqueta hijo indentar 2 espacios.</p>
+      <p class="text-content">Recomiendo usar 2 espacios para la indentación, cada elemento/etiqueta hijo indentar 2
+        espacios.</p>
 
       <div class="code-container">
         <div class="code-header">
@@ -414,9 +445,9 @@
       </div>
 
       <h3 class="section-subtitle">Los navegadores son tolerantes (pero tú no deberías serlo)</h3>
-      
+
       <p class="text-content">
-        Los navegadores modernos intentan interpretar HTML incluso si tiene errores. 
+        Los navegadores modernos intentan interpretar HTML incluso si tiene errores.
         Pueden cerrar etiquetas automáticamente o corregir estructuras mal formadas.
       </p>
 
@@ -437,9 +468,9 @@
       </div>
 
       <h3 class="section-subtitle">Elementos de bloque vs elementos en línea</h3>
-      
+
       <p class="text-content">
-        Este es un concepto que veremos en profundidad en lecciones posteriores, 
+        Este es un concepto que veremos en profundidad en lecciones posteriores,
         pero es bueno que lo conozcas desde ahora:
       </p>
 
@@ -447,13 +478,13 @@
         <h4>Diferencias básicas</h4>
         <ul>
           <li>
-            <strong>Elementos de bloque:</strong> Ocupan todo el ancho disponible y 
-            comienzan en una nueva línea. Ejemplos: <code>&lt;div&gt;</code>, 
+            <strong>Elementos de bloque:</strong> Ocupan todo el ancho disponible y
+            comienzan en una nueva línea. Ejemplos: <code>&lt;div&gt;</code>,
             <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>
           </li>
           <li>
-            <strong>Elementos en línea:</strong> Solo ocupan el espacio necesario y 
-            permiten que otros elementos estén en la misma línea. Ejemplos: 
+            <strong>Elementos en línea:</strong> Solo ocupan el espacio necesario y
+            permiten que otros elementos estén en la misma línea. Ejemplos:
             <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>
           </li>
         </ul>
@@ -462,9 +493,56 @@
       <div class="highlight-box info">
         <h4>No te preocupes por memorizar esto ahora</h4>
         <p>
-          En las próximas lecciones profundizaremos en este tema con ejemplos prácticos. 
+          En las próximas lecciones profundizaremos en este tema con ejemplos prácticos.
           Por ahora, solo necesitas saber que existen dos tipos principales de elementos.
         </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: Comentarios en HTML -->
+    <section class="section" data-aos="fade-up">
+      <h3 class="section-subtitle">Comentarios en HTML</h3>
+
+      <p class="text-content">
+        Los comentarios te permiten agregar notas en tu código que el navegador ignorará.
+        Son muy útiles para explicar tu código o desactivar temporalmente partes sin eliminarlas.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Sintaxis de comentarios</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Este es un comentario en HTML --&gt;
+&lt;!-- 
+  Esto es un comentario
+  multilínea
+--&gt;
+
+&lt;div class="container"&gt;
+  &lt;!-- Este div contiene el encabezado --&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi sitio&lt;/h1&gt;
+  &lt;/header&gt;
+  
+  &lt;!-- 
+  &lt;nav&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Enlace temporalmente deshabilitado&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  --&gt;
+&lt;/div&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box info" style="margin-top: 20px;">
+        <h4>Usos prácticos de comentarios</h4>
+        <ul>
+          <li><strong>Documentar código:</strong> Explicar qué hace una sección</li>
+          <li><strong>Desactivar código:</strong> "Comentar" elementos temporalmente</li>
+          <li><strong>Organizar:</strong> Dividir el código en secciones claras</li>
+          <li><strong>Notas para equipo:</strong> Indicar tareas pendientes o advertencias</li>
+        </ul>
       </div>
     </section>
 
@@ -472,25 +550,25 @@
     <section class="section" data-aos="fade-up">
       <div class="practice-section">
         <h3>Actividad práctica: Reconstruye una página HTML desde cero</h3>
-        
+
         <p style="margin-top: 20px; font-size: 1.1rem;">
-          Es momento de reforzar lo aprendido creando tu propio documento HTML sin copiar y pegar. 
+          Es momento de reforzar lo aprendido creando tu propio documento HTML sin copiar y pegar.
           Esto te ayudará a desarrollar memoria muscular y confianza:
         </p>
 
         <div class="practice-steps">
           <ol>
             <li>
-              Crea un nuevo archivo llamado <strong>pagina2.html</strong> en tu carpeta 
+              Crea un nuevo archivo llamado <strong>pagina2.html</strong> en tu carpeta
               de trabajo
             </li>
             <li>
-              Escribe la estructura completa de HTML sin copiar y pegar. 
+              Escribe la estructura completa de HTML sin copiar y pegar.
               Escríbela tú mismo de memoria
             </li>
             <li>
-              Cambia el título de la página por algo personalizado, por ejemplo: 
-              "Mi Segunda Página - [Tu Nombre]"
+              Cambia el título de la página por algo personalizado, por ejemplo:
+              "Mi Segunda Página"
             </li>
             <li>
               Dentro del <code>&lt;body&gt;</code>, añade:
@@ -502,7 +580,8 @@
             <li>
               Comenta cada sección principal usando comentarios HTML:
               <br>
-              <code style="background: #000; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 8px;">
+              <code
+                style="background: #000; padding: 5px 10px; border-radius: 5px; display: inline-block; margin-top: 8px;">
                 &lt;!-- Este es el cuerpo de mi documento --&gt;
               </code>
             </li>
@@ -510,16 +589,18 @@
               Guarda el archivo y ábrelo en tu navegador para verificar que funciona
             </li>
             <li>
-              Abre las DevTools de Chrome (F12) e inspecciona la estructura de tu página y edita el titulo y parrafo a tu gusto.
+              Abre las DevTools de Chrome (F12) e inspecciona la estructura de tu página y edita el titulo y parrafo a
+              tu gusto.
             </li>
           </ol>
         </div>
 
-        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+        <div class="highlight-box"
+          style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
           <h4 style="color: #fff;">Consejo</h4>
           <p style="color: #fff;">
-            Muchos editores como VS Code tienen atajos para generar la estructura básica. 
-            Por ejemplo, escribe <strong>!</strong> y presiona TAB. Pero es importante que 
+            Muchos editores como VS Code tienen atajos para generar la estructura básica.
+            Por ejemplo, escribe <strong>!</strong> y presiona TAB. Pero es importante que
             primero aprendas a hacerlo manualmente para entender cada parte.
           </p>
         </div>
@@ -530,171 +611,164 @@
     <section class="section" data-aos="fade-up">
       <div class="summary-section">
         <h3>Resumen de la lección</h3>
-        
+
         <div class="summary-content">
           <p>
-            Un documento HTML se compone de <strong>cuatro elementos fundamentales</strong>: 
-            la declaración <code>&lt;!DOCTYPE html&gt;</code>, la etiqueta raíz 
-            <code>&lt;html&gt;</code>, la sección de configuración <code>&lt;head&gt;</code> 
+            Un documento HTML se compone de <strong>cuatro elementos fundamentales</strong>:
+            la declaración <code>&lt;!DOCTYPE html&gt;</code>, la etiqueta raíz
+            <code>&lt;html&gt;</code>, la sección de configuración <code>&lt;head&gt;</code>
             y el contenido visible <code>&lt;body&gt;</code>.
           </p>
-          
+
           <p style="margin-top: 15px;">
-            Cada sección cumple una función específica que el navegador respeta. 
-            El <code>&lt;head&gt;</code> contiene metadatos como la codificación UTF-8, 
+            Cada sección cumple una función específica que el navegador respeta.
+            El <code>&lt;head&gt;</code> contiene metadatos como la codificación UTF-8,
             la configuración viewport para responsividad y el título de la página.
           </p>
-          
+
           <p style="margin-top: 15px;">
-            Todo el contenido visible para el usuario debe ir dentro del <code>&lt;body&gt;</code>. 
-            Es fundamental mantener un HTML bien indentado y evitar errores comunes como 
+            Todo el contenido visible para el usuario debe ir dentro del <code>&lt;body&gt;</code>.
+            Es fundamental mantener un HTML bien indentado y evitar errores comunes como
             cerrar mal las etiquetas o colocar contenido en el lugar equivocado.
-          </p>
-          
-          <p style="margin-top: 15px;">
-            Esta estructura es la base de cualquier sitio web profesional. Dominarla te permitirá 
-            construir páginas más complejas con confianza, sabiendo que tu código está bien 
-            fundamentado desde el inicio.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Agregar esta sección antes de la navegación entre lecciones en leccion2.html -->
-<section class="section" data-aos="fade-up">
-  <h2 class="section-title">Quiz: Verifica tu comprensión</h2>
-  
-  <div class="quiz-container">
-    <div class="quiz-header">
-      <h3>Estructura básica de HTML</h3>
-      <div class="quiz-score">
-        Puntuación: <span id="score-leccion2">0</span>/5
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>Estructura básica de HTML</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion2">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion2">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuál es la declaración correcta para HTML5?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">&lt;!DOCTYPE HTML PUBLIC&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">&lt;!DOCTYPE html&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">&lt;HTML5&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Dónde debe ir el contenido visible de la página?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">En la sección &lt;head&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">En la sección &lt;body&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">Fuera de &lt;html&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Para qué sirve el atributo lang en la etiqueta &lt;html&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">Para definir el lenguaje de programación</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">Para especificar el idioma del contenido</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">Para indicar la ubicación del servidor</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Qué metadato es esencial para el diseño responsive?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">&lt;meta charset="UTF-8"&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">&lt;meta name="viewport"&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">&lt;title&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Qué elemento muestra el texto en la pestaña del navegador?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">&lt;h1&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">&lt;title&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">&lt;header&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion2" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion2" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
       </div>
-    </div>
-    
-    <form id="quiz-form-leccion2">
-      <!-- Pregunta 1 -->
-      <div class="quiz-question">
-        <div class="question-header">
-          <span class="question-number">1</span>
-          <p>¿Cuál es la declaración correcta para HTML5?</p>
-        </div>
-        <div class="question-options">
-          <label class="option">
-            <input type="radio" name="q1" value="a">
-            <span class="option-text">&lt;!DOCTYPE HTML PUBLIC&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q1" value="b">
-            <span class="option-text">&lt;!DOCTYPE html&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q1" value="c">
-            <span class="option-text">&lt;HTML5&gt;</span>
-          </label>
-        </div>
-        <div class="question-feedback" id="feedback-q1"></div>
-      </div>
-      
-      <!-- Pregunta 2 -->
-      <div class="quiz-question">
-        <div class="question-header">
-          <span class="question-number">2</span>
-          <p>¿Dónde debe ir el contenido visible de la página?</p>
-        </div>
-        <div class="question-options">
-          <label class="option">
-            <input type="radio" name="q2" value="a">
-            <span class="option-text">En la sección &lt;head&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q2" value="b">
-            <span class="option-text">En la sección &lt;body&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q2" value="c">
-            <span class="option-text">Fuera de &lt;html&gt;</span>
-          </label>
-        </div>
-        <div class="question-feedback" id="feedback-q2"></div>
-      </div>
-      
-      <!-- Pregunta 3 -->
-      <div class="quiz-question">
-        <div class="question-header">
-          <span class="question-number">3</span>
-          <p>¿Para qué sirve el atributo lang en la etiqueta &lt;html&gt;?</p>
-        </div>
-        <div class="question-options">
-          <label class="option">
-            <input type="radio" name="q3" value="a">
-            <span class="option-text">Para definir el lenguaje de programación</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q3" value="b">
-            <span class="option-text">Para especificar el idioma del contenido</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q3" value="c">
-            <span class="option-text">Para indicar la ubicación del servidor</span>
-          </label>
-        </div>
-        <div class="question-feedback" id="feedback-q3"></div>
-      </div>
-      
-      <!-- Pregunta 4 -->
-      <div class="quiz-question">
-        <div class="question-header">
-          <span class="question-number">4</span>
-          <p>¿Qué metadato es esencial para el diseño responsive?</p>
-        </div>
-        <div class="question-options">
-          <label class="option">
-            <input type="radio" name="q4" value="a">
-            <span class="option-text">&lt;meta charset="UTF-8"&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q4" value="b">
-            <span class="option-text">&lt;meta name="viewport"&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q4" value="c">
-            <span class="option-text">&lt;title&gt;</span>
-          </label>
-        </div>
-        <div class="question-feedback" id="feedback-q4"></div>
-      </div>
-      
-      <!-- Pregunta 5 -->
-      <div class="quiz-question">
-        <div class="question-header">
-          <span class="question-number">5</span>
-          <p>¿Qué elemento muestra el texto en la pestaña del navegador?</p>
-        </div>
-        <div class="question-options">
-          <label class="option">
-            <input type="radio" name="q5" value="a">
-            <span class="option-text">&lt;h1&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q5" value="b">
-            <span class="option-text">&lt;title&gt;</span>
-          </label>
-          <label class="option">
-            <input type="radio" name="q5" value="c">
-            <span class="option-text">&lt;header&gt;</span>
-          </label>
-        </div>
-        <div class="question-feedback" id="feedback-q5"></div>
-      </div>
-      
-      <div class="quiz-actions">
-        <button type="button" id="check-quiz-leccion2" class="btn-quiz-check">Verificar respuestas</button>
-        <button type="button" id="reset-quiz-leccion2" class="btn-quiz-reset">Reiniciar quiz</button>
-      </div>
-    </form>
-  </div>
-</section>
+    </section>
 
     <!-- NAVEGACIÓN ENTRE LECCIONES -->
     <div class="lesson-navigation">
@@ -709,9 +783,11 @@
   </main>
 
   <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  
+
   <script>
     // Inicializar AOS
     AOS.init({
@@ -724,7 +800,7 @@
     hljs.highlightAll();
 
     // Marcar lección como completada
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       // Aquí puedes agregar lógica para guardar progreso
       console.log('Lección 2 cargada - Estructura básica de HTML');
     });
@@ -744,124 +820,96 @@
     });
 
     // Quiz para Lección 2
-document.addEventListener('DOMContentLoaded', function() {
-  // Respuestas correctas
-  const correctAnswersLeccion2 = {
-    q1: 'b', // DOCTYPE html
-    q2: 'b', // body
-    q3: 'b', // especificar idioma
-    q4: 'b', // meta viewport
-    q5: 'b'  // title
-  };
-  
-  // Explicaciones de las respuestas
-  const explanationsLeccion2 = {
-    q1: {
-      correct: "¡Correcto! &lt;!DOCTYPE html&gt; es la declaración correcta para HTML5.",
-      incorrect: "Incorrecto. La declaración correcta para HTML5 es &lt;!DOCTYPE html&gt;."
-    },
-    q2: {
-      correct: "¡Correcto! Todo el contenido visible debe ir dentro de &lt;body&gt;.",
-      incorrect: "Incorrecto. El contenido visible debe ir en &lt;body&gt;, no en &lt;head&gt;."
-    },
-    q3: {
-      correct: "¡Correcto! El atributo lang especifica el idioma del contenido para accesibilidad y SEO.",
-      incorrect: "Incorrecto. El atributo lang especifica el idioma del contenido, no el de programación."
-    },
-    q4: {
-      correct: "¡Correcto! &lt;meta name='viewport'&gt; es esencial para el diseño responsive.",
-      incorrect: "Incorrecto. Aunque charset es importante, viewport es el esencial para responsive design."
-    },
-    q5: {
-      correct: "¡Correcto! &lt;title&gt; define el texto que aparece en la pestaña del navegador.",
-      incorrect: "Incorrecto. &lt;h1&gt; es para el contenido de la página, &lt;title&gt; es para la pestaña."
-    }
-  };
-  
-  const checkButton2 = document.getElementById('check-quiz-leccion2');
-  const resetButton2 = document.getElementById('reset-quiz-leccion2');
-  const scoreElement2 = document.getElementById('score-leccion2');
-  
-  checkButton2.addEventListener('click', function() {
-    let score = 0;
-    const form = document.getElementById('quiz-form-leccion2');
-    
-    // Verificar cada pregunta
-    for (let i = 1; i <= 5; i++) {
-      const questionName = 'q' + i;
-      const selectedOption = form.elements[questionName].value;
-      const feedbackElement = document.getElementById('feedback-q' + i);
-      
-      if (selectedOption === correctAnswersLeccion2[questionName]) {
-        score++;
-        feedbackElement.textContent = explanationsLeccion2[questionName].correct;
-        feedbackElement.className = 'question-feedback correct';
-      } else if (selectedOption) {
-        feedbackElement.textContent = explanationsLeccion2[questionName].incorrect;
-        feedbackElement.className = 'question-feedback incorrect';
-      } else {
-        feedbackElement.textContent = 'Por favor selecciona una respuesta.';
-        feedbackElement.className = 'question-feedback incorrect';
-      }
-    }
-    
-    // Actualizar puntuación
-    scoreElement2.textContent = score;
-    
-    // Mostrar mensaje final
-    if (score === 5) {
-      setTimeout(() => {
-        alert('¡Excelente! Dominas la estructura básica de HTML.');
-      }, 500);
-    }
-  });
-  
-  resetButton2.addEventListener('click', function() {
-    const form = document.getElementById('quiz-form-leccion2');
-    form.reset();
-    
-    // Limpiar feedback
-    for (let i = 1; i <= 5; i++) {
-      const feedbackElement = document.getElementById('feedback-q' + i);
-      feedbackElement.textContent = '';
-      feedbackElement.className = 'question-feedback';
-    }
-    
-    // Reiniciar puntuación
-    scoreElement2.textContent = '0';
-  });
-});
+    document.addEventListener('DOMContentLoaded', function () {
+      // Respuestas correctas
+      const correctAnswersLeccion2 = {
+        q1: 'b', // DOCTYPE html
+        q2: 'b', // body
+        q3: 'b', // especificar idioma
+        q4: 'b', // meta viewport
+        q5: 'b'  // title
+      };
+
+      // Explicaciones de las respuestas
+      const explanationsLeccion2 = {
+        q1: {
+          correct: "¡Correcto! &lt;!DOCTYPE html&gt; es la declaración correcta para HTML5.",
+          incorrect: "Incorrecto. La declaración correcta para HTML5 es &lt;!DOCTYPE html&gt;."
+        },
+        q2: {
+          correct: "¡Correcto! Todo el contenido visible debe ir dentro de &lt;body&gt;.",
+          incorrect: "Incorrecto. El contenido visible debe ir en &lt;body&gt;, no en &lt;head&gt;."
+        },
+        q3: {
+          correct: "¡Correcto! El atributo lang especifica el idioma del contenido para accesibilidad y SEO.",
+          incorrect: "Incorrecto. El atributo lang especifica el idioma del contenido, no el de programación."
+        },
+        q4: {
+          correct: "¡Correcto! &lt;meta name='viewport'&gt; es esencial para el diseño responsive.",
+          incorrect: "Incorrecto. Aunque charset es importante, viewport es el esencial para responsive design."
+        },
+        q5: {
+          correct: "¡Correcto! &lt;title&gt; define el texto que aparece en la pestaña del navegador.",
+          incorrect: "Incorrecto. &lt;h1&gt; es para el contenido de la página, &lt;title&gt; es para la pestaña."
+        }
+      };
+
+      const checkButton2 = document.getElementById('check-quiz-leccion2');
+      const resetButton2 = document.getElementById('reset-quiz-leccion2');
+      const scoreElement2 = document.getElementById('score-leccion2');
+
+      checkButton2.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion2');
+
+        // Verificar cada pregunta
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion2[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion2[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion2[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        // Actualizar puntuación
+        scoreElement2.textContent = score;
+
+        // Mostrar mensaje final
+        if (score === 5) {
+          setTimeout(() => {
+            alert('¡Excelente! Dominas la estructura básica de HTML.');
+          }, 500);
+        }
+      });
+
+      resetButton2.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion2');
+        form.reset();
+
+        // Limpiar feedback
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        // Reiniciar puntuación
+        scoreElement2.textContent = '0';
+      });
+    });
 
   </script>
-<!-- DESPUÉS (CORRECTO) -->
-<!-- Sistema de Progreso - Debe ir DESPUÉS de cargar progressManager.js -->
-<script src="../../assets/js/progressManager.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Obtener ID de la lección actual
-    const currentLesson = window.location.pathname.split('/').pop().replace('.html', '');
-    
-    // Marcar como completada cuando se llega al final
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (typeof progressManager !== 'undefined') {
-                    progressManager.marcarLeccionCompletada(currentLesson);
-                    observer.disconnect();
-                } else {
-                    console.error('progressManager no está definido');
-                }
-            }
-        });
-    }, { threshold: 0.5 });
-
-    // Observar el último elemento de la lección
-    const lastElement = document.querySelector('.lesson-navigation');
-    if (lastElement) {
-        observer.observe(lastElement);
-    }
-});
-</script>
 
 </body>
+
 </html>

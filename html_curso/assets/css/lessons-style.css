@@ -335,6 +335,18 @@ body {
   color: #c5c6d0;
 }
 
+.highlight-box li a {
+  color: #c5c6d0;
+}
+
+.highlight-box li a:hover {
+  color: #c95538;
+}
+
+a h3:hover {
+  color: #c95538;
+}
+
 .highlight-box li::before {
   content: "▸";
   position: absolute;
@@ -730,4 +742,129 @@ code {
 
 .highlight-box:hover {
   border-left-width: 40px;
+}
+
+
+.code-preview {
+  background-color: #16213e;
+  padding: 25px;
+  border-radius: 0 0 10px 10px;
+  margin-top: -5px;
+  border: 2px solid #3d4875;
+  border-top: none;
+}
+
+.preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.preview-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 1px solid #3d4875;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.preview-image:hover {
+  transform: scale(1.02);
+}
+
+.preview-image.zoomed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  z-index: 1000;
+  max-width: 90vw;
+  max-height: 90vh;
+  cursor: zoom-out;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.preview-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 999;
+  display: none;
+}
+
+.preview-caption {
+  color: #c5c6d0;
+  font-size: 0.9rem;
+  text-align: center;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+.preview-toggle {
+  background-color: #2d3561;
+  color: #fff;
+  border: 1px solid #3d4875;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  margin-bottom: 10px;
+  font-family: inherit;
+}
+
+.preview-toggle:hover {
+  background-color: #e34c26;
+  border-color: #e34c26;
+}
+
+.preview-toggle.active {
+  background-color: #e34c26;
+  border-color: #e34c26;
+}
+
+/* Ajuste para que el código y preview se vean unidos */
+.code-container + .code-preview {
+  margin-top: 0;
+}
+
+/* Placeholder para cuando no hay imagen */
+.preview-placeholder {
+  background: #2d3561;
+  padding: 60px 20px;
+  border-radius: 8px;
+  text-align: center;
+  color: #c5c6d0;
+  border: 2px dashed #3d4875;
+  width: 100%;
+}
+
+.preview-placeholder .fas {
+  font-size: 3rem;
+  margin-bottom: 15px;
+  display: block;
+  color: #f06529;
+}
+
+.preview-placeholder small {
+  color: #8a8ca0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .preview-image {
+    max-width: 95%;
+  }
+  
+  .preview-image.zoomed {
+    transform: translate(-50%, -50%) scale(1.1);
+    max-width: 95vw;
+    max-height: 95vh;
+  }
 }
