@@ -1,3 +1,5 @@
+// progressManager.js - VERSIÓN SIN NOTIFICACIONES
+
 class ProgressManager {
     constructor() {
         this.progress = this.loadProgress();
@@ -54,9 +56,7 @@ class ProgressManager {
             this.actualizarProgresoGeneral();
             this.saveProgress();
             this.actualizarUI();
-            
-            // Feedback visual
-            this.mostrarNotificacion(`¡Lección completada! 🎉`);
+
             return true;
         }
         return false;
@@ -117,31 +117,6 @@ class ProgressManager {
         }
     }
 
-    mostrarNotificacion(mensaje) {
-        const notif = document.createElement('div');
-        notif.className = 'progress-notification';
-        notif.textContent = mensaje;
-        notif.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #27ae60;
-            color: white;
-            padding: 15px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-            z-index: 10000;
-            animation: slideIn 0.3s ease;
-        `;
-        
-        document.body.appendChild(notif);
-        
-        setTimeout(() => {
-            notif.style.animation = 'slideOut 0.3s ease';
-            setTimeout(() => notif.remove(), 300);
-        }, 3000);
-    }
-
     getProgreso() {
         return this.progress;
     }
@@ -156,7 +131,6 @@ class ProgressManager {
             localStorage.removeItem('cursoHTMLProgress');
             this.progress = this.getDefaultProgress();
             this.actualizarUI();
-            this.mostrarNotificacion('Progreso reiniciado');
         }
     }
 }
@@ -168,30 +142,3 @@ const progressManager = new ProgressManager();
 document.addEventListener('DOMContentLoaded', function() {
     progressManager.actualizarUI();
 });
-
-// Agregar animaciones CSS
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes slideIn {
-        from {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-        to {
-            transform: translateX(0);
-            opacity: 1;
-        }
-    }
-    
-    @keyframes slideOut {
-        from {
-            transform: translateX(0);
-            opacity: 1;
-        }
-        to {
-            transform: translateX(400px);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);

@@ -884,12 +884,13 @@
         // Actualizar puntuación
         scoreElement2.textContent = score;
 
-        // Mostrar mensaje final
-        if (score === 5) {
-          setTimeout(() => {
-            alert('¡Excelente! Dominas la estructura básica de HTML.');
-          }, 500);
-        }
+        setTimeout(() => {
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
+          } else {
+            quizNotification.showError(score, totalQuestions);
+          }
+        }, 500);
       });
 
       resetButton2.addEventListener('click', function () {

@@ -5,13 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lección 5: Imágenes y multimedia en HTML</title>
-  
+
   <!-- Estilos base -->
   <link rel="stylesheet" href="../../assets/css/lessons-style.css">
   <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
   <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
   <link rel="stylesheet" href="../../assets/css/extras-style/leccion5-style.css">
-  
+
   <!-- Dependencias -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
@@ -77,8 +77,8 @@
       <h2 class="section-title">El poder visual de la web</h2>
 
       <p class="text-content">
-        Las imágenes y el multimedia transforman sitios web estáticos en experiencias 
-        ricas y atractivas. Son esenciales para comunicar ideas, mostrar productos, 
+        Las imágenes y el multimedia transforman sitios web estáticos en experiencias
+        ricas y atractivas. Son esenciales para comunicar ideas, mostrar productos,
         compartir momentos y crear conexiones emocionales con los usuarios.
       </p>
 
@@ -134,8 +134,8 @@
         <div class="highlight-box success" style="margin-top: 30px;">
           <h4><i class="fas fa-chart-line"></i> Impacto real</h4>
           <p>
-            Las páginas con imágenes relevantes tienen un <strong>47% más de interacción</strong> 
-            y mantienen a los usuarios un <strong>80% más de tiempo</strong>. 
+            Las páginas con imágenes relevantes tienen un <strong>47% más de interacción</strong>
+            y mantienen a los usuarios un <strong>80% más de tiempo</strong>.
             Pero cuidado: imágenes mal optimizadas pueden tener el efecto contrario.
           </p>
         </div>
@@ -147,7 +147,7 @@
       <h2 class="section-title">La etiqueta <code>&lt;img&gt;</code> y sus atributos</h2>
 
       <p class="text-content">
-        La etiqueta <code>&lt;img&gt;</code> es autocerrada y requiere al menos dos atributos 
+        La etiqueta <code>&lt;img&gt;</code> es autocerrada y requiere al menos dos atributos
         para funcionar correctamente. Veamos cada uno en detalle:
       </p>
 
@@ -196,7 +196,7 @@
               <pre><code class="language-html">&lt;img src="foto.jpg" alt="Paisaje" width="800" height="600"&gt;</code></pre>
             </div>
             <p style="margin-top: 15px;">
-              <strong>Beneficio clave:</strong> Previene desplazamientos del layout (Cumulative Layout Shift - CLS), 
+              <strong>Beneficio clave:</strong> Previene desplazamientos del layout (Cumulative Layout Shift - CLS),
               mejorando la experiencia de usuario y el SEO.
             </p>
           </div>
@@ -206,8 +206,8 @@
       <div class="highlight-box warning">
         <h4><i class="fas fa-exclamation-triangle"></i> Atributo <code>alt</code> es obligatorio</h4>
         <p>
-          Según los estándares de accesibilidad WCAG, <strong>todas las imágenes deben tener 
-          texto alternativo</strong>. Solo puedes omitirlo si la imagen es puramente decorativa 
+          Según los estándares de accesibilidad WCAG, <strong>todas las imágenes deben tener
+            texto alternativo</strong>. Solo puedes omitirlo si la imagen es puramente decorativa
           usando <code>alt=""</code> (texto vacío).
         </p>
       </div>
@@ -283,7 +283,7 @@
             <div class="table-cell">Tamaño típico</div>
             <div class="table-cell">Mejor para</div>
           </div>
-          
+
           <div class="table-row" data-format="jpeg">
             <div class="table-cell">
               <i class="fab fa-jpeg"></i> JPEG
@@ -294,7 +294,7 @@
             <div class="table-cell">50-200 KB</div>
             <div class="table-cell">Fotografías</div>
           </div>
-          
+
           <div class="table-row" data-format="png">
             <div class="table-cell">
               <i class="fab fa-png"></i> PNG
@@ -305,7 +305,7 @@
             <div class="table-cell">100-500 KB</div>
             <div class="table-cell">Logos, capturas</div>
           </div>
-          
+
           <div class="table-row" data-format="gif">
             <div class="table-cell">
               <i class="fab fa-gif"></i> GIF
@@ -316,7 +316,7 @@
             <div class="table-cell">1-5 MB</div>
             <div class="table-cell">Animaciones simples</div>
           </div>
-          
+
           <div class="table-row" data-format="svg">
             <div class="table-cell">
               <i class="fas fa-vector-square"></i> SVG
@@ -327,7 +327,7 @@
             <div class="table-cell">5-50 KB</div>
             <div class="table-cell">Iconos, logos</div>
           </div>
-          
+
           <div class="table-row" data-format="webp">
             <div class="table-cell">
               <i class="fab fa-webp"></i> WebP
@@ -358,13 +358,13 @@
       <h2 class="section-title">Imágenes responsivas: <code>&lt;picture&gt;</code> y <code>srcset</code></h2>
 
       <p class="text-content">
-        En un mundo con dispositivos de diferentes tamaños y densidades de píxeles, 
+        En un mundo con dispositivos de diferentes tamaños y densidades de píxeles,
         necesitamos imágenes que se adapten inteligentemente.
       </p>
 
       <div class="srcset-generator">
         <h3 style="color: #f06529; text-align: center;">Generador de <code>srcset</code></h3>
-        
+
         <div class="size-slider">
           <label class="slider-label">Ancho de pantalla: <span id="screenWidth">1920</span>px</label>
           <div class="slider-container">
@@ -414,8 +414,8 @@
         <div class="highlight-box success" style="margin-top: 20px;">
           <h4><i class="fas fa-mobile-alt"></i> ¿Por qué srcset?</h4>
           <p>
-            <strong>Beneficios:</strong> Mejor rendimiento (móviles descargan imágenes pequeñas), 
-            mejor calidad (pantallas 4K reciben imágenes grandes), 
+            <strong>Beneficios:</strong> Mejor rendimiento (móviles descargan imágenes pequeñas),
+            mejor calidad (pantallas 4K reciben imágenes grandes),
             ahorro de ancho de banda (hasta 70-80% en móviles).
           </p>
         </div>
@@ -464,7 +464,7 @@
       <h2 class="section-title">Optimización de imágenes: ¡No subas fotos de 10MB!</h2>
 
       <p class="text-content">
-        Una imagen mal optimizada puede arruinar la experiencia de usuario, especialmente 
+        Una imagen mal optimizada puede arruinar la experiencia de usuario, especialmente
         en conexiones móviles lentas. Sigue estas reglas simples:
       </p>
 
@@ -488,7 +488,7 @@
             </div>
             <div class="comparison-label">TinyPNG</div>
             <div class="comparison-desc">
-              Compresión con pérdida inteligente. 
+              Compresión con pérdida inteligente.
               Reduce PNG y JPEG hasta en 70% sin pérdida visible de calidad.
               <br><br>
               <a href="https://tinypng.com" target="_blank">tinypng.com</a>
@@ -501,7 +501,7 @@
             </div>
             <div class="comparison-label">Squoosh</div>
             <div class="comparison-desc">
-              Editor en el navegador de Google. 
+              Editor en el navegador de Google.
               Compara formatos y ajusta compresión en tiempo real.
               <br><br>
               <a href="https://squoosh.app" target="_blank">squoosh.app</a>
@@ -514,7 +514,7 @@
             </div>
             <div class="comparison-label">ImageOptim</div>
             <div class="comparison-desc">
-              Aplicación desktop para macOS. 
+              Aplicación desktop para macOS.
               Elimina metadatos innecesarios y optimiza todos los formatos.
               <br><br>
               <a href="https://imageoptim.com" target="_blank">imageoptim.com</a>
@@ -526,8 +526,8 @@
       <div class="highlight-box warning">
         <h4><i class="fas fa-tachometer-alt"></i> Impacto en rendimiento</h4>
         <p>
-          Una imagen de 5MB en una conexión 3G (1Mbps) tarda <strong>40 segundos</strong> en cargar. 
-          Optimizada a 200KB, carga en <strong>1.6 segundos</strong>. 
+          Una imagen de 5MB en una conexión 3G (1Mbps) tarda <strong>40 segundos</strong> en cargar.
+          Optimizada a 200KB, carga en <strong>1.6 segundos</strong>.
           ¡Esa es la diferencia entre que un usuario se quede o abandone tu sitio!
         </p>
       </div>
@@ -539,7 +539,7 @@
 
       <div class="gallery-builder">
         <h3 style="color: #f06529; text-align: center;">Constructor de galería interactivo</h3>
-        
+
         <div class="builder-container">
           <div class="image-palette">
             <div class="palette-title">Imágenes disponibles</div>
@@ -581,7 +581,7 @@
         </div>
       </div>
 
-     
+
       </div>
     </section>
 
@@ -668,8 +668,8 @@
       <div class="highlight-box warning">
         <h4><i class="fas fa-volume-mute"></i> ¡Cuidado con autoplay!</h4>
         <p>
-          Los navegadores modernos bloquean el autoplay con sonido por defecto. 
-          Solo permiten reproducción automática si el video/audio está silenciado 
+          Los navegadores modernos bloquean el autoplay con sonido por defecto.
+          Solo permiten reproducción automática si el video/audio está silenciado
           (<code>muted</code>) o si el usuario ha interactuado previamente con la página.
         </p>
       </div>
@@ -790,7 +790,7 @@
 &lt;/video&gt;</code></pre>
             </div>
             <p style="margin-top: 15px;">
-              <strong>Importante:</strong> En iOS, sin este atributo, los videos entran 
+              <strong>Importante:</strong> En iOS, sin este atributo, los videos entran
               automáticamente en pantalla completa al reproducirse.
             </p>
           </div>
@@ -879,7 +879,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       <h2 class="section-title">Elementos semánticos: <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h2>
 
       <p class="text-content">
-        Estas etiquetas agrupan una imagen con su descripción, creando una unidad semántica 
+        Estas etiquetas agrupan una imagen con su descripción, creando una unidad semántica
         que los navegadores y motores de búsqueda pueden entender mejor.
       </p>
 
@@ -942,9 +942,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       <div class="highlight-box info">
         <h4><i class="fas fa-search"></i> Beneficios para SEO</h4>
         <p>
-          Los motores de búsqueda dan más peso a las imágenes que están dentro de 
-          <code>&lt;figure&gt;</code> con <code>&lt;figcaption&gt;</code> descriptivo. 
-          Además, mejora la accesibilidad ya que los lectores de pantalla anuncian 
+          Los motores de búsqueda dan más peso a las imágenes que están dentro de
+          <code>&lt;figure&gt;</code> con <code>&lt;figcaption&gt;</code> descriptivo.
+          Además, mejora la accesibilidad ya que los lectores de pantalla anuncian
           claramente la relación entre imagen y descripción.
         </p>
       </div>
@@ -955,7 +955,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       <h2 class="section-title">Mapas de imagen: <code>&lt;map&gt;</code> y <code>&lt;area&gt;</code></h2>
 
       <p class="text-content">
-        Los mapas de imagen convierten zonas específicas de una imagen en enlaces clickeables. 
+        Los mapas de imagen convierten zonas específicas de una imagen en enlaces clickeables.
         Perfectos para:
       </p>
 
@@ -1006,7 +1006,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
           <div class="structure-item-desc">
             <p>Rectángulo definido por coordenadas: <code>coords="izquierda,arriba,derecha,abajo"</code></p>
             <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
-              <div style="position: absolute; top: 20px; left: 20px; width: 160px; height: 60px; border: 3px solid #e34c26; background: rgba(227, 76, 38, 0.2);"></div>
+              <div
+                style="position: absolute; top: 20px; left: 20px; width: 160px; height: 60px; border: 3px solid #e34c26; background: rgba(227, 76, 38, 0.2);">
+              </div>
               <p style="position: relative; z-index: 2;">coords="20,20,180,80"</p>
             </div>
           </div>
@@ -1017,7 +1019,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
           <div class="structure-item-desc">
             <p>Círculo definido por: <code>coords="centro-x,centro-y,radio"</code></p>
             <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
-              <div style="position: absolute; top: 25px; left: 100px; width: 50px; height: 50px; border: 3px solid #3498db; background: rgba(52, 152, 219, 0.2); border-radius: 50%;"></div>
+              <div
+                style="position: absolute; top: 25px; left: 100px; width: 50px; height: 50px; border: 3px solid #3498db; background: rgba(52, 152, 219, 0.2); border-radius: 50%;">
+              </div>
               <p style="position: relative; z-index: 2;">coords="125,50,25"</p>
             </div>
           </div>
@@ -1028,7 +1032,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
           <div class="structure-item-desc">
             <p>Polígono definido por pares de coordenadas: <code>coords="x1,y1,x2,y2,x3,y3..."</code></p>
             <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
-              <div style="position: absolute; top: 20px; left: 50px; width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 80px solid rgba(46, 204, 113, 0.2);"></div>
+              <div
+                style="position: absolute; top: 20px; left: 50px; width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 80px solid rgba(46, 204, 113, 0.2);">
+              </div>
               <p style="position: relative; z-index: 2;">coords="50,100,150,100,100,20"</p>
             </div>
           </div>
@@ -1038,9 +1044,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       <div class="highlight-box warning">
         <h4><i class="fas fa-mouse-pointer"></i> Consideraciones de usabilidad</h4>
         <p>
-          Los mapas de imagen pueden ser difíciles de usar en dispositivos táctiles. 
-          Asegúrate de que las áreas clickeables sean lo suficientemente grandes 
-          (mínimo 44x44 píxeles según las pautas de accesibilidad) y proporciona 
+          Los mapas de imagen pueden ser difíciles de usar en dispositivos táctiles.
+          Asegúrate de que las áreas clickeables sean lo suficientemente grandes
+          (mínimo 44x44 píxeles según las pautas de accesibilidad) y proporciona
           enlaces alternativos para móviles si es necesario.
         </p>
       </div>
@@ -1051,7 +1057,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       <div class="project-preview">
         <h3>Practica: Galería Fotográfica HTML</h3>
         <p style="margin-top: 15px; font-size: 1.1rem;">
-          Es hora de aplicar todo lo aprendido creando una galería fotográfica completa 
+          Es hora de aplicar todo lo aprendido creando una galería fotográfica completa
           usando <strong>únicamente HTML</strong>
         </p>
 
@@ -1068,7 +1074,8 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
             <div class="step-number">4</div>
             <div class="step-content">
               <h4>Galería de miniaturas</h4>
-              <p>Crea una sección con al menos 6 imágenes usando los atributos <code>width</code>, <code>height</code> y <code>alt</code>.</p>
+              <p>Crea una sección con al menos 6 imágenes usando los atributos <code>width</code>, <code>height</code> y
+                <code>alt</code>.</p>
             </div>
           </div>
 
@@ -1098,36 +1105,36 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
 
         <div class="summary-content">
           <p>
-            Las <strong>imágenes</strong> (<code>&lt;img src="..." alt="..."&gt;</code>) son esenciales 
-            para el engagement web. Los atributos <code>alt</code>, <code>width</code> y <code>height</code> 
+            Las <strong>imágenes</strong> (<code>&lt;img src="..." alt="..."&gt;</code>) son esenciales
+            para el engagement web. Los atributos <code>alt</code>, <code>width</code> y <code>height</code>
             son obligatorios para accesibilidad y rendimiento.
           </p>
 
           <p style="margin-top: 15px;">
-            <strong>Formatos clave:</strong> JPEG para fotos, PNG para transparencias, SVG para vectores, 
+            <strong>Formatos clave:</strong> JPEG para fotos, PNG para transparencias, SVG para vectores,
             y WebP como formato moderno universal. GIF solo para animaciones simples.
           </p>
 
           <p style="margin-top: 15px;">
-            Las <strong>imágenes responsivas</strong> con <code>srcset</code> y <code>&lt;picture&gt;</code> 
-            aseguran que cada dispositivo reciba la imagen optimizada para su pantalla, mejorando 
+            Las <strong>imágenes responsivas</strong> con <code>srcset</code> y <code>&lt;picture&gt;</code>
+            aseguran que cada dispositivo reciba la imagen optimizada para su pantalla, mejorando
             drásticamente el rendimiento.
           </p>
 
           <p style="margin-top: 15px;">
-            HTML5 introduce elementos nativos para <strong>multimedia</strong>: 
-            <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con controles integrados. 
+            HTML5 introduce elementos nativos para <strong>multimedia</strong>:
+            <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con controles integrados.
             El atributo <code>&lt;track&gt;</code> añade subtítulos y mejora la accesibilidad.
           </p>
 
           <p style="margin-top: 15px;">
-            Los elementos semánticos <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code> 
-            agrupan imágenes con sus descripciones, mientras que <code>&lt;map&gt;</code> y 
+            Los elementos semánticos <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code>
+            agrupan imágenes con sus descripciones, mientras que <code>&lt;map&gt;</code> y
             <code>&lt;area&gt;</code> crean imágenes con zonas clickeables.
           </p>
 
           <p style="margin-top: 15px;">
-            La <strong>optimización</strong> es crucial: redimensionar, comprimir, elegir formatos 
+            La <strong>optimización</strong> es crucial: redimensionar, comprimir, elegir formatos
             correctos e implementar lazy loading pueden reducir los tiempos de carga en un 80%.
           </p>
         </div>
@@ -1305,7 +1312,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       const scenarioButtons = document.querySelectorAll('.scenario-btn');
       const recommendedFormat = document.querySelector('.recommended-format');
       const chartBars = document.querySelectorAll('.chart-bar');
-      
+
       const scenarios = {
         photograph: {
           format: 'JPEG',
@@ -1343,20 +1350,20 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
           scenarioButtons.forEach(btn => btn.classList.remove('active'));
           // Agregar active al clickeado
           this.classList.add('active');
-          
+
           const scenarioType = this.getAttribute('data-scenario');
           const scenario = scenarios[scenarioType];
-          
+
           if (scenario) {
             // Actualizar recomendación
             recommendedFormat.querySelector('.format-icon').className = `format-icon ${scenario.icon}`;
             recommendedFormat.querySelector('.format-name').textContent = scenario.format;
             recommendedFormat.querySelector('.format-desc').textContent = scenario.desc;
             recommendedFormat.style.background = `linear-gradient(135deg, ${scenario.color}, ${lightenColor(scenario.color, 20)})`;
-            
+
             // Actualizar gráfico
             updateChart(scenario.values);
-            
+
             // Efecto visual
             recommendedFormat.classList.remove('animate-in');
             void recommendedFormat.offsetWidth; // Trigger reflow
@@ -1390,11 +1397,11 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       widthSlider.addEventListener('input', function () {
         const width = this.value;
         screenWidth.textContent = width;
-        
+
         // Determinar breakpoint más cercano
         let closestBreakpoint = 1920;
         let minDiff = Infinity;
-        
+
         breakpointCards.forEach(card => {
           const cardWidth = parseInt(card.getAttribute('data-width'));
           const diff = Math.abs(cardWidth - width);
@@ -1403,9 +1410,9 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
             closestBreakpoint = cardWidth;
           }
         });
-        
+
         recommendedSize.textContent = `Imagen recomendada: ${closestBreakpoint}px`;
-        
+
         // Actualizar código
         srcsetCode.textContent = `<img src="imagen-${closestBreakpoint}.jpg"
      srcset="imagen-3840.jpg 3840w,
@@ -1415,7 +1422,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
              imagen-375.jpg 375w"
      sizes="100vw"
      alt="Imagen responsiva">`;
-        
+
         // Resaltar breakpoint correspondiente
         breakpointCards.forEach(card => {
           card.style.borderColor = card.getAttribute('data-width') == closestBreakpoint ? '#e34c26' : 'transparent';
@@ -1446,7 +1453,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
       galleryPreview.addEventListener('drop', function (e) {
         e.preventDefault();
         this.style.borderColor = '#3d4875';
-        
+
         const imageType = e.dataTransfer.getData('text/plain');
         addImageToGallery(imageType);
       });
@@ -1485,7 +1492,7 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
         removeBtn.addEventListener('click', function () {
           imageDiv.remove();
           updateGalleryCode();
-          
+
           // Si no hay imágenes, mostrar placeholder
           if (galleryPreview.children.length === 0) {
             galleryPreview.innerHTML = `
@@ -1509,18 +1516,18 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
         }
 
         let code = '<div class="gallery">\n';
-        
+
         images.forEach((img, index) => {
           const icon = img.querySelector('i.fas').className.match(/fa-([a-z]+)/)[1];
           const name = img.querySelector('span').textContent;
           const alt = `${name} ${icon}`;
-          
+
           code += `  <img src="imagen${index + 1}.jpg" 
        alt="${alt}" 
        width="300" 
        height="200">\n`;
         });
-        
+
         code += '</div>';
         galleryCode.textContent = code;
       }
@@ -1622,11 +1629,13 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
 
         scoreElement5.textContent = score;
 
-        if (score === 5) {
-          setTimeout(() => {
-            alert('¡Excelente! Dominas las imágenes y multimedia en HTML.');
-          }, 500);
-        }
+        setTimeout(() => {
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
+          } else {
+            quizNotification.showError(score, totalQuestions);
+          }
+        }, 500);
       });
 
       resetButton5.addEventListener('click', function () {
@@ -1644,4 +1653,5 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
     });
   </script>
 </body>
+
 </html>
