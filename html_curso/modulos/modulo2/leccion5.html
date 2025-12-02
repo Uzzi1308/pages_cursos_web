@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 5: Imágenes y multimedia en HTML</title>
+  
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion5-style.css">
+  
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion3.html">Lección 3</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="leccion4.html">Lección 4</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 5: Imágenes y multimedia</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 2</span>
+        Lección 5: Imágenes y multimedia en HTML
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 5 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Imágenes y multimedia en HTML</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Insertar imágenes con atributos esenciales</li>
+          <li>Comprender formatos de imagen y cuándo usar cada uno</li>
+          <li>Implementar audio y video nativos de HTML5</li>
+          <li>Crear galerías de imágenes responsivas</li>
+          <li>Optimizar multimedia para rendimiento web</li>
+          <li>Garantizar accesibilidad en elementos multimedia</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">El poder visual de la web</h2>
+
+      <p class="text-content">
+        Las imágenes y el multimedia transforman sitios web estáticos en experiencias 
+        ricas y atractivas. Son esenciales para comunicar ideas, mostrar productos, 
+        compartir momentos y crear conexiones emocionales con los usuarios.
+      </p>
+
+      <div class="image-comparator">
+        <div class="comparator-container">
+          <div class="comparator-item">
+            <div class="comparator-label">
+              <i class="fas fa-times-circle"></i>
+              Sin imágenes
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <i class="fas fa-file-alt" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                <p>Texto plano<br>Sin impacto visual</p>
+              </div>
+            </div>
+            <div class="comparator-stats">
+              <div class="stat-item">
+                <div class="stat-value">2s</div>
+                <div class="stat-label">Tiempo en página</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">10%</div>
+                <div class="stat-label">Retención</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparator-item">
+            <div class="comparator-label">
+              <i class="fas fa-check-circle"></i>
+              Con imágenes
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <i class="fas fa-images" style="font-size: 3rem; margin-bottom: 10px;"></i>
+                <p>Contenido visual<br>Alto impacto</p>
+              </div>
+            </div>
+            <div class="comparator-stats">
+              <div class="stat-item">
+                <div class="stat-value">45s</div>
+                <div class="stat-label">Tiempo en página</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-value">85%</div>
+                <div class="stat-label">Retención</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 30px;">
+          <h4><i class="fas fa-chart-line"></i> Impacto real</h4>
+          <p>
+            Las páginas con imágenes relevantes tienen un <strong>47% más de interacción</strong> 
+            y mantienen a los usuarios un <strong>80% más de tiempo</strong>. 
+            Pero cuidado: imágenes mal optimizadas pueden tener el efecto contrario.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: La etiqueta <img> -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">La etiqueta <code>&lt;img&gt;</code> y sus atributos</h2>
+
+      <p class="text-content">
+        La etiqueta <code>&lt;img&gt;</code> es autocerrada y requiere al menos dos atributos 
+        para funcionar correctamente. Veamos cada uno en detalle:
+      </p>
+
+      <div class="structure-visual">
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>src</code> - La fuente de la imagen</h4>
+          <div class="structure-item-desc">
+            <p>Indica la ruta (URL) donde se encuentra la imagen. Puede ser absoluta o relativa.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;!-- Ruta relativa --&gt;
+&lt;img src="imagenes/foto.jpg"&gt;
+
+&lt;!-- Ruta absoluta --&gt;
+&lt;img src="https://ejemplo.com/imagen.jpg"&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              <strong>Consejo:</strong> Usa rutas relativas para imágenes dentro de tu propio sitio.
+            </p>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>alt</code> - Texto alternativo</h4>
+          <div class="structure-item-desc">
+            <p>Describe la imagen para:</p>
+            <ul>
+              <li>Personas con discapacidad visual (lectores de pantalla)</li>
+              <li>Cuando la imagen no carga</li>
+              <li>Motores de búsqueda (SEO)</li>
+            </ul>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;!-- Ejemplo bueno --&gt;
+&lt;img src="perro.jpg" alt="Perro golden retriever jugando con pelota"&gt;
+
+&lt;!-- Ejemplo malo --&gt;
+&lt;img src="perro.jpg" alt="foto123.jpg"&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>width</code> y <code>height</code> - Dimensiones</h4>
+          <div class="structure-item-desc">
+            <p>Especifican el ancho y alto de la imagen en píxeles.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;img src="foto.jpg" alt="Paisaje" width="800" height="600"&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              <strong>Beneficio clave:</strong> Previene desplazamientos del layout (Cumulative Layout Shift - CLS), 
+              mejorando la experiencia de usuario y el SEO.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> Atributo <code>alt</code> es obligatorio</h4>
+        <p>
+          Según los estándares de accesibilidad WCAG, <strong>todas las imágenes deben tener 
+          texto alternativo</strong>. Solo puedes omitirlo si la imagen es puramente decorativa 
+          usando <code>alt=""</code> (texto vacío).
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Formatos de imagen interactivo -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Formatos de imagen: ¿Cuál elegir?</h2>
+
+      <div class="format-selector">
+        <div class="scenario-picker">
+          <h3>¿Qué tipo de imagen necesitas?</h3>
+          <div class="scenario-buttons">
+            <button class="scenario-btn active" data-scenario="photograph">
+              <i class="fas fa-camera"></i>
+              <span>Fotografía</span>
+            </button>
+            <button class="scenario-btn" data-scenario="logo">
+              <i class="fas fa-signature"></i>
+              <span>Logo</span>
+            </button>
+            <button class="scenario-btn" data-scenario="icon">
+              <i class="fas fa-icons"></i>
+              <span>Icono/Ilustración</span>
+            </button>
+            <button class="scenario-btn" data-scenario="animation">
+              <i class="fas fa-film"></i>
+              <span>Animación simple</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="recommendation-display">
+          <div class="recommended-format">
+            <div class="format-badge">RECOMENDADO</div>
+            <div class="format-icon">
+              <i class="fab fa-jpeg"></i>
+            </div>
+            <div class="format-name">JPEG</div>
+            <div class="format-desc">Ideal para fotografías con muchos colores y gradientes</div>
+          </div>
+
+          <div class="comparison-chart">
+            <div class="chart-item" data-format="jpeg">
+              <div class="chart-bar" style="height: 90%; background: #27ae60;"></div>
+              <div class="chart-label">JPEG</div>
+              <div class="chart-value">90%</div>
+            </div>
+            <div class="chart-item" data-format="webp">
+              <div class="chart-bar" style="height: 95%; background: #3498db;"></div>
+              <div class="chart-label">WebP</div>
+              <div class="chart-value">95%</div>
+            </div>
+            <div class="chart-item" data-format="png">
+              <div class="chart-bar" style="height: 70%; background: #f39c12;"></div>
+              <div class="chart-label">PNG</div>
+              <div class="chart-value">70%</div>
+            </div>
+            <div class="chart-item" data-format="svg">
+              <div class="chart-bar" style="height: 100%; background: #9b59b6;"></div>
+              <div class="chart-label">SVG</div>
+              <div class="chart-value">100%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="formats-detail-table">
+          <div class="table-row header">
+            <div class="table-cell">Formato</div>
+            <div class="table-cell">Extensión</div>
+            <div class="table-cell">Transparencia</div>
+            <div class="table-cell">Animación</div>
+            <div class="table-cell">Tamaño típico</div>
+            <div class="table-cell">Mejor para</div>
+          </div>
+          
+          <div class="table-row" data-format="jpeg">
+            <div class="table-cell">
+              <i class="fab fa-jpeg"></i> JPEG
+            </div>
+            <div class="table-cell">.jpg, .jpeg</div>
+            <div class="table-cell"><i class="fas fa-times" style="color: #e74c3c;"></i></div>
+            <div class="table-cell"><i class="fas fa-times" style="color: #e74c3c;"></i></div>
+            <div class="table-cell">50-200 KB</div>
+            <div class="table-cell">Fotografías</div>
+          </div>
+          
+          <div class="table-row" data-format="png">
+            <div class="table-cell">
+              <i class="fab fa-png"></i> PNG
+            </div>
+            <div class="table-cell">.png</div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell"><i class="fas fa-times" style="color: #e74c3c;"></i></div>
+            <div class="table-cell">100-500 KB</div>
+            <div class="table-cell">Logos, capturas</div>
+          </div>
+          
+          <div class="table-row" data-format="gif">
+            <div class="table-cell">
+              <i class="fab fa-gif"></i> GIF
+            </div>
+            <div class="table-cell">.gif</div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell">1-5 MB</div>
+            <div class="table-cell">Animaciones simples</div>
+          </div>
+          
+          <div class="table-row" data-format="svg">
+            <div class="table-cell">
+              <i class="fas fa-vector-square"></i> SVG
+            </div>
+            <div class="table-cell">.svg</div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell">5-50 KB</div>
+            <div class="table-cell">Iconos, logos</div>
+          </div>
+          
+          <div class="table-row" data-format="webp">
+            <div class="table-cell">
+              <i class="fab fa-webp"></i> WebP
+            </div>
+            <div class="table-cell">.webp</div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell"><i class="fas fa-check" style="color: #27ae60;"></i></div>
+            <div class="table-cell">20-150 KB</div>
+            <div class="table-cell">Todo (moderno)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-lightbulb"></i> Regla general</h4>
+        <ul>
+          <li><strong>Fotografías:</strong> JPEG o WebP</li>
+          <li><strong>Logos con transparencia:</strong> PNG o SVG</li>
+          <li><strong>Iconos e ilustraciones:</strong> SVG (si es vectorial) o PNG</li>
+          <li><strong>Animaciones simples:</strong> GIF (aunque considera video para animaciones complejas)</li>
+          <li><strong>Para todo lo demás:</strong> WebP (si soportas navegadores modernos)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Imágenes responsivas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Imágenes responsivas: <code>&lt;picture&gt;</code> y <code>srcset</code></h2>
+
+      <p class="text-content">
+        En un mundo con dispositivos de diferentes tamaños y densidades de píxeles, 
+        necesitamos imágenes que se adapten inteligentemente.
+      </p>
+
+      <div class="srcset-generator">
+        <h3 style="color: #f06529; text-align: center;">Generador de <code>srcset</code></h3>
+        
+        <div class="size-slider">
+          <label class="slider-label">Ancho de pantalla: <span id="screenWidth">1920</span>px</label>
+          <div class="slider-container">
+            <input type="range" id="widthSlider" min="320" max="3840" value="1920" class="form-range">
+          </div>
+          <div class="slider-value" id="recommendedSize">Imagen recomendada: 1920px</div>
+        </div>
+
+        <div class="breakpoints-grid">
+          <div class="breakpoint-card" data-width="3840">
+            <div class="breakpoint-size">3840px</div>
+            <div class="breakpoint-desc">4K / Retina</div>
+          </div>
+          <div class="breakpoint-card" data-width="1920">
+            <div class="breakpoint-size">1920px</div>
+            <div class="breakpoint-desc">Desktop HD</div>
+          </div>
+          <div class="breakpoint-card" data-width="1024">
+            <div class="breakpoint-size">1024px</div>
+            <div class="breakpoint-desc">Tablet</div>
+          </div>
+          <div class="breakpoint-card" data-width="768">
+            <div class="breakpoint-size">768px</div>
+            <div class="breakpoint-desc">Tablet pequeña</div>
+          </div>
+          <div class="breakpoint-card" data-width="375">
+            <div class="breakpoint-size">375px</div>
+            <div class="breakpoint-desc">Móvil</div>
+          </div>
+        </div>
+
+        <div class="code-container" style="margin-top: 30px;">
+          <div class="code-header">
+            <span>Código generado</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html" id="srcsetCode">&lt;img src="imagen-1920.jpg"
+     srcset="imagen-3840.jpg 3840w,
+             imagen-1920.jpg 1920w,
+             imagen-1024.jpg 1024w,
+             imagen-768.jpg 768w,
+             imagen-375.jpg 375w"
+     sizes="100vw"
+     alt="Imagen responsiva"&gt;</code></pre>
+        </div>
+
+        <div class="highlight-box success" style="margin-top: 20px;">
+          <h4><i class="fas fa-mobile-alt"></i> ¿Por qué srcset?</h4>
+          <p>
+            <strong>Beneficios:</strong> Mejor rendimiento (móviles descargan imágenes pequeñas), 
+            mejor calidad (pantallas 4K reciben imágenes grandes), 
+            ahorro de ancho de banda (hasta 70-80% en móviles).
+          </p>
+        </div>
+      </div>
+
+      <h3 class="section-subtitle">Elemento <code>&lt;picture&gt;</code> para art direction</h3>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de &lt;picture&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;picture&gt;
+  &lt;!-- Para pantallas anchas --&gt;
+  &lt;source media="(min-width: 1200px)" 
+          srcset="paisaje-ancho.jpg"&gt;
+  
+  &lt;!-- Para tablets --&gt;
+  &lt;source media="(min-width: 768px)" 
+          srcset="paisaje-cuadrado.jpg"&gt;
+  
+  &lt;!-- Para móviles (y fallback) --&gt;
+  &lt;img src="paisaje-vertical.jpg" 
+       alt="Paisaje adaptado al dispositivo"&gt;
+&lt;/picture&gt;</code></pre>
+      </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver ejemplo visual
+          </button>
+          <div class="preview-content" style="display: none;">
+            <div class="preview-placeholder">
+              <i class="fas fa-columns"></i>
+              <p>Art direction con &lt;picture&gt;</p>
+              <small>Misma escena, diferente recorte según dispositivo</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Optimización de imágenes -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Optimización de imágenes: ¡No subas fotos de 10MB!</h2>
+
+      <p class="text-content">
+        Una imagen mal optimizada puede arruinar la experiencia de usuario, especialmente 
+        en conexiones móviles lentas. Sigue estas reglas simples:
+      </p>
+
+      <div class="key-points">
+        <h4>Reglas de oro para optimización</h4>
+        <ul>
+          <li><strong>Redimensiona antes de subir:</strong> No uses CSS para escalar imágenes grandes</li>
+          <li><strong>Elige el formato correcto:</strong> JPEG para fotos, PNG para gráficos</li>
+          <li><strong>Comprime inteligentemente:</strong> Usa herramientas como TinyPNG o Squoosh</li>
+          <li><strong>Usa lazy loading:</strong> <code>loading="lazy"</code> para imágenes fuera de pantalla</li>
+          <li><strong>Implementa srcset:</strong> Diferentes tamaños para diferentes dispositivos</li>
+        </ul>
+      </div>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Herramientas gratuitas de optimización</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-compress-alt"></i>
+            </div>
+            <div class="comparison-label">TinyPNG</div>
+            <div class="comparison-desc">
+              Compresión con pérdida inteligente. 
+              Reduce PNG y JPEG hasta en 70% sin pérdida visible de calidad.
+              <br><br>
+              <a href="https://tinypng.com" target="_blank">tinypng.com</a>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-paint-brush"></i>
+            </div>
+            <div class="comparison-label">Squoosh</div>
+            <div class="comparison-desc">
+              Editor en el navegador de Google. 
+              Compara formatos y ajusta compresión en tiempo real.
+              <br><br>
+              <a href="https://squoosh.app" target="_blank">squoosh.app</a>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-image"></i>
+            </div>
+            <div class="comparison-label">ImageOptim</div>
+            <div class="comparison-desc">
+              Aplicación desktop para macOS. 
+              Elimina metadatos innecesarios y optimiza todos los formatos.
+              <br><br>
+              <a href="https://imageoptim.com" target="_blank">imageoptim.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-tachometer-alt"></i> Impacto en rendimiento</h4>
+        <p>
+          Una imagen de 5MB en una conexión 3G (1Mbps) tarda <strong>40 segundos</strong> en cargar. 
+          Optimizada a 200KB, carga en <strong>1.6 segundos</strong>. 
+          ¡Esa es la diferencia entre que un usuario se quede o abandone tu sitio!
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Galerías de imágenes -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Creando galerías de imágenes</h2>
+
+      <div class="gallery-builder">
+        <h3 style="color: #f06529; text-align: center;">Constructor de galería interactivo</h3>
+        
+        <div class="builder-container">
+          <div class="image-palette">
+            <div class="palette-title">Imágenes disponibles</div>
+            <div class="palette-images">
+              <div class="palette-image" draggable="true" data-type="landscape">
+                <i class="fas fa-mountain"></i>
+                <span>Paisaje montañoso</span>
+              </div>
+              <div class="palette-image" draggable="true" data-type="portrait">
+                <i class="fas fa-user"></i>
+                <span>Retrato</span>
+              </div>
+              <div class="palette-image" draggable="true" data-type="city">
+                <i class="fas fa-city"></i>
+                <span>Arquitectura urbana</span>
+              </div>
+              <div class="palette-image" draggable="true" data-type="nature">
+                <i class="fas fa-leaf"></i>
+                <span>Naturaleza</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="gallery-preview">
+            <div class="preview-title">Tu galería</div>
+            <div class="preview-area" id="galleryPreview">
+              <!-- Las imágenes se agregarán aquí -->
+              <div class="image-placeholder" style="width: 100%; height: 100%;">
+                <i class="fas fa-arrow-left" style="font-size: 2rem;"></i>
+                <p>Arrastra imágenes aquí para construir tu galería</p>
+              </div>
+            </div>
+
+            <div class="code-output" id="galleryCode">
+              <!-- El código se generará aquí -->
+              &lt;!-- Tu código de galería aparecerá aquí --&gt;
+            </div>
+          </div>
+        </div>
+      </div>
+
+     
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Audio HTML5 -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Audio en HTML5: <code>&lt;audio&gt;</code></h2>
+
+      <div class="media-player">
+        <div class="player-header">
+          <div class="player-title">
+            <i class="fas fa-music"></i>
+            Reproductor de audio HTML5
+          </div>
+          <div class="player-controls">
+            <button class="control-btn" id="playAudio">
+              <i class="fas fa-play"></i> Play
+            </button>
+            <button class="control-btn" id="pauseAudio">
+              <i class="fas fa-pause"></i> Pause
+            </button>
+            <button class="control-btn" id="stopAudio">
+              <i class="fas fa-stop"></i> Stop
+            </button>
+          </div>
+        </div>
+
+        <div class="media-container">
+          <div class="media-placeholder">
+            <i class="fas fa-volume-up"></i>
+            <div>
+              <p>Audio HTML5 en acción</p>
+              <small>Reproduciendo: Ambiente natural.mp3</small>
+            </div>
+          </div>
+
+          <div class="stats-display">
+            <div class="stat-card">
+              <div class="stat-card-value">MP3</div>
+              <div class="stat-card-label">Formato principal</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">OGG</div>
+              <div class="stat-card-label">Formato alternativo</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">2:30</div>
+              <div class="stat-card-label">Duración</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">128kbps</div>
+              <div class="stat-card-label">Calidad</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Sintaxis completa de &lt;audio&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio.ogg" type="audio/ogg"&gt;
+  &lt;source src="audio.wav" type="audio/wav"&gt;
+  
+  &lt;!-- Texto de fallback --&gt;
+  Tu navegador no soporta audio HTML5. 
+  &lt;a href="audio.mp3"&gt;Descarga el audio&lt;/a&gt;.
+&lt;/audio&gt;</code></pre>
+      </div>
+
+      <div class="key-points">
+        <h4>Atributos importantes del audio</h4>
+        <ul>
+          <li><code>controls</code> - Muestra controles de reproducción</li>
+          <li><code>autoplay</code> - Reproduce automáticamente (¡usar con cuidado!)</li>
+          <li><code>loop</code> - Repite el audio indefinidamente</li>
+          <li><code>muted</code> - Comienza silenciado</li>
+          <li><code>preload</code> - "auto", "metadata", o "none" (carga anticipada)</li>
+        </ul>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-volume-mute"></i> ¡Cuidado con autoplay!</h4>
+        <p>
+          Los navegadores modernos bloquean el autoplay con sonido por defecto. 
+          Solo permiten reproducción automática si el video/audio está silenciado 
+          (<code>muted</code>) o si el usuario ha interactuado previamente con la página.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Video HTML5 -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Video en HTML5: <code>&lt;video&gt;</code></h2>
+
+      <div class="media-player">
+        <div class="player-header">
+          <div class="player-title">
+            <i class="fas fa-video"></i>
+            Reproductor de video HTML5
+          </div>
+          <div class="player-controls">
+            <button class="control-btn" id="playVideo">
+              <i class="fas fa-play"></i> Play
+            </button>
+            <button class="control-btn" id="pauseVideo">
+              <i class="fas fa-pause"></i> Pause
+            </button>
+            <button class="control-btn" id="fullscreen">
+              <i class="fas fa-expand"></i> Pantalla completa
+            </button>
+          </div>
+        </div>
+
+        <div class="media-container">
+          <div class="media-placeholder">
+            <i class="fas fa-film"></i>
+            <div>
+              <p>Video HTML5 en acción</p>
+              <small>Reproduciendo: Tutorial HTML5.mp4</small>
+            </div>
+          </div>
+
+          <div class="stats-display">
+            <div class="stat-card">
+              <div class="stat-card-value">MP4</div>
+              <div class="stat-card-label">Formato universal</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">WebM</div>
+              <div class="stat-card-label">Formato moderno</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">1080p</div>
+              <div class="stat-card-label">Resolución</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-value">5mb/min</div>
+              <div class="stat-card-label">Tamaño aprox.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Video con todos los atributos</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;video width="640" height="360" 
+       controls 
+       poster="imagen-portada.jpg"
+       preload="metadata"&gt;
+  
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  &lt;source src="video.webm" type="video/webm"&gt;
+  
+  &lt;!-- Subtítulos --&gt;
+  &lt;track src="subtitulos.vtt" 
+         kind="subtitles" 
+         srclang="es" 
+         label="Español"&gt;
+  
+  &lt;!-- Fallback --&gt;
+  Tu navegador no soporta video HTML5.
+  &lt;a href="video.mp4"&gt;Descarga el video&lt;/a&gt;.
+&lt;/video&gt;</code></pre>
+      </div>
+
+      <h3 class="section-subtitle">Atributos especiales del video</h3>
+
+      <div class="structure-visual">
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>poster</code></h4>
+          <div class="structure-item-desc">
+            <p>La imagen que se muestra antes de que el video comience a reproducirse.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;video poster="portada.jpg"&gt;
+  &lt;!-- ... --&gt;
+&lt;/video&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>preload</code></h4>
+          <div class="structure-item-desc">
+            <p>Controla cuánto video se carga anticipadamente:</p>
+            <ul>
+              <li><code>none</code>: No carga nada hasta que el usuario hace play</li>
+              <li><code>metadata</code>: Solo carga metadatos (duración, dimensiones)</li>
+              <li><code>auto</code>: Carga todo el video (¡cuidado con el ancho de banda!)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>playsinline</code></h4>
+          <div class="structure-item-desc">
+            <p>Especial para móviles. Evita que el video entre en modo pantalla completa automáticamente.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;video playsinline&gt;
+  &lt;!-- ... --&gt;
+&lt;/video&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              <strong>Importante:</strong> En iOS, sin este atributo, los videos entran 
+              automáticamente en pantalla completa al reproducirse.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Subtítulos y accesibilidad -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Subtítulos y accesibilidad multimedia</h2>
+
+      <p class="text-content">
+        Los subtítulos no son solo para personas con discapacidad auditiva. Son útiles para:
+      </p>
+
+      <div class="key-points">
+        <ul>
+          <li>Ver videos en lugares silenciosos (oficinas, bibliotecas)</li>
+          <li>Personas que están aprendiendo el idioma</li>
+          <li>Contenido con audio difícil de entender (acentos, tecnicismos)</li>
+          <li>Mejorar el SEO (los motores de búsqueda pueden indexar el texto)</li>
+        </ul>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Implementando subtítulos con &lt;track&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  
+  &lt;!-- Subtítulos en español --&gt;
+  &lt;track src="subtitulos-es.vtt" 
+         kind="subtitles" 
+         srclang="es" 
+         label="Español" 
+         default&gt;
+  
+  &lt;!-- Subtítulos en inglés --&gt;
+  &lt;track src="subtitulos-en.vtt" 
+         kind="subtitles" 
+         srclang="en" 
+         label="English"&gt;
+  
+  &lt;!-- Descripción para ciegos --&gt;
+  &lt;track src="descripcion.vtt" 
+         kind="description" 
+         srclang="es" 
+         label="Descripción audio"&gt;
+&lt;/video&gt;</code></pre>
+      </div>
+
+      <h3 class="section-subtitle">Formato WebVTT (archivo .vtt)</h3>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de archivo subtitulos-es.vtt</span>
+          <span class="code-language">VTT</span>
+        </div>
+        <pre><code class="language-plaintext">WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Hola, bienvenidos a este tutorial sobre HTML
+
+00:00:05.000 --> 00:00:08.000
+Hoy aprenderemos sobre imágenes y multimedia
+
+00:00:09.000 --> 00:00:12.000
+Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-universal-access"></i> Beneficios de la accesibilidad</h4>
+        <ul>
+          <li><strong>Amplía tu audiencia:</strong> 466 millones de personas tienen pérdida auditiva</li>
+          <li><strong>Mejora la comprensión:</strong> Hasta 80% mejor retención de información</li>
+          <li><strong>Mejor SEO:</strong> Los buscadores indexan el texto de los subtítulos</li>
+          <li><strong>Cumplimiento legal:</strong> Requerido en muchos países para contenido público</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Figure y figcaption -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Elementos semánticos: <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h2>
+
+      <p class="text-content">
+        Estas etiquetas agrupan una imagen con su descripción, creando una unidad semántica 
+        que los navegadores y motores de búsqueda pueden entender mejor.
+      </p>
+
+      <div class="comparison-container">
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="comparison-label">Sin figure</div>
+            <div class="comparison-desc">
+              <pre style="background: #000; padding: 15px; border-radius: 8px; color: #f0f0f0; text-align: left;"><code>&lt;img src="grafico.jpg" alt="Gráfico de ventas"&gt;
+&lt;p&gt;Gráfico de ventas trimestrales&lt;/p&gt;</code></pre>
+              <p style="margin-top: 10px;">Relación implícita, no semántica</p>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="comparison-label">Con figure</div>
+            <div class="comparison-desc">
+              <pre style="background: #000; padding: 15px; border-radius: 8px; color: #f0f0f0; text-align: left;"><code>&lt;figure&gt;
+  &lt;img src="grafico.jpg" alt="Gráfico de ventas"&gt;
+  &lt;figcaption&gt;Gráfico de ventas trimestrales&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+              <p style="margin-top: 10px;">Relación explícita y semántica</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Uso correcto de figure y figcaption</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Para una imagen con descripción --&gt;
+&lt;figure&gt;
+  &lt;img src="foto.jpg" alt="Atardecer en la playa"&gt;
+  &lt;figcaption&gt;
+    Atardecer en la playa de Santa María - Foto por Juan Pérez
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Para un diagrama o gráfico --&gt;
+&lt;figure&gt;
+  &lt;img src="diagrama.svg" alt="Diagrama de flujo del proceso"&gt;
+  &lt;figcaption&gt;Figura 1: Diagrama de flujo del proceso de desarrollo&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Para código --&gt;
+&lt;figure&gt;
+  &lt;pre&gt;&lt;code&gt;console.log("Hola mundo");&lt;/code&gt;&lt;/pre&gt;
+  &lt;figcaption&gt;Ejemplo básico de JavaScript&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-search"></i> Beneficios para SEO</h4>
+        <p>
+          Los motores de búsqueda dan más peso a las imágenes que están dentro de 
+          <code>&lt;figure&gt;</code> con <code>&lt;figcaption&gt;</code> descriptivo. 
+          Además, mejora la accesibilidad ya que los lectores de pantalla anuncian 
+          claramente la relación entre imagen y descripción.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Mapas de imagen -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Mapas de imagen: <code>&lt;map&gt;</code> y <code>&lt;area&gt;</code></h2>
+
+      <p class="text-content">
+        Los mapas de imagen convierten zonas específicas de una imagen en enlaces clickeables. 
+        Perfectos para:
+      </p>
+
+      <div class="key-points">
+        <ul>
+          <li>Mapas geográficos interactivos</li>
+          <li>Infografías con enlaces a más información</li>
+          <li>Diagramas de equipos con enlaces a perfiles</li>
+          <li>Menús visuales en restaurantes</li>
+        </ul>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de mapa de imagen</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;img src="mapa-mundo.jpg" 
+     alt="Mapa del mundo con regiones clickeables" 
+     usemap="#mapaMundo"&gt;
+
+&lt;map name="mapaMundo"&gt;
+  &lt;!-- América del Norte --&gt;
+  &lt;area shape="rect" 
+        coords="100,50,300,200" 
+        href="america-norte.html" 
+        alt="América del Norte"&gt;
+  
+  &lt;!-- Europa --&gt;
+  &lt;area shape="circle" 
+        coords="400,150,50" 
+        href="europa.html" 
+        alt="Europa"&gt;
+  
+  &lt;!-- Asia --&gt;
+  &lt;area shape="poly" 
+        coords="500,100,600,150,550,250,450,200" 
+        href="asia.html" 
+        alt="Asia"&gt;
+&lt;/map&gt;</code></pre>
+      </div>
+
+      <h3 class="section-subtitle">Tipos de formas</h3>
+
+      <div class="structure-visual">
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>shape="rect"</code></h4>
+          <div class="structure-item-desc">
+            <p>Rectángulo definido por coordenadas: <code>coords="izquierda,arriba,derecha,abajo"</code></p>
+            <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
+              <div style="position: absolute; top: 20px; left: 20px; width: 160px; height: 60px; border: 3px solid #e34c26; background: rgba(227, 76, 38, 0.2);"></div>
+              <p style="position: relative; z-index: 2;">coords="20,20,180,80"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>shape="circle"</code></h4>
+          <div class="structure-item-desc">
+            <p>Círculo definido por: <code>coords="centro-x,centro-y,radio"</code></p>
+            <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
+              <div style="position: absolute; top: 25px; left: 100px; width: 50px; height: 50px; border: 3px solid #3498db; background: rgba(52, 152, 219, 0.2); border-radius: 50%;"></div>
+              <p style="position: relative; z-index: 2;">coords="125,50,25"</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title"><code>shape="poly"</code></h4>
+          <div class="structure-item-desc">
+            <p>Polígono definido por pares de coordenadas: <code>coords="x1,y1,x2,y2,x3,y3..."</code></p>
+            <div class="image-placeholder" style="height: 100px; margin-top: 10px; position: relative;">
+              <div style="position: absolute; top: 20px; left: 50px; width: 0; height: 0; border-left: 50px solid transparent; border-right: 50px solid transparent; border-bottom: 80px solid rgba(46, 204, 113, 0.2);"></div>
+              <p style="position: relative; z-index: 2;">coords="50,100,150,100,100,20"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-mouse-pointer"></i> Consideraciones de usabilidad</h4>
+        <p>
+          Los mapas de imagen pueden ser difíciles de usar en dispositivos táctiles. 
+          Asegúrate de que las áreas clickeables sean lo suficientemente grandes 
+          (mínimo 44x44 píxeles según las pautas de accesibilidad) y proporciona 
+          enlaces alternativos para móviles si es necesario.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 12: Proyecto - Galería HTML -->
+    <section class="section" data-aos="fade-up">
+      <div class="project-preview">
+        <h3>Practica: Galería Fotográfica HTML</h3>
+        <p style="margin-top: 15px; font-size: 1.1rem;">
+          Es hora de aplicar todo lo aprendido creando una galería fotográfica completa 
+          usando <strong>únicamente HTML</strong>
+        </p>
+
+        <div class="project-steps">
+          <div class="step-item">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Estructura básica del documento</h4>
+              <p>Crea un archivo <code>galeria.html</code> con la estructura HTML5 básica.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Galería de miniaturas</h4>
+              <p>Crea una sección con al menos 6 imágenes usando los atributos <code>width</code>, <code>height</code> y <code>alt</code>.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Video de presentación</h4>
+              <p>Inserta un video HTML5 con controles, poster.</p>
+            </div>
+          </div>
+
+          <div class="step-item">
+            <div class="step-number">6</div>
+            <div class="step-content">
+              <h4>Audio ambiental</h4>
+              <p>Añade un reproductor de audio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 13: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            Las <strong>imágenes</strong> (<code>&lt;img src="..." alt="..."&gt;</code>) son esenciales 
+            para el engagement web. Los atributos <code>alt</code>, <code>width</code> y <code>height</code> 
+            son obligatorios para accesibilidad y rendimiento.
+          </p>
+
+          <p style="margin-top: 15px;">
+            <strong>Formatos clave:</strong> JPEG para fotos, PNG para transparencias, SVG para vectores, 
+            y WebP como formato moderno universal. GIF solo para animaciones simples.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Las <strong>imágenes responsivas</strong> con <code>srcset</code> y <code>&lt;picture&gt;</code> 
+            aseguran que cada dispositivo reciba la imagen optimizada para su pantalla, mejorando 
+            drásticamente el rendimiento.
+          </p>
+
+          <p style="margin-top: 15px;">
+            HTML5 introduce elementos nativos para <strong>multimedia</strong>: 
+            <code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code> con controles integrados. 
+            El atributo <code>&lt;track&gt;</code> añade subtítulos y mejora la accesibilidad.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los elementos semánticos <code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code> 
+            agrupan imágenes con sus descripciones, mientras que <code>&lt;map&gt;</code> y 
+            <code>&lt;area&gt;</code> crean imágenes con zonas clickeables.
+          </p>
+
+          <p style="margin-top: 15px;">
+            La <strong>optimización</strong> es crucial: redimensionar, comprimir, elegir formatos 
+            correctos e implementar lazy loading pueden reducir los tiempos de carga en un 80%.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Imágenes y multimedia</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas el multimedia en HTML?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion5">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion5">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuál es el atributo MÁS importante de la etiqueta &lt;img&gt; después de src?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">title</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">alt</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">style</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Qué formato es mejor para una fotografía con muchos colores y gradientes?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">PNG</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">JPEG</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">GIF</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Para qué sirve el atributo srcset en las imágenes?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">Para especificar diferentes tamaños para diferentes dispositivos</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">Para cambiar la imagen al pasar el mouse</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">Para aplicar filtros CSS a la imagen</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Qué elemento HTML5 usarías para insertar un video con controles?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">&lt;video controls&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">&lt;movie src="..."&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">&lt;embed type="video"&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Qué etiquetas se usan para agrupar una imagen con su descripción semánticamente?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">&lt;figure&gt; y &lt;figcaption&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">&lt;div class="imagen"&gt; y &lt;p&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">&lt;img&gt; y &lt;description&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion5" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion5" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="leccion4.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Listas y enlaces
+      </a>
+      <a href="leccion6.html" class="btn-nav">
+        Siguiente: Tablas <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Selector de formatos interactivo
+    document.addEventListener('DOMContentLoaded', function () {
+      // Selector de escenarios
+      const scenarioButtons = document.querySelectorAll('.scenario-btn');
+      const recommendedFormat = document.querySelector('.recommended-format');
+      const chartBars = document.querySelectorAll('.chart-bar');
+      
+      const scenarios = {
+        photograph: {
+          format: 'JPEG',
+          icon: 'fab fa-jpeg',
+          desc: 'Ideal para fotografías con muchos colores y gradientes',
+          color: '#27ae60',
+          values: { jpeg: 90, webp: 95, png: 70, svg: 100 }
+        },
+        logo: {
+          format: 'SVG',
+          icon: 'fas fa-vector-square',
+          desc: 'Perfecto para logos e iconos vectoriales',
+          color: '#9b59b6',
+          values: { jpeg: 30, webp: 85, png: 80, svg: 100 }
+        },
+        icon: {
+          format: 'PNG',
+          icon: 'fab fa-png',
+          desc: 'Óptimo para iconos e ilustraciones con transparencia',
+          color: '#f39c12',
+          values: { jpeg: 40, webp: 90, png: 100, svg: 95 }
+        },
+        animation: {
+          format: 'GIF',
+          icon: 'fab fa-gif',
+          desc: 'Para animaciones simples (considera video para complejas)',
+          color: '#e74c3c',
+          values: { jpeg: 10, webp: 85, png: 20, svg: 30, gif: 100 }
+        }
+      };
+
+      scenarioButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Remover active de todos
+          scenarioButtons.forEach(btn => btn.classList.remove('active'));
+          // Agregar active al clickeado
+          this.classList.add('active');
+          
+          const scenarioType = this.getAttribute('data-scenario');
+          const scenario = scenarios[scenarioType];
+          
+          if (scenario) {
+            // Actualizar recomendación
+            recommendedFormat.querySelector('.format-icon').className = `format-icon ${scenario.icon}`;
+            recommendedFormat.querySelector('.format-name').textContent = scenario.format;
+            recommendedFormat.querySelector('.format-desc').textContent = scenario.desc;
+            recommendedFormat.style.background = `linear-gradient(135deg, ${scenario.color}, ${lightenColor(scenario.color, 20)})`;
+            
+            // Actualizar gráfico
+            updateChart(scenario.values);
+            
+            // Efecto visual
+            recommendedFormat.classList.remove('animate-in');
+            void recommendedFormat.offsetWidth; // Trigger reflow
+            recommendedFormat.classList.add('animate-in');
+          }
+        });
+      });
+
+      function updateChart(values) {
+        chartBars.forEach(bar => {
+          const format = bar.parentElement.getAttribute('data-format');
+          if (values[format]) {
+            bar.style.height = `${values[format]}%`;
+            bar.style.transition = 'height 0.5s ease';
+          }
+        });
+      }
+
+      function lightenColor(color, percent) {
+        // Simulación simple de aclarado de color
+        return color;
+      }
+
+      // Simulador de srcset
+      const widthSlider = document.getElementById('widthSlider');
+      const screenWidth = document.getElementById('screenWidth');
+      const recommendedSize = document.getElementById('recommendedSize');
+      const breakpointCards = document.querySelectorAll('.breakpoint-card');
+      const srcsetCode = document.getElementById('srcsetCode');
+
+      widthSlider.addEventListener('input', function () {
+        const width = this.value;
+        screenWidth.textContent = width;
+        
+        // Determinar breakpoint más cercano
+        let closestBreakpoint = 1920;
+        let minDiff = Infinity;
+        
+        breakpointCards.forEach(card => {
+          const cardWidth = parseInt(card.getAttribute('data-width'));
+          const diff = Math.abs(cardWidth - width);
+          if (diff < minDiff) {
+            minDiff = diff;
+            closestBreakpoint = cardWidth;
+          }
+        });
+        
+        recommendedSize.textContent = `Imagen recomendada: ${closestBreakpoint}px`;
+        
+        // Actualizar código
+        srcsetCode.textContent = `<img src="imagen-${closestBreakpoint}.jpg"
+     srcset="imagen-3840.jpg 3840w,
+             imagen-1920.jpg 1920w,
+             imagen-1024.jpg 1024w,
+             imagen-768.jpg 768w,
+             imagen-375.jpg 375w"
+     sizes="100vw"
+     alt="Imagen responsiva">`;
+        
+        // Resaltar breakpoint correspondiente
+        breakpointCards.forEach(card => {
+          card.style.borderColor = card.getAttribute('data-width') == closestBreakpoint ? '#e34c26' : 'transparent';
+          card.style.transform = card.getAttribute('data-width') == closestBreakpoint ? 'translateY(-5px)' : 'none';
+        });
+      });
+
+      // Constructor de galería
+      const paletteImages = document.querySelectorAll('.palette-image');
+      const galleryPreview = document.getElementById('galleryPreview');
+      const galleryCode = document.getElementById('galleryCode');
+
+      paletteImages.forEach(image => {
+        image.addEventListener('dragstart', function (e) {
+          e.dataTransfer.setData('text/plain', this.getAttribute('data-type'));
+        });
+      });
+
+      galleryPreview.addEventListener('dragover', function (e) {
+        e.preventDefault();
+        this.style.borderColor = '#e34c26';
+      });
+
+      galleryPreview.addEventListener('dragleave', function () {
+        this.style.borderColor = '#3d4875';
+      });
+
+      galleryPreview.addEventListener('drop', function (e) {
+        e.preventDefault();
+        this.style.borderColor = '#3d4875';
+        
+        const imageType = e.dataTransfer.getData('text/plain');
+        addImageToGallery(imageType);
+      });
+
+      function addImageToGallery(type) {
+        const images = {
+          landscape: { icon: 'fa-mountain', name: 'Paisaje', alt: 'Paisaje montañoso' },
+          portrait: { icon: 'fa-user', name: 'Retrato', alt: 'Retrato profesional' },
+          city: { icon: 'fa-city', name: 'Ciudad', alt: 'Arquitectura urbana' },
+          nature: { icon: 'fa-leaf', name: 'Naturaleza', alt: 'Escena natural' }
+        };
+
+        const image = images[type];
+        if (!image) return;
+
+        // Eliminar placeholder si existe
+        const placeholder = galleryPreview.querySelector('.image-placeholder[style*="width: 100%"]');
+        if (placeholder) {
+          placeholder.remove();
+        }
+
+        // Crear nueva imagen
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'palette-image';
+        imageDiv.style.cursor = 'default';
+        imageDiv.innerHTML = `
+          <i class="fas ${image.icon}"></i>
+          <span>${image.name}</span>
+          <button class="control-btn" style="margin-left: auto; padding: 3px 8px; font-size: 0.8rem;">
+            <i class="fas fa-times"></i>
+          </button>
+        `;
+
+        // Botón para eliminar
+        const removeBtn = imageDiv.querySelector('button');
+        removeBtn.addEventListener('click', function () {
+          imageDiv.remove();
+          updateGalleryCode();
+          
+          // Si no hay imágenes, mostrar placeholder
+          if (galleryPreview.children.length === 0) {
+            galleryPreview.innerHTML = `
+              <div class="image-placeholder" style="width: 100%; height: 100%;">
+                <i class="fas fa-arrow-left" style="font-size: 2rem;"></i>
+                <p>Arrastra imágenes aquí para construir tu galería</p>
+              </div>
+            `;
+          }
+        });
+
+        galleryPreview.appendChild(imageDiv);
+        updateGalleryCode();
+      }
+
+      function updateGalleryCode() {
+        const images = galleryPreview.querySelectorAll('.palette-image');
+        if (images.length === 0) {
+          galleryCode.textContent = '<!-- Tu código de galería aparecerá aquí -->';
+          return;
+        }
+
+        let code = '<div class="gallery">\n';
+        
+        images.forEach((img, index) => {
+          const icon = img.querySelector('i.fas').className.match(/fa-([a-z]+)/)[1];
+          const name = img.querySelector('span').textContent;
+          const alt = `${name} ${icon}`;
+          
+          code += `  <img src="imagen${index + 1}.jpg" 
+       alt="${alt}" 
+       width="300" 
+       height="200">\n`;
+        });
+        
+        code += '</div>';
+        galleryCode.textContent = code;
+      }
+
+      // Controles de media player
+      const playAudio = document.getElementById('playAudio');
+      const pauseAudio = document.getElementById('pauseAudio');
+      const stopAudio = document.getElementById('stopAudio');
+      const playVideo = document.getElementById('playVideo');
+      const pauseVideo = document.getElementById('pauseVideo');
+      const fullscreen = document.getElementById('fullscreen');
+
+      playAudio.addEventListener('click', function () {
+        alert('🎵 Reproduciendo audio... (simulación)');
+      });
+
+      pauseAudio.addEventListener('click', function () {
+        alert('⏸️ Audio pausado (simulación)');
+      });
+
+      playVideo.addEventListener('click', function () {
+        alert('🎬 Reproduciendo video... (simulación)');
+      });
+
+      pauseVideo.addEventListener('click', function () {
+        alert('⏸️ Video pausado (simulación)');
+      });
+
+      fullscreen.addEventListener('click', function () {
+        alert('📺 Modo pantalla completa activado (simulación)');
+      });
+
+      // Tabla de formatos interactiva
+      const tableRows = document.querySelectorAll('.table-row:not(.header)');
+      tableRows.forEach(row => {
+        row.addEventListener('click', function () {
+          const format = this.getAttribute('data-format');
+          alert(`Has seleccionado el formato ${format.toUpperCase()}. Este formato es ideal para el uso mostrado en la tabla.`);
+        });
+      });
+
+      // Quiz para Lección 5
+      const correctAnswersLeccion5 = {
+        q1: 'b', // alt
+        q2: 'b', // JPEG
+        q3: 'a', // srcset para diferentes dispositivos
+        q4: 'a', // <video controls>
+        q5: 'a'  // figure y figcaption
+      };
+
+      const explanationsLeccion5 = {
+        q1: {
+          correct: "¡Correcto! El atributo alt es esencial para accesibilidad y SEO.",
+          incorrect: "Incorrecto. Aunque title y style son útiles, alt es obligatorio para accesibilidad."
+        },
+        q2: {
+          correct: "¡Exacto! JPEG es ideal para fotografías por su compresión eficiente.",
+          incorrect: "Incorrecto. PNG es mejor para gráficos con transparencia, GIF para animaciones simples."
+        },
+        q3: {
+          correct: "¡Perfecto! srcset permite al navegador elegir la imagen adecuada para cada dispositivo.",
+          incorrect: "Incorrecto. srcset es específicamente para imágenes responsivas, no para efectos hover."
+        },
+        q4: {
+          correct: "¡Correcto! &lt;video controls&gt; es el elemento HTML5 estándar para video.",
+          incorrect: "Incorrecto. &lt;movie&gt; y &lt;embed&gt; no son elementos estándar de HTML5 para video."
+        },
+        q5: {
+          correct: "¡Exacto! &lt;figure&gt; y &lt;figcaption&gt; crean una relación semántica entre imagen y descripción.",
+          incorrect: "Incorrecto. Aunque un div y p funcionan visualmente, no tienen significado semántico."
+        }
+      };
+
+      const checkButton5 = document.getElementById('check-quiz-leccion5');
+      const resetButton5 = document.getElementById('reset-quiz-leccion5');
+      const scoreElement5 = document.getElementById('score-leccion5');
+
+      checkButton5.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion5');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion5[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion5[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion5[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement5.textContent = score;
+
+        if (score === 5) {
+          setTimeout(() => {
+            alert('¡Excelente! Dominas las imágenes y multimedia en HTML.');
+          }, 500);
+        }
+      });
+
+      resetButton5.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion5');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement5.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>
