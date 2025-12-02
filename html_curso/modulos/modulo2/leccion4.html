@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 4: Listas y enlaces HTML</title>
+  
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion2.html">Lección 2</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion3.html">Lección 3</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 4: Listas y enlaces</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 2</span>
+        Lección 4: Listas y enlaces HTML
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 4 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Listas y enlaces HTML</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Crear listas ordenadas y no ordenadas</li>
+          <li>Anidar listas para estructurar contenido complejo</li>
+          <li>Enlazar páginas internas y sitios externos</li>
+          <li>Usar rutas absolutas vs relativas correctamente</li>
+          <li>Crear menús de navegación funcionales</li>
+          <li>Implementar enlaces con atributos especiales</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Organizando contenido con listas</h2>
+
+      <p class="text-content">
+        Las listas son fundamentales para organizar información en la web. 
+        Piensa en menús de navegación, índices, pasos de un proceso o 
+        cualquier contenido que tenga elementos relacionados.
+      </p>
+
+      <div class="icon-grid">
+        <div class="icon-item">
+          <i class="fas fa-list-ul"></i>
+          <div class="icon-label">Listas no ordenadas</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-list-ol"></i>
+          <div class="icon-label">Listas ordenadas</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-sitemap"></i>
+          <div class="icon-label">Listas anidadas</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-link"></i>
+          <div class="icon-label">Enlaces</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Listas no ordenadas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Listas no ordenadas <code>&lt;ul&gt;</code></h2>
+
+      <p class="text-content">
+        Se usan cuando el orden de los elementos no importa. Ideal para:
+      </p>
+
+      <div class="list-demo-container">
+        <div class="list-demo-grid">
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="list-type-label">Lista de compras</div>
+            <div class="list-preview">
+              <ul>
+                <li>Leche</li>
+                <li>Pan</li>
+                <li>Huevos</li>
+                <li>Fruta</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="list-type-label">Características</div>
+            <div class="list-preview">
+              <ul>
+                <li>Fácil de leer</li>
+                <li>Sin orden específico</li>
+                <li>Usa viñetas (bullets)</li>
+                <li>Para agrupaciones</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Sintaxis de lista no ordenada</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Primer elemento&lt;/li&gt;
+  &lt;li&gt;Segundo elemento&lt;/li&gt;
+  &lt;li&gt;Tercer elemento&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+
+        <div class="code-hint highlight-box">
+          <p>
+            <strong>Tip:</strong> Cada <code>&lt;li&gt;</code> debe estar dentro de <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code>.
+            Los elementos de lista pueden contener texto, imágenes, enlaces y hasta otras listas.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Listas ordenadas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Listas ordenadas <code>&lt;ol&gt;</code></h2>
+
+      <p class="text-content">
+        Se usan cuando el orden SÍ importa. Perfectas para:
+      </p>
+
+      <div class="custom-counter">
+        <li>Recetas de cocina</li>
+        <li>Instrucciones paso a paso</li>
+        <li>Rankings o clasificaciones</li>
+        <li>Tutoriales secuenciales</li>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo: Pasos para hacer café</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Calentar agua&lt;/li&gt;
+  &lt;li&gt;Poner café en el filtro&lt;/li&gt;
+  &lt;li&gt;Verter agua caliente&lt;/li&gt;
+  &lt;li&gt;Dejar reposar 3 minutos&lt;/li&gt;
+  &lt;li&gt;Servir y disfrutar&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+      </div>
+
+      <div class="code-preview">
+        <div class="preview-container">
+          <button class="preview-toggle">
+            <i class="fas fa-eye"></i> Ver cómo se ve
+          </button>
+          <div class="preview-content" style="display: none;">
+            <div class="preview-placeholder">
+              <i class="fas fa-list-ol"></i>
+              <p>Lista ordenada en navegador</p>
+              <small>1. Calentar agua<br>2. Poner café en el filtro<br>3. Verter agua caliente<br>4. Dejar reposar 3 minutos<br>5. Servir y disfrutar</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Listas anidadas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Listas anidadas: Estructuras complejas</h2>
+
+      <p class="text-content">
+        Puedes poner listas dentro de listas para crear estructuras jerárquicas, 
+        como menús desplegables o esquemas de contenido.
+      </p>
+
+      <div class="nested-list-container">
+        <div class="nested-list">
+          <ul>
+            <li>Módulo 1: Fundamentos
+              <ul>
+                <li>Introducción a HTML</li>
+                <li>Estructura básica</li>
+                <li>Etiquetas de texto</li>
+              </ul>
+            </li>
+            <li>Módulo 2: Elementos esenciales
+              <ul>
+                <li>Listas y enlaces</li>
+                <li>Imágenes</li>
+                <li>Tablas
+                  <ul>
+                    <li>Filas y columnas</li>
+                    <li>Encabezados de tabla</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Estructura de lista anidada</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Módulo 1: Fundamentos
+    &lt;ul&gt;
+      &lt;li&gt;Introducción a HTML&lt;/li&gt;
+      &lt;li&gt;Estructura básica&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Módulo 2: Elementos esenciales
+    &lt;ul&gt;
+      &lt;li&gt;Listas y enlaces&lt;/li&gt;
+      &lt;li&gt;Imágenes&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> ¡Atención a la indentación!</h4>
+        <p>
+          Las listas anidadas requieren una <strong>indentación cuidadosa</strong> para mantener 
+          el código legible. Usa 2 espacios por cada nivel de anidación.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Introducción a enlaces -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">El poder de los enlaces: <code>&lt;a&gt;</code></h2>
+
+      <p class="text-content">
+        Los enlaces (hyperlinks) son lo que hace a la web "web". Conectan páginas, 
+        recursos y sitios, creando la red global de información.
+      </p>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">El elemento más importante de HTML</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-dna"></i>
+            </div>
+            <div class="comparison-label">Hipertexto</div>
+            <div class="comparison-desc">
+              La "H" en HTML significa HyperText. 
+              Los enlaces son la esencia misma de la web.
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-road"></i>
+            </div>
+            <div class="comparison-label">Navegación</div>
+            <div class="comparison-desc">
+              Sin enlaces, las páginas serían islas aisladas. 
+              Los enlaces crean caminos entre contenido.
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-sitemap"></i>
+            </div>
+            <div class="comparison-label">Estructura</div>
+            <div class="comparison-desc">
+              Los menús de navegación son listas de enlaces. 
+              Organizan el acceso a todo tu sitio.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Sintaxis de enlaces -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Sintaxis básica de enlaces</h2>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Estructura del elemento &lt;a&gt;</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;a href="URL"&gt;Texto del enlace&lt;/a&gt;</code></pre>
+      </div>
+
+      <div class="link-tooltip-demo">
+        <p class="text-content">
+          El atributo <code>href</code> (hypertext reference) es obligatorio. 
+          Indica hacia dónde lleva el enlace.
+        </p>
+
+        <div class="link-examples">
+          <div class="link-example">
+            <a href="#ejemplo" onclick="return false">Enlace interno</a>
+            <div class="link-tooltip">href="#seccion"</div>
+          </div>
+          <div class="link-example">
+            <a href="https://ejemplo.com" target="_blank" onclick="return false">Enlace externo</a>
+            <div class="link-tooltip">target="_blank"</div>
+          </div>
+          <div class="link-example">
+            <a href="mailto:correo@ejemplo.com" onclick="return false">Enlace email</a>
+            <div class="link-tooltip">href="mailto:"</div>
+          </div>
+          <div class="link-example">
+            <a href="tel:+1234567890" onclick="return false">Enlace teléfono</a>
+            <div class="link-tooltip">href="tel:"</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-lightbulb"></i> Texto descriptivo</h4>
+        <p>
+          El texto del enlace debe describir claramente hacia dónde lleva. 
+          Evita textos genéricos como "haz clic aquí" o "más información".
+        </p>
+        <p style="margin-top: 10px;">
+          <strong>Mal:</strong> <a href="#" style="color: #e34c26;">Haz clic aquí</a> para ver nuestro catálogo.<br>
+          <strong>Bien:</strong> Explora nuestro <a href="#" style="color: #e34c26;">catálogo de productos</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Rutas absolutas vs relativas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Rutas: ¿Absolutas o relativas?</h2>
+
+      <div class="path-visualizer">
+        <div class="path-selector">
+          <button class="path-btn active" data-path="absolute">Ruta absoluta</button>
+          <button class="path-btn" data-path="relative-root">Ruta relativa (raíz)</button>
+          <button class="path-btn" data-path="relative-current">Ruta relativa (actual)</button>
+          <button class="path-btn" data-path="parent">Subir directorio (../)</button>
+        </div>
+
+        <div class="path-display">
+          <div class="path-example" id="pathExample">https://misitio.com/proyectos/index.html</div>
+          <div class="path-description" id="pathDescription">
+            Accede a un recurso desde cualquier lugar usando la URL completa.
+          </div>
+        </div>
+
+        <div class="directory-structure">
+          <h4>Estructura de ejemplo:</h4>
+          <div class="directory-tree">
+            <div class="directory-item">sitio-web/
+              <div class="directory-item">index.html</div>
+              <div class="directory-item">nosotros/
+                <div class="directory-item">index.html</div>
+                <div class="directory-item">equipo.html</div>
+              </div>
+              <div class="directory-item">proyectos/
+                <div class="directory-item">index.html</div>
+                <div class="directory-item file">web.html</div>
+              </div>
+              <div class="directory-item">assets/
+                <div class="directory-item file">estilos.css</div>
+                <div class="directory-item file">script.js</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-road"></i> ¿Cuándo usar cada tipo?</h4>
+        <ul>
+          <li><strong>Absolutas:</strong> Para enlaces a otros sitios web</li>
+          <li><strong>Relativas (raíz):</strong> Desde la raíz del sitio (comienzan con /)</li>
+          <li><strong>Relativas (actual):</strong> Desde la ubicación actual del archivo</li>
+          <li><strong>../:</strong> Para subir un nivel en la estructura de carpetas</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Atributos especiales de enlaces -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Atributos que potencian tus enlaces</h2>
+
+      <div class="structure-visual">
+        <div class="structure-item">
+          <h4 class="structure-item-title">target="_blank"</h4>
+          <div class="structure-item-desc">
+            <p>Abre el enlace en una nueva pestaña o ventana.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;a href="https://ejemplo.com" target="_blank"&gt;
+  Abrir en nueva pestaña
+&lt;/a&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              <strong>Usa con cuidado:</strong> Abrir muchas pestañas puede molestar a los usuarios.
+              Recomendado solo para enlaces que deben mantener la página actual abierta.
+            </p>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title">title="Descripción"</h4>
+          <div class="structure-item-desc">
+            <p>Proporciona información adicional sobre el enlace.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;a href="documento.pdf" title="Descargar PDF (2MB)"&gt;
+  Descargar guía
+&lt;/a&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              Aparece como tooltip al pasar el mouse. Mejora la accesibilidad
+              y ayuda a los usuarios a entender hacia dónde va el enlace.
+            </p>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title">Enlaces a email y teléfono</h4>
+          <div class="structure-item-desc">
+            <p>Especiales para contacto directo.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;!-- Enlace de correo --&gt;
+&lt;a href="mailto:info@ejemplo.com"&gt;
+  Envíanos un correo
+&lt;/a&gt;
+
+&lt;!-- Enlace de teléfono --&gt;
+&lt;a href="tel:+1234567890"&gt;
+  Llámanos
+&lt;/a&gt;</code></pre>
+            </div>
+            <p style="margin-top: 15px;">
+              En dispositivos móviles, estos enlaces abren la app de correo
+              o marcan el número automáticamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Menús de navegación -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Creando menús de navegación</h2>
+
+      <p class="text-content">
+        Los menús de navegación son esenciales en cualquier sitio web. 
+        Combinan listas no ordenadas con enlaces para crear una estructura 
+        clara y accesible.
+      </p>
+
+      <div class="nav-menu-demo">
+        <div class="nav-menu-preview">
+          <nav class="nav-menu">
+            <div class="nav-item">
+              <a href="#" class="nav-link active" onclick="return false">Inicio</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" onclick="return false">Nosotros</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" onclick="return false">Servicios</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" onclick="return false">Portafolio</a>
+            </div>
+            <div class="nav-item">
+              <a href="#" class="nav-link" onclick="return false">Contacto</a>
+            </div>
+          </nav>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Código del menú de navegación</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="nosotros.html"&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="servicios.html"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="portafolio.html"&gt;Portafolio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-check-circle"></i> Buenas prácticas para menús</h4>
+        <ul>
+          <li>Usa la etiqueta semántica <code>&lt;nav&gt;</code></li>
+          <li>Mantén el menú simple y claro (5-7 elementos máximo)</li>
+          <li>Organiza los enlaces de más importante a menos</li>
+          <li>Usa texto descriptivo para cada enlace</li>
+          <li>Asegúrate de que todos los enlaces funcionen</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Enlaces internos (anclas) -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Navegación dentro de la misma página</h2>
+
+      <p class="text-content">
+        Los enlaces internos (también llamados anclas) permiten saltar a 
+        diferentes secciones de la misma página. Perfectos para:
+      </p>
+
+      <div class="key-points">
+        <ul>
+          <li>Índices de contenido</li>
+          <li>Botones "volver arriba"</li>
+          <li>Navegación entre secciones largas</li>
+          <li>FAQs con preguntas y respuestas</li>
+        </ul>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Ejemplo de enlaces internos</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Enlace que apunta a una sección --&gt;
+&lt;a href="#conclusion"&gt;Ir a la conclusión&lt;/a&gt;
+
+&lt;!-- Sección destino con id --&gt;
+&lt;h2 id="conclusion"&gt;Conclusión&lt;/h2&gt;
+&lt;p&gt;Contenido de la sección...&lt;/p&gt;
+
+&lt;!-- Enlace para volver arriba --&gt;
+&lt;a href="#top"&gt;Volver al inicio&lt;/a&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-anchor"></i> El atributo id es clave</h4>
+        <p>
+          Para que un enlace interno funcione, el elemento destino debe tener 
+          un <code>id</code> único. El enlace usa <code>href="#id-del-elemento"</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Crea tu primer sitio web estructurado</h3>
+
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Es hora de aplicar todo lo aprendido creando un pequeño sitio web 
+          con múltiples páginas y menú de navegación:
+        </p>
+
+        <div class="practice-steps">
+          <ol>
+            <li>
+              Crea una carpeta llamada <strong>mi-sitio-web</strong> con esta estructura:
+              <div class="directory-structure" style="margin: 15px 0;">
+                <div class="directory-tree">
+                  <div class="directory-item">mi-sitio-web/
+                    <div class="directory-item file">index.html</div>
+                    <div class="directory-item">acerca-de/
+                      <div class="directory-item file">index.html</div>
+                    </div>
+                    <div class="directory-item">proyectos/
+                      <div class="directory-item file">index.html</div>
+                    </div>
+                    <div class="directory-item">contacto/
+                      <div class="directory-item file">index.html</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              En <strong>index.html</strong> (página principal):
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Crea un menú de navegación con enlaces a las otras páginas</li>
+                <li>Añade una lista ordenada con tus 3 pasatiempos favoritos</li>
+                <li>Añade una lista no ordenada con tus 5 películas/series favoritas</li>
+                <li>Incluye un enlace a tu sitio web favorito (usando target="_blank")</li>
+              </ul>
+            </li>
+            <li>
+              En <strong>acerca-de/index.html</strong>:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Crea el mismo menú de navegación</li>
+                <li>Escribe un párrafo sobre ti</li>
+                <li>Crea una lista anidada con tus habilidades (ej: "Tecnología > HTML > CSS")</li>
+                <li>Añade un enlace de correo para contacto</li>
+              </ul>
+            </li>
+            <li>
+              En <strong>proyectos/index.html</strong>:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Menú de navegación</li>
+                <li>Lista ordenada de proyectos (paso a paso de uno de ellos)</li>
+                <li>Enlaces internos para saltar entre secciones del proyecto</li>
+              </ul>
+            </li>
+            <li>
+              En <strong>contacto/index.html</strong>:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Menú de navegación</li>
+                <li>Enlace de teléfono (puede ser un número ficticio)</li>
+                <li>Enlace que descargue un archivo PDF (usa href="CV.pdf")</li>
+                <li>Enlace que vuelva a la página principal</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Reto extra:</strong> Crea un enlace en el pie de cada página 
+              que diga "Volver arriba" y funcione como enlace interno.
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Consejo profesional</h4>
+          <p style="color: #fff;">
+            Mantén el menú de navegación idéntico en todas las páginas. 
+            Esto crea consistencia y ayuda a los usuarios a orientarse. 
+            Puedes copiar y pegar el código del menú en cada archivo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 12: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            Las <strong>listas</strong> (<code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code>) 
+            organizan contenido relacionado. Las no ordenadas usan viñetas, las ordenadas usan números. 
+            Pueden anidarse para crear estructuras jerárquicas complejas.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los <strong>enlaces</strong> (<code>&lt;a href="URL"&gt;</code>) conectan la web. 
+            El atributo <code>href</code> puede contener rutas absolutas (https://...), 
+            relativas (carpeta/archivo.html), o internas (#seccion).
+          </p>
+
+          <p style="margin-top: 15px;">
+            Atributos especiales como <code>target="_blank"</code> (abre en nueva pestaña), 
+            <code>title="descripción"</code> (tooltip), y esquemas como <code>mailto:</code> 
+            y <code>tel:</code> potencian la funcionalidad de los enlaces.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los <strong>menús de navegación</strong> combinan listas no ordenadas con enlaces 
+            dentro de la etiqueta semántica <code>&lt;nav&gt;</code>. Son esenciales para 
+            la usabilidad de cualquier sitio web.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Listas y enlaces</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas las listas y enlaces?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion4">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion4">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Qué etiqueta usarías para una lista de pasos donde el orden importa?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">&lt;ul&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">&lt;ol&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">&lt;li&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Qué atributo es OBLIGATORIO en la etiqueta &lt;a&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">target</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">title</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">href</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Cuál es la diferencia entre rutas absolutas y relativas?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">Absolutas: URL completa | Relativas: desde ubicación actual</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">Absolutas: solo para imágenes | Relativas: solo para páginas</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">No hay diferencia práctica</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Qué hace target="_blank" en un enlace?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">Lo abre en una nueva pestaña/ventana</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">Lo descarga automáticamente</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">Lo oculta hasta que el usuario haga clic</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Cómo crearías un enlace interno a una sección con id="conclusion"?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">&lt;a link="#conclusion"&gt;Ir a conclusión&lt;/a&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">&lt;a href="#conclusion"&gt;Ir a conclusión&lt;/a&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">&lt;a id="conclusion"&gt;Ir a conclusión&lt;/a&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion4" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion4" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="../modulo1/leccion3.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Etiquetas de texto
+      </a>
+      <a href="leccion5.html" class="btn-nav">
+        Siguiente: Imágenes y multimedia <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Visualizador de rutas interactivo
+    document.addEventListener('DOMContentLoaded', function () {
+      const pathButtons = document.querySelectorAll('.path-btn');
+      const pathExample = document.getElementById('pathExample');
+      const pathDescription = document.getElementById('pathDescription');
+      
+      const pathExamples = {
+        absolute: {
+          text: 'https://misitio.com/proyectos/index.html',
+          desc: 'URL completa. Funciona desde cualquier lugar, incluso fuera de tu sitio.'
+        },
+        'relative-root': {
+          text: '/proyectos/index.html',
+          desc: 'Ruta relativa desde la raíz del sitio. El / inicial indica empezar desde la carpeta principal.'
+        },
+        'relative-current': {
+          text: 'index.html',
+          desc: 'Ruta relativa desde la ubicación actual. Si estás en /proyectos/, apunta a /proyectos/index.html'
+        },
+        parent: {
+          text: '../assets/estilos.css',
+          desc: 'Sube un directorio (../) y luego entra a assets/estilos.css'
+        }
+      };
+
+      pathButtons.forEach(button => {
+        button.addEventListener('click', function () {
+          // Remover active de todos
+          pathButtons.forEach(btn => btn.classList.remove('active'));
+          // Agregar active al clickeado
+          this.classList.add('active');
+          
+          const pathType = this.getAttribute('data-path');
+          const example = pathExamples[pathType];
+          
+          if (example) {
+            pathExample.textContent = example.text;
+            pathDescription.textContent = example.desc;
+            
+            // Efecto visual
+            pathExample.classList.remove('highlighted');
+            void pathExample.offsetWidth; // Trigger reflow
+            pathExample.classList.add('highlighted');
+          }
+        });
+      });
+
+      // Activar primera opción por defecto
+      if (pathButtons[0]) {
+        pathButtons[0].click();
+      }
+
+      // Menú de navegación interactivo
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          navLinks.forEach(l => l.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      // Quiz para Lección 4
+      const correctAnswersLeccion4 = {
+        q1: 'b', // ol
+        q2: 'c', // href
+        q3: 'a', // absolutas vs relativas
+        q4: 'a', // target="_blank"
+        q5: 'b'  // href="#conclusion"
+      };
+
+      const explanationsLeccion4 = {
+        q1: {
+          correct: "¡Correcto! &lt;ol&gt; se usa para listas ordenadas donde la secuencia importa.",
+          incorrect: "Incorrecto. &lt;ul&gt; es para listas no ordenadas. Para pasos usa &lt;ol&gt;."
+        },
+        q2: {
+          correct: "¡Correcto! href es obligatorio, indica la dirección del enlace.",
+          incorrect: "Incorrecto. target y title son opcionales. href es el único obligatorio."
+        },
+        q3: {
+          correct: "¡Perfecto! Las rutas absolutas usan URL completa, las relativas se basan en la ubicación actual.",
+          incorrect: "Incorrecto. La diferencia es importante: absolutas = URL completa, relativas = desde ubicación actual."
+        },
+        q4: {
+          correct: "¡Exacto! target='_blank' abre el enlace en una nueva pestaña o ventana.",
+          incorrect: "Incorrecto. target='_blank' abre en nueva pestaña, no descarga ni oculta."
+        },
+        q5: {
+          correct: "¡Correcto! Los enlaces internos usan href='#id' para saltar a elementos con ese id.",
+          incorrect: "Incorrecto. Para enlaces internos se usa href='#id', no link='' ni id=''."
+        }
+      };
+
+      const checkButton4 = document.getElementById('check-quiz-leccion4');
+      const resetButton4 = document.getElementById('reset-quiz-leccion4');
+      const scoreElement4 = document.getElementById('score-leccion4');
+
+      checkButton4.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion4');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion4[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion4[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion4[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement4.textContent = score;
+
+        if (score === 5) {
+          setTimeout(() => {
+            alert('¡Excelente! Dominas las listas y enlaces HTML.');
+          }, 500);
+        }
+      });
+
+      resetButton4.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion4');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement4.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>
