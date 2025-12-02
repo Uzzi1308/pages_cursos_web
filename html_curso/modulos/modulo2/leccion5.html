@@ -1532,34 +1532,6 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
         galleryCode.textContent = code;
       }
 
-      // Controles de media player
-      const playAudio = document.getElementById('playAudio');
-      const pauseAudio = document.getElementById('pauseAudio');
-      const stopAudio = document.getElementById('stopAudio');
-      const playVideo = document.getElementById('playVideo');
-      const pauseVideo = document.getElementById('pauseVideo');
-      const fullscreen = document.getElementById('fullscreen');
-
-      playAudio.addEventListener('click', function () {
-        alert('🎵 Reproduciendo audio... (simulación)');
-      });
-
-      pauseAudio.addEventListener('click', function () {
-        alert('⏸️ Audio pausado (simulación)');
-      });
-
-      playVideo.addEventListener('click', function () {
-        alert('🎬 Reproduciendo video... (simulación)');
-      });
-
-      pauseVideo.addEventListener('click', function () {
-        alert('⏸️ Video pausado (simulación)');
-      });
-
-      fullscreen.addEventListener('click', function () {
-        alert('📺 Modo pantalla completa activado (simulación)');
-      });
-
       // Tabla de formatos interactiva
       const tableRows = document.querySelectorAll('.table-row:not(.header)');
       tableRows.forEach(row => {
@@ -1577,6 +1549,8 @@ Las imágenes se insertan con la etiqueta &lt;img&gt;</code></pre>
         q4: 'a', // <video controls>
         q5: 'a'  // figure y figcaption
       };
+      
+      const totalQuestions = Object.keys(correctAnswersLeccion5).length;
 
       const explanationsLeccion5 = {
         q1: {

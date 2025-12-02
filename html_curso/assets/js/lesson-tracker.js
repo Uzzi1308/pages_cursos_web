@@ -1,4 +1,4 @@
-// lesson-tracker.js - VERSIÓN SIN NOTIFICACIONES
+// lesson-tracker.js - CON SISTEMA DE NOTIFICACIONES
 (function() {
     'use strict';
     
@@ -102,39 +102,144 @@ function initCodePreviews() {
 document.addEventListener('DOMContentLoaded', function() {
     initCodePreviews();
 });
-// En el archivo de la lección, añade esto después del código del quiz:
-document.getElementById('check-quiz-leccion2').addEventListener('click', function() {
-    setTimeout(function() {
-        // Crear una notificación simple de prueba
+
+
+// ===== SISTEMA DE NOTIFICACIONES PARA QUIZ =====
+const quizNotification = {
+    currentOverlay: null,
+    
+    showSuccess: function(score, total) {
+        this.createOverlay('success', score, total);
+    },
+    
+    showError: function(score, total) {
+        this.createOverlay('error', score, total);
+    },
+    
+    createOverlay: function(type, score, total) {
+        // Si ya hay un overlay, lo eliminamos primero
+        if (this.currentOverlay) {
+            this.removeOverlay();
+        }
+        
+        // Crear overlay
         const overlay = document.createElement('div');
-        overlay.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+        overlay.className = 'quiz-notification-overlay';
+        overlay.setAttribute('data-notification-type', type);
+        
+        const isSuccess = type === 'success';
+        
+        overlay.innerHTML = `
+            <div class="quiz-notification notification-${type}" onclick="event.stopPropagation()">
+                <div class="notification-characters">
+                    <img src="../../assets/images/honguito.png" class="notification-character" alt="Honguito celebrando">
+                    <div class="notification-heart">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <img src="../../assets/images/uzzi.png" class="notification-character" alt="Uzzi celebrando">
+                </div>
+                
+                <h2 class="notification-title">${isSuccess ? '¡Perfecto!' : '¡Buen intento!'}</h2>
+                <p class="notification-message">
+                    ${isSuccess 
+                        ? 'Has respondido correctamente todas las preguntas. ¡Excelente trabajo!'
+                        : `Has respondido correctamente ${score} de ${total} preguntas. Revisa las respuestas incorrectas y vuelve a intentarlo.`}
+                </p>
+                
+                <div class="notification-score">${score}/${total}</div>
+                
+                ${!isSuccess ? `
+                <div class="notification-tip">
+                    <h4><i class="fas fa-lightbulb"></i> Consejo</h4>
+                    <p>Repasa el contenido de la lección antes de volver a intentar el quiz.</p>
+                </div>
+                ` : ''}
+                
+                <div class="notification-buttons">
+                    <button class="notification-btn notification-btn-${type}" onclick="quizNotification.removeOverlay()">
+                        <i class="fas fa-${isSuccess ? 'check' : 'redo'}"></i>
+                        ${isSuccess ? 'Continuar' : 'Entendido'}
+                    </button>
+                </div>
+            </div>
         `;
         
-        const notification = document.createElement('div');
-        notification.style.cssText = `
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            color: black;
-        `;
-        notification.innerHTML = `
-            <h2>¡PRUEBA FUNCIONA!</h2>
-            <p>El sistema de notificaciones está cargado</p>
-            <button onclick="this.parentElement.parentElement.remove()">Cerrar</button>
-        `;
+        // Agregar evento para cerrar al hacer clic fuera
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                this.removeOverlay();
+            }
+        });
         
-        overlay.appendChild(notification);
+        // Agregar evento para cerrar con Escape
+        document.addEventListener('keydown', this.handleEscapeKey);
+        
+        // Bloquear scroll
+        this.blockScroll();
+        
+        // Guardar referencia
+        this.currentOverlay = overlay;
+        
+        // Agregar al DOM
         document.body.appendChild(overlay);
-    }, 500);
-});
+    },
+    
+    removeOverlay: function() {
+        if (this.currentOverlay) {
+            // Agregar animación de salida
+            this.currentOverlay.classList.add('removing');
+            
+            // Esperar a que termine la animación
+            setTimeout(() => {
+                if (this.currentOverlay && this.currentOverlay.parentNode) {
+                    this.currentOverlay.parentNode.removeChild(this.currentOverlay);
+                }
+                this.currentOverlay = null;
+                
+                // Remover listener de Escape
+                document.removeEventListener('keydown', this.handleEscapeKey);
+                
+                // Restaurar scroll
+                this.restoreScroll();
+            }, 600);
+        }
+    },
+    
+    handleEscapeKey: function(e) {
+        if (e.key === 'Escape' || e.keyCode === 27) {
+            quizNotification.removeOverlay();
+        }
+    },
+    
+    blockScroll: function() {
+        // Guardar posición actual del scroll
+        this.scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Aplicar estilos para bloquear scroll
+        document.body.style.cssText = `
+            position: fixed;
+            top: -${this.scrollPosition}px;
+            left: 0;
+            right: 0;
+            overflow: hidden;
+            height: 100vh;
+        `;
+        
+        document.documentElement.style.cssText = `
+            overflow: hidden;
+            height: 100vh;
+        `;
+    },
+    
+    restoreScroll: function() {
+        // Remover estilos
+        document.body.style.cssText = '';
+        document.documentElement.style.cssText = '';
+        
+        // Restaurar posición del scroll
+        if (this.scrollPosition !== undefined) {
+            window.scrollTo(0, this.scrollPosition);
+            this.scrollPosition = undefined;
+        }
+    }
+};
