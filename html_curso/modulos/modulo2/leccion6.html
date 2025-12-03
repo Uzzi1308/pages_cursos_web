@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 6: Tablas HTML</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion6-style.css">
+
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo2/leccion4.html">Lección 4</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo2/leccion5.html">Lección 5</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 6: Tablas HTML</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 2</span>
+        Lección 6: Tablas HTML
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 6 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Tablas HTML</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Comprender la estructura básica de una tabla HTML</li>
+          <li>Crear tablas con filas, columnas y celdas</li>
+          <li>Implementar encabezados de tabla para accesibilidad</li>
+          <li>Combinar celdas usando rowspan y colspan</li>
+          <li>Usar elementos semánticos como thead, tbody y tfoot</li>
+          <li>Crear tablas complejas y estructuradas</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Organizando datos con tablas</h2>
+
+      <p class="text-content">
+        Las tablas son esenciales para presentar datos estructurados en la web.
+        Permiten organizar información en filas y columnas, facilitando la
+        lectura y comparación de datos numéricos, horarios, precios y más.
+      </p>
+
+      <div class="icon-grid">
+        <div class="icon-item">
+          <i class="fas fa-table"></i>
+          <div class="icon-label">Estructura básica</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-th-large"></i>
+          <div class="icon-label">Filas y columnas</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-expand-alt"></i>
+          <div class="icon-label">Celdas combinadas</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-blind"></i>
+          <div class="icon-label">Accesibilidad</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Estructura básica -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Estructura básica: <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;td&gt;</code></h2>
+
+      <p class="text-content">
+        Una tabla HTML se construye con tres elementos fundamentales:
+      </p>
+
+      <div class="list-demo-container">
+        <div class="list-demo-grid">
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-table"></i>
+            </div>
+            <div class="list-type-label">&lt;table&gt;</div>
+            <div class="list-preview">
+              <ul>
+                <li>Contenedor principal</li>
+                <li>Define la tabla</li>
+                <li>Encierra todos los elementos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-bars"></i>
+            </div>
+            <div class="list-type-label">&lt;tr&gt;</div>
+            <div class="list-preview">
+              <ul>
+                <li>Table Row (fila)</li>
+                <li>Contiene las celdas</li>
+                <li>Una por cada fila</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-square"></i>
+            </div>
+            <div class="list-type-label">&lt;td&gt;</div>
+            <div class="list-preview">
+              <ul>
+                <li>Table Data (celda)</li>
+                <li>Contiene los datos</li>
+                <li>Dentro de &lt;tr&gt;</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Sintaxis básica de tabla</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Celda 1&lt;/td&gt;
+    &lt;td&gt;Celda 2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Celda 3&lt;/td&gt;
+    &lt;td&gt;Celda 4&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+
+        <div class="code-hint highlight-box">
+          <p>
+            <strong>Tip:</strong> El atributo <code>border="1"</code> en la etiqueta <code>&lt;table&gt;</code>
+            muestra los bordes de la tabla durante el desarrollo, pero en producción se usan estilos CSS.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Encabezados de tabla -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Encabezados de tabla: <code>&lt;th&gt;</code></h2>
+
+      <p class="text-content">
+        Los encabezados (<code>&lt;th&gt;</code>) identifican el contenido de las columnas o filas.
+        Son esenciales para la accesibilidad y mejoran la legibilidad.
+      </p>
+
+      <div class="table-demo-container">
+        <div class="table-preview">
+          <table class="basic-table">
+            <tr>
+              <th>Nombre</th>
+              <th>Edad</th>
+              <th>Ciudad</th>
+            </tr>
+            <tr>
+              <td>María</td>
+              <td>25</td>
+              <td>Madrid</td>
+            </tr>
+            <tr>
+              <td>Carlos</td>
+              <td>30</td>
+              <td>Barcelona</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Tabla con encabezados</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nombre&lt;/th&gt;
+    &lt;th&gt;Edad&lt;/th&gt;
+    &lt;th&gt;Ciudad&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;María&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Madrid&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-universal-access"></i> Importancia de los encabezados</h4>
+        <p>
+          Los lectores de pantalla usan los encabezados para navegar las tablas.
+          Siempre usa <code>&lt;th&gt;</code> para encabezados y <code>&lt;td&gt;</code> para datos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Atributos colspan y rowspan -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Combinando celdas: <code>colspan</code> y <code>rowspan</code></h2>
+
+      <p class="text-content">
+        Estos atributos permiten que una celda ocupe múltiples columnas o filas,
+        útil para encabezados agrupados o celdas especiales.
+      </p>
+
+      <div class="table-demo-container">
+        <div class="table-preview">
+          <table class="basic-table">
+            <tr>
+              <th colspan="2">Información Personal</th>
+              <th>Contacto</th>
+            </tr>
+            <tr>
+              <td>Nombre</td>
+              <td>Apellido</td>
+              <td rowspan="2">correo@ejemplo.com</td>
+            </tr>
+            <tr>
+              <td>María</td>
+              <td>García</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Tabla con celdas combinadas</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th colspan="2"&gt;Información Personal&lt;/th&gt;
+    &lt;th&gt;Contacto&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Nombre&lt;/td&gt;
+    &lt;td&gt;Apellido&lt;/td&gt;
+    &lt;td rowspan="2"&gt;correo@ejemplo.com&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;María&lt;/td&gt;
+    &lt;td&gt;García&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> ¡Planifica cuidadosamente!</h4>
+        <p>
+          Al usar <code>rowspan</code> y <code>colspan</code>, asegúrate de que el número total
+          de celdas en cada fila sea consistente. Un error común es crear filas con diferente
+          número de celdas.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Elementos semánticos -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Estructura semántica: <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></h2>
+
+      <p class="text-content">
+        Estos elementos agrupan las filas de una tabla, mejorando la accesibilidad,
+        el estilo y la impresión.
+      </p>
+
+      <div class="structure-visual">
+        <div class="structure-item">
+          <h4 class="structure-item-title">&lt;thead&gt;</h4>
+          <div class="structure-item-desc">
+            <p>Contiene las filas de encabezado (cabecera de la tabla).</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;thead&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Producto&lt;/th&gt;
+    &lt;th&gt;Precio&lt;/th&gt;
+  &lt;/tr&gt;
+&lt;/thead&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title">&lt;tbody&gt;</h4>
+          <div class="structure-item-desc">
+            <p>Contiene el cuerpo principal de datos de la tabla.</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;tbody&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Laptop&lt;/td&gt;
+    &lt;td&gt;$999&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-item">
+          <h4 class="structure-item-title">&lt;tfoot&gt;</h4>
+          <div class="structure-item-desc">
+            <p>Contiene las filas de pie (totales, resúmenes).</p>
+            <div class="code-container" style="margin-top: 15px;">
+              <pre><code class="language-html">&lt;tfoot&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Total&lt;/td&gt;
+    &lt;td&gt;$1998&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tfoot&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Tabla completa con estructura semántica</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Lista de Productos&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Producto&lt;/th&gt;
+      &lt;th&gt;Precio&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Laptop&lt;/td&gt;
+      &lt;td&gt;$999&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Mouse&lt;/td&gt;
+      &lt;td&gt;$25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;$1024&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Atributo caption -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Títulos de tabla: <code>&lt;caption&gt;</code></h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;caption&gt;</code> proporciona un título descriptivo para la tabla.
+        Es importante para la accesibilidad y ayuda a los usuarios a entender el contenido.
+      </p>
+
+      <div class="table-demo-container">
+        <div class="table-preview">
+          <table class="basic-table">
+            <caption>Horario de Clases - Primer Semestre</caption>
+            <tr>
+              <th>Hora</th>
+              <th>Lunes</th>
+              <th>Martes</th>
+            </tr>
+            <tr>
+              <td>8:00-9:00</td>
+              <td>Matemáticas</td>
+              <td>Español</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Tabla con caption</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Horario de Clases - Primer Semestre&lt;/caption&gt;
+  &lt;!-- resto de la tabla --&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-info-circle"></i> Posicionamiento del caption</h4>
+        <p>
+          El <code>&lt;caption&gt;</code> debe ser el primer elemento dentro de <code>&lt;table&gt;</code>.
+          Puede posicionarse arriba o abajo de la tabla usando CSS (<code>caption-side: top|bottom</code>).
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Tablas anidadas y usos -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Tablas anidadas y usos apropiados</h2>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">¿Cuándo usar tablas?</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item correct">
+            <div class="comparison-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="comparison-label">USAR tablas para:</div>
+            <div class="comparison-desc">
+              <ul>
+                <li>Datos tabulares</li>
+                <li>Horarios y calendarios</li>
+                <li>Comparación de productos</li>
+                <li>Resultados deportivos</li>
+                <li>Datos financieros</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-item incorrect">
+            <div class="comparison-icon">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <div class="comparison-label">NO USAR tablas para:</div>
+            <div class="comparison-desc">
+              <ul>
+                <li>Layout de página</li>
+                <li>Posicionar elementos</li>
+                <li>Diseño de formularios</li>
+                <li>Menús de navegación</li>
+                <li>Estructura general del sitio</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-history"></i> Lección histórica</h4>
+        <p>
+          En los primeros días de la web (1990s-2000s), las tablas se usaban para crear layouts completos.
+          <strong>Esto ya no es recomendado</strong> porque crea problemas de accesibilidad, mantenimiento
+          y no es responsive. Hoy usamos CSS Grid y Flexbox para layouts.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Ejemplo completo - Horario -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Ejemplo completo: Horario de clases</h2>
+
+      <p class="text-content">
+        Combinemos todo lo aprendido en un ejemplo práctico: un horario de clases semanal.
+      </p>
+
+      <div class="full-table-container">
+        <div class="table-responsive">
+          <table class="schedule-table">
+            <caption>Horario de Clases - Primer Semestre 2024</caption>
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miércoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>7:00 - 8:00</td>
+                <td>Matemáticas</td>
+                <td>Español</td>
+                <td>Ciencias</td>
+                <td>Historia</td>
+                <td>Educación Física</td>
+              </tr>
+              <tr>
+                <td>8:00 - 9:00</td>
+                <td>Inglés</td>
+                <td>Matemáticas</td>
+                <td>Arte</td>
+                <td>Español</td>
+                <td>Tecnología</td>
+              </tr>
+              <tr>
+                <td>9:00 - 10:00</td>
+                <td colspan="5" class="break-cell">R E C E S O</td>
+              </tr>
+              <tr>
+                <td>10:00 - 11:00</td>
+                <td>Geografía</td>
+                <td>Química</td>
+                <td>Matemáticas</td>
+                <td>Biología</td>
+                <td>Filosofía</td>
+              </tr>
+              <tr>
+                <td>11:00 - 12:00</td>
+                <td>Educación Física</td>
+                <td>Historia</td>
+                <td>Inglés</td>
+                <td>Matemáticas</td>
+                <td>Música</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="6">Total de horas semanales: 25 horas</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+
+        <div class="code-container full-width">
+          <div class="code-header">
+            <span>Código completo del horario</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;table border="1"&gt;
+  &lt;caption&gt;Horario de Clases - Primer Semestre 2024&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Hora&lt;/th&gt;
+      &lt;th&gt;Lunes&lt;/th&gt;
+      &lt;th&gt;Martes&lt;/th&gt;
+      &lt;th&gt;Miércoles&lt;/th&gt;
+      &lt;th&gt;Jueves&lt;/th&gt;
+      &lt;th&gt;Viernes&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7:00 - 8:00&lt;/td&gt;
+      &lt;td&gt;Matemáticas&lt;/td&gt;
+      &lt;td&gt;Español&lt;/td&gt;
+      &lt;td&gt;Ciencias&lt;/td&gt;
+      &lt;td&gt;Historia&lt;/td&gt;
+      &lt;td&gt;Educación Física&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;8:00 - 9:00&lt;/td&gt;
+      &lt;td&gt;Inglés&lt;/td&gt;
+      &lt;td&gt;Matemáticas&lt;/td&gt;
+      &lt;td&gt;Arte&lt;/td&gt;
+      &lt;td&gt;Español&lt;/td&gt;
+      &lt;td&gt;Tecnología&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;9:00 - 10:00&lt;/td&gt;
+      &lt;td colspan="5"&gt;RECESO&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;!-- más filas --&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td colspan="6"&gt;Total de horas semanales: 25 horas&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Buenas prácticas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Buenas prácticas para tablas</h2>
+
+      <div class="best-practices-container">
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h4>Accesibilidad</h4>
+          <ul>
+            <li>Usa <code>&lt;th&gt;</code> para encabezados</li>
+            <li>Agrega <code>&lt;caption&gt;</code> descriptivo</li>
+            <li>Usa <code>scope="col"</code> o <code>scope="row"</code></li>
+            <li>Evita tablas anidadas complejas</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Responsive</h4>
+          <ul>
+            <li>Usa <code>&lt;div class="table-responsive"&gt;</code></li>
+            <li>Considera mostrar datos verticalmente en móviles</li>
+            <li>Evita tablas muy anchas (más de 6-7 columnas)</li>
+            <li>Usa <code>overflow-x: auto</code> para scroll horizontal</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h4>Código limpio</h4>
+          <ul>
+            <li>Usa indentación consistente</li>
+            <li>Agrupa con <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code></li>
+            <li>Comenta secciones complejas</li>
+            <li>Mantén los nombres de clases semánticos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-lightbulb"></i> Regla general</h4>
+        <p>
+          <strong>Si los datos son tabulares, usa una tabla.</strong> Si estás creando layout visual,
+          usa CSS. Las tablas son para datos, no para diseño.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Crea tu horario de clases</h3>
+
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Es hora de aplicar lo aprendido creando tu propio horario de clases usando solo HTML.
+        </p>
+
+        <div class="practice-steps">
+          <ol>
+            <li>
+              Crea un archivo llamado <strong>horario.html</strong> con la estructura básica:
+              <div class="code-container" style="margin: 15px 0;">
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi Horario de Clases&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Mi Horario de Clases&lt;/h1&gt;
+  &lt;!-- Tu tabla irá aquí --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </li>
+            
+            <li>
+              Crea una tabla con las siguientes características:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Usa <code>&lt;table border="1"&gt;</code> para ver los bordes</li>
+                <li>Agrega un <code>&lt;caption&gt;</code> con "Mi Horario Semanal"</li>
+                <li>Encabezados para los días de la semana (Lunes a Viernes)</li>
+                <li>Al menos 5 filas con horarios de 7:00 a 12:00</li>
+                <li>Una fila con <code>colspan="5"</code> para el RECESO</li>
+                <li>Pon tus materias reales o inventadas</li>
+              </ul>
+            </li>
+            
+            <li>
+              Mejora tu tabla (opcional):
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Agrega <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> y <code>&lt;tfoot&gt;</code></li>
+                <li>En el <code>&lt;tfoot&gt;</code>, añade el total de horas semanales</li>
+                <li>Usa <code>rowspan</code> para una clase que dure dos horas seguidas</li>
+                <li>Agrega una columna para el sábado si tienes clases ese día</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Revisa tu trabajo:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Todos los <code>&lt;tr&gt;</code> tienen el mismo número de celdas?</li>
+                <li>¿Los encabezados usan <code>&lt;th&gt;</code> en lugar de <code>&lt;td&gt;</code>?</li>
+                <li>¿La tabla se ve bien al abrirla en el navegador?</li>
+                <li>¿El código está correctamente indentado?</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Consejo profesional</h4>
+          <p style="color: #fff;">
+            Empieza con una tabla simple de 2x2 para asegurarte de que la estructura básica funciona,
+            luego expande a tu horario completo. Usa comentarios HTML (<code>&lt;!-- comentario --&gt;</code>)
+            para organizar las diferentes partes de tu tabla.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            Las <strong>tablas HTML</strong> (<code>&lt;table&gt;</code>) organizan datos en filas (<code>&lt;tr&gt;</code>)
+            y columnas. Las celdas de datos usan <code>&lt;td&gt;</code> y los encabezados usan <code>&lt;th&gt;</code>.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los atributos <strong>colspan</strong> y <strong>rowspan</strong> permiten combinar celdas horizontal
+            o verticalmente. Los elementos semánticos <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>,
+            y <code>&lt;tfoot&gt;</code> mejoran la estructura y accesibilidad.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Siempre usa <code>&lt;caption&gt;</code> para describir la tabla y considera la accesibilidad
+            usando <code>scope</code> en los encabezados. Recuerda: las tablas son para datos tabulares,
+            no para diseño de layouts.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Con estos conocimientos, puedes crear desde simples listas de precios hasta complejos
+            horarios y calendarios, todo mientras mantienes tu código accesible y semánticamente correcto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Tablas HTML</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas las tablas HTML?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion6">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion6">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Qué etiqueta representa una celda normal en una tabla HTML?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">&lt;tr&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">&lt;td&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">&lt;th&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Qué atributo usarías para que una celda ocupe 3 columnas?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">rowspan="3"</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">colspan="3"</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">span="3"</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Qué elemento HTML proporciona un título descriptivo para una tabla?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">&lt;title&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">&lt;caption&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">&lt;description&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Cuál es la principal diferencia entre &lt;th&gt; y &lt;td&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">&lt;th&gt; es para encabezados, &lt;td&gt; para datos</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">&lt;th&gt; es más ancho que &lt;td&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">&lt;th&gt; solo puede contener texto, &lt;td&gt; cualquier elemento</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Qué elemento semántico contiene las filas de pie de una tabla?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">&lt;tfoot&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">&lt;tbody&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">&lt;tbottom&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion6" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion6" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="../modulo2/leccion5.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Imágenes y multimedia
+      </a>
+      <a href="leccion7.html" class="btn-nav">
+        Siguiente: Formularios básicos <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Quiz para Lección 6
+    const correctAnswersLeccion6 = {
+      q1: 'b', // td
+      q2: 'b', // colspan="3"
+      q3: 'b', // caption
+      q4: 'a', // th para encabezados, td para datos
+      q5: 'a'  // tfoot
+    };
+
+    const explanationsLeccion6 = {
+      q1: {
+        correct: "¡Correcto! &lt;td&gt; significa 'table data' y representa una celda normal.",
+        incorrect: "Incorrecto. &lt;tr&gt; es para filas y &lt;th&gt; para encabezados. &lt;td&gt; es para celdas de datos."
+      },
+      q2: {
+        correct: "¡Exacto! colspan='3' hace que una celda ocupe 3 columnas.",
+        incorrect: "Incorrecto. rowspan='3' ocuparía 3 filas. Para columnas usa colspan."
+      },
+      q3: {
+        correct: "¡Perfecto! &lt;caption&gt; proporciona un título descriptivo para la tabla.",
+        incorrect: "Incorrecto. &lt;title&gt; es para toda la página. &lt;caption&gt; es específico para tablas."
+      },
+      q4: {
+        correct: "¡Correcto! &lt;th&gt; es para encabezados de tabla, &lt;td&gt; para datos normales.",
+        incorrect: "Incorrecto. Ambos pueden tener cualquier ancho y contener varios elementos. La diferencia es semántica."
+      },
+      q5: {
+        correct: "¡Exacto! &lt;tfoot&gt; contiene las filas de pie de tabla (totales, resúmenes).",
+        incorrect: "Incorrecto. &lt;tbody&gt; es para el cuerpo principal. &lt;tfoot&gt; es para el pie."
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkButton6 = document.getElementById('check-quiz-leccion6');
+      const resetButton6 = document.getElementById('reset-quiz-leccion6');
+      const scoreElement6 = document.getElementById('score-leccion6');
+
+      checkButton6.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion6');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion6[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion6[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion6[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement6.textContent = score;
+
+        // Mostrar notificación de resultados
+        setTimeout(() => {
+          if (score === 5) {
+            alert(`¡Perfecto! Obtuviste ${score}/5 respuestas correctas.`);
+          } else if (score >= 3) {
+            alert(`¡Bien hecho! Obtuviste ${score}/5 respuestas correctas.`);
+          } else {
+            alert(`Obtuviste ${score}/5. Revisa la lección e intenta de nuevo.`);
+          }
+        }, 500);
+      });
+
+      resetButton6.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion6');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement6.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>

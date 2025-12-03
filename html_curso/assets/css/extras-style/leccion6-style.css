@@ -1,0 +1,356 @@
+/* 
+ * Archivo: leccion6-style.css
+ * Estilos específicos para la Lección 6: Tablas HTML
+ */
+
+/* ===== ESTILOS PARA TABLAS DE DEMOSTRACIÓN ===== */
+.table-demo-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin: 25px 0;
+}
+
+.table-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.basic-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.basic-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.basic-table td {
+  padding: 10px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.02);
+  transition: background-color 0.3s ease;
+}
+
+.basic-table tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.basic-table tr:hover td {
+  background-color: rgba(102, 126, 234, 0.1);
+}
+
+.basic-table caption {
+  caption-side: top;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* ===== TABLA DE HORARIO COMPLETO ===== */
+.full-table-container {
+  margin: 30px 0;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 600px;
+}
+
+.schedule-table th {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 15px 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.schedule-table td {
+  padding: 12px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.schedule-table tr:nth-child(even) td {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.schedule-table tr:hover td {
+  background-color: rgba(245, 87, 108, 0.15);
+  transform: translateY(-1px);
+}
+
+.schedule-table caption {
+  caption-side: top;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 8px 8px 0 0;
+  text-align: center;
+}
+
+.break-cell {
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%) !important;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.schedule-table tfoot td {
+  background: rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+/* ===== ESTRUCTURA VISUAL PARA ELEMENTOS SEMÁNTICOS ===== */
+.structure-visual {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.structure-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 4px solid #667eea;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.structure-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.structure-item:nth-child(2) {
+  border-left-color: #f093fb;
+}
+
+.structure-item:nth-child(3) {
+  border-left-color: #4fd1c5;
+}
+
+.structure-item-title {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.structure-item-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+/* ===== MEJORES PRÁCTICAS ===== */
+.best-practices-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.practice-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.practice-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.practice-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.practice-card:nth-child(2) .practice-icon {
+  color: #f093fb;
+}
+
+.practice-card:nth-child(3) .practice-icon {
+  color: #4fd1c5;
+}
+
+.practice-card h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.practice-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.practice-card li {
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.practice-card li:last-child {
+  border-bottom: none;
+}
+
+.practice-card li:before {
+  content: "✓";
+  color: #4fd1c5;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* ===== COMPARACIÓN USO CORRECTO/INCORRECTO ===== */
+.comparison-container {
+  margin: 30px 0;
+}
+
+.comparison-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.comparison-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  border-top: 5px solid transparent;
+}
+
+.comparison-item.correct {
+  border-top-color: #48bb78;
+}
+
+.comparison-item.incorrect {
+  border-top-color: #f56565;
+}
+
+.comparison-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.comparison-item.correct .comparison-icon {
+  color: #48bb78;
+}
+
+.comparison-item.incorrect .comparison-icon {
+  color: #f56565;
+}
+
+.comparison-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.comparison-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.comparison-desc ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.comparison-desc li {
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.comparison-item.correct .comparison-desc li:before {
+  content: "✓";
+  color: #48bb78;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.comparison-item.incorrect .comparison-desc li:before {
+  content: "✗";
+  color: #f56565;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .structure-visual,
+  .best-practices-container,
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-demo-container {
+    flex-direction: column;
+  }
+  
+  .schedule-table th,
+  .schedule-table td {
+    padding: 10px 5px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-card,
+  .structure-item,
+  .comparison-item {
+    padding: 20px 15px;
+  }
+  
+  .basic-table th,
+  .basic-table td {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
