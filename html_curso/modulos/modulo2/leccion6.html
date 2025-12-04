@@ -663,7 +663,7 @@
     <!-- SECCIÓN 10: Actividad práctica -->
     <section class="section" data-aos="fade-up">
       <div class="practice-section">
-        <h3>Actividad práctica: Crea tu horario de clases</h3>
+        <h3>Actividad práctica: Crea un horario de clases</h3>
 
         <p style="margin-top: 20px; font-size: 1.1rem;">
           Es hora de aplicar lo aprendido creando tu propio horario de clases usando solo HTML.
@@ -706,7 +706,7 @@
                 <li>Agrega <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> y <code>&lt;tfoot&gt;</code></li>
                 <li>En el <code>&lt;tfoot&gt;</code>, añade el total de horas semanales</li>
                 <li>Usa <code>rowspan</code> para una clase que dure dos horas seguidas</li>
-                <li>Agrega una columna para el sábado si tienes clases ese día</li>
+
               </ul>
             </li>
             
@@ -937,6 +937,7 @@
       q4: 'a', // th para encabezados, td para datos
       q5: 'a'  // tfoot
     };
+          const totalQuestions = Object.keys(correctAnswersLeccion6).length;
 
     const explanationsLeccion6 = {
       q1: {
@@ -990,14 +991,11 @@
 
         scoreElement6.textContent = score;
 
-        // Mostrar notificación de resultados
         setTimeout(() => {
-          if (score === 5) {
-            alert(`¡Perfecto! Obtuviste ${score}/5 respuestas correctas.`);
-          } else if (score >= 3) {
-            alert(`¡Bien hecho! Obtuviste ${score}/5 respuestas correctas.`);
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
           } else {
-            alert(`Obtuviste ${score}/5. Revisa la lección e intenta de nuevo.`);
+            quizNotification.showError(score, totalQuestions);
           }
         }, 500);
       });

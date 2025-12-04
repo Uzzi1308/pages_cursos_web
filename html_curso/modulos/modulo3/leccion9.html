@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 9: Header, Nav, Main, Footer - HTML Semántico</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion6-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion7-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion8-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion9-style.css">
+
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  
+  <!-- Estilos adicionales para mejoras -->
+
+</head>
+
+<body>
+  <!-- Enlace de salto para accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+  <div class="breadcrumb-container" aria-label="Ruta de navegación">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo3/leccion8.html">Lección 8</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right" aria-hidden="true"></i></li>
+      <li class="breadcrumb-item active" aria-current="page">Lección 9: Header, Nav, Main, Footer</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav" aria-label="Navegación de la lección">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 3</span>
+        Lección 9: Header, Nav, Main, Footer
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> <span>Volver a Módulos</span>
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header" role="banner">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 9 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Header, Nav, Main, Footer</h1>
+      
+      <p class="lead" data-aos="fade-up" data-aos-delay="300">
+        Los elementos estructurales fundamentales para crear páginas web semánticas y accesibles.
+      </p>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h2>Objetivos de aprendizaje</h2>
+        <ul>
+          <li>Comprender la función específica de cada elemento estructural</li>
+          <li>Aprender a usar correctamente &lt;header&gt; en diferentes contextos</li>
+          <li>Dominar el uso de &lt;nav&gt; para navegación principal y secundaria</li>
+          <li>Entender el papel único de &lt;main&gt; y las reglas para su uso</li>
+          <li>Implementar &lt;footer&gt; para pies de página y pies de sección</li>
+          <li>Crear una estructura completa y semánticamente correcta</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main id="main-content" class="lesson-content" role="main" aria-label="Contenido principal de la lección">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section1-title">
+      <h2 id="section1-title" class="section-title">Los pilares de la estructura web</h2>
+
+      <div class="text-content">
+        <p>
+          En la lección anterior aprendiste sobre HTML semántico. Ahora profundizaremos en los
+          cuatro elementos estructurales más importantes: <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+          <code>&lt;main&gt;</code> y <code>&lt;footer&gt;</code>. Estos son los pilares sobre los que
+          construyes cualquier página web moderna.
+        </p>
+        
+        <div class="alert alert-info" role="alert">
+          <i class="fas fa-info-circle me-2"></i>
+          Estos elementos no solo mejoran la estructura, sino también la accesibilidad y el SEO.
+        </div>
+      </div>
+
+      <div class="icon-grid" role="list" aria-label="Elementos estructurales">
+        <div class="icon-item" role="listitem">
+          <i class="fas fa-heading" aria-hidden="true"></i>
+          <div class="icon-label">Header</div>
+          <p class="icon-desc">Cabecera y contenido introductorio</p>
+        </div>
+        <div class="icon-item" role="listitem">
+          <i class="fas fa-map-signs" aria-hidden="true"></i>
+          <div class="icon-label">Nav</div>
+          <p class="icon-desc">Navegación principal y secundaria</p>
+        </div>
+        <div class="icon-item" role="listitem">
+          <i class="fas fa-star" aria-hidden="true"></i>
+          <div class="icon-label">Main</div>
+          <p class="icon-desc">Contenido principal único</p>
+        </div>
+        <div class="icon-item" role="listitem">
+          <i class="fas fa-shoe-prints" aria-hidden="true"></i>
+          <div class="icon-label">Footer</div>
+          <p class="icon-desc">Pie de página y sección</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: El elemento Header -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section2-title">
+      <h2 id="section2-title" class="section-title">El elemento <code>&lt;header&gt;</code></h2>
+
+      <div class="element-explanation">
+        <div class="element-visual">
+          <div class="visual-header" role="banner">
+            <div class="visual-logo" aria-label="Logo del sitio">MiSitio</div>
+            <div class="visual-nav" role="navigation" aria-label="Navegación principal">
+              <a href="#" onclick="return false" aria-current="page">Inicio</a>
+              <a href="#" onclick="return false">Servicios</a>
+              <a href="#" onclick="return false">Contacto</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="element-details">
+          <h3>¿Qué es un <code>&lt;header&gt;</code>?</h3>
+          <p>
+            Representa un grupo de contenido introductorio o de navegación.
+            Puede contener elementos como logotipos, títulos, menús de navegación,
+            formularios de búsqueda, etc.
+          </p>
+
+          <h4>Usos principales:</h4>
+          <ul>
+            <li><strong>Header de página:</strong> La cabecera principal del sitio</li>
+            <li><strong>Header de sección:</strong> Cabecera dentro de <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code></li>
+            <li><strong>Header de artículo:</strong> Título, autor y fecha de publicación</li>
+          </ul>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span>Ejemplo de header</span>
+              <span class="code-language">HTML</span>
+            </div>
+            <pre><code class="language-html">&lt;header role="banner"&gt;
+  &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+  &lt;p&gt;El mejor lugar para aprender HTML&lt;/p&gt;
+  &lt;nav aria-label="Navegación principal"&gt;
+    &lt;!-- Menú de navegación --&gt;
+  &lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-lightbulb"></i> ¡Puedes tener múltiples headers!</h4>
+        <p>
+          A diferencia de <code>&lt;main&gt;</code>, puedes tener varios elementos <code>&lt;header&gt;</code>
+          en una página: uno principal para toda la página, y otros dentro de artículos o secciones.
+          Cada uno representa la cabecera de su sección contenedora.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: El elemento Nav -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section3-title">
+      <h2 id="section3-title" class="section-title">El elemento <code>&lt;nav&gt;</code></h2>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">Tipos de navegación</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="comparison-label">Navegación Principal</div>
+            <div class="comparison-desc">
+              <p>Enlaces esenciales para navegar el sitio.</p>
+              <ul>
+                <li>Normalmente en el <code>&lt;header&gt;</code></li>
+                <li>Incluye: Inicio, Acerca, Servicios, Contacto</li>
+                <li>Esencial para la usabilidad</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-sitemap" aria-hidden="true"></i>
+            </div>
+            <div class="comparison-label">Navegación Secundaria</div>
+            <div class="comparison-desc">
+              <p>Enlaces complementarios o de pie de página.</p>
+              <ul>
+                <li>Normalmente en el <code>&lt;footer&gt;</code></li>
+                <li>Incluye: Términos, Privacidad, Mapa del sitio</li>
+                <li>No esencial pero útil</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <div class="comparison-icon">
+              <i class="fas fa-road" aria-hidden="true"></i>
+            </div>
+            <div class="comparison-label">Breadcrumbs</div>
+            <div class="comparison-desc">
+              <p>Ruta de navegación jerárquica.</p>
+              <ul>
+                <li>Muestra la ubicación actual</li>
+                <li>Formato: Inicio > Categoría > Subcategoría</li>
+                <li>Mejora la experiencia de usuario</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Ejemplo completo de navegación</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Navegación principal --&gt;
+&lt;nav aria-label="Navegación principal" role="navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="servicios.html"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;
+
+&lt;!-- Breadcrumbs --&gt;
+&lt;nav aria-label="Ruta de navegación"&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="blog.html"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li aria-current="page"&gt;Artículo actual&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/nav&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> ¿Cuándo NO usar <code>&lt;nav&gt;</code>?</h4>
+        <p>
+          No todos los grupos de enlaces merecen un <code>&lt;nav&gt;</code>. Por ejemplo:
+          <br><strong>NO usar nav:</strong> Enlaces sociales en el footer, enlaces patrocinados, enlaces dentro de un artículo.
+          <br><strong>SÍ usar nav:</strong> Menú principal, breadcrumbs, navegación entre páginas de un tutorial.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: El elemento Main -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section4-title">
+      <h2 id="section4-title" class="section-title">El elemento <code>&lt;main&gt;</code></h2>
+
+      <div class="main-explanation">
+        <div class="main-visual">
+          <div class="main-structure">
+            <div class="main-header">
+              <h3><code>&lt;main&gt;</code></h3>
+              <p>Contenido principal único</p>
+            </div>
+            <div class="main-content">
+              <div class="main-article">
+                <h4>Artículo principal</h4>
+                <p>Este es el contenido central de la página...</p>
+              </div>
+              <div class="main-aside">
+                <h4>Contenido relacionado</h4>
+                <p>Información complementaria...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="main-details">
+          <h3>La regla más importante de HTML5</h3>
+          <p class="main-rule">
+            <strong>Solo debe haber UN elemento <code>&lt;main&gt;</code> por página.</strong>
+          </p>
+
+          <h4>¿Qué va dentro de <code>&lt;main&gt;</code>?</h4>
+          <ul>
+            <li>Contenido directamente relacionado con el tema central de la página</li>
+            <li>Contenido que es único en esa página (no se repite en otras)</li>
+            <li>Contenido que debería ser el foco para el usuario</li>
+            <li>Artículos, secciones, formularios principales</li>
+          </ul>
+
+          <h4>¿Qué NO va dentro de <code>&lt;main&gt;</code>?</h4>
+          <ul>
+            <li>Encabezados de página (<code>&lt;header&gt;</code>)</li>
+            <li>Navegación principal (<code>&lt;nav&gt;</code>)</li>
+            <li>Pies de página (<code>&lt;footer&gt;</code>)</li>
+            <li>Información complementaria (<code>&lt;aside&gt;</code>) que no es parte del flujo principal</li>
+            <li>Barras laterales de navegación</li>
+          </ul>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span>Uso correcto de main</span>
+              <span class="code-language">HTML</span>
+            </div>
+            <pre><code class="language-html">&lt;body&gt;
+  &lt;header role="banner"&gt;...&lt;/header&gt;
+  
+  &lt;main role="main" aria-label="Contenido principal"&gt;
+    &lt;h1&gt;Título principal de la página&lt;/h1&gt;
+    &lt;p&gt;Este es el contenido único y principal...&lt;/p&gt;
+    &lt;!-- Más contenido principal --&gt;
+  &lt;/main&gt;
+  
+  &lt;footer role="contentinfo"&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box error">
+        <h4><i class="fas fa-ban"></i> ¡Error común!</h4>
+        <p>
+          Muchos desarrolladores principiantes ponen TODO el contenido dentro de <code>&lt;main&gt;</code>.
+          Esto es incorrecto. Solo el contenido <strong>principal y único</strong> debe ir dentro.
+          Los headers, footers y navegación van fuera.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: El elemento Footer -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section5-title">
+      <h2 id="section5-title" class="section-title">El elemento <code>&lt;footer&gt;</code></h2>
+
+      <div class="footer-demo">
+        <div class="footer-preview">
+          <footer class="demo-footer" role="contentinfo">
+            <div class="footer-section">
+              <h4>Mi Sitio Web</h4>
+              <p>Aprendiendo HTML semántico juntos</p>
+            </div>
+            <div class="footer-section">
+              <h5>Enlaces rápidos</h5>
+              <nav class="footer-nav" aria-label="Navegación secundaria">
+                <a href="#" onclick="return false">Inicio</a>
+                <a href="#" onclick="return false">Acerca</a>
+                <a href="#" onclick="return false">Contacto</a>
+              </nav>
+            </div>
+            <div class="footer-section">
+              <h5>Legal</h5>
+              <p>© 2024 Todos los derechos reservados</p>
+              <a href="#" onclick="return false">Política de privacidad</a>
+            </div>
+          </footer>
+        </div>
+
+        <div class="footer-explanation">
+          <h3>¿Qué es un <code>&lt;footer&gt;</code>?</h3>
+          <p>
+            Representa el pie de una sección o página. Normalmente contiene información
+            sobre el autor, enlaces relacionados, información de copyright, etc.
+          </p>
+
+          <h4>Contenido típico:</h4>
+          <ul>
+            <li>Información de copyright (<code>&copy; 2024 Mi Empresa</code>)</li>
+            <li>Información de contacto</li>
+            <li>Enlaces a redes sociales</li>
+            <li>Enlaces legales (Términos, Privacidad)</li>
+            <li>Mapa del sitio</li>
+            <li>Información del autor</li>
+            <li>Suscripción a newsletter</li>
+          </ul>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span>Ejemplo de footer</span>
+              <span class="code-language">HTML</span>
+            </div>
+            <pre><code class="language-html">&lt;footer role="contentinfo"&gt;
+  &lt;p&gt;&copy; 2024 Mi Sitio Web. Todos los derechos reservados.&lt;/p&gt;
+  &lt;nav aria-label="Navegación del pie de página"&gt;
+    &lt;a href="privacidad.html"&gt;Política de Privacidad&lt;/a&gt;
+    &lt;a href="terminos.html"&gt;Términos de Servicio&lt;/a&gt;
+  &lt;/nav&gt;
+  &lt;address&gt;
+    Contacto: &lt;a href="mailto:info@ejemplo.com"&gt;info@ejemplo.com&lt;/a&gt;
+  &lt;/address&gt;
+&lt;/footer&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-layer-group"></i> Footers anidados</h4>
+        <p>
+          Al igual que <code>&lt;header&gt;</code>, puedes tener múltiples elementos <code>&lt;footer&gt;</code>.
+          Puedes tener un footer principal para toda la página, y footers dentro de
+          <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code> para información específica
+          de esa sección.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Jerarquía y anidamiento -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section6-title">
+      <h2 id="section6-title" class="section-title">Jerarquía y anidamiento correcto</h2>
+
+      <div class="text-content">
+        <p>
+          La relación entre estos elementos no es aleatoria. Siguen una jerarquía lógica
+          que determina cómo deben anidarse para crear una estructura válida y semántica.
+        </p>
+      </div>
+
+      <div class="hierarchy-container">
+        <div class="hierarchy-diagram">
+          <div class="hierarchy-level">
+            <div class="hierarchy-item body">
+              <div class="hierarchy-label"><code>&lt;body&gt;</code></div>
+              <div class="hierarchy-children">
+                <div class="hierarchy-level">
+                  <div class="hierarchy-item header">
+                    <div class="hierarchy-label"><code>&lt;header&gt;</code></div>
+                    <div class="hierarchy-children">
+                      <div class="hierarchy-level">
+                        <div class="hierarchy-item nav">
+                          <div class="hierarchy-label"><code>&lt;nav&gt;</code></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hierarchy-level">
+                  <div class="hierarchy-item main">
+                    <div class="hierarchy-label"><code>&lt;main&gt;</code></div>
+                    <div class="hierarchy-children">
+                      <div class="hierarchy-level">
+                        <div class="hierarchy-item article">
+                          <div class="hierarchy-label"><code>&lt;article&gt;</code></div>
+                          <div class="hierarchy-children">
+                            <div class="hierarchy-level">
+                              <div class="hierarchy-item header">
+                                <div class="hierarchy-label"><code>&lt;header&gt;</code></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="hierarchy-level">
+                  <div class="hierarchy-item footer">
+                    <div class="hierarchy-label"><code>&lt;footer&gt;</code></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hierarchy-rules">
+          <h3>Reglas de anidamiento</h3>
+          <ul>
+            <li><code>&lt;nav&gt;</code> puede ir dentro de <code>&lt;header&gt;</code> o <code>&lt;footer&gt;</code></li>
+            <li><code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> pueden ir dentro de <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code></li>
+            <li><code>&lt;main&gt;</code> NO debe ir dentro de otros elementos de sección</li>
+            <li>Puede haber múltiples <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code> y <code>&lt;footer&gt;</code></li>
+            <li>Solo puede haber un <code>&lt;main&gt;</code> por página</li>
+            <li><code>&lt;main&gt;</code> debe ser hijo directo de <code>&lt;body&gt;</code></li>
+          </ul>
+
+          <div class="code-container">
+            <div class="code-header">
+              <span>Estructura completa válida</span>
+              <span class="code-language">HTML</span>
+            </div>
+            <pre><code class="language-html">&lt;body&gt;
+  &lt;header role="banner"&gt;
+    &lt;h1&gt;Mi Sitio&lt;/h1&gt;
+    &lt;nav aria-label="Navegación principal"&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main role="main"&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Título del artículo&lt;/h2&gt;
+      &lt;/header&gt;
+      &lt;p&gt;Contenido...&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+  
+  &lt;footer role="contentinfo"&gt;
+    &lt;p&gt;© 2024&lt;/p&gt;
+    &lt;nav aria-label="Navegación secundaria"&gt;...&lt;/nav&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="interactive-exercise">
+        <h3>Ejercicio interactivo: Arma la estructura</h3>
+        <p>Arrastra los elementos a la posición correcta para crear una página web válida:</p>
+        <div class="structure-builder">
+          <div class="builder-container">
+            <div class="builder-dropzone" id="dropzone" aria-label="Área para construir la estructura">
+              <div class="builder-instruction">Arrastra los elementos aquí para construir tu página</div>
+            </div>
+            <div class="builder-elements" aria-label="Elementos disponibles para construir">
+              <div class="builder-element" draggable="true" data-element="body" aria-grabbed="false">
+                <span>&lt;body&gt;</span>
+                <small>Contenedor principal</small>
+              </div>
+              <div class="builder-element" draggable="true" data-element="header" aria-grabbed="false">
+                <span>&lt;header&gt;</span>
+                <small>Cabecera de página</small>
+              </div>
+              <div class="builder-element" draggable="true" data-element="nav" aria-grabbed="false">
+                <span>&lt;nav&gt;</span>
+                <small>Navegación</small>
+              </div>
+              <div class="builder-element" draggable="true" data-element="main" aria-grabbed="false">
+                <span>&lt;main&gt;</span>
+                <small>Contenido principal</small>
+              </div>
+              <div class="builder-element" draggable="true" data-element="footer" aria-grabbed="false">
+                <span>&lt;footer&gt;</span>
+                <small>Pie de página</small>
+              </div>
+              <div class="builder-element" draggable="true" data-element="article" aria-grabbed="false">
+                <span>&lt;article&gt;</span>
+                <small>Artículo independiente</small>
+              </div>
+            </div>
+          </div>
+          <div class="builder-actions">
+            <button class="btn-check-structure" onclick="checkStructure()">Verificar estructura</button>
+            <button class="btn-reset-structure" onclick="resetStructure()">Reiniciar ejercicio</button>
+          </div>
+          <div class="structure-feedback" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Ejemplo práctico completo -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section7-title">
+      <h2 id="section7-title" class="section-title">Ejemplo práctico: Página web completa</h2>
+
+      <div class="text-content">
+        <p>
+          Veamos cómo se combinan todos estos elementos en una página web real.
+          Crearemos una página de blog con estructura semántica completa.
+        </p>
+      </div>
+
+      <div class="full-example">
+        <div class="example-preview">
+          <div class="preview-window" role="article" aria-label="Ejemplo de página web">
+            <div class="preview-header" role="banner">
+              <h3>MiBlog</h3>
+              <nav class="preview-nav" aria-label="Navegación principal">
+                <a href="#" onclick="return false" aria-current="page">Inicio</a>
+                <a href="#" onclick="return false">Artículos</a>
+                <a href="#" onclick="return false">Acerca</a>
+                <a href="#" onclick="return false">Contacto</a>
+              </nav>
+            </div>
+            <div class="preview-main" role="main">
+              <article class="preview-article">
+                <header>
+                  <h2>Introducción a HTML Semántico</h2>
+                  <p class="preview-date">Publicado el 15 de enero, 2024</p>
+                </header>
+                <p>El HTML semántico es fundamental para crear sitios web accesibles y bien estructurados...</p>
+                <section>
+                  <h3>Beneficios principales</h3>
+                  <p>Mejora la accesibilidad, el SEO y la mantenibilidad del código.</p>
+                </section>
+              </article>
+              <aside class="preview-aside" aria-label="Información adicional">
+                <h3>Categorías</h3>
+                <ul>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+              </aside>
+            </div>
+            <div class="preview-footer" role="contentinfo">
+              <p>© 2024 MiBlog. Todos los derechos reservados.</p>
+              <nav class="preview-footer-nav" aria-label="Navegación del pie">
+                <a href="#" onclick="return false">Privacidad</a>
+                <a href="#" onclick="return false">Términos</a>
+                <a href="#" onclick="return false">Contacto</a>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container full-width">
+          <div class="code-header">
+            <span>Código completo de la página</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;MiBlog - HTML Semántico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- HEADER PRINCIPAL --&gt;
+  &lt;header role="banner"&gt;
+    &lt;h1&gt;MiBlog&lt;/h1&gt;
+    &lt;p&gt;Aprendiendo desarrollo web&lt;/p&gt;
+    
+    &lt;!-- NAVEGACIÓN PRINCIPAL --&gt;
+    &lt;nav aria-label="Navegación principal" role="navigation"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html" aria-current="page"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="articulos.html"&gt;Artículos&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="acerca.html"&gt;Acerca&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;!-- CONTENIDO PRINCIPAL --&gt;
+  &lt;main role="main" aria-label="Contenido principal"&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Introducción a HTML Semántico&lt;/h2&gt;
+        &lt;p&gt;Publicado el &lt;time datetime="2024-01-15"&gt;15 de enero, 2024&lt;/time&gt;&lt;/p&gt;
+      &lt;/header&gt;
+      
+      &lt;p&gt;El HTML semántico es fundamental para crear sitios web accesibles...&lt;/p&gt;
+      
+      &lt;section&gt;
+        &lt;h3&gt;Beneficios principales&lt;/h3&gt;
+        &lt;p&gt;Mejora la accesibilidad, el SEO y la mantenibilidad del código.&lt;/p&gt;
+      &lt;/section&gt;
+      
+      &lt;section&gt;
+        &lt;h3&gt;Elementos clave&lt;/h3&gt;
+        &lt;p&gt;Los elementos &lt;code&gt;&amp;lt;header&amp;gt;&lt;/code&gt;, &lt;code&gt;&amp;lt;nav&amp;gt;&lt;/code&gt;,
+        &lt;code&gt;&amp;lt;main&amp;gt;&lt;/code&gt; y &lt;code&gt;&amp;lt;footer&amp;gt;&lt;/code&gt; son esenciales.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+    
+    &lt;aside aria-label="Categorías del blog"&gt;
+      &lt;h3&gt;Categorías&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;!-- FOOTER PRINCIPAL --&gt;
+  &lt;footer role="contentinfo"&gt;
+    &lt;p&gt;&copy; 2024 MiBlog. Todos los derechos reservados.&lt;/p&gt;
+    
+    &lt;!-- NAVEGACIÓN SECUNDARIA --&gt;
+    &lt;nav aria-label="Navegación del pie de página"&gt;
+      &lt;a href="privacidad.html"&gt;Política de Privacidad&lt;/a&gt;
+      &lt;a href="terminos.html"&gt;Términos de Servicio&lt;/a&gt;
+      &lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;
+    &lt;/nav&gt;
+    
+    &lt;address&gt;
+      Escríbenos a: &lt;a href="mailto:info@miblog.com"&gt;info@miblog.com&lt;/a&gt;
+    &lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-check-circle"></i> Estructura validada</h4>
+        <p>
+          Este código pasa todas las validaciones HTML5. Observa cómo:
+          <br>1. Hay solo un <code>&lt;main&gt;</code>
+          <br>2. Los <code>&lt;nav&gt;</code> están correctamente ubicados y etiquetados
+          <br>3. Los <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> están en sus contextos apropiados
+          <br>4. La jerarquía de encabezados es correcta (<code>&lt;h1&gt;</code> → <code>&lt;h2&gt;</code> → <code>&lt;h3&gt;</code>)
+          <br>5. Todos los elementos tienen roles ARIA apropiados
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Accesibilidad y SEO -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section8-title">
+      <h2 id="section8-title" class="section-title">Accesibilidad y SEO</h2>
+
+      <div class="benefits-container">
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h4>Accesibilidad Mejorada</h4>
+          <ul>
+            <li>Los lectores de pantalla pueden navegar por landmarks</li>
+            <li>Los usuarios pueden saltar al contenido principal fácilmente</li>
+            <li>Mejor experiencia para usuarios con discapacidades</li>
+            <li>Compatibilidad con tecnologías de asistencia</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h4>SEO Optimizado</h4>
+          <ul>
+            <li>Los motores de búsqueda entienden mejor la estructura</li>
+            <li>Mejor indexación del contenido principal</li>
+            <li>Mayor relevancia en resultados de búsqueda</li>
+            <li>Mejor experiencia de usuario (métrica SEO importante)</li>
+          </ul>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h4>Mantenibilidad</h4>
+          <ul>
+            <li>Código más legible y organizado</li>
+            <li>Fácil de actualizar y modificar</li>
+            <li>Mejor colaboración entre desarrolladores</li>
+            <li>Compatibilidad futura garantizada</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="accessibility-demo">
+        <h3>Atributos ARIA para mejorar accesibilidad</h3>
+        <div class="code-container">
+          <div class="code-header">
+            <span>Atributos ARIA recomendados</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;!-- Elementos semánticos con roles implícitos --&gt;
+&lt;nav aria-label="Navegación principal"&gt;
+  &lt;!-- menú --&gt;
+&lt;/nav&gt;
+
+&lt;main aria-label="Contenido principal"&gt;
+  &lt;!-- contenido --&gt;
+&lt;/main&gt;
+
+&lt;header role="banner"&gt;
+  &lt;!-- cabecera --&gt;
+&lt;/header&gt;
+
+&lt;footer role="contentinfo"&gt;
+  &lt;!-- pie --&gt;
+&lt;/footer&gt;
+
+&lt;!-- Para elementos no semánticos que funcionan como landmarks --&gt;
+&lt;div role="navigation" aria-label="Menú secundario"&gt;
+  &lt;!-- navegación secundaria --&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+        <div class="text-content">
+          <p>
+            <strong>Nota:</strong> Los elementos semánticos como <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>,
+            <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> ya tienen roles ARIA implícitos.
+            Solo debes añadir roles explícitos si necesitas soporte para navegadores muy antiguos,
+            o si usas elementos no semánticos (como <code>&lt;div&gt;</code>) para estas funciones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Casos especiales y errores comunes -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section9-title">
+      <h2 id="section9-title" class="section-title">Casos especiales y errores comunes</h2>
+
+      <div class="common-errors">
+        <div class="error-example">
+          <h4><i class="fas fa-times-circle"></i> ERROR: Múltiples <code>&lt;main&gt;</code></h4>
+          <div class="code-container error-code">
+            <pre><code class="language-html">&lt;body&gt;
+  &lt;main&gt;
+    &lt;h1&gt;Sección 1&lt;/h1&gt;
+  &lt;/main&gt;
+  
+  &lt;main&gt;  &lt;!-- ¡ERROR! Solo un main permitido --&gt;
+    &lt;h2&gt;Sección 2&lt;/h2&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+          </div>
+          <p><strong>Solución:</strong> Usa <code>&lt;section&gt;</code> o <code>&lt;article&gt;</code> para agrupar contenido dentro de un único <code>&lt;main&gt;</code>.</p>
+        </div>
+
+        <div class="error-example">
+          <h4><i class="fas fa-times-circle"></i> ERROR: <code>&lt;nav&gt;</code> para enlaces no esenciales</h4>
+          <div class="code-container error-code">
+            <pre><code class="language-html">&lt;article&gt;
+  &lt;p&gt;Lee más sobre &lt;a href="#"&gt;HTML&lt;/a&gt;.&lt;/p&gt;
+  
+  &lt;nav&gt;  &lt;!-- ¡ERROR! Enlaces no esenciales --&gt;
+    &lt;a href="#"&gt;Enlace 1&lt;/a&gt;
+    &lt;a href="#"&gt;Enlace 2&lt;/a&gt;
+  &lt;/nav&gt;
+&lt;/article&gt;</code></pre>
+          </div>
+          <p><strong>Solución:</strong> Solo usa <code>&lt;nav&gt;</code> para bloques de navegación principales. Para enlaces dentro de contenido, usa un simple <code>&lt;div&gt;</code> o <code>&lt;p&gt;</code>.</p>
+        </div>
+
+        <div class="error-example">
+          <h4><i class="fas fa-times-circle"></i> ERROR: Header/footer en ubicación incorrecta</h4>
+          <div class="code-container error-code">
+            <pre><code class="language-html">&lt;body&gt;
+  &lt;main&gt;
+    &lt;header&gt;  &lt;!-- ¡ADVERTENCIA! Mejor fuera del main --&gt;
+      &lt;h1&gt;Título&lt;/h1&gt;
+    &lt;/header&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+          </div>
+          <p><strong>Solución:</strong> El <code>&lt;header&gt;</code> principal debe ir antes de <code>&lt;main&gt;</code>. Los headers dentro de <code>&lt;main&gt;</code> deben estar dentro de <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>.</p>
+        </div>
+      </div>
+
+      <div class="special-cases">
+        <h3>Casos especiales válidos</h3>
+        <div class="case-example">
+          <h4><i class="fas fa-check-circle"></i> Múltiples <code>&lt;nav&gt;</code> en diferentes ubicaciones</h4>
+          <p>Es perfectamente válido tener varios elementos <code>&lt;nav&gt;</code> en diferentes partes de la página:</p>
+          <ul>
+            <li>Uno en el <code>&lt;header&gt;</code> para navegación principal</li>
+            <li>Uno en el <code>&lt;footer&gt;</code> para enlaces legales y secundarios</li>
+            <li>Uno en un <code>&lt;aside&gt;</code> para navegación dentro de una sección</li>
+          </ul>
+        </div>
+
+        <div class="case-example">
+          <h4><i class="fas fa-check-circle"></i> <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> dentro de <code>&lt;article&gt;</code></h4>
+          <p>Cada <code>&lt;article&gt;</code> puede tener su propio <code>&lt;header&gt;</code> (con título, autor, fecha) y <code>&lt;footer&gt;</code> (con información del artículo, enlaces relacionados).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Resumen -->
+    <section class="section" data-aos="fade-up" aria-labelledby="section10-title">
+      <div class="summary-section">
+        <h2 id="section10-title">Resumen de la lección</h2>
+
+        <div class="summary-content">
+          <p>
+            Los elementos <strong><code>&lt;header&gt;</code></strong>, <strong><code>&lt;nav&gt;</code></strong>,
+            <strong><code>&lt;main&gt;</code></strong> y <strong><code>&lt;footer&gt;</code></strong> son los
+            pilares fundamentales del HTML semántico moderno. Cada uno cumple una función específica y
+            debe usarse de manera apropiada para crear páginas web bien estructuradas.
+          </p>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <h4><code>&lt;header&gt;</code></h4>
+              <p>Contenido introductorio o de navegación. Puede aparecer múltiples veces.</p>
+            </div>
+            <div class="summary-item">
+              <h4><code>&lt;nav&gt;</code></h4>
+              <p>Bloques de navegación importantes. Usar solo para navegación esencial.</p>
+            </div>
+            <div class="summary-item">
+              <h4><code>&lt;main&gt;</code></h4>
+              <p>Contenido principal único. Solo uno por página.</p>
+            </div>
+            <div class="summary-item">
+              <h4><code>&lt;footer&gt;</code></h4>
+              <p>Pie de página o sección. Información de cierre y enlaces relacionados.</p>
+            </div>
+          </div>
+
+          <div class="alert alert-success mt-4" role="alert">
+            <h5><i class="fas fa-check-circle me-2"></i>Beneficios clave</h5>
+            <ul>
+              <li><strong>Accesibilidad:</strong> Mejora la navegación con lectores de pantalla</li>
+              <li><strong>SEO:</strong> Los motores de búsqueda entienden mejor tu contenido</li>
+              <li><strong>Mantenibilidad:</strong> Código más organizado y fácil de entender</li>
+              <li><strong>Compatibilidad:</strong> Funciona en todos los navegadores modernos</li>
+            </ul>
+          </div>
+
+          <div class="call-to-action mt-4">
+            <p class="lead">
+              <strong>Recuerda la regla más importante:</strong> solo un <code>&lt;main&gt;</code> por página,
+              y úsalo solo para el contenido verdaderamente principal y único.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up" aria-labelledby="quiz-title">
+      <h2 id="quiz-title" class="section-title">Quiz: Header, Nav, Main, Footer</h2>
+
+      <div class="quiz-container" role="region" aria-label="Cuestionario de evaluación">
+        <div class="quiz-header">
+          <h3>¿Dominas los elementos estructurales?</h3>
+          <div class="quiz-score" aria-live="polite">
+            Puntuación: <span id="score-leccion9">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion9">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question" role="group" aria-labelledby="q1-label">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p id="q1-label">¿Cuántos elementos &lt;main&gt; debe haber en una página HTML válida?</p>
+            </div>
+            <div class="question-options" role="radiogroup">
+              <label class="option">
+                <input type="radio" name="q1" value="a" aria-describedby="q1-label">
+                <span class="option-text">Uno</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b" aria-describedby="q1-label">
+                <span class="option-text">Tantos como secciones principales tenga</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c" aria-describedby="q1-label">
+                <span class="option-text">Ninguno, es opcional</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1" role="alert"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question" role="group" aria-labelledby="q2-label">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p id="q2-label">¿Dónde es más común ubicar el elemento &lt;nav&gt;?</p>
+            </div>
+            <div class="question-options" role="radiogroup">
+              <label class="option">
+                <input type="radio" name="q2" value="a" aria-describedby="q2-label">
+                <span class="option-text">Dentro de &lt;header&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b" aria-describedby="q2-label">
+                <span class="option-text">Dentro de &lt;footer&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c" aria-describedby="q2-label">
+                <span class="option-text">Ambas son correctas</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2" role="alert"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question" role="group" aria-labelledby="q3-label">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p id="q3-label">¿Qué contenido es más apropiado para un &lt;footer&gt;?</p>
+            </div>
+            <div class="question-options" role="radiogroup">
+              <label class="option">
+                <input type="radio" name="q3" value="a" aria-describedby="q3-label">
+                <span class="option-text">Información de copyright y enlaces legales</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b" aria-describedby="q3-label">
+                <span class="option-text">El menú de navegación principal</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c" aria-describedby="q3-label">
+                <span class="option-text">El artículo principal de la página</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3" role="alert"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question" role="group" aria-labelledby="q4-label">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p id="q4-label">¿Puede un elemento &lt;header&gt; contener otro &lt;header&gt;?</p>
+            </div>
+            <div class="question-options" role="radiogroup">
+              <label class="option">
+                <input type="radio" name="q4" value="a" aria-describedby="q4-label">
+                <span class="option-text">Sí, cuando hay jerarquías de cabeceras</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b" aria-describedby="q4-label">
+                <span class="option-text">No, los elementos de sección no se pueden anidar</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c" aria-describedby="q4-label">
+                <span class="option-text">Solo si tienen diferentes roles ARIA</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4" role="alert"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question" role="group" aria-labelledby="q5-label">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p id="q5-label">¿Qué atributo ARIA debería tener &lt;main&gt; para máxima accesibilidad?</p>
+            </div>
+            <div class="question-options" role="radiogroup">
+              <label class="option">
+                <input type="radio" name="q5" value="a" aria-describedby="q5-label">
+                <span class="option-text">role="main"</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b" aria-describedby="q5-label">
+                <span class="option-text">No necesita atributos ARIA, ya es semántico</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c" aria-describedby="q5-label">
+                <span class="option-text">aria-label="contenido principal"</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5" role="alert"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion9" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion9" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation" role="navigation" aria-label="Navegación entre lecciones">
+      <a href="../modulo3/leccion8.html" class="btn-nav">
+        <i class="fas fa-arrow-left" aria-hidden="true"></i> Anterior: Layout semántico
+      </a>
+      <a href="leccion10.html" class="btn-nav">
+        Siguiente: Section, Article, Aside <i class="fas fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Quiz para Lección 9
+    const correctAnswersLeccion9 = {
+      q1: 'a', // Uno
+      q2: 'c', // Ambas son correctas
+      q3: 'a', // Información de copyright y enlaces legales
+      q4: 'a', // Sí, cuando hay jerarquías de cabeceras
+      q5: 'b'  // No necesita atributos ARIA, ya es semántico
+    };
+
+    const totalQuestions = Object.keys(correctAnswersLeccion9).length;
+
+    const explanationsLeccion9 = {
+      q1: {
+        correct: "¡Correcto! Solo debe haber un elemento &lt;main&gt; por página, que contiene el contenido principal único.",
+        incorrect: "Incorrecto. El elemento &lt;main&gt; debe ser único en cada página HTML."
+      },
+      q2: {
+        correct: "¡Exacto! &lt;nav&gt; puede estar tanto en &lt;header&gt; (navegación principal) como en &lt;footer&gt; (enlaces secundarios).",
+        incorrect: "Incorrecto. &lt;nav&gt; puede ubicarse en diferentes partes, no solo en header o footer."
+      },
+      q3: {
+        correct: "¡Perfecto! El footer suele contener información de copyright, enlaces legales, contacto y similar.",
+        incorrect: "Incorrecto. El menú de navegación principal va en &lt;nav&gt; y el artículo principal en &lt;main&gt;."
+      },
+      q4: {
+        correct: "¡Correcto! Puede haber &lt;header&gt; anidados, como un header principal de página y headers dentro de artículos.",
+        incorrect: "Incorrecto. Los elementos &lt;header&gt; sí pueden anidarse en diferentes contextos."
+      },
+      q5: {
+        correct: "¡Exacto! &lt;main&gt; ya tiene semántica implícita, no necesita role='main' (de hecho, sería redundante).",
+        incorrect: "Incorrecto. Los elementos semánticos como &lt;main&gt; ya tienen roles implícitos, no necesitan ARIA redundante."
+      }
+    };
+
+    // Ejercicio interactivo de estructura mejorado
+    function setupDragAndDrop() {
+      const elements = document.querySelectorAll('.builder-element');
+      const dropzone = document.getElementById('dropzone');
+      
+      elements.forEach(element => {
+        element.addEventListener('dragstart', (e) => {
+          e.dataTransfer.setData('text/plain', element.getAttribute('data-element'));
+          element.classList.add('dragging');
+          element.setAttribute('aria-grabbed', 'true');
+        });
+        
+        element.addEventListener('dragend', () => {
+          element.classList.remove('dragging');
+          element.setAttribute('aria-grabbed', 'false');
+        });
+      });
+      
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('drag-over');
+      });
+      
+      dropzone.addEventListener('dragleave', () => {
+        dropzone.classList.remove('drag-over');
+      });
+      
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('drag-over');
+        
+        const elementType = e.dataTransfer.getData('text/plain');
+        const element = document.querySelector(`[data-element="${elementType}"]`);
+        
+        if (element) {
+          const clone = element.cloneNode(true);
+          clone.classList.add('dropped');
+          clone.draggable = false;
+          clone.setAttribute('aria-grabbed', 'false');
+          
+          // Remover elemento original de la lista
+          element.style.opacity = '0.5';
+          element.style.pointerEvents = 'none';
+          
+          // Agregar botón para remover
+          const removeBtn = document.createElement('button');
+          removeBtn.innerHTML = '<i class="fas fa-times"></i>';
+          removeBtn.className = 'btn-remove-element';
+          removeBtn.setAttribute('aria-label', `Remover ${elementType}`);
+          removeBtn.onclick = function() {
+            clone.remove();
+            element.style.opacity = '1';
+            element.style.pointerEvents = 'auto';
+            updateFeedback();
+          };
+          clone.appendChild(removeBtn);
+          
+          // Agregar al dropzone
+          dropzone.appendChild(clone);
+          
+          // Actualizar instrucción
+          const instruction = dropzone.querySelector('.builder-instruction');
+          if (instruction) {
+            instruction.style.display = 'none';
+          }
+          
+          updateFeedback();
+        }
+      });
+    }
+    
+    function updateFeedback() {
+      const droppedElements = document.querySelectorAll('.dropped');
+      const feedback = document.querySelector('.structure-feedback');
+      
+      if (droppedElements.length === 0) {
+        feedback.textContent = 'Arrastra elementos para construir tu estructura.';
+        feedback.className = 'structure-feedback info';
+      }
+    }
+    
+    function checkStructure() {
+      const droppedElements = document.querySelectorAll('.dropped');
+      const feedback = document.querySelector('.structure-feedback');
+      
+      // Verificar si tenemos al menos body, header, main, footer
+      const elementTypes = Array.from(droppedElements).map(el => el.getAttribute('data-element'));
+      
+      let message = '';
+      let correct = false;
+      let type = 'info';
+      
+      if (elementTypes.length === 0) {
+        message = 'No has colocado ningún elemento. Intenta arrastrar algunos.';
+        type = 'warning';
+      } else if (!elementTypes.includes('body')) {
+        message = 'Necesitas incluir el elemento &lt;body&gt; como contenedor principal.';
+        type = 'error';
+      } else if (!elementTypes.includes('header')) {
+        message = 'Falta el elemento &lt;header&gt; para la cabecera.';
+        type = 'error';
+      } else if (!elementTypes.includes('main')) {
+        message = 'Falta el elemento &lt;main&gt; para el contenido principal.';
+        type = 'error';
+      } else if (!elementTypes.includes('footer')) {
+        message = 'Falta el elemento &lt;footer&gt; para el pie de página.';
+        type = 'error';
+      } else if (elementTypes.filter(type => type === 'main').length > 1) {
+        message = '¡Error! Solo puede haber un elemento &lt;main&gt;.';
+        type = 'error';
+      } else {
+        // Verificar orden básico
+        const bodyIndex = elementTypes.indexOf('body');
+        const headerIndex = elementTypes.indexOf('header');
+        const mainIndex = elementTypes.indexOf('main');
+        const footerIndex = elementTypes.indexOf('footer');
+        
+        if (bodyIndex === 0) {
+          if (headerIndex < mainIndex && mainIndex < footerIndex) {
+            message = '¡Perfecto! Estructura correcta: &lt;body&gt; → &lt;header&gt; → &lt;main&gt; → &lt;footer&gt;';
+            correct = true;
+            type = 'success';
+          } else {
+            message = 'El orden debería ser: &lt;body&gt; → &lt;header&gt; → &lt;main&gt; → &lt;footer&gt;';
+            type = 'warning';
+          }
+        } else {
+          message = 'Recuerda: &lt;body&gt; debe ser el primer elemento.';
+          type = 'error';
+        }
+      }
+      
+      feedback.textContent = message;
+      feedback.className = `structure-feedback ${type}`;
+      
+      // Anunciar para lectores de pantalla
+      if (correct) {
+        setTimeout(() => {
+          const announcement = document.createElement('div');
+          announcement.setAttribute('aria-live', 'assertive');
+          announcement.className = 'sr-only';
+          announcement.textContent = 'Estructura correcta construida exitosamente';
+          document.body.appendChild(announcement);
+          setTimeout(() => announcement.remove(), 1000);
+        }, 100);
+      }
+    }
+    
+    function resetStructure() {
+      const droppedElements = document.querySelectorAll('.dropped');
+      const allElements = document.querySelectorAll('.builder-element');
+      const dropzone = document.getElementById('dropzone');
+      const instruction = dropzone.querySelector('.builder-instruction');
+      
+      // Remover elementos del dropzone
+      droppedElements.forEach(el => el.remove());
+      
+      // Restaurar todos los elementos
+      allElements.forEach(el => {
+        el.style.opacity = '1';
+        el.style.pointerEvents = 'auto';
+        el.setAttribute('aria-grabbed', 'false');
+      });
+      
+      // Mostrar instrucción
+      if (instruction) {
+        instruction.style.display = 'block';
+      }
+      
+      // Limpiar feedback
+      const feedback = document.querySelector('.structure-feedback');
+      feedback.textContent = 'Estructura reiniciada. Puedes comenzar de nuevo.';
+      feedback.className = 'structure-feedback info';
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Configurar drag and drop
+      setupDragAndDrop();
+      
+      // Botón para resetear estructura ya está en el HTML
+      
+      // Quiz para Lección 9
+      const checkButton9 = document.getElementById('check-quiz-leccion9');
+      const resetButton9 = document.getElementById('reset-quiz-leccion9');
+      const scoreElement9 = document.getElementById('score-leccion9');
+
+      checkButton9.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion9');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion9[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion9[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion9[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement9.textContent = score;
+
+        // Mostrar notificación según el resultado
+        setTimeout(() => {
+          if (score === totalQuestions) {
+            showNotification('¡Perfecto! Has respondido todas correctamente.', 'success');
+          } else if (score >= totalQuestions / 2) {
+            showNotification(`Buen trabajo! ${score} de ${totalQuestions} correctas.`, 'info');
+          } else {
+            showNotification(`Necesitas repasar. ${score} de ${totalQuestions} correctas.`, 'warning');
+          }
+        }, 500);
+      });
+
+      resetButton9.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion9');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement9.textContent = '0';
+        showNotification('Quiz reiniciado. Puedes intentarlo de nuevo.', 'info');
+      });
+      
+      // Función para mostrar notificaciones
+      function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification notification-${type}`;
+        notification.setAttribute('role', 'alert');
+        notification.setAttribute('aria-live', 'polite');
+        notification.innerHTML = `
+          <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i>
+          <span>${message}</span>
+          <button class="notification-close" aria-label="Cerrar notificación">
+            <i class="fas fa-times"></i>
+          </button>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Animación de entrada
+        setTimeout(() => notification.classList.add('show'), 10);
+        
+        // Cerrar notificación
+        notification.querySelector('.notification-close').addEventListener('click', () => {
+          notification.classList.remove('show');
+          setTimeout(() => notification.remove(), 300);
+        });
+        
+        // Auto-cerrar después de 5 segundos
+        setTimeout(() => {
+          if (notification.parentNode) {
+            notification.classList.remove('show');
+            setTimeout(() => notification.remove(), 300);
+          }
+        }, 5000);
+      }
+      
+      // Estilos para notificaciones
+      const style = document.createElement('style');
+      style.textContent = `
+        .notification {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 15px 20px;
+          border-radius: 8px;
+          color: white;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          z-index: 9999;
+          transform: translateX(150%);
+          transition: transform 0.3s ease;
+          max-width: 400px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .notification.show {
+          transform: translateX(0);
+        }
+        
+        .notification-success {
+          background: #28a745;
+          border-left: 5px solid #1e7e34;
+        }
+        
+        .notification-info {
+          background: #17a2b8;
+          border-left: 5px solid #117a8b;
+        }
+        
+        .notification-warning {
+          background: #ffc107;
+          color: #212529;
+          border-left: 5px solid #d39e00;
+        }
+        
+        .notification-close {
+          background: transparent;
+          border: none;
+          color: inherit;
+          cursor: pointer;
+          margin-left: auto;
+          padding: 0;
+        }
+        
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border: 0;
+        }
+      `;
+      document.head.appendChild(style);
+    });
+  </script>
+</body>
+</html>

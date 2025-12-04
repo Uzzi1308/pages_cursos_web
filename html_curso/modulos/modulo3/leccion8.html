@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 8: Layout Semántico</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion6-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion7-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion8-style.css">
+
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo2/leccion7.html">Lección 7</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 8: Layout Semántico</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 3</span>
+        Lección 8: Layout Semántico
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 8 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Layout Semántico</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Comprender la importancia del HTML semántico</li>
+          <li>Diferenciar entre elementos semánticos y no semánticos</li>
+          <li>Conocer los elementos semánticos de estructura principales</li>
+          <li>Reemplazar divs genéricos por elementos semánticos apropiados</li>
+          <li>Crear una estructura básica de página con semántica</li>
+          <li>Mejorar accesibilidad y SEO con HTML semántico</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">¿Qué es HTML Semántico?</h2>
+
+      <p class="text-content">
+        El HTML semántico usa elementos que describen el <strong>significado</strong> del contenido,
+        no solo su apariencia. En lugar de usar <code>&lt;div&gt;</code> y <code>&lt;span&gt;</code> genéricos,
+        usamos elementos específicos como <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>,
+        que explican claramente qué representan.
+      </p>
+
+      <div class="icon-grid">
+        <div class="icon-item">
+          <i class="fas fa-brain"></i>
+          <div class="icon-label">Significado</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-universal-access"></i>
+          <div class="icon-label">Accesibilidad</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-search"></i>
+          <div class="icon-label">SEO</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-code"></i>
+          <div class="icon-label">Mantenibilidad</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Evolución histórica -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Evolución del diseño web</h2>
+
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1990s</div>
+            <div class="timeline-content">
+              <h4>Era de las tablas</h4>
+              <p>Las tablas (<code>&lt;table&gt;</code>) se usaban para todo el layout. Código difícil de mantener y poco accesible.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2000s</div>
+            <div class="timeline-content">
+              <h4>Era de los divs</h4>
+              <p><code>&lt;div id="header"&gt;</code>, <code>&lt;div class="nav"&gt;</code>. Mejor separación entre contenido y estilo, pero aún sin significado semántico.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-year">2010s+</div>
+            <div class="timeline-content">
+              <h4>HTML5 Semántico</h4>
+              <p><code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>. Elementos con significado intrínseco que mejoran accesibilidad, SEO y mantenibilidad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-history"></i> ¿Por qué importa esta evolución?</h4>
+        <p>
+          Cada etapa representó un avance en cómo pensamos la web. Las tablas eran para presentar datos,
+          no para diseño. Los divs permitieron diseño flexible con CSS. Los elementos semánticos permiten
+          que tanto humanos como máquinas (motores de búsqueda, lectores de pantalla) entiendan la estructura
+          y significado del contenido.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Elementos semánticos vs no semánticos -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Elementos semánticos vs no semánticos</h2>
+
+      <div class="comparison-container">
+        <div class="comparison-grid">
+          <div class="comparison-item semantic">
+            <div class="comparison-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="comparison-label">Elementos Semánticos</div>
+            <div class="comparison-desc">
+              <p>Describen su significado tanto al navegador como al desarrollador.</p>
+              <ul>
+                <li><code>&lt;header&gt;</code> - Cabecera</li>
+                <li><code>&lt;nav&gt;</code> - Navegación</li>
+                <li><code>&lt;main&gt;</code> - Contenido principal</li>
+                <li><code>&lt;article&gt;</code> - Contenido independiente</li>
+                <li><code>&lt;footer&gt;</code> - Pie de página</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-item non-semantic">
+            <div class="comparison-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="comparison-label">Elementos No Semánticos</div>
+            <div class="comparison-desc">
+              <p>No proporcionan información sobre su contenido.</p>
+              <ul>
+                <li><code>&lt;div&gt;</code> - Contenedor genérico</li>
+                <li><code>&lt;span&gt;</code> - Contenedor en línea genérico</li>
+                <li><code>&lt;b&gt;</code> - Negrita (solo estilo)</li>
+                <li><code>&lt;i&gt;</code> - Itálica (solo estilo)</li>
+                <li><code>&lt;font&gt;</code> - Fuente (obsoleto, solo estilo)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Comparación: Semántico vs No Semántico</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- NO SEMÁNTICO (mal) --&gt;
+&lt;div id="header"&gt;
+  &lt;div class="logo"&gt;Mi Sitio&lt;/div&gt;
+  &lt;div class="menu"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- SEMÁNTICO (bien) --&gt;
+&lt;header&gt;
+  &lt;h1&gt;Mi Sitio&lt;/h1&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Elementos de sección semántica -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Elementos de sección: <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code></h2>
+
+      <div class="semantic-elements-container">
+        <div class="semantic-element">
+          <div class="element-icon">
+            <i class="fas fa-cube"></i>
+          </div>
+          <h3><code>&lt;section&gt;</code></h3>
+          <p class="element-subtitle">Agrupación temática</p>
+          <div class="element-desc">
+            <p>Agrupa contenido temáticamente relacionado. Cada sección debe tener su propio encabezado.</p>
+            <div class="code-example">
+              <pre><code class="language-html">&lt;section&gt;
+  &lt;h2&gt;Nuestros Servicios&lt;/h2&gt;
+  &lt;p&gt;Descripción de servicios...&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="semantic-element">
+          <div class="element-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h3><code>&lt;article&gt;</code></h3>
+          <p class="element-subtitle">Contenido independiente</p>
+          <div class="element-desc">
+            <p>Contenido autocontenido que podría distribuirse independientemente (post de blog, noticia).</p>
+            <div class="code-example">
+              <pre><code class="language-html">&lt;article&gt;
+  &lt;h2&gt;Título del artículo&lt;/h2&gt;
+  &lt;p&gt;Contenido completo...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="semantic-element">
+          <div class="element-icon">
+            <i class="fas fa-stream"></i>
+          </div>
+          <h3><code>&lt;aside&gt;</code></h3>
+          <p class="element-subtitle">Contenido relacionado indirectamente</p>
+          <div class="element-desc">
+            <p>Contenido tangencialmente relacionado (sidebars, notas al margen, publicidad).</p>
+            <div class="code-example">
+              <pre><code class="language-html">&lt;aside&gt;
+  &lt;h3&gt;Noticias relacionadas&lt;/h3&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-question-circle"></i> ¿<code>&lt;section&gt;</code> o <code>&lt;article&gt;</code>?</h4>
+        <p>
+          <strong>Pregúntate:</strong> "¿Este contenido tendría sentido por sí solo en un feed RSS o similar?"<br>
+          Si la respuesta es <strong>sí</strong>, usa <code>&lt;article&gt;</code>.<br>
+          Si es <strong>no</strong>, pero agrupa contenido temático, usa <code>&lt;section&gt;</code>.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Elementos de estructura principal -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Estructura principal: <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code></h2>
+
+      <div class="structure-visualizer">
+        <div class="structure-diagram">
+          <div class="structure-item header">
+            <div class="structure-label">
+              <i class="fas fa-heading"></i>
+              <code>&lt;header&gt;</code>
+            </div>
+            <div class="structure-desc">Cabecera de página o sección</div>
+          </div>
+
+          <div class="structure-item main">
+            <div class="structure-label">
+              <i class="fas fa-star"></i>
+              <code>&lt;main&gt;</code>
+            </div>
+            <div class="structure-desc">Contenido principal único</div>
+            <div class="structure-nested">
+              <div class="structure-item article">
+                <code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="structure-item footer">
+            <div class="structure-label">
+              <i class="fas fa-shoe-prints"></i>
+              <code>&lt;footer&gt;</code>
+            </div>
+            <div class="structure-desc">Pie de página o sección</div>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Estructura básica de página</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Título del artículo&lt;/h2&gt;
+      &lt;p&gt;Contenido...&lt;/p&gt;
+    &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2024 Mi Sitio Web&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> ¡Solo un <code>&lt;main&gt;</code> por página!</h4>
+        <p>
+          El elemento <code>&lt;main&gt;</code> debe ser <strong>único</strong> en cada página HTML.
+          Representa el contenido principal único de la página. Si tienes múltiples elementos
+          <code>&lt;main&gt;</code>, estarás violando las especificaciones de HTML5.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Elemento de navegación -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Navegación semántica: <code>&lt;nav&gt;</code></h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;nav&gt;</code> está diseñado específicamente para bloques de enlaces de navegación.
+        No todos los grupos de enlaces deben ir en <code>&lt;nav&gt;</code>, solo aquellos que constituyen
+        la navegación principal del sitio.
+      </p>
+
+      <div class="nav-demo-container">
+        <div class="nav-demo">
+          <nav class="demo-nav">
+            <ul>
+              <li><a href="#" onclick="return false">Inicio</a></li>
+              <li><a href="#" onclick="return false">Acerca</a></li>
+              <li><a href="#" onclick="return false">Servicios</a></li>
+              <li><a href="#" onclick="return false">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Uso correcto de <code>&lt;nav&gt;</code></span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="acerca.html"&gt;Acerca&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="servicios.html"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-map-signs"></i> ¿Cuándo usar <code>&lt;nav&gt;</code>?</h4>
+        <ul>
+          <li><strong>Sí</strong>: Menú principal de navegación, breadcrumbs, navegación entre páginas</li>
+          <li><strong>No</strong>: Enlaces en el footer, enlaces sociales, enlaces dentro de un artículo</li>
+          <li><strong>Regla práctica</strong>: Si los enlaces son esenciales para navegar el sitio, usa <code>&lt;nav&gt;</code></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Elementos semánticos para contenido -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Más elementos semánticos</h2>
+
+      <div class="content-elements-container">
+        <div class="content-element">
+          <h4><code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h4>
+          <p>Para imágenes, diagramas, código, etc., con una leyenda descriptiva.</p>
+          <div class="code-example">
+            <pre><code class="language-html">&lt;figure&gt;
+  &lt;img src="imagen.jpg" alt="Descripción"&gt;
+  &lt;figcaption&gt;Texto descriptivo de la imagen&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="content-element">
+          <h4><code>&lt;time&gt;</code></h4>
+          <p>Para representar fechas y horas de forma legible por máquinas.</p>
+          <div class="code-example">
+            <pre><code class="language-html">&lt;time datetime="2024-01-15"&gt;15 de enero, 2024&lt;/time&gt;
+&lt;time datetime="14:30"&gt;2:30 PM&lt;/time&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="content-element">
+          <h4><code>&lt;mark&gt;</code></h4>
+          <p>Para resaltar texto relevante en el contexto actual (como resultados de búsqueda).</p>
+          <div class="code-example">
+            <pre><code class="language-html">El &lt;mark&gt;HTML semántico&lt;/mark&gt; mejora la accesibilidad.</code></pre>
+          </div>
+        </div>
+
+        <div class="content-element">
+          <h4><code>&lt;blockquote&gt;</code> y <code>&lt;cite&gt;</code></h4>
+          <p>Para citas textuales y referencias a fuentes.</p>
+          <div class="code-example">
+            <pre><code class="language-html">&lt;blockquote&gt;
+  &lt;p&gt;El buen código es como un buen chiste...&lt;/p&gt;
+  &lt;cite&gt;Programador Anónimo&lt;/cite&gt;
+&lt;/blockquote&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-robot"></i> Datos legibles por máquinas</h4>
+        <p>
+          Elementos como <code>&lt;time&gt;</code> permiten que los navegadores, motores de búsqueda
+          y otras herramientas procesen la información de forma inteligente. El atributo <code>datetime</code>
+          proporciona la fecha en formato máquina, mientras que el contenido es para humanos.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Esquema del documento -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Esquema del documento</h2>
+
+      <p class="text-content">
+        Los elementos semánticos crean un <strong>esquema del documento</strong> que los lectores de pantalla
+        y los motores de búsqueda usan para entender la estructura de tu página.
+      </p>
+
+      <div class="outline-demo">
+        <div class="outline-visual">
+          <div class="outline-level">
+            <div class="outline-item">body</div>
+            <div class="outline-children">
+              <div class="outline-level">
+                <div class="outline-item">header</div>
+              </div>
+              <div class="outline-level">
+                <div class="outline-item">main</div>
+                <div class="outline-children">
+                  <div class="outline-level">
+                    <div class="outline-item">article</div>
+                    <div class="outline-children">
+                      <div class="outline-level">
+                        <div class="outline-item">section</div>
+                      </div>
+                      <div class="outline-level">
+                        <div class="outline-item">section</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="outline-level">
+                    <div class="outline-item">aside</div>
+                  </div>
+                </div>
+              </div>
+              <div class="outline-level">
+                <div class="outline-item">footer</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Código que genera este esquema</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;body&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;section&gt;...&lt;/section&gt;
+      &lt;section&gt;...&lt;/section&gt;
+    &lt;/article&gt;
+    &lt;aside&gt;...&lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-sitemap"></i> Herramientas para visualizar esquemas</h4>
+        <p>
+          Puedes usar herramientas como <strong>HTML5 Outliner</strong> (extensión de navegador)
+          o validadores online para visualizar el esquema de tu documento. Esto te ayuda a
+          asegurarte de que tu estructura semántica sea lógica y bien organizada.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Ejemplo práctico - Blog -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Ejemplo práctico: Blog Semántico</h2>
+
+      <div class="blog-example">
+        <div class="blog-preview">
+          <div class="blog-structure">
+            <div class="blog-item header-blog">
+              <h4>header</h4>
+              <p>Logo + Navegación principal</p>
+            </div>
+            <div class="blog-item main-blog">
+              <h4>main</h4>
+              <div class="blog-nested">
+                <div class="blog-item article-blog">
+                  <h5>article</h5>
+                  <p>Post del blog</p>
+                </div>
+                <div class="blog-item aside-blog">
+                  <h5>aside</h5>
+                  <p>Sidebar con widgets</p>
+                </div>
+              </div>
+            </div>
+            <div class="blog-item footer-blog">
+              <h4>footer</h4>
+              <p>Info de contacto + enlaces</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container full-width">
+          <div class="code-header">
+            <span>Código completo del blog</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi Blog Semántico&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi Blog Personal&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="index.html"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="acerca.html"&gt;Acerca&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="contacto.html"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Introducción al HTML Semántico&lt;/h2&gt;
+        &lt;p&gt;Publicado el &lt;time datetime="2024-01-15"&gt;15 de enero, 2024&lt;/time&gt;&lt;/p&gt;
+      &lt;/header&gt;
+      
+      &lt;section&gt;
+        &lt;h3&gt;¿Qué es HTML semántico?&lt;/h3&gt;
+        &lt;p&gt;Contenido sobre HTML semántico...&lt;/p&gt;
+        &lt;figure&gt;
+          &lt;img src="semantica.jpg" alt="Diagrama de HTML semántico"&gt;
+          &lt;figcaption&gt;Estructura semántica de una página web&lt;/figcaption&gt;
+        &lt;/figure&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;section&gt;
+        &lt;h3&gt;Categorías&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2024 Mi Blog Personal. Todos los derechos reservados.&lt;/p&gt;
+    &lt;address&gt;
+      Contacto: &lt;a href="mailto:info@ejemplo.com"&gt;info@ejemplo.com&lt;/a&gt;
+    &lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-lightbulb"></i> ¡Observa los detalles!</h4>
+        <ul>
+          <li><strong>Múltiples headers:</strong> Hay un <code>&lt;header&gt;</code> principal y otro dentro del <code>&lt;article&gt;</code></li>
+          <li><strong>Anidamiento:</strong> <code>&lt;section&gt;</code> dentro de <code>&lt;article&gt;</code></li>
+          <li><strong>Elementos semánticos:</strong> <code>&lt;time&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;address&gt;</code></li>
+          <li><strong>Estructura clara:</strong> Es fácil entender la organización solo leyendo el HTML</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Mejores prácticas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Mejores prácticas de HTML semántico</h2>
+
+      <div class="best-practices-container">
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-check"></i>
+          </div>
+          <h4>Qué Hacer</h4>
+          <ul>
+            <li>Usa elementos semánticos cuando describan adecuadamente el contenido</li>
+            <li>Anida correctamente (ej: header dentro de article)</li>
+            <li>Usa múltiples nav, header, footer cuando sea apropiado</li>
+            <li>Incluye encabezados (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) en secciones</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-times"></i>
+          </div>
+          <h4>Qué NO Hacer</h4>
+          <ul>
+            <li>No uses elementos semánticos solo por su estilo por defecto</li>
+            <li>No abuses de <code>&lt;div&gt;</code> cuando haya elementos semánticos apropiados</li>
+            <li>No uses <code>&lt;section&gt;</code> como contenedor genérico para estilo</li>
+            <li>No crees múltiples <code>&lt;main&gt;</code> en una página</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h4>Herramientas</h4>
+          <ul>
+            <li>Validador HTML (validator.w3.org)</li>
+            <li>Herramientas de esquema (HTML5 Outliner)</li>
+            <li>Extensiones de navegador para visualizar semántica</li>
+            <li>Lectores de pantalla para probar accesibilidad</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-star"></i> Regla de oro</h4>
+        <p>
+          <strong>"Si puedes describir lo que hace un elemento con una palabra simple (navegación, artículo, pie),
+          usa el elemento semántico correspondiente (<code>&lt;nav&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>)."</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Convierte divs a HTML semántico</h3>
+
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Tienes el siguiente código HTML que usa solo <code>&lt;div&gt;</code>. Convierte todos los divs
+          a elementos semánticos apropiados.
+        </p>
+
+        <div class="code-container" style="margin: 20px 0;">
+          <div class="code-header">
+            <span>Código inicial (con divs)</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Mi Sitio Web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="cabecera"&gt;
+        &lt;div class="logo"&gt;Mi Logo&lt;/div&gt;
+        &lt;div class="menu"&gt;
+            &lt;a href="#"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#"&gt;Acerca&lt;/a&gt;
+            &lt;a href="#"&gt;Contacto&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="contenido"&gt;
+        &lt;div class="articulo"&gt;
+            &lt;h2&gt;Título del Artículo&lt;/h2&gt;
+            &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+            &lt;div class="fecha"&gt;Publicado el 10 de enero, 2024&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar"&gt;
+            &lt;h3&gt;Noticias Relacionadas&lt;/h3&gt;
+            &lt;div class="noticia"&gt;Noticia 1&lt;/div&gt;
+            &lt;div class="noticia"&gt;Noticia 2&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="pie"&gt;
+        &lt;div class="copyright"&gt;© 2024 Mi Sitio Web&lt;/div&gt;
+        &lt;div class="enlaces"&gt;
+            &lt;a href="#"&gt;Política de Privacidad&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="practice-steps">
+          <h4>Instrucciones:</h4>
+          <ol>
+            <li>
+              <strong>Analiza cada <code>&lt;div&gt;</code>:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Qué función cumple en la página?</li>
+                <li>¿Hay un elemento semántico que describa mejor esa función?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Reemplaza los divs:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li><code>div id="cabecera"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="menu"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div id="contenido"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="articulo"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="sidebar"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div id="pie"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="fecha"</code> → ¿Qué elemento semántico usarías?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Mejora el contenido:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Puedes usar <code>&lt;time&gt;</code> para la fecha?</li>
+                <li>¿Puedes usar <code>&lt;article&gt;</code> para cada noticia?</li>
+                <li>¿Puedes usar <code>&lt;nav&gt;</code> para los enlaces del pie?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Verifica tu trabajo:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Tienes solo un <code>&lt;main&gt;</code>?</li>
+                <li>¿Los elementos están correctamente anidados?</li>
+                <li>¿El código es más legible que el original?</li>
+                <li>¿Incluye todos los elementos semánticos apropiados?</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Consejo profesional</h4>
+          <p style="color: #fff;">
+            No todo <code>&lt;div&gt;</code> debe ser reemplazado. Los <code>&lt;div&gt;</code> siguen siendo útiles
+            para agrupaciones genéricas sin significado semántico, especialmente cuando necesitas contenedores
+            para aplicar estilos CSS. La clave es usar elementos semánticos <strong>cuando describan adecuadamente
+            el contenido</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 12: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            El <strong>HTML semántico</strong> usa elementos que describen el significado de su contenido,
+            no solo su presentación. Representa una evolución desde las tablas (1990s) y los divs (2000s)
+            hacia una web más accesible, mejor posicionada en buscadores y más fácil de mantener.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los elementos semánticos principales incluyen <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>,
+            <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>,
+            y <code>&lt;footer&gt;</code>. Cada uno tiene un propósito específico y debe usarse cuando
+            describe adecuadamente el contenido que contiene.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Los beneficios del HTML semántico son múltiples: <strong>mejor accesibilidad</strong> (lectores de pantalla
+            pueden navegar mejor), <strong>mejor SEO</strong> (los motores de búsqueda entienden mejor el contenido),
+            <strong>mejor mantenibilidad</strong> (el código es más legible y estructurado), y <strong>mejor compatibilidad
+            futura</strong> (los estándares evolucionan hacia la semántica).
+          </p>
+
+          <p style="margin-top: 15px;">
+            Recuerda la regla de oro: "Si puedes describir lo que hace un elemento con una palabra simple,
+            usa el elemento semántico correspondiente." Con práctica, el uso de HTML semántico se volverá
+            natural y transformará la forma en que construyes sitios web.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Layout Semántico</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas el HTML semántico?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion8">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion8">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuál es el propósito principal del HTML semántico?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">Mejorar el estilo visual</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">Describir el significado del contenido</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">Hacer la página más rápida</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Qué elemento semántico usarías para la navegación principal?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">&lt;header&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">&lt;nav&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">&lt;menu&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Cuál es la diferencia entre &lt;section&gt; y &lt;article&gt;?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">&lt;section&gt; es para contenido independiente, &lt;article&gt; para agrupar temáticamente</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">&lt;article&gt; es para contenido independiente, &lt;section&gt; para agrupar temáticamente</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">No hay diferencia, son intercambiables</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Qué elemento semántico representa contenido relacionado indirectamente?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">&lt;aside&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">&lt;sidebar&gt;</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">&lt;related&gt;</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Cuál de estos NO es un beneficio del HTML semántico?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">Mejor SEO</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">Mejor accesibilidad</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">Mejores efectos visuales</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion8" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion8" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="../modulo2/leccion7.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Formularios básicos
+      </a>
+      <a href="leccion9.html" class="btn-nav">
+        Siguiente: Header, Nav, Main, Footer <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Quiz para Lección 8
+    const correctAnswersLeccion8 = {
+      q1: 'b', // Describir el significado del contenido
+      q2: 'b', // nav
+      q3: 'b', // article independiente, section temática
+      q4: 'a', // aside
+      q5: 'c'  // No proporciona mejores efectos visuales
+    };
+
+    const totalQuestions = Object.keys(correctAnswersLeccion8).length;
+
+    const explanationsLeccion8 = {
+      q1: {
+        correct: "¡Correcto! El HTML semántico describe el significado del contenido, no la apariencia.",
+        incorrect: "Incorrecto. El HTML semántico no trata sobre estilo visual, sino sobre significado."
+      },
+      q2: {
+        correct: "¡Exacto! &lt;nav&gt; está diseñado específicamente para bloques de navegación.",
+        incorrect: "Incorrecto. Aunque &lt;header&gt; puede contener navegación, &lt;nav&gt; es el elemento específico para ello."
+      },
+      q3: {
+        correct: "¡Perfecto! &lt;article&gt; es para contenido independiente (como un post de blog), mientras que &lt;section&gt; agrupa contenido temáticamente.",
+        incorrect: "Incorrecto. &lt;article&gt; es para contenido independiente, &lt;section&gt; para agrupación temática."
+      },
+      q4: {
+        correct: "¡Correcto! &lt;aside&gt; se usa para contenido relacionado indirectamente, como sidebars.",
+        incorrect: "Incorrecto. &lt;aside&gt; es el elemento semántico para contenido relacionado indirectamente."
+      },
+      q5: {
+        correct: "¡Exacto! El HTML semántico no mejora los efectos visuales; eso es responsabilidad del CSS.",
+        incorrect: "Incorrecto. El HTML semántico sí mejora SEO y accesibilidad, pero no los efectos visuales."
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Quiz para Lección 8
+      const checkButton8 = document.getElementById('check-quiz-leccion8');
+      const resetButton8 = document.getElementById('reset-quiz-leccion8');
+      const scoreElement8 = document.getElementById('score-leccion8');
+
+      checkButton8.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion8');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion8[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion8[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion8[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement8.textContent = score;
+
+        setTimeout(() => {
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
+          } else {
+            quizNotification.showError(score, totalQuestions);
+          }
+        }, 500);
+      });
+
+      resetButton8.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion8');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement8.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 7: Formularios Básicos</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion6-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion7-style.css">
+
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo2/leccion4.html">Lección 4</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo2/leccion6.html">Lección 6</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 7: Formularios Básicos</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 2</span>
+        Lección 7: Formularios Básicos
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 7 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Formularios Básicos</h1>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Comprender la estructura básica de un formulario HTML</li>
+          <li>Crear formularios con diferentes tipos de inputs</li>
+          <li>Implementar validación básica con atributos HTML</li>
+          <li>Usar etiquetas y agrupaciones para formularios accesibles</li>
+          <li>Crear formularios de contacto y registro funcionales</li>
+          <li>Entender la diferencia entre GET y POST</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Comunicación con formularios</h2>
+
+      <p class="text-content">
+        Los formularios son el puente entre tus usuarios y tu aplicación web.
+        Permiten recopilar información, autenticar usuarios, realizar búsquedas
+        y mucho más. Sin formularios, la web sería solo de lectura.
+      </p>
+
+      <div class="icon-grid">
+        <div class="icon-item">
+          <i class="fas fa-user-plus"></i>
+          <div class="icon-label">Registro</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-sign-in-alt"></i>
+          <div class="icon-label">Login</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-search"></i>
+          <div class="icon-label">Búsqueda</div>
+        </div>
+        <div class="icon-item">
+          <i class="fas fa-envelope"></i>
+          <div class="icon-label">Contacto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Estructura básica -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Estructura básica: <code>&lt;form&gt;</code></h2>
+
+      <p class="text-content">
+        Todo formulario comienza con la etiqueta <code>&lt;form&gt;</code> que
+        define el área interactiva y cómo se enviarán los datos.
+      </p>
+
+      <div class="list-demo-container">
+        <div class="list-demo-grid">
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="list-type-label">&lt;form&gt;</div>
+            <div class="list-preview">
+              <ul>
+                <li>Contenedor principal</li>
+                <li>Define el formulario</li>
+                <li>Atributos: action, method</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-sign-out-alt"></i>
+            </div>
+            <div class="list-type-label">action</div>
+            <div class="list-preview">
+              <ul>
+                <li>URL que procesa los datos</li>
+                <li>Puede ser absoluta o relativa</li>
+                <li>Ej: "procesar.php"</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="list-demo-card">
+            <div class="list-type-icon">
+              <i class="fas fa-paper-plane"></i>
+            </div>
+            <div class="list-type-label">method</div>
+            <div class="list-preview">
+              <ul>
+                <li>GET (datos visibles)</li>
+                <li>POST (datos ocultos)</li>
+                <li>Por defecto: GET</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Sintaxis básica de formulario</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;form action="procesar.php" method="POST"&gt;
+  &lt;!-- Elementos del formulario --&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+
+        <div class="code-hint highlight-box">
+          <p>
+            <strong>GET vs POST:</strong> Usa <strong>GET</strong> para búsquedas (datos visibles en URL).
+            Usa <strong>POST</strong> para envío de datos sensibles (contraseñas, información personal).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Elemento input -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">El elemento <code>&lt;input&gt;</code></h2>
+
+      <p class="text-content">
+        <code>&lt;input&gt;</code> es el elemento más versátil de los formularios.
+        Su apariencia y comportamiento cambian según el atributo <code>type</code>.
+      </p>
+
+      <div class="input-types-grid">
+        <div class="input-type-demo">
+          <div class="input-preview">
+            <input type="text" placeholder="Texto simple">
+          </div>
+          <div class="input-code">
+            <code>&lt;input type="text"&gt;</code>
+          </div>
+        </div>
+
+        <div class="input-type-demo">
+          <div class="input-preview">
+            <input type="email" placeholder="correo@ejemplo.com">
+          </div>
+          <div class="input-code">
+            <code>&lt;input type="email"&gt;</code>
+          </div>
+        </div>
+
+        <div class="input-type-demo">
+          <div class="input-preview">
+            <input type="password" placeholder="Contraseña">
+          </div>
+          <div class="input-code">
+            <code>&lt;input type="password"&gt;</code>
+          </div>
+        </div>
+
+        <div class="input-type-demo">
+          <div class="input-preview">
+            <input type="number" value="25">
+          </div>
+          <div class="input-code">
+            <code>&lt;input type="number"&gt;</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Tipos comunes de input</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Texto simple --&gt;
+&lt;input type="text" name="nombre" placeholder="Tu nombre"&gt;
+
+&lt;!-- Email con validación --&gt;
+&lt;input type="email" name="email" required&gt;
+
+&lt;!-- Contraseña oculta --&gt;
+&lt;input type="password" name="password"&gt;
+
+&lt;!-- Número con rango --&gt;
+&lt;input type="number" name="edad" min="0" max="120"&gt;
+
+&lt;!-- Fecha --&gt;
+&lt;input type="date" name="fecha_nacimiento"&gt;
+
+&lt;!-- Botón de envío --&gt;
+&lt;input type="submit" value="Enviar"&gt;</code></pre>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Checkbox y Radio -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Selecciones: Checkbox y Radio</h2>
+
+      <div class="comparison-container">
+        <h3 class="comparison-title">¿Cuándo usar cada uno?</h3>
+        <div class="comparison-grid">
+          <div class="comparison-item correct">
+            <div class="comparison-icon">
+              <i class="fas fa-check-square"></i>
+            </div>
+            <div class="comparison-label">Checkbox</div>
+            <div class="comparison-desc">
+              <ul>
+                <li>Selección múltiple</li>
+                <li>Cada opción independiente</li>
+                <li>Ideal para preferencias</li>
+                <li>Ej: Intereses (Deportes, Música, Cine)</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="comparison-item correct">
+            <div class="comparison-icon">
+              <i class="fas fa-dot-circle"></i>
+            </div>
+            <div class="comparison-label">Radio Buttons</div>
+            <div class="comparison-desc">
+              <ul>
+                <li>Selección única</li>
+                <li>Opciones mutuamente excluyentes</li>
+                <li>Mismo atributo <code>name</code></li>
+                <li>Ej: Género (Masculino, Femenino, Otro)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Ejemplo: Checkbox vs Radio</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- CHECKBOX (múltiple selección) --&gt;
+&lt;p&gt;¿Qué deportes te gustan?&lt;/p&gt;
+&lt;input type="checkbox" name="deportes" value="futbol" id="futbol"&gt;
+&lt;label for="futbol"&gt;Fútbol&lt;/label&gt;&lt;br&gt;
+
+&lt;input type="checkbox" name="deportes" value="baloncesto" id="baloncesto"&gt;
+&lt;label for="baloncesto"&gt;Baloncesto&lt;/label&gt;&lt;br&gt;
+
+&lt;!-- RADIO (selección única) --&gt;
+&lt;p&gt;¿Cuál es tu género?&lt;/p&gt;
+&lt;input type="radio" name="genero" value="masculino" id="masculino"&gt;
+&lt;label for="masculino"&gt;Masculino&lt;/label&gt;&lt;br&gt;
+
+&lt;input type="radio" name="genero" value="femenino" id="femenino"&gt;
+&lt;label for="femenino"&gt;Femenino&lt;/label&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-lightbulb"></i> Regla de oro</h4>
+        <p>
+          <strong>Checkbox:</strong> Mismo <code>name</code> para agrupar conceptualmente,
+          pero cada uno puede tener valor diferente.<br>
+          <strong>Radio:</strong> Mismo <code>name</code> para hacerlos mutuamente excluyentes,
+          diferente <code>value</code> para identificar la selección.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Otros elementos de formulario -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Más elementos: Textarea, Select, Label</h2>
+
+      <div class="form-elements-container">
+        <div class="form-element-demo">
+          <h4><code>&lt;textarea&gt;</code></h4>
+          <p>Para texto multilínea (comentarios, mensajes).</p>
+          <div class="code-container">
+            <pre><code class="language-html">&lt;textarea name="mensaje" rows="4" cols="50"&gt;
+Escribe tu mensaje aquí...
+&lt;/textarea&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="form-element-demo">
+          <h4><code>&lt;select&gt;</code> y <code>&lt;option&gt;</code></h4>
+          <p>Listas desplegables para opciones predefinidas.</p>
+          <div class="code-container">
+            <pre><code class="language-html">&lt;select name="pais"&gt;
+  &lt;option value="mx"&gt;México&lt;/option&gt;
+  &lt;option value="es"&gt;España&lt;/option&gt;
+  &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+          </div>
+        </div>
+
+        <div class="form-element-demo">
+          <h4><code>&lt;label&gt;</code></h4>
+          <p>Asocia texto descriptivo con elementos de formulario.</p>
+          <div class="code-container">
+            <pre><code class="language-html">&lt;!-- Método 1: Envolviendo --&gt;
+&lt;label&gt;
+  &lt;input type="checkbox" name="terminos"&gt;
+  Acepto los términos
+&lt;/label&gt;
+
+&lt;!-- Método 2: Con atributo for --&gt;
+&lt;input type="text" id="nombre"&gt;
+&lt;label for="nombre"&gt;Nombre completo:&lt;/label&gt;</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-universal-access"></i> ¡Etiquetas son esenciales!</h4>
+        <p>
+          Los elementos <code>&lt;label&gt;</code> no son solo decoración. Mejoran la accesibilidad
+          (lectores de pantalla), permiten hacer clic en el texto para activar el input,
+          y mejoran la usabilidad en dispositivos táctiles.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Validación HTML5 -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Validación básica con atributos</h2>
+
+      <p class="text-content">
+        HTML5 introdujo validación nativa en el navegador, reduciendo la necesidad
+        de JavaScript para validaciones simples.
+      </p>
+
+      <div class="validation-demo">
+        <div class="validation-grid">
+          <div class="validation-item">
+            <div class="validation-icon required">
+              <i class="fas fa-asterisk"></i>
+            </div>
+            <div class="validation-info">
+              <h4><code>required</code></h4>
+              <p>Campo obligatorio</p>
+              <code>&lt;input required&gt;</code>
+            </div>
+          </div>
+
+          <div class="validation-item">
+            <div class="validation-icon">
+              <i class="fas fa-ruler"></i>
+            </div>
+            <div class="validation-info">
+              <h4><code>minlength</code> / <code>maxlength</code></h4>
+              <p>Longitud mínima/máxima</p>
+              <code>&lt;input minlength="3" maxlength="50"&gt;</code>
+            </div>
+          </div>
+
+          <div class="validation-item">
+            <div class="validation-icon">
+              <i class="fas fa-sliders-h"></i>
+            </div>
+            <div class="validation-info">
+              <h4><code>min</code> / <code>max</code></h4>
+              <p>Valor mínimo/máximo</p>
+              <code>&lt;input type="number" min="1" max="100"&gt;</code>
+            </div>
+          </div>
+
+          <div class="validation-item">
+            <div class="validation-icon">
+              <i class="fas fa-at"></i>
+            </div>
+            <div class="validation-info">
+              <h4><code>type="email"</code></h4>
+              <p>Validación de email</p>
+              <code>&lt;input type="email"&gt;</code>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-container full-width">
+          <div class="code-header">
+            <span>Ejemplo de formulario validado</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;form&gt;
+  &lt;label for="usuario"&gt;Usuario:&lt;/label&gt;
+  &lt;input type="text" id="usuario" name="usuario" 
+         required minlength="3" maxlength="20"&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="edad"&gt;Edad:&lt;/label&gt;
+  &lt;input type="number" id="edad" name="edad" 
+         min="18" max="99" required&gt;
+
+  &lt;input type="submit" value="Registrarse"&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> Validación del lado del cliente ≠ Seguridad</h4>
+        <p>
+          La validación HTML5 es para <strong>mejorar la experiencia del usuario</strong>,
+          no para seguridad. Los datos siempre deben validarse también en el servidor,
+          ya que los usuarios pueden desactivar JavaScript o modificar el HTML.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Agrupación con fieldset y legend -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Organizando formularios: <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code></h2>
+
+      <p class="text-content">
+        Para formularios largos, es útil agrupar elementos relacionados.
+        Esto mejora la accesibilidad y la usabilidad.
+      </p>
+
+      <div class="form-grouping-demo">
+        <div class="form-group-preview">
+          <fieldset>
+            <legend>Información Personal</legend>
+            <div class="form-group">
+              <label for="nombre2">Nombre:</label>
+              <input type="text" id="nombre2">
+            </div>
+            <div class="form-group">
+              <label for="email2">Email:</label>
+              <input type="email" id="email2">
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferencias</legend>
+            <div class="form-group">
+              <input type="checkbox" id="noticias">
+              <label for="noticias">Recibir noticias</label>
+            </div>
+            <div class="form-group">
+              <input type="checkbox" id="ofertas">
+              <label for="ofertas">Recibir ofertas</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Código de agrupación</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Información Personal&lt;/legend&gt;
+    
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre" name="nombre"&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email"&gt;
+  &lt;/fieldset&gt;
+
+  &lt;fieldset&gt;
+    &lt;legend&gt;Preferencias&lt;/legend&gt;
+    
+    &lt;input type="checkbox" id="noticias" name="noticias"&gt;
+    &lt;label for="noticias"&gt;Recibir noticias&lt;/label&gt;
+    
+    &lt;input type="checkbox" id="ofertas" name="ofertas"&gt;
+    &lt;label for="ofertas"&gt;Recibir ofertas&lt;/label&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-users"></i> Beneficios de la agrupación</h4>
+        <ul>
+          <li><strong>Accesibilidad:</strong> Los lectores de pantalla anuncian los grupos</li>
+          <li><strong>Usabilidad:</strong> Los usuarios comprenden mejor la estructura</li>
+          <li><strong>Estilo:</strong> Más fácil aplicar estilos CSS a grupos</li>
+          <li><strong>Organización:</strong> Código más limpio y mantenible</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Ejemplos prácticos -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Ejemplos prácticos de formularios</h2>
+
+      <div class="form-examples-container">
+        <div class="form-example-tabs">
+          <button class="form-tab active" data-tab="contacto">Contacto</button>
+          <button class="form-tab" data-tab="registro">Registro</button>
+          <button class="form-tab" data-tab="busqueda">Búsqueda</button>
+        </div>
+
+        <div class="form-example-content">
+          <!-- Formulario de Contacto -->
+          <div class="form-example" id="contacto-example">
+            <div class="form-preview">
+              <form class="demo-form" onsubmit="return false;">
+                <h4>Contacto</h4>
+                <div class="form-group">
+                  <label for="demo-nombre">Nombre:</label>
+                  <input type="text" id="demo-nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                  <label for="demo-email">Email:</label>
+                  <input type="email" id="demo-email" placeholder="correo@ejemplo.com" required>
+                </div>
+                <div class="form-group">
+                  <label for="demo-mensaje">Mensaje:</label>
+                  <textarea id="demo-mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+                </div>
+                <button type="submit">Enviar mensaje</button>
+              </form>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span>Formulario de Contacto</span>
+                <span class="code-language">HTML</span>
+              </div>
+              <pre><code class="language-html">&lt;form action="contacto.php" method="POST"&gt;
+  &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+  &lt;input type="text" id="nombre" name="nombre" required&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" required&gt;
+
+  &lt;label for="mensaje"&gt;Mensaje:&lt;/label&gt;
+  &lt;textarea id="mensaje" name="mensaje" rows="4" required&gt;&lt;/textarea&gt;
+
+  &lt;input type="submit" value="Enviar mensaje"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Formulario de Registro (oculto inicialmente) -->
+          <div class="form-example" id="registro-example" style="display: none;">
+            <div class="form-preview">
+              <form class="demo-form" onsubmit="return false;">
+                <h4>Registro</h4>
+                <div class="form-group">
+                  <label for="demo-usuario">Usuario:</label>
+                  <input type="text" id="demo-usuario" placeholder="min. 3 caracteres" minlength="3" required>
+                </div>
+                <div class="form-group">
+                  <label for="demo-pass">Contraseña:</label>
+                  <input type="password" id="demo-pass" minlength="6" required>
+                </div>
+                <div class="form-group">
+                  <label>Género:</label>
+                  <div class="radio-group">
+                    <input type="radio" id="demo-m" name="demo-genero">
+                    <label for="demo-m">Masculino</label>
+                    <input type="radio" id="demo-f" name="demo-genero">
+                    <label for="demo-f">Femenino</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="demo-pais">País:</label>
+                  <select id="demo-pais">
+                    <option value="mx">México</option>
+                    <option value="es">España</option>
+                    <option value="ar">Argentina</option>
+                  </select>
+                </div>
+                <button type="submit">Crear cuenta</button>
+              </form>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span>Formulario de Registro</span>
+                <span class="code-language">HTML</span>
+              </div>
+              <pre><code class="language-html">&lt;form action="registro.php" method="POST"&gt;
+  &lt;label for="usuario"&gt;Usuario:&lt;/label&gt;
+  &lt;input type="text" id="usuario" name="usuario" 
+         minlength="3" required&gt;
+
+  &lt;label for="password"&gt;Contraseña:&lt;/label&gt;
+  &lt;input type="password" id="password" name="password" 
+         minlength="6" required&gt;
+
+  &lt;label&gt;Género:&lt;/label&gt;
+  &lt;input type="radio" id="masculino" name="genero" value="m"&gt;
+  &lt;label for="masculino"&gt;Masculino&lt;/label&gt;
+
+  &lt;input type="radio" id="femenino" name="genero" value="f"&gt;
+  &lt;label for="femenino"&gt;Femenino&lt;/label&gt;
+
+  &lt;label for="pais"&gt;País:&lt;/label&gt;
+  &lt;select id="pais" name="pais"&gt;
+    &lt;option value="mx"&gt;México&lt;/option&gt;
+    &lt;option value="es"&gt;España&lt;/option&gt;
+    &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;input type="submit" value="Crear cuenta"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Formulario de Búsqueda (oculto inicialmente) -->
+          <div class="form-example" id="busqueda-example" style="display: none;">
+            <div class="form-preview">
+              <form class="demo-form search-form" onsubmit="return false;">
+                <h4>Búsqueda</h4>
+                <div class="form-group">
+                  <label for="demo-busqueda">Buscar:</label>
+                  <input type="search" id="demo-busqueda" placeholder="¿Qué estás buscando?">
+                </div>
+                <div class="form-group">
+                  <label for="demo-categoria">Categoría:</label>
+                  <select id="demo-categoria">
+                    <option value="todos">Todos</option>
+                    <option value="web">Web</option>
+                    <option value="imagenes">Imágenes</option>
+                    <option value="videos">Videos</option>
+                  </select>
+                </div>
+                <button type="submit">Buscar</button>
+              </form>
+            </div>
+
+            <div class="code-container">
+              <div class="code-header">
+                <span>Formulario de Búsqueda</span>
+                <span class="code-language">HTML</span>
+              </div>
+              <pre><code class="language-html">&lt;form action="buscar.php" method="GET"&gt;
+  &lt;label for="busqueda"&gt;Buscar:&lt;/label&gt;
+  &lt;input type="search" id="busqueda" name="q" 
+         placeholder="¿Qué estás buscando?"&gt;
+
+  &lt;label for="categoria"&gt;Categoría:&lt;/label&gt;
+  &lt;select id="categoria" name="categoria"&gt;
+    &lt;option value="todos"&gt;Todos&lt;/option&gt;
+    &lt;option value="web"&gt;Web&lt;/option&gt;
+    &lt;option value="imagenes"&gt;Imágenes&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;input type="submit" value="Buscar"&gt;
+&lt;/form&gt;</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-keyboard"></i> Nota sobre method</h4>
+        <p>
+          Observa que el formulario de <strong>búsqueda usa GET</strong> (los datos van en la URL),
+          mientras que <strong>contacto y registro usan POST</strong> (datos ocultos).
+          GET es ideal para búsquedas porque permite compartir la URL con los resultados.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Buenas prácticas -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Buenas prácticas para formularios</h2>
+
+      <div class="best-practices-container">
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-universal-access"></i>
+          </div>
+          <h4>Accesibilidad</h4>
+          <ul>
+            <li>Siempre usa <code>&lt;label&gt;</code></li>
+            <li>Orden lógico de tabulación</li>
+            <li>Agrupa con <code>&lt;fieldset&gt;</code></li>
+            <li>Mensajes de error claros</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Responsive</h4>
+          <ul>
+            <li>Inputs al 100% en móviles</li>
+            <li>Tamaños de toque adecuados</li>
+            <li>Usa tipos de input apropiados</li>
+            <li>Evita tablas en formularios</li>
+          </ul>
+        </div>
+
+        <div class="practice-card">
+          <div class="practice-icon">
+            <i class="fas fa-user-check"></i>
+          </div>
+          <h4>Usabilidad</h4>
+          <ul>
+            <li>Mínimo de campos necesarios</li>
+            <li>Placeholders como ejemplos</li>
+            <li>Validación en tiempo real</li>
+            <li>Botones con texto claro</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-star"></i> Regla de oro: Menos es más</h4>
+        <p>
+          Cada campo adicional reduce la tasa de conversión. Pregúntate:
+          <strong>¿Realmente necesito este dato?</strong> Elimina campos innecesarios,
+          agrupa información relacionada y usa tipos de input apropiados para cada dato.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad práctica: Crea tus formularios básicos</h3>
+
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Es hora de aplicar lo aprendido creando dos formularios funcionales usando solo HTML.
+        </p>
+
+        <div class="practice-steps">
+          <ol>
+            <li>
+              Crea un archivo llamado <strong>contacto.html</strong> con este contenido base:
+              <div class="code-container" style="margin: 15px 0;">
+                <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Formulario de Contacto&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Contáctanos&lt;/h1&gt;
+  &lt;!-- Tu formulario irá aquí --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+              </div>
+            </li>
+            
+            <li>
+              Dentro del body, crea un formulario de contacto con:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Campo "Nombre" (text, required)</li>
+                <li>Campo "Email" (email, required)</li>
+                <li>Campo "Asunto" (text)</li>
+                <li>Campo "Mensaje" (textarea, rows=5, required)</li>
+                <li>Checkbox: "Deseo recibir noticias"</li>
+                <li>Botón "Enviar mensaje" (type="submit")</li>
+                <li>Todos los campos deben tener <code>&lt;label&gt;</code> asociados</li>
+              </ul>
+            </li>
+            
+            <li>
+              Crea un segundo archivo <strong>registro.html</strong> con un formulario de registro:
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>Campo "Usuario" (text, minlength=3, required)</li>
+                <li>Campo "Email" (email, required)</li>
+                <li>Campo "Contraseña" (password, minlength=6, required)</li>
+                <li>Campo "Confirmar contraseña" (password, required)</li>
+                <li>Radio buttons para "Género" (Masculino, Femenino, Otro)</li>
+                <li>Select para "País" (3 opciones mínimas)</li>
+                <li>Checkbox: "Acepto términos y condiciones" (required)</li>
+                <li>Dos botones: "Registrarse" (submit) y "Limpiar" (reset)</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Revisa tus formularios:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Todos los inputs tienen atributo <code>name</code>?</li>
+                <li>¿Los labels usan atributo <code>for</code> correctamente?</li>
+                <li>¿Los radio buttons del mismo grupo tienen mismo <code>name</code>?</li>
+                <li>¿Los formularios se ven bien al abrirlos en el navegador?</li>
+                <li>¿La validación funciona (intenta enviar campos vacíos)?</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Consejo profesional</h4>
+          <p style="color: #fff;">
+            Usa el atributo <code>autocomplete</code> para ayudar a los navegadores:
+            <code>autocomplete="name"</code>, <code>autocomplete="email"</code>, etc.
+            Esto mejora la experiencia del usuario permitiendo autocompletar campos comunes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            Los <strong>formularios HTML</strong> (<code>&lt;form&gt;</code>) permiten la interacción
+            con los usuarios. Usan el atributo <code>method</code> (GET para datos visibles en URL,
+            POST para datos ocultos) y <code>action</code> para especificar dónde enviar los datos.
+          </p>
+
+          <p style="margin-top: 15px;">
+            El elemento <strong>&lt;input&gt;</strong> es el más versátil, cambiando su comportamiento
+            según el <code>type</code> (text, email, password, number, checkbox, radio, submit, etc.).
+            Otros elementos importantes son <code>&lt;textarea&gt;</code> (texto multilínea),
+            <code>&lt;select&gt;</code> (listas desplegables) y <code>&lt;label&gt;</code> (etiquetas descriptivas).
+          </p>
+
+          <p style="margin-top: 15px;">
+            HTML5 introdujo <strong>validación nativa</strong> con atributos como <code>required</code>,
+            <code>minlength</code>, <code>maxlength</code>, <code>min</code>, <code>max</code>, y tipos
+            especiales como <code>email</code> que validan automáticamente.
+          </p>
+
+          <p style="margin-top: 15px;">
+            Para formularios complejos, usa <code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code>
+            para agrupar elementos relacionados. Siempre prioriza la <strong>accesibilidad</strong>
+            usando etiquetas correctamente asociadas y orden lógico de tabulación.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Formularios Básicos</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas los formularios básicos?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion7">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion7">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuál es el atributo obligatorio en un input para definir su tipo?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text">value</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text">name</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text">type</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Qué tipo de input usarías para una contraseña?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">type="text"</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">type="password"</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">type="hidden"</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>¿Cuál es la diferencia principal entre checkbox y radio buttons?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text">Checkbox permite múltiple selección, radio solo uno</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text">No hay diferencia, son intercambiables</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text">Checkbox es para opciones, radio para texto</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Qué hace el atributo <code>required</code> en un input?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text">Lo hace visible en pantalla</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text">Obliga al usuario a completarlo antes de enviar</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text">Establece un valor por defecto</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Para qué sirve el atributo <code>for</code> en la etiqueta <code>&lt;label&gt;</code>?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text">Para asociar el label con un input mediante su id</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text">Para definir el tipo de label</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">Para establecer el orden de tabulación</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion7" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion7" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="../modulo2/leccion6.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Tablas HTML
+      </a>
+      <a href="../modulo3/leccion8.html" class="btn-nav">
+        Siguiente: Layout semántico <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Quiz para Lección 7
+    const correctAnswersLeccion7 = {
+      q1: 'c', // type
+      q2: 'b', // password
+      q3: 'a', // checkbox múltiple, radio uno
+      q4: 'b', // obliga a completar
+      q5: 'a'  // asocia con id
+    };
+
+    const totalQuestions = Object.keys(correctAnswersLeccion7).length;
+
+    const explanationsLeccion7 = {
+      q1: {
+        correct: "¡Correcto! El atributo type es obligatorio para definir qué tipo de input es.",
+        incorrect: "Incorrecto. Aunque value y name son útiles, type es obligatorio en inputs."
+      },
+      q2: {
+        correct: "¡Exacto! type='password' oculta los caracteres con puntos o asteriscos.",
+        incorrect: "Incorrecto. type='text' muestra la contraseña en claro, comprometiendo seguridad."
+      },
+      q3: {
+        correct: "¡Perfecto! Checkbox permite selección múltiple, radio buttons solo uno por grupo.",
+        incorrect: "Incorrecto. Hay diferencia importante: checkbox es múltiple, radio es exclusivo."
+      },
+      q4: {
+        correct: "¡Correcto! required obliga al usuario a completar el campo antes de enviar.",
+        incorrect: "Incorrecto. required no afecta visibilidad ni valores por defecto, solo validación."
+      },
+      q5: {
+        correct: "¡Exacto! El atributo for asocia el label con el input mediante su id, mejorando accesibilidad.",
+        incorrect: "Incorrecto. El atributo for no define tipo ni orden, sino asociación con input."
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Navegación entre pestañas de ejemplos
+      const formTabs = document.querySelectorAll('.form-tab');
+      const formExamples = document.querySelectorAll('.form-example');
+
+      formTabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+          // Remover active de todas las pestañas
+          formTabs.forEach(t => t.classList.remove('active'));
+          // Agregar active a la pestaña clickeada
+          this.classList.add('active');
+
+          // Ocultar todos los ejemplos
+          formExamples.forEach(example => {
+            example.style.display = 'none';
+          });
+
+          // Mostrar el ejemplo correspondiente
+          const tabId = this.getAttribute('data-tab');
+          const exampleToShow = document.getElementById(`${tabId}-example`);
+          if (exampleToShow) {
+            exampleToShow.style.display = 'block';
+          }
+        });
+      });
+
+      // Quiz para Lección 7
+      const checkButton7 = document.getElementById('check-quiz-leccion7');
+      const resetButton7 = document.getElementById('reset-quiz-leccion7');
+      const scoreElement7 = document.getElementById('score-leccion7');
+
+      checkButton7.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion7');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion7[questionName]) {
+            score++;
+            feedbackElement.textContent = explanationsLeccion7[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.textContent = explanationsLeccion7[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement7.textContent = score;
+
+        setTimeout(() => {
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
+          } else {
+            quizNotification.showError(score, totalQuestions);
+          }
+        }, 500);
+      });
+
+      resetButton7.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion7');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement7.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>

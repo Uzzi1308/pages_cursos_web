@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lección 10: Section, Article, Aside</title>
+
+  <!-- Estilos base -->
+  <link rel="stylesheet" href="../../assets/css/lessons-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion2-3-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion4-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion6-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion7-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion8-style.css">
+  <link rel="stylesheet" href="../../assets/css/extras-style/leccion10-style.css">
+
+  <!-- Dependencias -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+  <div class="breadcrumb-container">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="../../index.html">Inicio</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../../modulos.html">Módulos</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="../modulo1/leccion1.html">Lección 1</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item"><a href="leccion9.html">Lección 9</a></li>
+      <li class="breadcrumb-separator"><i class="fas fa-chevron-right"></i></li>
+      <li class="breadcrumb-item active">Lección 10: Section, Article, Aside</li>
+    </ol>
+  </div>
+
+  <!-- NAVEGACIÓN -->
+  <nav class="lesson-nav">
+    <div class="nav-content">
+      <div class="lesson-title-nav">
+        <span class="module-badge">Módulo 3</span>
+        Lección 10: Section, Article, Aside
+      </div>
+      <a href="../../modulos.html" class="btn-back">
+        <i class="fas fa-arrow-left"></i> Volver a Módulos
+      </a>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="lesson-header">
+    <div class="container">
+      <div class="lesson-number" data-aos="fade-down">Lección 10 de 16</div>
+      <h1 data-aos="fade-up" data-aos-delay="200">Section, Article, Aside</h1>
+      <p class="lesson-subtitle" data-aos="fade-up" data-aos-delay="300">Elementos de sección semántica en HTML5</p>
+
+      <div class="lesson-objectives" data-aos="fade-up" data-aos-delay="400">
+        <h3>Objetivos de aprendizaje</h3>
+        <ul>
+          <li>Diferenciar entre <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code></li>
+          <li>Comprender el uso específico de cada elemento</li>
+          <li>Aplicar correctamente la jerarquía de encabezados</li>
+          <li>Crear esquemas de documento semánticamente correctos</li>
+          <li>Implementar estructuras anidadas apropiadas</li>
+          <li>Mejorar SEO y accesibilidad con secciones semánticas</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENIDO -->
+  <main class="lesson-content">
+
+    <!-- SECCIÓN 1: Introducción -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Los Tres Pilares de la Sección Semántica</h2>
+
+      <p class="text-content">
+        En HTML5, tenemos tres elementos fundamentales para estructurar el contenido de forma semántica:
+        <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code>. Cada uno tiene un
+        propósito específico que ayuda a navegadores, motores de búsqueda y tecnologías de asistencia a entender
+        la organización y relación del contenido.
+      </p>
+
+      <div class="section-visualizer">
+        <div class="section-box section" data-aos="zoom-in" data-aos-delay="200">
+          <div class="section-header">
+            <div class="section-icon section">
+              <i class="fas fa-cube"></i>
+            </div>
+            <div>
+              <h3><code>&lt;section&gt;</code></h3>
+              <p class="element-subtitle">Agrupación Temática</p>
+            </div>
+          </div>
+          <p>Agrupa contenido relacionado temáticamente que forma parte de un todo mayor.</p>
+          <div class="example-tag">Ejemplo: Capítulos de un libro, pestañas de una aplicación</div>
+        </div>
+
+        <div class="section-box article" data-aos="zoom-in" data-aos-delay="300">
+          <div class="section-header">
+            <div class="section-icon article">
+              <i class="fas fa-newspaper"></i>
+            </div>
+            <div>
+              <h3><code>&lt;article&gt;</code></h3>
+              <p class="element-subtitle">Contenido Independiente</p>
+            </div>
+          </div>
+          <p>Contenido autocontenido que podría distribuirse independientemente.</p>
+          <div class="example-tag">Ejemplo: Post de blog, artículo de noticias, comentario</div>
+        </div>
+
+        <div class="section-box aside" data-aos="zoom-in" data-aos-delay="400">
+          <div class="section-header">
+            <div class="section-icon aside">
+              <i class="fas fa-stream"></i>
+            </div>
+            <div>
+              <h3><code>&lt;aside&gt;</code></h3>
+              <p class="element-subtitle">Contenido Relacionado</p>
+            </div>
+          </div>
+          <p>Contenido tangencialmente relacionado con el contenido principal.</p>
+          <div class="example-tag">Ejemplo: Sidebar, notas al margen, publicidad relacionada</div>
+        </div>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-lightbulb"></i> ¿Por qué usar estos elementos?</h4>
+        <p>
+          Cada elemento crea un <strong>esquema semántico</strong> que ayuda a los lectores de pantalla a navegar
+          el contenido, mejora el <strong>SEO</strong> al indicar a los motores de búsqueda la estructura del contenido,
+          y hace el código más <strong>mantenible</strong> y comprensible para otros desarrolladores.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 2: Elemento <section> -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title"><code>&lt;section&gt;</code> - Agrupación Temática</h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;section&gt;</code> representa una sección genérica de un documento. Agrupa contenido
+        temáticamente relacionado. Cada <code>&lt;section&gt;</code> debe ser identificado, típicamente incluyendo
+        un elemento de encabezado (<code>&lt;h1&gt;</code>-<code>&lt;h6&gt;</code>) como hijo del elemento
+        <code>&lt;section&gt;</code>.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Uso correcto de <code>&lt;section&gt;</code></span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Una página de servicios --&gt;
+&lt;main&gt;
+  &lt;h1&gt;Nuestros Servicios&lt;/h1&gt;
+  
+  &lt;section&gt;
+    &lt;h2&gt;Diseño Web&lt;/h2&gt;
+    &lt;p&gt;Creación de sitios web modernos y responsivos...&lt;/p&gt;
+  &lt;/section&gt;
+  
+  &lt;section&gt;
+    &lt;h2&gt;Desarrollo de Apps&lt;/h2&gt;
+    &lt;p&gt;Desarrollo de aplicaciones móviles nativas...&lt;/p&gt;
+  &lt;/section&gt;
+  
+  &lt;section&gt;
+    &lt;h2&gt;SEO y Marketing&lt;/h2&gt;
+    &lt;p&gt;Optimización para motores de búsqueda...&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> No usar <code>&lt;section&gt;</code> como contenedor de estilo</h4>
+        <p>
+          <strong>Mal uso:</strong> <code>&lt;section&gt;</code> solo para aplicar CSS.<br>
+          <strong>Buen uso:</strong> <code>&lt;section&gt;</code> para agrupar contenido temático.<br>
+          Si necesitas un contenedor solo para estilos, usa <code>&lt;div&gt;</code>.
+        </p>
+      </div>
+
+      <div class="use-cases">
+        <h4>Casos de uso apropiados para <code>&lt;section&gt;</code>:</h4>
+        <ul class="use-cases-list">
+          <li><i class="fas fa-check-circle"></i> Capítulos de un libro o artículo largo</li>
+          <li><i class="fas fa-check-circle"></i> Pestañas en una interfaz de usuario</li>
+          <li><i class="fas fa-check-circle"></i> Secciones temáticas en una página (servicios, equipo, testimonios)</li>
+          <li><i class="fas fa-check-circle"></i> Introducción y conclusión de un documento</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: Elemento <article> -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title"><code>&lt;article&gt;</code> - Contenido Independiente</h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;article&gt;</code> representa una composición auto-contenida que podría distribuirse
+        independientemente. Piensa en artículos de periódico, entradas de blog, comentarios de usuarios, tarjetas
+        de productos, o cualquier contenido que tenga sentido por sí solo.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Estructura de un <code>&lt;article&gt;</code> completo</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;article&gt;
+  &lt;header&gt;
+    &lt;h2&gt;Introducción al HTML Semántico&lt;/h2&gt;
+    &lt;p class="article-meta"&gt;
+      Publicado el &lt;time datetime="2024-01-20"&gt;20 de enero, 2024&lt;/time&gt;
+      por &lt;span class="author"&gt;Carlos Rodríguez&lt;/span&gt;
+    &lt;/p&gt;
+  &lt;/header&gt;
+  
+  &lt;section&gt;
+    &lt;h3&gt;¿Qué es HTML semántico?&lt;/h3&gt;
+    &lt;p&gt;El HTML semántico utiliza elementos que describen su significado...&lt;/p&gt;
+  &lt;/section&gt;
+  
+  &lt;section&gt;
+    &lt;h3&gt;Beneficios principales&lt;/h3&gt;
+    &lt;p&gt;Mejora la accesibilidad, SEO y mantenibilidad del código...&lt;/p&gt;
+  &lt;/section&gt;
+  
+  &lt;footer&gt;
+    &lt;p class="article-tags"&gt;Etiquetas: HTML5, Semántica, Web Development&lt;/p&gt;
+    &lt;div class="comments"&gt;5 comentarios&lt;/div&gt;
+  &lt;/footer&gt;
+&lt;/article&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-question-circle"></i> ¿Cuándo algo es "independiente"?</h4>
+        <p>
+          <strong>Pregúntate:</strong> "¿Este contenido tendría sentido si se publicara solo en otro sitio o en un feed RSS?"<br>
+          Si la respuesta es <strong>sí</strong>, probablemente debería ser un <code>&lt;article&gt;</code>.<br>
+          Ejemplos: post de blog, artículo de noticias, comentario, producto en catálogo.
+        </p>
+      </div>
+
+      <div class="article-examples">
+        <h4>Ejemplos de <code>&lt;article&gt;</code> en diferentes contextos:</h4>
+        <div class="examples-grid">
+          <div class="example-card">
+            <i class="fas fa-blog"></i>
+            <h5>Blog</h5>
+            <p>Cada entrada del blog es un <code>&lt;article&gt;</code></p>
+          </div>
+          <div class="example-card">
+            <i class="fas fa-newspaper"></i>
+            <h5>Periódico</h5>
+            <p>Cada noticia es un <code>&lt;article&gt;</code></p>
+          </div>
+          <div class="example-card">
+            <i class="fas fa-comments"></i>
+            <h5>Foro</h5>
+            <p>Cada comentario puede ser un <code>&lt;article&gt;</code></p>
+          </div>
+          <div class="example-card">
+            <i class="fas fa-shopping-cart"></i>
+            <h5>E-commerce</h5>
+            <p>Cada producto puede ser un <code>&lt;article&gt;</code></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: Elemento <aside> -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title"><code>&lt;aside&gt;</code> - Contenido Relacionado</h2>
+
+      <p class="text-content">
+        El elemento <code>&lt;aside&gt;</code> representa contenido que está indirectamente relacionado con el contenido
+        principal. Es contenido tangencial, como barras laterales (sidebars), pull-quotes, publicidad relacionada,
+        biografías del autor, o enlaces relacionados.
+      </p>
+
+      <div class="blog-example">
+        <div class="blog-area article-area">
+          <h4><i class="fas fa-newspaper"></i> Área Principal (Article)</h4>
+          <p>Contenido principal del artículo o página</p>
+          <div class="content-preview">
+            <h5>Título del Artículo Principal</h5>
+            <p>Este es el contenido principal que los usuarios vienen a leer...</p>
+          </div>
+        </div>
+        
+        <div class="blog-area aside-area">
+          <h4><i class="fas fa-stream"></i> Área Secundaria (Aside)</h4>
+          <p>Contenido relacionado indirectamente</p>
+          <div class="content-preview">
+            <h5>Artículos Relacionados</h5>
+            <ul>
+              <li>Guía de HTML5 Semántico</li>
+              <li>Mejores prácticas de accesibilidad</li>
+              <li>Tutorial de estructura web</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Implementación de <code>&lt;aside&gt;</code> en un blog</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;main&gt;
+  &lt;article&gt;
+    &lt;h1&gt;Guía completa de HTML Semántico&lt;/h1&gt;
+    &lt;!-- Contenido principal del artículo --&gt;
+  &lt;/article&gt;
+  
+  &lt;aside&gt;
+    &lt;section&gt;
+      &lt;h3&gt;Artículos Relacionados&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Introducción a CSS Grid&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Accesibilidad Web 101&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;SEO para desarrolladores&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+    
+    &lt;section&gt;
+      &lt;h3&gt;Sobre el autor&lt;/h3&gt;
+      &lt;p&gt;Carlos es desarrollador web con 10 años de experiencia...&lt;/p&gt;
+    &lt;/section&gt;
+    
+    &lt;section&gt;
+      &lt;h3&gt;Newsletter&lt;/h3&gt;
+      &lt;p&gt;Suscríbete para recibir más tutoriales&lt;/p&gt;
+    &lt;/section&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-map-signs"></i> Ubicaciones comunes de <code>&lt;aside&gt;</code></h4>
+        <ul>
+          <li><strong>Lateral:</strong> Como sidebar tradicional (a la izquierda o derecha)</li>
+          <li><strong>Inline:</strong> Dentro de un artículo, para notas o información adicional</li>
+          <li><strong>Después del contenido:</strong> Para contenido relacionado al final</li>
+          <li><strong>Múltiples:</strong> Puedes tener varios <code>&lt;aside&gt;</code> en una página</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 5: Comparativa -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Comparativa: ¿Cuándo usar cada uno?</h2>
+
+      <p class="text-content">
+        Elegir entre <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y <code>&lt;aside&gt;</code> puede ser
+        confuso al principio. Esta tabla te ayudará a tomar la decisión correcta:
+      </p>
+
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Elemento</th>
+            <th>Propósito</th>
+            <th>¿Es independiente?</th>
+            <th>Ejemplos comunes</th>
+            <th>¿Necesita header?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>&lt;section&gt;</code></td>
+            <td>Agrupar contenido temático relacionado</td>
+            <td><i class="fas fa-times text-danger"></i> No</td>
+            <td>Capítulos, pestañas, secciones de página</td>
+            <td><i class="fas fa-check text-success"></i> Sí, recomendado</td>
+          </tr>
+          <tr>
+            <td><code>&lt;article&gt;</code></td>
+            <td>Contenido autocontenido e independiente</td>
+            <td><i class="fas fa-check text-success"></i> Sí</td>
+            <td>Posts de blog, noticias, comentarios, productos</td>
+            <td><i class="fas fa-check text-success"></i> Sí, esencial</td>
+          </tr>
+          <tr>
+            <td><code>&lt;aside&gt;</code></td>
+            <td>Contenido relacionado indirectamente</td>
+            <td><i class="fas fa-minus text-warning"></i> Depende</td>
+            <td>Sidebars, notas, biografías, enlaces relacionados</td>
+            <td><i class="fas fa-check text-success"></i> Sí, recomendado</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="decision-flow">
+        <h4>Diagrama de flujo para decidir:</h4>
+        <div class="flow-chart">
+          <div class="flow-step">
+            <div class="flow-question">¿El contenido es autocontenido e independiente?</div>
+            <div class="flow-arrows">
+              <div class="flow-yes">
+                <span class="arrow-label">Sí</span>
+                <i class="fas fa-arrow-down"></i>
+                <div class="flow-answer">Usa <code>&lt;article&gt;</code></div>
+              </div>
+              <div class="flow-no">
+                <span class="arrow-label">No</span>
+                <i class="fas fa-arrow-down"></i>
+                <div class="flow-question">¿El contenido está tangencialmente relacionado?</div>
+                <div class="flow-arrows">
+                  <div class="flow-yes">
+                    <span class="arrow-label">Sí</span>
+                    <i class="fas fa-arrow-down"></i>
+                    <div class="flow-answer">Usa <code>&lt;aside&gt;</code></div>
+                  </div>
+                  <div class="flow-no">
+                    <span class="arrow-label">No</span>
+                    <i class="fas fa-arrow-down"></i>
+                    <div class="flow-answer">Usa <code>&lt;section&gt;</code></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-lightbulb"></i> Regla mnemotécnica</h4>
+        <p>
+          <strong>Section</strong> = Separar temáticamente<br>
+          <strong>Article</strong> = Aislar independientemente<br>
+          <strong>Aside</strong> = Añadir relacionadamente
+        </p>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 6: Jerarquía de encabezados -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Jerarquía de Encabezados en Secciones</h2>
+
+      <p class="text-content">
+        Cada elemento de sección semántica debe tener su propia jerarquía de encabezados. Esto crea un esquema
+        del documento que ayuda a tecnologías de asistencia y mejora el SEO. La regla es simple: comienza con
+        <code>&lt;h1&gt;</code> para el título principal, y usa encabezados consecutivos (<code>&lt;h2&gt;</code>,
+        <code>&lt;h3&gt;</code>, etc.) para subsecciones.
+      </p>
+
+      <div class="outline-visual">
+        <div class="outline-item body">
+          <strong>&lt;body&gt;</strong>
+          <div class="outline-children">
+            <div class="outline-item h1">
+              <strong>&lt;h1&gt;</strong> Título Principal de la Página
+            </div>
+            <div class="outline-item section">
+              <strong>&lt;section&gt;</strong>
+              <div class="outline-children">
+                <div class="outline-item h2">
+                  <strong>&lt;h2&gt;</strong> Introducción
+                </div>
+              </div>
+            </div>
+            <div class="outline-item article">
+              <strong>&lt;article&gt;</strong>
+              <div class="outline-children">
+                <div class="outline-item h2">
+                  <strong>&lt;h2&gt;</strong> Título del Artículo
+                </div>
+                <div class="outline-item section">
+                  <strong>&lt;section&gt;</strong>
+                  <div class="outline-children">
+                    <div class="outline-item h3">
+                      <strong>&lt;h3&gt;</strong> Subtítulo dentro del artículo
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="outline-item aside">
+              <strong>&lt;aside&gt;</strong>
+              <div class="outline-children">
+                <div class="outline-item h2">
+                  <strong>&lt;h2&gt;</strong> Contenido Relacionado
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Jerarquía correcta de encabezados</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi Blog de Desarrollo Web&lt;/h1&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Guía de HTML Semántico&lt;/h2&gt;  &lt;!-- h2 porque está dentro de body --&gt;
+      
+      &lt;section&gt;
+        &lt;h3&gt;Elementos de Sección&lt;/h3&gt;  &lt;!-- h3 porque está dentro de article --&gt;
+        
+        &lt;section&gt;
+          &lt;h4&gt;El elemento &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;&lt;/h4&gt; &lt;!-- h4 porque está anidado --&gt;
+        &lt;/section&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+      &lt;h2&gt;Artículos Relacionados&lt;/h2&gt;  &lt;!-- h2 porque es hermano de article --&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+&lt;/body&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box warning">
+        <h4><i class="fas fa-exclamation-triangle"></i> Errores comunes con encabezados</h4>
+        <ul>
+          <li><strong>Saltar niveles:</strong> Ir de <code>&lt;h1&gt;</code> directamente a <code>&lt;h3&gt;</code></li>
+          <li><strong>Usar encabezados solo por estilo:</strong> Elegir <code>&lt;h4&gt;</code> porque "se ve mejor"</li>
+          <li><strong>Múltiples <code>&lt;h1&gt;</code>:</strong> En HTML5 puedes tener varios, pero sigue siendo controversial</li>
+          <li><strong>Secciones sin encabezados:</strong> Cada sección semántica debería tener al menos un encabezado</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 7: Anidamiento -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Anidamiento y Estructuras Complejas</h2>
+
+      <p class="text-content">
+        Los elementos de sección semántica pueden anidarse para crear estructuras complejas y jerárquicas.
+        El anidamiento correcto es esencial para crear un esquema de documento lógico y comprensible.
+      </p>
+
+      <div class="nesting-diagram">
+        <div class="nesting-level body">
+          <div class="nesting-label">
+            <strong>&lt;body&gt;</strong> - Documento completo
+          </div>
+          
+          <div class="nesting-level main">
+            <div class="nesting-label">
+              <strong>&lt;main&gt;</strong> - Contenido principal
+            </div>
+            
+            <div class="nesting-level article">
+              <div class="nesting-label">
+                <strong>&lt;article&gt;</strong> - Artículo principal
+              </div>
+              
+              <div class="nesting-level section">
+                <div class="nesting-label">
+                  <strong>&lt;section&gt;</strong> - Sección 1 del artículo
+                </div>
+              </div>
+              
+              <div class="nesting-level section">
+                <div class="nesting-label">
+                  <strong>&lt;section&gt;</strong> - Sección 2 del artículo
+                </div>
+                
+                <div class="nesting-level aside">
+                  <div class="nesting-label">
+                    <strong>&lt;aside&gt;</strong> - Nota dentro de la sección
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="nesting-level aside">
+              <div class="nesting-label">
+                <strong>&lt;aside&gt;</strong> - Sidebar principal
+              </div>
+              
+              <div class="nesting-level section">
+                <div class="nesting-label">
+                  <strong>&lt;section&gt;</strong> - Sección dentro del sidebar
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Estructura anidada compleja</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Foro de discusión --&gt;
+&lt;main&gt;
+  &lt;article&gt;  &lt;!-- Hilo de discusión --&gt;
+    &lt;h2&gt;¿Cuál es la mejor práctica para HTML semántico?&lt;/h2&gt;
+    
+    &lt;section&gt;  &lt;!-- Posts dentro del hilo --&gt;
+      &lt;article&gt;  &lt;!-- Post individual --&gt;
+        &lt;h3&gt;Respuesta de Carlos&lt;/h3&gt;
+        &lt;p&gt;En mi experiencia, lo más importante es...&lt;/p&gt;
+        
+        &lt;aside&gt;  &lt;!-- Cita dentro del post --&gt;
+          &lt;blockquote&gt;
+            Como dice la documentación oficial de MDN...
+          &lt;/blockquote&gt;
+        &lt;/aside&gt;
+      &lt;/article&gt;
+      
+      &lt;article&gt;  &lt;!-- Otro post --&gt;
+        &lt;h3&gt;Respuesta de Ana&lt;/h3&gt;
+        &lt;p&gt;Estoy de acuerdo con Carlos, pero añadiría...&lt;/p&gt;
+      &lt;/article&gt;
+    &lt;/section&gt;
+  &lt;/article&gt;
+  
+  &lt;aside&gt;  &lt;!-- Sidebar del foro --&gt;
+    &lt;section&gt;
+      &lt;h3&gt;Hilos populares&lt;/h3&gt;
+      &lt;!-- Lista de hilos --&gt;
+    &lt;/section&gt;
+  &lt;/aside&gt;
+&lt;/main&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box info">
+        <h4><i class="fas fa-sitemap"></i> Reglas de anidamiento</h4>
+        <ul>
+          <li><code>&lt;article&gt;</code> puede contener <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, u otros <code>&lt;article&gt;</code></li>
+          <li><code>&lt;section&gt;</code> puede contener <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, u otros <code>&lt;section&gt;</code></li>
+          <li><code>&lt;aside&gt;</code> puede contener <code>&lt;section&gt;</code> o <code>&lt;article&gt;</code></li>
+          <li>Cualquiera puede contener elementos de contenido (p, ul, img, etc.)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 8: Esquema del documento -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Esquema del Documento (Document Outline)</h2>
+
+      <p class="text-content">
+        Los elementos semánticos crean automáticamente un esquema del documento que los navegadores y
+        tecnologías de asistencia usan para navegar el contenido. Este esquema es esencial para la
+        accesibilidad y el SEO.
+      </p>
+
+      <div class="outline-comparison">
+        <div class="comparison-item">
+          <h4>Sin semántica (solo divs)</h4>
+          <div class="outline-visual simple">
+            <div class="outline-item">body</div>
+            <div class="outline-item">div (contenedor)</div>
+            <div class="outline-item">div (contenido)</div>
+            <div class="outline-item">div (sidebar)</div>
+            <div class="outline-item">div (footer)</div>
+          </div>
+          <p class="outline-desc">Esquema plano sin estructura comprensible</p>
+        </div>
+        
+        <div class="comparison-item">
+          <h4>Con semántica</h4>
+          <div class="outline-visual detailed">
+            <div class="outline-item">body</div>
+            <div class="outline-children">
+              <div class="outline-item">header (cabecera)</div>
+              <div class="outline-item">main (contenido principal)</div>
+              <div class="outline-children">
+                <div class="outline-item">article (artículo)</div>
+                <div class="outline-children">
+                  <div class="outline-item">section (introducción)</div>
+                  <div class="outline-item">section (desarrollo)</div>
+                </div>
+                <div class="outline-item">aside (contenido relacionado)</div>
+              </div>
+              <div class="outline-item">footer (pie)</div>
+            </div>
+          </div>
+          <p class="outline-desc">Esquema jerárquico y semánticamente rico</p>
+        </div>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span>Cómo ver el esquema de tu documento</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!-- Herramientas para visualizar el esquema --&gt;
+&lt;!-- 
+1. HTML5 Outliner (extensión de navegador)
+2. Validator.w3.org (validador de esquema)
+3. Herramientas de desarrollo del navegador
+--&gt;
+
+&lt;!-- Ejemplo de estructura que genera buen esquema --&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+    &lt;nav&gt;...&lt;/nav&gt;
+  &lt;/header&gt;
+  
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Artículo Principal&lt;/h2&gt;
+      &lt;section&gt;
+        &lt;h3&gt;Sección 1&lt;/h3&gt;
+        &lt;p&gt;Contenido...&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+    
+    &lt;aside&gt;
+      &lt;h2&gt;Sidebar&lt;/h2&gt;
+      &lt;section&gt;
+        &lt;h3&gt;Enlaces relacionados&lt;/h3&gt;
+      &lt;/section&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+  
+  &lt;footer&gt;
+    &lt;p&gt;Pie de página&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-universal-access"></i> Beneficios del esquema semántico</h4>
+        <ul>
+          <li><strong>Accesibilidad:</strong> Los lectores de pantalla pueden navegar por secciones</li>
+          <li><strong>SEO:</strong> Los motores de búsqueda entienden mejor la estructura del contenido</li>
+          <li><strong>Mantenibilidad:</strong> Los desarrolladores pueden entender rápidamente la estructura</li>
+          <li><strong>Navegación:</strong> Los usuarios pueden saltar rápidamente a secciones relevantes</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 9: Ejemplo práctico -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Ejemplo Práctico - Blog con Secciones Complejas</h2>
+
+      <p class="text-content">
+        Veamos un ejemplo completo de un blog implementado con secciones semánticas. Este ejemplo integra
+        todo lo aprendido: <code>&lt;article&gt;</code> para posts, <code>&lt;section&gt;</code> para organizar
+        contenido dentro de posts, y <code>&lt;aside&gt;</code> para contenido relacionado.
+      </p>
+
+      <div class="blog-preview">
+        <div class="blog-structure">
+          <div class="structure-item header-structure">
+            <div class="structure-label">
+              <i class="fas fa-heading"></i>
+              <code>&lt;header&gt;</code>
+            </div>
+            <div class="structure-desc">Logo + Navegación + Título</div>
+          </div>
+          
+          <div class="structure-item main-structure">
+            <div class="structure-label">
+              <i class="fas fa-star"></i>
+              <code>&lt;main&gt;</code>
+            </div>
+            <div class="structure-desc">Contenido principal</div>
+            <div class="structure-nested">
+              <div class="structure-item article-structure">
+                <div class="structure-label">
+                  <i class="fas fa-newspaper"></i>
+                  <code>&lt;article&gt;</code>
+                </div>
+                <div class="structure-desc">Post del blog</div>
+                <div class="structure-nested">
+                  <div class="structure-item section-structure">
+                    <code>&lt;section&gt;</code> (Introducción)
+                  </div>
+                  <div class="structure-item section-structure">
+                    <code>&lt;section&gt;</code> (Desarrollo)
+                  </div>
+                  <div class="structure-item aside-structure">
+                    <code>&lt;aside&gt;</code> (Nota del autor)
+                  </div>
+                </div>
+              </div>
+              
+              <div class="structure-item aside-structure">
+                <div class="structure-label">
+                  <i class="fas fa-stream"></i>
+                  <code>&lt;aside&gt;</code>
+                </div>
+                <div class="structure-desc">Sidebar con widgets</div>
+                <div class="structure-nested">
+                  <div class="structure-item section-structure">
+                    <code>&lt;section&gt;</code> (Artículos recientes)
+                  </div>
+                  <div class="structure-item section-structure">
+                    <code>&lt;section&gt;</code> (Categorías)
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="structure-item footer-structure">
+            <div class="structure-label">
+              <i class="fas fa-shoe-prints"></i>
+              <code>&lt;footer&gt;</code>
+            </div>
+            <div class="structure-desc">Información de contacto</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code-container full-width">
+        <div class="code-header">
+          <span>Código completo del blog semántico</span>
+          <span class="code-language">HTML</span>
+        </div>
+        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Blog Semántico - Desarrollo Web&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Blog de Desarrollo Web&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Dominando los Elementos de Sección en HTML5&lt;/h2&gt;
+        &lt;p class="meta"&gt;
+          Publicado el &lt;time datetime="2024-01-20"&gt;20 de enero, 2024&lt;/time&gt;
+          por &lt;span&gt;Carlos Rodríguez&lt;/span&gt;
+        &lt;/p&gt;
+      &lt;/header&gt;
+
+      &lt;section&gt;
+        &lt;h3&gt;Introducción&lt;/h3&gt;
+        &lt;p&gt;Los elementos de sección semántica son fundamentales para crear...&lt;/p&gt;
+      &lt;/section&gt;
+
+      &lt;section&gt;
+        &lt;h3&gt;El elemento &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+        &lt;p&gt;El elemento &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; representa una sección genérica...&lt;/p&gt;
+        
+        &lt;aside class="tip"&gt;
+          &lt;h4&gt;Consejo Práctico&lt;/h4&gt;
+          &lt;p&gt;Usa &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; cuando necesites agrupar contenido temático.&lt;/p&gt;
+        &lt;/aside&gt;
+      &lt;/section&gt;
+
+      &lt;section&gt;
+        &lt;h3&gt;El elemento &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;&lt;/h3&gt;
+        &lt;p&gt;A diferencia de &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt;, el elemento &lt;code&gt;&amp;lt;article&amp;gt;&lt;/code&gt;...&lt;/p&gt;
+      &lt;/section&gt;
+
+      &lt;footer&gt;
+        &lt;p class="tags"&gt;Etiquetas: HTML5, Semántica, SEO, Accesibilidad&lt;/p&gt;
+        &lt;div class="comments"&gt;
+          &lt;h4&gt;Comentarios (3)&lt;/h4&gt;
+          &lt;article class="comment"&gt;
+            &lt;h5&gt;María González&lt;/h5&gt;
+            &lt;p&gt;Excelente artículo, muy claro y útil.&lt;/p&gt;
+          &lt;/article&gt;
+        &lt;/div&gt;
+      &lt;/footer&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;section&gt;
+        &lt;h3&gt;Artículos Recientes&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Introducción a CSS Grid&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Flexbox vs Grid&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Accesibilidad Web 101&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+
+      &lt;section&gt;
+        &lt;h3&gt;Categorías&lt;/h3&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="#"&gt;Accesibilidad&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/section&gt;
+
+      &lt;section&gt;
+        &lt;h3&gt;Sobre el autor&lt;/h3&gt;
+        &lt;p&gt;Carlos es desarrollador web con más de 10 años de experiencia...&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;© 2024 Blog de Desarrollo Web. Todos los derechos reservados.&lt;/p&gt;
+    &lt;address&gt;
+      Contacto: &lt;a href="mailto:info@blogdevweb.com"&gt;info@blogdevweb.com&lt;/a&gt;
+    &lt;/address&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+      </div>
+
+      <div class="highlight-box">
+        <h4><i class="fas fa-search"></i> ¡Observa los detalles semánticos!</h4>
+        <ul>
+          <li><strong>Anidamiento múltiple:</strong> <code>&lt;section&gt;</code> dentro de <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code> dentro de <code>&lt;section&gt;</code></li>
+          <li><strong>Jerarquía clara:</strong> Encabezados que reflejan la estructura (<code>&lt;h1&gt;</code> → <code>&lt;h2&gt;</code> → <code>&lt;h3&gt;</code> → <code>&lt;h4&gt;</code>)</li>
+          <li><strong>Elementos reutilizados:</strong> <code>&lt;article&gt;</code> para el post principal y también para cada comentario</li>
+          <li><strong>Estructura lógica:</strong> Cada sección tiene un propósito claro y bien definido</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 10: Patrones comunes -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Patrones Comunes de Uso</h2>
+
+      <p class="text-content">
+        Diferentes tipos de sitios web tienen diferentes necesidades estructurales. Aquí tienes patrones
+        comunes para implementar secciones semánticas en varios tipos de sitios:
+      </p>
+
+      <div class="pattern-grid">
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-blog"></i>
+          </div>
+          <h4>Blog o Revista</h4>
+          <p>Estructura centrada en artículos con sidebar para contenido relacionado.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;article&gt; (post)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;section&gt; (secciones)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt; (notas)<br>
+            &nbsp;&nbsp;&lt;/article&gt;<br>
+            &nbsp;&nbsp;&lt;aside&gt; (sidebar)<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-shopping-cart"></i>
+          </div>
+          <h4>E-commerce</h4>
+          <p>Productos como artículos independientes, secciones para categorías.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;section&gt; (categoría)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (producto)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (producto)<br>
+            &nbsp;&nbsp;&lt;/section&gt;<br>
+            &nbsp;&nbsp;&lt;aside&gt; (filtros)<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-newspaper"></i>
+          </div>
+          <h4>Portal de Noticias</h4>
+          <p>Múltiples artículos agrupados por secciones temáticas.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;section&gt; (nacional)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (noticia)<br>
+            &nbsp;&nbsp;&lt;/section&gt;<br>
+            &nbsp;&nbsp;&lt;section&gt; (internacional)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (noticia)<br>
+            &nbsp;&nbsp;&lt;/section&gt;<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <h4>Sitio Educativo</h4>
+          <p>Lecciones como artículos, agrupadas en secciones por tema.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;section&gt; (módulo)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (lección)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;aside&gt; (ejercicio)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (lección)<br>
+            &nbsp;&nbsp;&lt;/section&gt;<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <h4>Foro o Comunidad</h4>
+          <p>Hilos como artículos, con artículos anidados para respuestas.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;article&gt; (hilo)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (respuesta)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (respuesta)<br>
+            &nbsp;&nbsp;&lt;/article&gt;<br>
+            &nbsp;&nbsp;&lt;aside&gt; (hilos populares)<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+
+        <div class="pattern-card">
+          <div class="pattern-icon">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h4>Sitio Corporativo</h4>
+          <p>Secciones para diferentes áreas, artículos para casos de estudio.</p>
+          <div class="pattern-structure">
+            &lt;main&gt;<br>
+            &nbsp;&nbsp;&lt;section&gt; (servicios)<br>
+            &nbsp;&nbsp;&lt;section&gt; (equipo)<br>
+            &nbsp;&nbsp;&lt;section&gt; (casos de éxito)<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&lt;article&gt; (caso)<br>
+            &nbsp;&nbsp;&lt;/section&gt;<br>
+            &lt;/main&gt;
+          </div>
+        </div>
+      </div>
+
+      <div class="highlight-box success">
+        <h4><i class="fas fa-clipboard-check"></i> Checklist para elegir el patrón correcto</h4>
+        <ul>
+          <li><input type="checkbox" checked> ¿El contenido principal es independiente? → <code>&lt;article&gt;</code></li>
+          <li><input type="checkbox" checked> ¿Necesitas agrupar por temas? → <code>&lt;section&gt;</code></li>
+          <li><input type="checkbox" checked> ¿Hay contenido relacionado indirectamente? → <code>&lt;aside&gt;</code></li>
+          <li><input type="checkbox" checked> ¿La estructura refleja el propósito del sitio? → Revisa patrones similares</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 11: Actividad práctica -->
+    <section class="section" data-aos="fade-up">
+      <div class="practice-section">
+        <h3>Actividad Práctica: Convertir Divs a Secciones Semánticas</h3>
+
+        <p style="margin-top: 20px; font-size: 1.1rem;">
+          Tienes el siguiente código HTML de una página de noticias que usa solo <code>&lt;div&gt;</code>.
+          Tu tarea es convertir todos los divs a elementos semánticos apropiados (<code>&lt;section&gt;</code>,
+          <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>).
+        </p>
+
+        <div class="code-container" style="margin: 20px 0;">
+          <div class="code-header">
+            <span>Código inicial (solo divs)</span>
+            <span class="code-language">HTML</span>
+          </div>
+          <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Portal de Noticias&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="cabecera"&gt;
+        &lt;h1&gt;Noticias del Día&lt;/h1&gt;
+        &lt;div class="menu"&gt;
+            &lt;a href="#"&gt;Inicio&lt;/a&gt;
+            &lt;a href="#"&gt;Nacional&lt;/a&gt;
+            &lt;a href="#"&gt;Internacional&lt;/a&gt;
+            &lt;a href="#"&gt;Deportes&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="contenido-principal"&gt;
+        &lt;div class="noticia-destacada"&gt;
+            &lt;h2&gt;Avance científico revoluciona la medicina&lt;/h2&gt;
+            &lt;p&gt;Investigadores descubren nuevo tratamiento...&lt;/p&gt;
+            &lt;div class="fecha"&gt;20 de enero, 2024&lt;/div&gt;
+            &lt;div class="autor"&gt;Por: Dra. María López&lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="otras-noticias"&gt;
+            &lt;h3&gt;Últimas Noticias&lt;/h3&gt;
+            &lt;div class="noticia"&gt;
+                &lt;h4&gt;Nueva política económica&lt;/h4&gt;
+                &lt;p&gt;El gobierno anuncia medidas...&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class="noticia"&gt;
+                &lt;h4&gt;Resultados deportivos&lt;/h4&gt;
+                &lt;p&gt;El equipo local gana el campeonato...&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="sidebar"&gt;
+            &lt;h3&gt;Noticias Populares&lt;/h3&gt;
+            &lt;div class="popular"&gt;Noticia más leída&lt;/div&gt;
+            &lt;div class="popular"&gt;Noticia viral&lt;/div&gt;
+            &lt;div class="popular"&gt;Noticia comentada&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    
+    &lt;div id="pie"&gt;
+        &lt;div class="copyright"&gt;© 2024 Portal de Noticias&lt;/div&gt;
+        &lt;div class="enlaces-pie"&gt;
+            &lt;a href="#"&gt;Contacto&lt;/a&gt;
+            &lt;a href="#"&gt;Aviso Legal&lt;/a&gt;
+            &lt;a href="#"&gt;Política de Privacidad&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </div>
+
+        <div class="practice-steps">
+          <h4>Instrucciones paso a paso:</h4>
+          <ol>
+            <li>
+              <strong>Analiza cada <code>&lt;div&gt;</code>:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Qué función cumple en la página?</li>
+                <li>¿Es contenido independiente, agrupación temática o contenido relacionado?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Reemplaza los divs principales:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li><code>div id="cabecera"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="menu"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div id="contenido-principal"</code> → ¿Qué elemento semántico usarías?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Reemplaza los divs de contenido:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li><code>div class="noticia-destacada"</code> → ¿<code>&lt;article&gt;</code> o <code>&lt;section&gt;</code>?</li>
+                <li><code>div class="otras-noticias"</code> → ¿<code>&lt;section&gt;</code> o <code>&lt;aside&gt;</code>?</li>
+                <li><code>div class="noticia"</code> (dentro de otras-noticias) → ¿Qué elemento usarías?</li>
+                <li><code>div class="sidebar"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="popular"</code> → ¿Qué elemento usarías?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Reemplaza los divs estructurales:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li><code>div id="pie"</code> → ¿Qué elemento semántico usarías?</li>
+                <li><code>div class="enlaces-pie"</code> → ¿Qué elemento usarías?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Mejora la semántica:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Puedes usar <code>&lt;time&gt;</code> para la fecha?</li>
+                <li>¿Puedes usar <code>&lt;address&gt;</code> para información de contacto?</li>
+                <li>¿Puedes agregar <code>&lt;header&gt;</code> y <code>&lt;footer&gt;</code> dentro de los artículos?</li>
+              </ul>
+            </li>
+            
+            <li>
+              <strong>Verifica tu trabajo:</strong>
+              <ul style="margin-top: 10px; padding-left: 25px;">
+                <li>¿Los elementos están correctamente anidados?</li>
+                <li>¿La jerarquía de encabezados es lógica?</li>
+                <li>¿El código es más legible que el original?</li>
+                <li>¿Incluye todos los elementos semánticos apropiados?</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
+
+        <div class="highlight-box" style="background-color: rgba(0,0,0,0.3); border-left-color: #fff; margin-top: 20px;">
+          <h4 style="color: #fff;">Solución sugerida</h4>
+          <p style="color: #fff;">
+            <strong>Pista:</strong> La noticia destacada y cada noticia en "otras-noticias" deberían ser
+            <code>&lt;article&gt;</code> porque son contenidos independientes. "otras-noticias" como conjunto
+            debería ser <code>&lt;section&gt;</code> para agrupar artículos relacionados temáticamente.
+            El sidebar debería ser <code>&lt;aside&gt;</code> porque contiene contenido relacionado indirectamente.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 12: Resumen -->
+    <section class="section" data-aos="fade-up">
+      <div class="summary-section">
+        <h3>Resumen de la lección</h3>
+
+        <div class="summary-content">
+          <p>
+            Los elementos de sección semántica <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code> y
+            <code>&lt;aside&gt;</code> son fundamentales para crear estructuras HTML significativas y accesibles.
+            Cada uno tiene un propósito específico y debe usarse según la naturaleza del contenido.
+          </p>
+
+          <div class="summary-grid">
+            <div class="summary-item">
+              <h4><code>&lt;section&gt;</code></h4>
+              <p><strong>Propósito:</strong> Agrupar contenido temáticamente relacionado</p>
+              <p><strong>Regla:</strong> Debe tener un encabezado y agrupar contenido que forma parte de un todo mayor</p>
+            </div>
+            
+            <div class="summary-item">
+              <h4><code>&lt;article&gt;</code></h4>
+              <p><strong>Propósito:</strong> Contenido independiente y autocontenido</p>
+              <p><strong>Regla:</strong> Debe tener sentido por sí solo (como en un feed RSS)</p>
+            </div>
+            
+            <div class="summary-item">
+              <h4><code>&lt;aside&gt;</code></h4>
+              <p><strong>Propósito:</strong> Contenido relacionado indirectamente</p>
+              <p><strong>Regla:</strong> Debe ser tangencial al contenido principal (como sidebars o notas)</p>
+            </div>
+          </div>
+
+          <p style="margin-top: 20px;">
+            La <strong>jerarquía de encabezados</strong> dentro de estos elementos es crucial para crear
+            un esquema de documento comprensible. Cada elemento de sección debe tener al menos un encabezado,
+            y los niveles de encabezado deben reflejar la estructura anidada del contenido.
+          </p>
+
+          <p style="margin-top: 20px;">
+            El <strong>anidamiento correcto</strong> de estos elementos permite crear estructuras complejas
+            y significativas. Recuerda que <code>&lt;article&gt;</code> puede contener <code>&lt;section&gt;</code>,
+            <code>&lt;section&gt;</code> puede contener <code>&lt;article&gt;</code>, y ambos pueden contener
+            <code>&lt;aside&gt;</code> para contenido relacionado.
+          </p>
+
+          <p style="margin-top: 20px;">
+            Al utilizar correctamente estos elementos semánticos, mejoras la <strong>accesibilidad</strong>
+            (los lectores de pantalla pueden navegar mejor), el <strong>SEO</strong> (los motores de búsqueda
+            entienden mejor la estructura), y la <strong>mantenibilidad</strong> (el código es más legible
+            y comprensible para otros desarrolladores).
+          </p>
+
+          <div class="highlight-box success" style="margin-top: 30px;">
+            <h4><i class="fas fa-star"></i> Regla de oro final</h4>
+            <p>
+              <strong>"Si el contenido es independiente y tendría sentido en otro contexto, usa <code>&lt;article&gt;</code>.
+              Si es una agrupación temática dentro de un todo mayor, usa <code>&lt;section&gt;</code>.
+              Si es contenido relacionado pero no esencial, usa <code>&lt;aside&gt;</code>."</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section class="section" data-aos="fade-up">
+      <h2 class="section-title">Quiz: Section, Article, Aside</h2>
+
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <h3>¿Dominas los elementos de sección semántica?</h3>
+          <div class="quiz-score">
+            Puntuación: <span id="score-leccion10">0</span>/5
+          </div>
+        </div>
+
+        <form id="quiz-form-leccion10">
+          <!-- Pregunta 1 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">1</span>
+              <p>¿Cuál es la principal diferencia entre <code>&lt;section&gt;</code> y <code>&lt;article&gt;</code>?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q1" value="a">
+                <span class="option-text"><code>&lt;section&gt;</code> es para estilo, <code>&lt;article&gt;</code> para contenido</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="b">
+                <span class="option-text"><code>&lt;article&gt;</code> es contenido independiente, <code>&lt;section&gt;</code> agrupa temáticamente</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="c">
+                <span class="option-text"><code>&lt;section&gt;</code> es más moderno que <code>&lt;article&gt;</code></span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q1"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">2</span>
+              <p>¿Cuándo deberías usar <code>&lt;aside&gt;</code>?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q2" value="a">
+                <span class="option-text">Para cualquier contenido que vaya en un sidebar</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="b">
+                <span class="option-text">Para contenido tangencialmente relacionado con el principal</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="c">
+                <span class="option-text">Para contenido menos importante que el principal</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q2"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">3</span>
+              <p>En un blog, ¿qué elemento semántico usarías para cada comentario de los lectores?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q3" value="a">
+                <span class="option-text"><code>&lt;section&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="b">
+                <span class="option-text"><code>&lt;article&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="c">
+                <span class="option-text"><code>&lt;aside&gt;</code></span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q3"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">4</span>
+              <p>¿Cuál de estas estructuras es correcta?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q4" value="a">
+                <span class="option-text"><code>&lt;section&gt;</code> dentro de <code>&lt;article&gt;</code> dentro de <code>&lt;aside&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="b">
+                <span class="option-text"><code>&lt;article&gt;</code> dentro de <code>&lt;section&gt;</code> dentro de <code>&lt;aside&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="c">
+                <span class="option-text"><code>&lt;aside&gt;</code> dentro de <code>&lt;section&gt;</code> dentro de <code>&lt;article&gt;</code></span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q4"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="quiz-question">
+            <div class="question-header">
+              <span class="question-number">5</span>
+              <p>¿Qué elemento de sección NO necesita obligatoriamente un encabezado?</p>
+            </div>
+            <div class="question-options">
+              <label class="option">
+                <input type="radio" name="q5" value="a">
+                <span class="option-text"><code>&lt;section&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="b">
+                <span class="option-text"><code>&lt;article&gt;</code></span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q5" value="c">
+                <span class="option-text">Todos deberían tener encabezado</span>
+              </label>
+            </div>
+            <div class="question-feedback" id="feedback-q5"></div>
+          </div>
+
+          <div class="quiz-actions">
+            <button type="button" id="check-quiz-leccion10" class="btn-quiz-check">Verificar respuestas</button>
+            <button type="button" id="reset-quiz-leccion10" class="btn-quiz-reset">Reiniciar quiz</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- NAVEGACIÓN ENTRE LECCIONES -->
+    <div class="lesson-navigation">
+      <a href="leccion9.html" class="btn-nav">
+        <i class="fas fa-arrow-left"></i> Anterior: Header, Nav, Main, Footer
+      </a>
+      <a href="../modulo4/leccion11.html" class="btn-nav">
+        Siguiente: Input types especiales <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+  </main>
+
+  <!-- JavaScript -->
+  <script src="../../assets/js/progressManager.js"></script>
+  <script src="../../assets/js/lesson-tracker.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
+  <script>
+    // Inicializar AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Inicializar Highlight.js
+    hljs.highlightAll();
+
+    // Quiz para Lección 10
+    const correctAnswersLeccion10 = {
+      q1: 'b', // article independiente, section temática
+      q2: 'b', // contenido tangencialmente relacionado
+      q3: 'b', // article para comentarios
+      q4: 'c', // aside dentro de section dentro de article
+      q5: 'c'  // todos deberían tener encabezado
+    };
+
+    const totalQuestions = Object.keys(correctAnswersLeccion10).length;
+
+    const explanationsLeccion10 = {
+      q1: {
+        correct: "¡Correcto! <code>&lt;article&gt;</code> es para contenido independiente, mientras que <code>&lt;section&gt;</code> agrupa contenido temáticamente.",
+        incorrect: "Incorrecto. <code>&lt;article&gt;</code> es para contenido independiente, <code>&lt;section&gt;</code> para agrupación temática."
+      },
+      q2: {
+        correct: "¡Exacto! <code>&lt;aside&gt;</code> es para contenido tangencialmente relacionado con el principal.",
+        incorrect: "Incorrecto. <code>&lt;aside&gt;</code> no es solo para sidebars, sino para cualquier contenido relacionado indirectamente."
+      },
+      q3: {
+        correct: "¡Perfecto! Cada comentario es contenido independiente que podría distribuirse por separado, por lo que es un <code>&lt;article&gt;</code>.",
+        incorrect: "Incorrecto. Los comentarios son contenidos independientes, por lo que deberían ser <code>&lt;article&gt;</code>."
+      },
+      q4: {
+        correct: "¡Correcto! <code>&lt;aside&gt;</code> puede estar dentro de <code>&lt;section&gt;</code> que puede estar dentro de <code>&lt;article&gt;</code>.",
+        incorrect: "Incorrecto. La estructura correcta es <code>&lt;aside&gt;</code> dentro de <code>&lt;section&gt;</code> dentro de <code>&lt;article&gt;</code>."
+      },
+      q5: {
+        correct: "¡Exacto! Aunque no es obligatorio por la especificación, es una mejor práctica que todos los elementos de sección tengan encabezados.",
+        incorrect: "Incorrecto. Es una mejor práctica que todos tengan encabezados, aunque técnicamente no es obligatorio."
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Quiz para Lección 10
+      const checkButton10 = document.getElementById('check-quiz-leccion10');
+      const resetButton10 = document.getElementById('reset-quiz-leccion10');
+      const scoreElement10 = document.getElementById('score-leccion10');
+
+      checkButton10.addEventListener('click', function () {
+        let score = 0;
+        const form = document.getElementById('quiz-form-leccion10');
+
+        for (let i = 1; i <= 5; i++) {
+          const questionName = 'q' + i;
+          const selectedOption = form.elements[questionName].value;
+          const feedbackElement = document.getElementById('feedback-q' + i);
+
+          if (selectedOption === correctAnswersLeccion10[questionName]) {
+            score++;
+            feedbackElement.innerHTML = explanationsLeccion10[questionName].correct;
+            feedbackElement.className = 'question-feedback correct';
+          } else if (selectedOption) {
+            feedbackElement.innerHTML = explanationsLeccion10[questionName].incorrect;
+            feedbackElement.className = 'question-feedback incorrect';
+          } else {
+            feedbackElement.textContent = 'Por favor selecciona una respuesta.';
+            feedbackElement.className = 'question-feedback incorrect';
+          }
+        }
+
+        scoreElement10.textContent = score;
+
+        setTimeout(() => {
+          if (score === totalQuestions) { // Si es perfecto
+            quizNotification.showSuccess(score, totalQuestions);
+          } else {
+            quizNotification.showError(score, totalQuestions);
+          }
+        }, 500);
+      });
+
+      resetButton10.addEventListener('click', function () {
+        const form = document.getElementById('quiz-form-leccion10');
+        form.reset();
+
+        for (let i = 1; i <= 5; i++) {
+          const feedbackElement = document.getElementById('feedback-q' + i);
+          feedbackElement.textContent = '';
+          feedbackElement.className = 'question-feedback';
+        }
+
+        scoreElement10.textContent = '0';
+      });
+    });
+  </script>
+</body>
+</html>

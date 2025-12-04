@@ -1,0 +1,573 @@
+/* 
+ * Archivo: leccion7-style.css
+ * Estilos específicos para la Lección 7: Formularios Básicos
+ */
+
+/* ===== ESTILOS PARA INPUT TYPES ===== */
+.input-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.input-type-demo {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-type-demo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.input-preview {
+  margin-bottom: 15px;
+}
+
+.input-preview input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.input-preview input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.input-code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 6px;
+  font-family: 'Consolas', 'Monaco', monospace;
+}
+
+.input-code code {
+  color: #4fd1c5;
+  font-size: 0.9rem;
+  word-break: break-all;
+}
+
+/* ===== FORM ELEMENTS CONTAINER ===== */
+.form-elements-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.form-element-demo {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  border-left: 4px solid #667eea;
+}
+
+.form-element-demo:nth-child(2) {
+  border-left-color: #f093fb;
+}
+
+.form-element-demo:nth-child(3) {
+  border-left-color: #4fd1c5;
+}
+
+.form-element-demo h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.form-element-demo p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* ===== VALIDACIÓN DEMO ===== */
+.validation-demo {
+  margin: 30px 0;
+}
+
+.validation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.validation-item {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 20px;
+  gap: 15px;
+  transition: transform 0.3s ease;
+}
+
+.validation-item:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.validation-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  flex-shrink: 0;
+}
+
+.validation-icon.required {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.validation-info h4 {
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.validation-info p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.validation-info code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #4fd1c5;
+}
+
+/* ===== FORM GROUPING DEMO ===== */
+.form-grouping-demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+@media (max-width: 768px) {
+  .form-grouping-demo {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group-preview {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+}
+
+.form-group-preview fieldset {
+  border: 2px solid rgba(102, 126, 234, 0.4);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group-preview legend {
+  color: #fff;
+  font-weight: 600;
+  padding: 0 10px;
+  font-size: 1.1rem;
+}
+
+.form-group-preview .form-group {
+  margin-bottom: 15px;
+}
+
+.form-group-preview label {
+  color: rgba(255, 255, 255, 0.9);
+  display: inline-block;
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+
+.form-group-preview input[type="text"],
+.form-group-preview input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.form-group-preview input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* ===== FORM EXAMPLES CONTAINER ===== */
+.form-examples-container {
+  margin: 30px 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.form-example-tabs {
+  display: flex;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.form-tab {
+  flex: 1;
+  padding: 15px;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.form-tab:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.form-tab.active {
+  color: #fff;
+  border-bottom-color: #667eea;
+  background: rgba(102, 126, 234, 0.1);
+}
+
+.form-example-content {
+  padding: 30px;
+}
+
+.form-example {
+  display: block;
+}
+
+.form-preview {
+  margin-bottom: 25px;
+}
+
+.demo-form {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.demo-form h4 {
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.demo-form .form-group {
+  margin-bottom: 20px;
+}
+
+.demo-form label {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.demo-form input[type="text"],
+.demo-form input[type="email"],
+.demo-form input[type="password"],
+.demo-form input[type="search"],
+.demo-form input[type="number"],
+.demo-form textarea,
+.demo-form select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.demo-form input:focus,
+.demo-form textarea:focus,
+.demo-form select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.demo-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.demo-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 40px;
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  margin-top: 5px;
+}
+
+.radio-group input[type="radio"] {
+  margin-right: 5px;
+}
+
+.radio-group label {
+  display: inline;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.demo-form button[type="submit"] {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.demo-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.search-form .form-group {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.search-form .form-group label {
+  flex-shrink: 0;
+  width: 80px;
+}
+
+/* ===== MEJORES PRÁCTICAS ===== */
+.best-practices-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 30px 0;
+}
+
+.practice-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.practice-card:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-5px);
+}
+
+.practice-icon {
+  font-size: 2.5rem;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.practice-card:nth-child(2) .practice-icon {
+  color: #f093fb;
+}
+
+.practice-card:nth-child(3) .practice-icon {
+  color: #4fd1c5;
+}
+
+.practice-card h4 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.practice-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.practice-card li {
+  padding: 8px 0;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.practice-card li:last-child {
+  border-bottom: none;
+}
+
+.practice-card li:before {
+  content: "✓";
+  color: #4fd1c5;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* ===== COMPARACIÓN CHECKBOX/RADIO ===== */
+.comparison-container {
+  margin: 30px 0;
+}
+
+.comparison-title {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 1.4rem;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.comparison-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 25px;
+  border-top: 5px solid transparent;
+}
+
+.comparison-item.correct {
+  border-top-color: #667eea;
+}
+
+.comparison-item .comparison-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+.comparison-item:nth-child(2) .comparison-icon {
+  color: #f093fb;
+}
+
+.comparison-label {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.comparison-desc {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.comparison-desc ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.comparison-desc li {
+  padding: 5px 0;
+  padding-left: 25px;
+  position: relative;
+}
+
+.comparison-desc li:before {
+  content: "•";
+  color: #667eea;
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.comparison-item:nth-child(2) .comparison-desc li:before {
+  color: #f093fb;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .form-elements-container,
+  .validation-grid,
+  .comparison-grid,
+  .best-practices-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .input-types-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-example-tabs {
+    flex-direction: column;
+  }
+  
+  .form-tab {
+    width: 100%;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 3px solid transparent;
+  }
+  
+  .form-tab.active {
+    border-left-color: #667eea;
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .search-form .form-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .search-form .form-group label {
+    width: auto;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .practice-card,
+  .form-element-demo,
+  .comparison-item,
+  .validation-item {
+    padding: 20px 15px;
+  }
+  
+  .demo-form {
+    padding: 20px 15px;
+  }
+  
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
