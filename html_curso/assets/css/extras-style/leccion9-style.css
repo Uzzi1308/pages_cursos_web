@@ -466,18 +466,23 @@
 .hierarchy-item.body {
   border-left: 4px solid #667eea;
 }
+
 .hierarchy-item.header {
   border-left: 4px solid #48bb78;
 }
+
 .hierarchy-item.nav {
   border-left: 4px solid #ed8936;
 }
+
 .hierarchy-item.main {
   border-left: 4px solid #e53e3e;
 }
+
 .hierarchy-item.footer {
   border-left: 4px solid #805ad5;
 }
+
 .hierarchy-item.article {
   border-left: 4px solid #d69e2e;
 }

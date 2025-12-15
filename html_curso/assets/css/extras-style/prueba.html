@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35 Meses Juntos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --verde: #27ae60;
+            --morado: #8e44ad;
+            --verde-claro: #d5f4e6;
+            --morado-claro: #e8daef;
+            --blanco: #ffffff;
+            --gris-claro: #f9f9f9;
+            --texto: #333333;
+            --sombra: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: var(--texto);
+            background-color: var(--blanco);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+        }
+        
+        /* Pantalla de inicio */
+        .pantalla-inicio {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--blanco);
+            z-index: 1000;
+            transition: opacity 1.2s ease, transform 1.2s ease;
+            will-change: opacity, transform;
+        }
+        
+        .pantalla-inicio.oculta {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-20px);
+        }
+        
+        .titulo-principal {
+            font-size: 3.5rem;
+            color: var(--morado);
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.2s ease 0.5s forwards;
+        }
+        
+        .subtitulo {
+            font-size: 1.8rem;
+            color: var(--verde);
+            margin-top: 0;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.2s ease 0.8s forwards;
+        }
+        
+        .btn-entrar {
+            background-color: var(--verde);
+            color: var(--blanco);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1.2s ease 1.1s forwards;
+            box-shadow: 0 4px 15px var(--sombra);
+        }
+        
+        .btn-entrar:hover {
+            background-color: var(--morado);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(142, 68, 173, 0.25);
+        }
+        
+        /* Contenedor principal */
+        .contenedor-principal {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+        
+        .contenedor-principal.mostrar {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Secciones */
+        .seccion {
+            padding: 5rem 2rem;
+            position: relative;
+        }
+        
+        .seccion-vertical {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .seccion-horizontal {
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+            padding-bottom: 2rem;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Firefox */
+        }
+        
+        .seccion-horizontal::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Edge */
+        }
+        
+        .contenedor-horizontal {
+            display: inline-flex;
+            gap: 2rem;
+            padding: 0 2rem;
+        }
+        
+        /* Tarjetas */
+        .tarjeta {
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--sombra);
+            transition: transform 0.5s ease, opacity 0.8s ease;
+            margin-top: 3rem;
+            position: relative;
+            opacity: 0;
+        }
+        
+        .tarjeta.visible {
+            opacity: 1;
+        }
+        
+        .tarjeta-vertical {
+            width: 100%;
+        }
+        
+        .tarjeta-horizontal {
+            display: inline-block;
+            width: 320px;
+            height: 450px;
+            vertical-align: top;
+            white-space: normal;
+            flex-shrink: 0;
+        }
+        
+        .tarjeta-verde {
+            background-color: var(--verde);
+            color: var(--blanco);
+        }
+        
+        .tarjeta-morada {
+            background-color: var(--morado);
+            color: var(--blanco);
+        }
+        
+        .tarjeta-borde-verde {
+            background-color: var(--blanco);
+            border: 3px solid var(--verde);
+            color: var(--texto);
+        }
+        
+        .tarjeta-borde-morado {
+            background-color: var(--blanco);
+            border: 3px solid var(--morado);
+            color: var(--texto);
+        }
+        
+        .numero-tarjeta {
+            position: absolute;
+            top: -25px;
+            left: 30px;
+            font-size: 3.5rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            opacity: 0.9;
+        }
+        
+        .tarjeta-verde .numero-tarjeta,
+        .tarjeta-morada .numero-tarjeta {
+            color: var(--blanco);
+        }
+        
+        .tarjeta-borde-verde .numero-tarjeta {
+            color: var(--verde);
+        }
+        
+        .tarjeta-borde-morado .numero-tarjeta {
+            color: var(--morado);
+        }
+        
+        .titulo-tarjeta {
+            font-size: 1.8rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+            outline: none;
+        }
+        
+        .contenido-tarjeta {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            min-height: 180px;
+            outline: none;
+        }
+        
+        .titulo-tarjeta:empty:before,
+        .contenido-tarjeta:empty:before {
+            content: attr(data-placeholder);
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .tarjeta-borde-verde .titulo-tarjeta:empty:before,
+        .tarjeta-borde-verde .contenido-tarjeta:empty:before,
+        .tarjeta-borde-morado .titulo-tarjeta:empty:before,
+        .tarjeta-borde-morado .contenido-tarjeta:empty:before {
+            color: rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Navegación */
+        .navegacion {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--morado-claro);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .indicador.activo {
+            background-color: var(--morado);
+            transform: scale(1.3);
+        }
+        
+        .btn-siguiente {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--verde);
+            color: var(--blanco);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px var(--sombra);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        
+        .btn-siguiente:hover {
+            background-color: var(--morado);
+            transform: translateY(-3px);
+        }
+        
+        .contador {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.2rem;
+            color: var(--morado);
+            font-weight: 500;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px var(--sombra);
+        }
+        
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .animacion-fadein {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        .animacion-slideleft {
+            animation: slideInLeft 1s ease forwards;
+        }
+        
+        .animacion-slideright {
+            animation: slideInRight 1s ease forwards;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .titulo-principal {
+                font-size: 2.5rem;
+            }
+            
+            .subtitulo {
+                font-size: 1.5rem;
+            }
+            
+            .seccion {
+                padding: 3rem 1rem;
+            }
+            
+            .tarjeta {
+                padding: 2rem 1.5rem;
+            }
+            
+            .tarjeta-horizontal {
+                width: 280px;
+                height: 420px;
+            }
+            
+            .navegacion {
+                right: 1rem;
+            }
+            
+            .btn-siguiente {
+                bottom: 1rem;
+                right: 1rem;
+            }
+            
+            .contador {
+                top: 1rem;
+                right: 1rem;
+                font-size: 1rem;
+            }
+            
+            .numero-tarjeta {
+                font-size: 2.8rem;
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .titulo-principal {
+                font-size: 2rem;
+            }
+            
+            .subtitulo {
+                font-size: 1.2rem;
+            }
+            
+            .btn-entrar {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .tarjeta-horizontal {
+                width: 260px;
+                height: 400px;
+            }
+            
+            .titulo-tarjeta {
+                font-size: 1.5rem;
+            }
+            
+            .contenido-tarjeta {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Efecto parallax */
+        .parallax {
+            transition: transform 0.3s ease-out;
+        }
+        
+        /* Mensaje final */
+        .mensaje-final {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+        
+        .mensaje-final.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .contenedor-mensaje {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .titulo-final {
+            font-size: 2.5rem;
+            color: var(--morado);
+            margin-top: 0;
+            margin-bottom: 2rem;
+        }
+        
+        .texto-final {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--texto);
+        }
+    </style>
+</head>
+<body>
+    <!-- Pantalla de inicio -->
+    <div class="pantalla-inicio" id="pantallaInicio">
+        <h1 class="titulo-principal" contenteditable="true">35 razones por las que te amo</h1>
+        <h2 class="subtitulo" contenteditable="true">35 meses juntos</h2>
+        <button class="btn-entrar" id="btnEntrar">Entrar</button>
+    </div>
+    
+    <!-- Contenido principal -->
+    <main class="contenedor-principal" id="contenedorPrincipal">
+        <!-- Navegación lateral -->
+        <div class="navegacion" id="navegacion">
+            <!-- Los indicadores se generan dinámicamente con JavaScript -->
+        </div>
+        
+        <!-- Contador de progreso -->
+        <div class="contador" id="contador">1/35</div>
+        
+        <!-- Botón siguiente -->
+        <button class="btn-siguiente" id="btnSiguiente">
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        
+        <!-- Secciones de tarjetas -->
+        <!-- Primera sección (vertical) -->
+        <section class="seccion seccion-vertical" id="seccion1">
+            <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+        </section>
+        
+        <!-- Segunda sección (horizontal) -->
+        <section class="seccion seccion-horizontal" id="seccion2">
+            <div class="contenedor-horizontal">
+                <!-- Las tarjetas horizontales se generarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Tercera sección (vertical) -->
+        <section class="seccion seccion-vertical" id="seccion3">
+            <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+        </section>
+        
+        <!-- Cuarta sección (horizontal) -->
+        <section class="seccion seccion-horizontal" id="seccion4">
+            <div class="contenedor-horizontal">
+                <!-- Las tarjetas horizontales se generarán dinámicamente con JavaScript -->
+            </div>
+        </section>
+        
+        <!-- Quinta sección (vertical) -->
+        <section class="seccion seccion-vertical" id="seccion5">
+            <!-- Las tarjetas se generarán dinámicamente con JavaScript -->
+        </section>
+        
+        <!-- Mensaje final -->
+        <section class="mensaje-final" id="mensajeFinal">
+            <div class="contenedor-mensaje">
+                <h2 class="titulo-final" contenteditable="true">Y así cumplimos 35 meses...</h2>
+                <div class="texto-final" contenteditable="true">
+                    Este es solo el comienzo de nuestra historia. Cada día a tu lado es un regalo, y aunque la distancia nos separe físicamente, mi corazón siempre está contigo. Aquí hay 35 recuerdos y razones que demuestran por qué nuestro amor es especial y único. Te amo más de lo que las palabras pueden expresar.
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Elementos principales
+            const pantallaInicio = document.getElementById('pantallaInicio');
+            const btnEntrar = document.getElementById('btnEntrar');
+            const contenedorPrincipal = document.getElementById('contenedorPrincipal');
+            const navegacion = document.getElementById('navegacion');
+            const contador = document.getElementById('contador');
+            const btnSiguiente = document.getElementById('btnSiguiente');
+            const mensajeFinal = document.getElementById('mensajeFinal');
+            
+            // Configuración de las secciones
+            const secciones = [
+                { id: 'seccion1', tipo: 'vertical', cantidad: 7 },
+                { id: 'seccion2', tipo: 'horizontal', cantidad: 7 },
+                { id: 'seccion3', tipo: 'vertical', cantidad: 7 },
+                { id: 'seccion4', tipo: 'horizontal', cantidad: 7 },
+                { id: 'seccion5', tipo: 'vertical', cantidad: 7 }
+            ];
+            
+            // Variables de estado
+            let tarjetaActual = 0;
+            const totalTarjetas = 35;
+            const tarjetas = [];
+            
+            // Inicializar la página
+            function inicializarPagina() {
+                // Crear las tarjetas
+                crearTarjetas();
+                
+                // Crear los indicadores de navegación
+                crearIndicadores();
+                
+                // Configurar eventos
+                configurarEventos();
+                
+                // Mostrar la primera tarjeta
+                actualizarVista();
+            }
+            
+            // Crear todas las tarjetas
+            function crearTarjetas() {
+                let numeroTarjeta = 1;
+                
+                secciones.forEach((seccion, indiceSeccion) => {
+                    const elementoSeccion = document.getElementById(seccion.id);
+                    
+                    for (let i = 0; i < seccion.cantidad; i++) {
+                        // Determinar el tipo de tarjeta basado en el número
+                        let tipoTarjeta;
+                        if (numeroTarjeta % 3 === 0) {
+                            tipoTarjeta = 'verde';
+                        } else if (numeroTarjeta % 3 === 1) {
+                            tipoTarjeta = 'morada';
+                        } else {
+                            // Alternar entre borde verde y morado
+                            tipoTarjeta = numeroTarjeta % 6 < 3 ? 'borde-verde' : 'borde-morado';
+                        }
+                        
+                        // Crear la tarjeta
+                        const tarjeta = crearTarjetaElemento(numeroTarjeta, tipoTarjeta, seccion.tipo);
+                        
+                        // Agregar a la sección correspondiente
+                        if (seccion.tipo === 'vertical') {
+                            elementoSeccion.appendChild(tarjeta);
+                        } else {
+                            const contenedorHorizontal = elementoSeccion.querySelector('.contenedor-horizontal');
+                            contenedorHorizontal.appendChild(tarjeta);
+                        }
+                        
+                        // Guardar referencia a la tarjeta
+                        tarjetas.push({
+                            elemento: tarjeta,
+                            seccion: seccion.id,
+                            tipo: seccion.tipo,
+                            numero: numeroTarjeta,
+                            visible: false
+                        });
+                        
+                        numeroTarjeta++;
+                    }
+                });
+            }
+            
+            // Crear un elemento de tarjeta
+            function crearTarjetaElemento(numero, tipo, seccionTipo) {
+                const tarjeta = document.createElement('div');
+                tarjeta.className = `tarjeta tarjeta-${tipo} ${seccionTipo === 'vertical' ? 'tarjeta-vertical' : 'tarjeta-horizontal'}`;
+                tarjeta.id = `tarjeta-${numero}`;
+                
+                // Número de la tarjeta
+                const numeroElemento = document.createElement('div');
+                numeroElemento.className = 'numero-tarjeta';
+                numeroElemento.textContent = `#${numero}`;
+                
+                // Título editable
+                const titulo = document.createElement('h3');
+                titulo.className = 'titulo-tarjeta';
+                titulo.contentEditable = true;
+                titulo.setAttribute('data-placeholder', 'Título del recuerdo...');
+                
+                // Contenido editable
+                const contenido = document.createElement('div');
+                contenido.className = 'contenido-tarjeta';
+                contenido.contentEditable = true;
+                contenido.setAttribute('data-placeholder', 'Escribe aquí tu recuerdo...');
+                
+                // Ensamblar la tarjeta
+                tarjeta.appendChild(numeroElemento);
+                tarjeta.appendChild(titulo);
+                tarjeta.appendChild(contenido);
+                
+                return tarjeta;
+            }
+            
+            // Crear indicadores de navegación
+            function crearIndicadores() {
+                for (let i = 0; i < totalTarjetas; i++) {
+                    const indicador = document.createElement('div');
+                    indicador.className = 'indicador';
+                    indicador.dataset.tarjeta = i;
+                    indicador.addEventListener('click', () => {
+                        irATarjeta(i);
+                    });
+                    navegacion.appendChild(indicador);
+                }
+            }
+            
+            // Configurar eventos
+            function configurarEventos() {
+                // Botón entrar
+                btnEntrar.addEventListener('click', function() {
+                    pantallaInicio.classList.add('oculta');
+                    
+                    setTimeout(() => {
+                        contenedorPrincipal.classList.add('mostrar');
+                        // Activar el observador de intersección después de mostrar el contenido
+                        activarObservador();
+                    }, 1200);
+                });
+                
+                // Botón siguiente
+                btnSiguiente.addEventListener('click', function() {
+                    if (tarjetaActual < totalTarjetas - 1) {
+                        irATarjeta(tarjetaActual + 1);
+                    } else {
+                        // Si estamos en la última tarjeta, mostrar el mensaje final
+                        mensajeFinal.scrollIntoView({ behavior: 'smooth' });
+                        mensajeFinal.classList.add('visible');
+                    }
+                });
+                
+                // Evento de scroll
+                window.addEventListener('scroll', manejarScroll);
+                
+                // Permitir edición directa de los textos
+                document.addEventListener('focusin', function(e) {
+                    if (e.target.classList.contains('titulo-tarjeta') || 
+                        e.target.classList.contains('contenido-tarjeta') ||
+                        e.target.classList.contains('titulo-principal') ||
+                        e.target.classList.contains('subtitulo') ||
+                        e.target.classList.contains('titulo-final') ||
+                        e.target.classList.contains('texto-final')) {
+                        // Añadir estilo de enfoque
+                        e.target.style.outline = '2px solid var(--morado)';
+                        e.target.style.outlineOffset = '2px';
+                    }
+                });
+                
+                document.addEventListener('focusout', function(e) {
+                    if (e.target.classList.contains('titulo-tarjeta') || 
+                        e.target.classList.contains('contenido-tarjeta') ||
+                        e.target.classList.contains('titulo-principal') ||
+                        e.target.classList.contains('subtitulo') ||
+                        e.target.classList.contains('titulo-final') ||
+                        e.target.classList.contains('texto-final')) {
+                        // Quitar estilo de enfoque
+                        e.target.style.outline = 'none';
+                    }
+                });
+            }
+            
+            // Ir a una tarjeta específica
+            function irATarjeta(indice) {
+                if (indice >= 0 && indice < totalTarjetas) {
+                    tarjetaActual = indice;
+                    const tarjeta = tarjetas[indice];
+                    
+                    // Desplazarse a la tarjeta
+                    tarjeta.elemento.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'center' 
+                    });
+                    
+                    // Actualizar la vista
+                    actualizarVista();
+                }
+            }
+            
+            // Actualizar la vista según la tarjeta actual
+            function actualizarVista() {
+                // Actualizar contador
+                contador.textContent = `${tarjetaActual + 1}/${totalTarjetas}`;
+                
+                // Actualizar indicadores
+                const indicadores = document.querySelectorAll('.indicador');
+                indicadores.forEach((indicador, i) => {
+                    if (i === tarjetaActual) {
+                        indicador.classList.add('activo');
+                    } else {
+                        indicador.classList.remove('activo');
+                    }
+                });
+                
+                // Cambiar icono del botón siguiente si es la última tarjeta
+                if (tarjetaActual === totalTarjetas - 1) {
+                    btnSiguiente.innerHTML = '<i class="fas fa-heart"></i>';
+                } else {
+                    btnSiguiente.innerHTML = '<i class="fas fa-chevron-down"></i>';
+                }
+            }
+            
+            // Manejar scroll para efectos de parallax
+            function manejarScroll() {
+                // Efecto parallax en las tarjetas
+                tarjetas.forEach(tarjeta => {
+                    const rect = tarjeta.elemento.getBoundingClientRect();
+                    const isInView = rect.top < window.innerHeight && rect.bottom > 0;
+                    
+                    if (isInView && !tarjeta.visible) {
+                        // Determinar animación basada en el tipo de tarjeta
+                        let animacion;
+                        if (tarjeta.numero % 4 === 0) {
+                            animacion = 'animacion-slideleft';
+                        } else if (tarjeta.numero % 4 === 1) {
+                            animacion = 'animacion-slideright';
+                        } else {
+                            animacion = 'animacion-fadein';
+                        }
+                        
+                        tarjeta.elemento.classList.add(animacion, 'visible');
+                        tarjeta.visible = true;
+                        
+                        // Efecto parallax ligero
+                        const velocidad = 0.3;
+                        const yPos = -(rect.top * velocidad);
+                        tarjeta.elemento.style.transform = `translateY(${yPos}px)`;
+                    }
+                });
+                
+                // Mostrar mensaje final cuando esté en vista
+                const rectFinal = mensajeFinal.getBoundingClientRect();
+                if (rectFinal.top < window.innerHeight * 0.75) {
+                    mensajeFinal.classList.add('visible');
+                }
+                
+                // Actualizar tarjeta actual basada en scroll
+                const scrollPos = window.scrollY + window.innerHeight / 2;
+                let nuevaTarjetaActual = 0;
+                
+                for (let i = 0; i < tarjetas.length; i++) {
+                    const tarjetaRect = tarjetas[i].elemento.getBoundingClientRect();
+                    const tarjetaTop = tarjetaRect.top + window.scrollY;
+                    
+                    if (scrollPos >= tarjetaTop) {
+                        nuevaTarjetaActual = i;
+                    }
+                }
+                
+                if (nuevaTarjetaActual !== tarjetaActual) {
+                    tarjetaActual = nuevaTarjetaActual;
+                    actualizarVista();
+                }
+            }
+            
+            // Activar observador de intersección para animaciones
+            function activarObservador() {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Ya manejamos las animaciones en manejarScroll
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                // Observar todas las tarjetas
+                tarjetas.forEach(tarjeta => {
+                    observer.observe(tarjeta.elemento);
+                });
+                
+                // Observar mensaje final
+                observer.observe(mensajeFinal);
+            }
+            
+            // Inicializar la página
+            inicializarPagina();
+        });
+    </script>
+</body>
+</html>
